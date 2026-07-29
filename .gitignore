@@ -50,6 +50,7 @@ resources/docs
 
 /lang/*
 !/lang/en
+!/lang/vendor
 !/lang/es.json
 !/lang/ca.json
 !/lang/gl.json
@@ -75,3 +76,4 @@ release-manifest.json
 
 # PHPMD standalone binary (installed via PHAR to avoid Symfony 8 dependency conflict)
 phpmd.phar
+/dist

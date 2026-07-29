@@ -35,7 +35,14 @@ Set the domain's document root to the `public/` directory in the hosting panel. 
 
 If the hosting does not allow changing the document root, upload the project to the web root as-is. The `.htaccess` file at the project root rewrites every request to `public/`, so URLs work exactly the same. Slightly less strict than option A (project files live under the web root), but Botble ships protections for sensitive paths and `.env` is never web-served thanks to the rewrite rules.
 
-Full step-by-step installation and migration guides will live in `docs/INSTALL.md` and `docs/MIGRATION.md`.
+Full guides:
+
+- [`docs/INSTALL.md`](docs/INSTALL.md) — step-by-step shared hosting installation (including the one-shot browser seeder for hosts without SSH).
+- [`docs/MIGRATION.md`](docs/MIGRATION.md) — WordPress cut-over plan (staging on `nueva.torns.app`, go-live, verification).
+- [`docs/redirects.md`](docs/redirects.md) — URL preservation and 301 rules.
+- [`docs/comparison-verification.md`](docs/comparison-verification.md) — sources for every cell of the comparison table.
+
+To build the upload package: `bash scripts/build-release.sh` → `dist/torns-web-install.zip`.
 
 ## Languages
 
