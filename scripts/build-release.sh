@@ -62,4 +62,21 @@ zip -r -q "$ZIP_PATH" . \
     -x ".phpunit.result.cache" \
     -x "*.DS_Store"
 
+# Re-add placeholder files so runtime directories survive unzip tools that
+# drop empty folders (missing storage/framework/views causes a 500 on boot).
+RUNTIME_DIRS=(
+    "storage/framework/views"
+    "storage/framework/cache"
+    "storage/framework/cache/data"
+    "storage/framework/sessions"
+    "storage/logs"
+    "storage/app/public"
+    "bootstrap/cache"
+)
+for dir in "${RUNTIME_DIRS[@]}"; do
+    mkdir -p "$dir"
+    [[ -f "$dir/.gitkeep" ]] || touch "$dir/.gitkeep"
+    zip -q "$ZIP_PATH" "$dir/.gitkeep"
+done
+
 echo "==> done: $ZIP_PATH ($(du -h "$ZIP_PATH" | cut -f1))"
