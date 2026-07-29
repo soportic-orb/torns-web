@@ -1,0 +1,7 @@
+{
+    "General": {"name": "Umum"},
+    "Design": {"name": "Desain"},
+    "Fashion": {"name": "Fashion"},
+    "Branding": {"name": "Branding"},
+    "Modern": {"name": "Modern"}
+}

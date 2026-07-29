@@ -1,0 +1,20 @@
+{
+    "Home": {
+        "name": "Trang chủ",
+        "content": "<div>[about-banner title=\"Xin chào, tôi là &lt;span&gt;Steven&lt;/span&gt;\" subtitle=\"Chào mừng đến blog của tôi\" text_muted=\"Blogger Du lịch., Nhà viết Nội dung., Hướng dẫn Ẩm thực\" image=\"general/featured.png\" newsletter_title=\"Đừng bỏ lỡ tin tức mới nhất về Mẹo du lịch, Đánh giá khách sạn, Hướng dẫn ẩm thực...\" show_newsletter_form=\"yes\"][/about-banner]</div><div>[featured-posts title=\"Bài viết nổi bật\" enable_lazy_loading=\"yes\"][/featured-posts]</div><div>[blog-categories-posts category_id=\"2\" enable_lazy_loading=\"yes\"][/blog-categories-posts]</div><div>[categories-with-posts category_id_1=\"3\" category_id_2=\"4\" category_id_3=\"5\" enable_lazy_loading=\"yes\"][/categories-with-posts]</div><div>[featured-categories title=\"Danh mục\" enable_lazy_loading=\"yes\"][/featured-categories]</div>"
+    },
+    "Home 2": {"name": "Trang chủ 2"},
+    "Home 3": {"name": "Trang chủ 3"},
+    "Blog": {"name": "Blog"},
+    "Contact": {
+        "name": "Liên hệ",
+        "content": "<p>Địa chỉ: North Link Building, 10 Admiralty Street, 757695 Singapore</p><p>Hotline: 18006268</p><p>Email: contact@botble.com</p><p>[google-map]North Link Building, 10 Admiralty Street, 757695 Singapore[/google-map]</p><p>Để được phản hồi nhanh nhất, vui lòng sử dụng biểu mẫu liên hệ bên dưới.</p><p>[contact-form][/contact-form]</p>"
+    },
+    "Cookie Policy": {
+        "name": "Chính sách Cookie",
+        "content": "<h3>Chấp thuận Cookie EU</h3><p>Để sử dụng trang web này, chúng tôi đang sử dụng Cookie và thu thập một số dữ liệu. Để tuân thủ GDPR của EU, chúng tôi cho phép bạn chọn có cho phép chúng tôi sử dụng một số Cookie nhất định và thu thập một số dữ liệu hay không.</p><h4>Dữ liệu thiết yếu</h4><p>Dữ liệu thiết yếu cần thiết để vận hành trang web bạn đang truy cập về mặt kỹ thuật. Bạn không thể tắt chúng.</p><p>- Cookie phiên: PHP sử dụng Cookie để nhận dạng phiên người dùng. Không có Cookie này, trang web sẽ không hoạt động.</p><p>- Cookie XSRF-Token: Laravel tự động tạo mã CSRF cho mỗi phiên người dùng đang hoạt động được quản lý bởi ứng dụng. Mã này được sử dụng để xác minh rằng người dùng đã xác thực là người thực sự đưa ra yêu cầu đến ứng dụng.</p>"
+    },
+    "Blog List layout": {"name": "Bố cục danh sách Blog"},
+    "Blog Big layout": {"name": "Bố cục Blog lớn"},
+    "Blog Grid layout": {"name": "Bố cục lưới Blog"}
+}

@@ -1,0 +1,11 @@
+{
+    "Uncategorized": {"name": "Tidak Berkategori", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Travel": {"name": "Perjalanan", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Guides": {"name": "Panduan", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Destination": {"name": "Destinasi", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Food": {"name": "Makanan", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Hotels": {"name": "Hotel", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Review": {"name": "Ulasan", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Healthy": {"name": "Kesehatan", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."},
+    "Lifestyle": {"name": "Gaya Hidup", "description": "Jelajahi koleksi artikel dan wawasan kami dalam kategori ini."}
+}

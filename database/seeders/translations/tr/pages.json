@@ -1,0 +1,20 @@
+{
+    "Home": {
+        "name": "Ana Sayfa",
+        "content": "<div>[about-banner title=\"Merhaba, ben &lt;span&gt;Steven&lt;/span&gt;\" subtitle=\"Bloguma hoş geldiniz\" text_muted=\"Seyahat Blogcusu., İçerik Yazarı., Yemek Rehberi\" image=\"general/featured.png\" newsletter_title=\"Seyahat ipuçları, Otel değerlendirmeleri, Yemek rehberi hakkında en son haberleri kaçırmayın...\" show_newsletter_form=\"yes\"][/about-banner]</div><div>[featured-posts title=\"Öne çıkan yazılar\" enable_lazy_loading=\"yes\"][/featured-posts]</div><div>[blog-categories-posts category_id=\"2\" enable_lazy_loading=\"yes\"][/blog-categories-posts]</div><div>[categories-with-posts category_id_1=\"3\" category_id_2=\"4\" category_id_3=\"5\" enable_lazy_loading=\"yes\"][/categories-with-posts]</div><div>[featured-categories title=\"Kategoriler\" enable_lazy_loading=\"yes\"][/featured-categories]</div>"
+    },
+    "Home 2": {"name": "Ana Sayfa 2"},
+    "Home 3": {"name": "Ana Sayfa 3"},
+    "Blog": {"name": "Blog"},
+    "Contact": {
+        "name": "İletişim",
+        "content": "<p>Adres: North Link Building, 10 Admiralty Street, 757695 Singapur</p><p>Telefon: 18006268</p><p>E-posta: contact@botble.com</p><p>[google-map]North Link Building, 10 Admiralty Street, 757695 Singapur[/google-map]</p><p>En hızlı yanıt için lütfen aşağıdaki iletişim formunu kullanın.</p><p>[contact-form][/contact-form]</p>"
+    },
+    "Cookie Policy": {
+        "name": "Çerez Politikası",
+        "content": "<h3>AB Çerez Onayı</h3><p>Bu web sitesini kullanmak için Çerezler kullanıyor ve bazı veriler topluyoruz. AB GDPR'ye uyum sağlamak için belirli Çerezleri kullanmamıza ve bazı verileri toplamamıza izin verip vermeyeceğinizi seçmenize olanak tanıyoruz.</p><h4>Temel Veriler</h4><p>Temel Veriler, ziyaret ettiğiniz siteyi teknik olarak çalıştırmak için gereklidir. Bunları devre dışı bırakamazsınız.</p><p>- Oturum Çerezi: PHP, kullanıcı oturumlarını tanımlamak için bir Çerez kullanır. Bu Çerez olmadan web sitesi çalışmaz.</p><p>- XSRF-Token Çerezi: Laravel, uygulama tarafından yönetilen her aktif kullanıcı oturumu için otomatik olarak bir CSRF belirteci oluşturur. Bu belirteç, kimliği doğrulanmış kullanıcının uygulamaya gerçekten isteklerde bulunan kişi olduğunu doğrulamak için kullanılır.</p>"
+    },
+    "Blog List layout": {"name": "Blog liste düzeni"},
+    "Blog Big layout": {"name": "Blog büyük düzen"},
+    "Blog Grid layout": {"name": "Blog ızgara düzeni"}
+}

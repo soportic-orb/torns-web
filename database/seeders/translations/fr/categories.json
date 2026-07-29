@@ -1,0 +1,11 @@
+{
+    "Uncategorized": {"name": "Non classé", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Travel": {"name": "Voyage", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Guides": {"name": "Guides", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Destination": {"name": "Destination", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Food": {"name": "Gastronomie", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Hotels": {"name": "Hôtels", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Review": {"name": "Avis", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Healthy": {"name": "Santé", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."},
+    "Lifestyle": {"name": "Mode de vie", "description": "Explorez notre collection d'articles et de perspectives dans cette catégorie."}
+}

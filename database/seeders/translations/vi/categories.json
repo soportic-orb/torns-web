@@ -1,0 +1,11 @@
+{
+    "Uncategorized": {"name": "Chưa phân loại", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Travel": {"name": "Du lịch", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Guides": {"name": "Hướng dẫn", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Destination": {"name": "Điểm đến", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Food": {"name": "Ẩm thực", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Hotels": {"name": "Khách sạn", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Review": {"name": "Đánh giá", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Healthy": {"name": "Sức khỏe", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."},
+    "Lifestyle": {"name": "Phong cách sống", "description": "Khám phá bộ sưu tập bài viết và thông tin chi tiết trong danh mục này."}
+}

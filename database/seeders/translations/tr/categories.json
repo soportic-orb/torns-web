@@ -1,0 +1,11 @@
+{
+    "Uncategorized": {"name": "Kategorisiz", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Travel": {"name": "Seyahat", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Guides": {"name": "Rehberler", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Destination": {"name": "Destinasyon", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Food": {"name": "Yemek", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Hotels": {"name": "Oteller", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Review": {"name": "İnceleme", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Healthy": {"name": "Sağlık", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."},
+    "Lifestyle": {"name": "Yaşam Tarzı", "description": "Bu kategorideki makale ve içgörü koleksiyonumuzu keşfedin."}
+}
