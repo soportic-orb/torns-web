@@ -1,0 +1,8 @@
+{
+    "name": "Torns",
+    "namespace": "Theme\\Torns\\",
+    "description": "Custom marketing theme for Torns — shift swapping app for healthcare professionals",
+    "author": "Torns",
+    "url": "https://www.torns.app",
+    "required_plugins": []
+}

@@ -1,0 +1,238 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --torns-primary: #0e7e8a;
+        --torns-primary-dark: #0a5a63;
+        --torns-bg: #fafbfb;
+        --torns-ink: #16232a;
+        --shift-morning: #f5a623;
+        --shift-evening: #f0685b;
+        --shift-night: #4a5bc7;
+    }
+
+    /* Visible focus ring everywhere, AA compliant */
+    :focus-visible {
+        outline: 2px solid theme('colors.torns-primary');
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+@layer components {
+    .skip-link {
+        @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-torns-primary px-4 py-2.5 text-sm font-semibold text-white transition-transform focus-visible:translate-y-0;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center gap-2 rounded-xl bg-torns-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-torns-primary-dark;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 rounded-xl border border-torns-primary px-5 py-2.5 text-sm font-semibold text-torns-primary transition hover:bg-torns-primary/5;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-torns-ink/70 transition hover:bg-torns-ink/5 hover:text-torns-ink;
+    }
+
+    .nav-link {
+        @apply inline-flex rounded-lg px-3 py-2 text-sm font-medium text-torns-ink/80 transition hover:bg-torns-ink/5 hover:text-torns-ink;
+    }
+
+    .nav-link-active {
+        @apply text-torns-primary hover:text-torns-primary;
+    }
+
+    .footer-link {
+        @apply text-torns-ink/70 transition hover:text-torns-primary;
+    }
+
+}
+
+/* ---------------------------------------------------------------------- */
+/* Shift chip — the visual signature: a colored card with the shift        */
+/* letter (M/T/N) and optionally the time range.                           */
+/* Outside @layer so the modifier classes (built dynamically in Blade)     */
+/* are never purged by the content scanner.                                */
+/* ---------------------------------------------------------------------- */
+.shift-chip {
+    @apply inline-flex flex-col items-center justify-center rounded-xl font-display font-bold leading-none text-white shadow-sm;
+}
+
+.shift-chip--sm {
+    @apply h-9 min-w-9 rounded-lg px-1.5 text-sm;
+}
+
+.shift-chip--md {
+    @apply h-14 min-w-14 px-2 text-xl;
+}
+
+.shift-chip--lg {
+    @apply h-20 min-w-20 rounded-2xl px-3 text-3xl;
+}
+
+.shift-chip--morning {
+    background: linear-gradient(160deg, var(--shift-morning), #e0930f);
+}
+
+.shift-chip--evening {
+    background: linear-gradient(160deg, var(--shift-evening), #e04d3e);
+}
+
+.shift-chip--night {
+    background: linear-gradient(160deg, var(--shift-night), #3a49ad);
+}
+
+.shift-chip__time {
+    @apply mt-1 text-[0.55em] font-semibold opacity-90;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Swap animation — two chips exchange positions between two avatars.      */
+/* Slow loop; static (arrows only) under prefers-reduced-motion.           */
+/* ---------------------------------------------------------------------- */
+.swap-demo__row {
+    @apply flex items-center justify-center gap-4;
+}
+
+.swap-demo__avatar {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-torns-ink/10 font-display text-sm font-bold text-torns-ink/70;
+}
+
+.swap-demo__avatar--b {
+    @apply bg-torns-primary/15 text-torns-primary;
+}
+
+.swap-demo__arrows {
+    @apply text-torns-primary;
+}
+
+.swap-demo__chip {
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .swap-demo__chip--a {
+        animation: torns-swap-a 6s ease-in-out infinite;
+    }
+
+    .swap-demo__chip--b {
+        animation: torns-swap-b 6s ease-in-out infinite;
+    }
+}
+
+/* Keyframes: chips travel to each other's position (with a small arc), pause, and travel back. */
+@keyframes torns-swap-a {
+    0%,
+    20% {
+        transform: translate(0, 0);
+    }
+
+    35% {
+        transform: translate(calc(50% + 3.5rem), -0.75rem);
+    }
+
+    45%,
+    70% {
+        transform: translate(calc(100% + 7rem), 0);
+    }
+
+    85% {
+        transform: translate(calc(50% + 3.5rem), 0.75rem);
+    }
+
+    95%,
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes torns-swap-b {
+    0%,
+    20% {
+        transform: translate(0, 0);
+    }
+
+    35% {
+        transform: translate(calc(-50% - 3.5rem), 0.75rem);
+    }
+
+    45%,
+    70% {
+        transform: translate(calc(-100% - 7rem), 0);
+    }
+
+    85% {
+        transform: translate(calc(-50% - 3.5rem), -0.75rem);
+    }
+
+    95%,
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Drawer open state (toggled from main.js) */
+.drawer-backdrop.is-open {
+    opacity: 1;
+}
+
+.drawer.is-open {
+    transform: translateX(0);
+}
+
+body.drawer-locked {
+    overflow: hidden;
+}
+
+/* Comfortable reading width for CMS page content */
+.prose-torns {
+    max-width: 70ch;
+}
+
+.prose-torns h2 {
+    @apply mb-4 mt-10 font-display text-2xl font-semibold;
+}
+
+.prose-torns h3 {
+    @apply mb-3 mt-8 font-display text-xl font-semibold;
+}
+
+.prose-torns p {
+    @apply mb-4 leading-relaxed;
+}
+
+.prose-torns ul {
+    @apply mb-4 list-disc pl-6;
+}
+
+.prose-torns ol {
+    @apply mb-4 list-decimal pl-6;
+}
+
+.prose-torns a {
+    @apply font-medium text-torns-primary underline underline-offset-2 hover:text-torns-primary-dark;
+}
