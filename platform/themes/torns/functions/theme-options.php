@@ -30,6 +30,10 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
                         ->name('support_url')
                         ->label(__('Support site URL'))
                         ->defaultValue('https://soporte.torns.app'),
+                    TextField::make()
+                        ->name('ga4_measurement_id')
+                        ->label(__('GA4 Measurement ID'))
+                        ->helperText(__('E.g.: G-XXXXXXXXXX. The tracking snippet is only rendered in production when this is filled in.')),
                 ])
         );
 

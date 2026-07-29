@@ -3,14 +3,23 @@
     $content1 = $shortcode->content_1 ?: '';
     $content2 = $shortcode->content_2 ?: '';
     $side = $shortcode->side === 'right' ? 'right' : 'left';
-    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : ($shortcode->image_asset ? Theme::asset()->url('images/home/' . $shortcode->image_asset) : null);
+    $imageSrcset = null;
+    if ($shortcode->image) {
+        $image = RvMedia::getImageUrl($shortcode->image);
+    } elseif ($shortcode->image_asset) {
+        $assetBase = 'images/home/' . preg_replace('/\.(png|jpe?g|webp)$/', '', $shortcode->image_asset);
+        $image = Theme::asset()->url($assetBase . '-896.webp');
+        $imageSrcset = Theme::asset()->url($assetBase . '-480.webp') . ' 480w, ' . Theme::asset()->url($assetBase . '-896.webp') . ' 896w';
+    } else {
+        $image = null;
+    }
 @endphp
 
 <section class="py-12 lg:py-16">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div @class(['lg:order-2' => $side === 'right'])>
             @if ($image)
-                <img src="{{ $image }}" alt="{{ $title }}" class="mx-auto w-full max-w-md" width="640" height="640" loading="lazy">
+                <img src="{{ $image }}" @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 1024px) 28rem, 90vw" @endif alt="{{ $title }}" class="mx-auto w-full max-w-md" width="896" height="896" loading="lazy">
             @endif
         </div>
         <div @class(['lg:order-1' => $side === 'right'])>

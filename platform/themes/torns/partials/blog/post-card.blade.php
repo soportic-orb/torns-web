@@ -11,7 +11,7 @@
             >
         @endif
         <div class="flex flex-1 flex-col p-5">
-            <div class="flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-torns-ink/50">
+            <div class="flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-torns-ink/70">
                 <time datetime="{{ $post->created_at->toDateString() }}">{{ $post->created_at->translatedFormat('d M, Y') }}</time>
                 @if ($post->categories->isNotEmpty())
                     <span class="text-torns-primary">{{ $post->categories->first()->name }}</span>

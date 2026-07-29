@@ -21,7 +21,7 @@
     <p class="mt-4 flex items-baseline gap-1.5">
         <span class="font-display text-4xl font-bold tracking-tight">{{ $price ?? '' }}</span>
         @if (! empty($period))
-            <span class="text-sm font-medium text-torns-ink/60">{{ $period }}</span>
+            <span class="text-sm font-medium text-torns-ink/70">{{ $period }}</span>
         @endif
     </p>
 
@@ -39,7 +39,7 @@
     @if (! empty($cta_label))
         <div class="mt-8">
             @if ($disabled)
-                <span class="inline-flex w-full cursor-default items-center justify-center rounded-xl border border-torns-ink/10 px-5 py-3 text-sm font-semibold text-torns-ink/40">
+                <span class="inline-flex w-full cursor-default items-center justify-center rounded-xl border border-torns-ink/10 px-5 py-3 text-sm font-semibold text-torns-ink/70">
                     {{ $cta_label }}
                 </span>
             @else
@@ -55,6 +55,6 @@
     @endif
 
     @if (! empty($note))
-        <p class="mt-3 text-center text-xs text-torns-ink/50">{{ $note }}</p>
+        <p class="mt-3 text-center text-xs text-torns-ink/70">{{ $note }}</p>
     @endif
 </article>

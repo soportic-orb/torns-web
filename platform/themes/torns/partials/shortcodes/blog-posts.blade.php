@@ -22,7 +22,7 @@
                                 >
                             @endif
                             <div class="p-5">
-                                <time datetime="{{ $post->created_at->toDateString() }}" class="text-xs font-medium uppercase tracking-wide text-torns-ink/50">
+                                <time datetime="{{ $post->created_at->toDateString() }}" class="text-xs font-medium uppercase tracking-wide text-torns-ink/70">
                                     {{ $post->created_at->translatedFormat('d M, Y') }}
                                 </time>
                                 <h3 class="mt-2 font-display text-lg font-semibold leading-snug transition group-hover:text-torns-primary">{{ $post->name }}</h3>
@@ -44,7 +44,7 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.4 3.6a2 2 0 0 1 2.8 2.8L7 18.6 3 20l1.4-4Z"/></svg>
                 </span>
                 <h3 class="mt-4 font-display text-lg font-semibold">{{ __('Coming soon') }}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-torns-ink/60">{{ __('We will soon publish news, tips and stories for shift-working healthcare professionals here.') }}</p>
+                <p class="mt-2 text-sm leading-relaxed text-torns-ink/70">{{ __('We will soon publish news, tips and stories for shift-working healthcare professionals here.') }}</p>
             </div>
         @endif
     </div>

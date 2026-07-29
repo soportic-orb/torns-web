@@ -2,7 +2,8 @@
     $title = $shortcode->title ?: 'Calendario unificado de turnos de trabajo';
     $subtitle = $shortcode->subtitle ?: 'Gestiona tus turnos de trabajo y consulta los turnos disponibles de todos tus centros desde un único lugar.';
     $closing = $shortcode->closing ?: '¡Ya no necesitas otras apps para la gestión de tus turnos!';
-    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/calendar-mockup.png');
+    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/calendar-mockup-512.webp');
+    $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/calendar-mockup-256.webp') . ' 256w, ' . Theme::asset()->url('images/home/calendar-mockup-512.webp') . ' 512w';
 
     $benefitsLeft = [
         ['icon' => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>', 'text' => 'El calendario de todos tus centros en un solo lugar'],
@@ -39,7 +40,7 @@
             </ul>
 
             <div class="order-first mx-auto w-56 sm:w-64 lg:order-none">
-                <img src="{{ $image }}" alt="{{ __('Unified calendar in the Torns app') }}" class="w-full drop-shadow-2xl" width="480" height="903" loading="lazy">
+                <img src="{{ $image }}" @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 640px) 16rem, 14rem" @endif alt="{{ __('Unified calendar in the Torns app') }}" class="w-full drop-shadow-2xl" width="512" height="963" loading="lazy">
             </div>
 
             <ul class="flex flex-col gap-6">

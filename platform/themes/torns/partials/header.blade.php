@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
 
+        <link rel="preload" href="{{ Theme::asset()->url('fonts/bricolage-grotesque-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ Theme::asset()->url('fonts/instrument-sans-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+
         {!! Theme::header() !!}
     </head>
     <body {!! Theme::bodyAttributes() !!} class="bg-torns-bg font-sans text-torns-ink antialiased">
@@ -14,7 +17,7 @@
         <header class="site-header sticky top-0 z-40 border-b border-torns-ink/5 bg-torns-bg/90 backdrop-blur" data-header>
             <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
                 <a href="{{ BaseHelper::getHomepageUrl() }}" class="flex shrink-0 items-center" aria-label="Torns">
-                    <img src="{{ Theme::asset()->url('images/logo.png') }}" alt="Torns" class="h-8 w-auto lg:h-9" width="152" height="32">
+                    <img src="{{ Theme::asset()->url('images/logo.webp') }}" alt="Torns" class="h-8 w-auto lg:h-9" width="152" height="32">
                 </a>
 
                 <nav class="hidden lg:block" aria-label="{{ __('Main navigation') }}">
@@ -66,7 +69,7 @@
             hidden
         >
             <div class="flex h-16 items-center justify-between border-b border-torns-ink/5 px-4">
-                <img src="{{ Theme::asset()->url('images/logo.png') }}" alt="Torns" class="h-7 w-auto" width="133" height="28">
+                <img src="{{ Theme::asset()->url('images/logo.webp') }}" alt="Torns" class="h-7 w-auto" width="133" height="28">
                 <button
                     type="button"
                     class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-torns-ink transition hover:bg-torns-ink/5"
@@ -88,7 +91,7 @@
 
                 @if (is_plugin_active('language'))
                     <div class="mt-6 border-t border-torns-ink/5 pt-6">
-                        <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-torns-ink/50">{{ __('Language') }}</p>
+                        <p class="mb-3 text-xs font-semibold uppercase tracking-wide text-torns-ink/70">{{ __('Language') }}</p>
                         {!! Theme::partial('language-switcher', ['inline' => true]) !!}
                     </div>
                 @endif

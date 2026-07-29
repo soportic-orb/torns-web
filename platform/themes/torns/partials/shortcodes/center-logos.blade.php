@@ -10,17 +10,17 @@
 
     if (! $logos) {
         $logos = [
-            Theme::asset()->url('images/home/logos/logo-emergencies-mediques.png'),
-            Theme::asset()->url('images/home/logos/logo-center-2.jpg'),
-            Theme::asset()->url('images/home/logos/logo-vall-hebron.jpeg'),
-            Theme::asset()->url('images/home/logos/logo-center-4.png'),
+            Theme::asset()->url('images/home/logos/logo-emergencies-mediques.webp'),
+            Theme::asset()->url('images/home/logos/logo-center-2.webp'),
+            Theme::asset()->url('images/home/logos/logo-vall-hebron.webp'),
+            Theme::asset()->url('images/home/logos/logo-center-4.webp'),
         ];
     }
 @endphp
 
 <section class="border-y border-torns-ink/5 bg-white py-12">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-sm font-medium text-torns-ink/60">{{ $title }}</p>
+        <p class="text-center text-sm font-medium text-torns-ink/70">{{ $title }}</p>
         <ul class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
             @foreach ($logos as $logo)
                 <li>

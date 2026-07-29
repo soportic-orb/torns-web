@@ -1,5 +1,6 @@
 @php
     Theme::layout('full-width');
+    Theme::set('post', $post);
     $relatedPosts = get_related_posts($post->id, 3);
     $shareUrl = $post->url;
     $shareTitle = $post->name;
@@ -17,7 +18,7 @@
             </div>
         @endif
         <h1 class="mt-4 text-center font-display text-3xl font-bold tracking-tight sm:text-4xl">{{ $post->name }}</h1>
-        <div class="mt-4 flex items-center justify-center gap-3 text-sm text-torns-ink/60">
+        <div class="mt-4 flex items-center justify-center gap-3 text-sm text-torns-ink/70">
             <time datetime="{{ $post->created_at->toDateString() }}">{{ $post->created_at->translatedFormat('d F, Y') }}</time>
             @if ($post->author?->name)
                 <span aria-hidden="true">·</span>

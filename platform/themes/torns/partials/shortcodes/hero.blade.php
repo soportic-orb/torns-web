@@ -1,7 +1,8 @@
 @php
     $title = $shortcode->title ?: 'Cambia turnos con tus compañeros y gestiona el calendario de todos tus centros';
     $subtitle = $shortcode->subtitle ?: 'Torns es la app de cambios de turno para profesionales sanitarios: publica el turno que no puedes hacer, intercámbialo con compañeros de tu centro y controla todos tus turnos en un calendario unificado sincronizado con Apple y Google Calendar.';
-    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/hero-mockup.png');
+    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/hero-mockup-896.webp');
+    $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/hero-mockup-480.webp') . ' 480w, ' . Theme::asset()->url('images/home/hero-mockup-896.webp') . ' 896w';
 @endphp
 
 <section class="overflow-hidden bg-gradient-to-b from-white to-torns-bg">
@@ -36,10 +37,11 @@
             <div class="absolute -inset-8 rounded-full bg-torns-primary/5 blur-2xl" aria-hidden="true"></div>
             <img
                 src="{{ $image }}"
+                @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 1024px) 28rem, 90vw" @endif
                 alt="{{ __('Torns app on an iPhone') }}"
                 class="relative w-full"
-                width="740"
-                height="860"
+                width="896"
+                height="1041"
                 fetchpriority="high"
             >
         </div>

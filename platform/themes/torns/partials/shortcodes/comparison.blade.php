@@ -17,7 +17,7 @@
                 <caption class="sr-only">{{ $title }}</caption>
                 <thead>
                     <tr class="border-b border-torns-ink/10">
-                        <th scope="col" class="sticky left-0 z-10 bg-white p-4 text-left font-semibold text-torns-ink/60">{{ __('Feature') }}</th>
+                        <th scope="col" class="sticky left-0 z-10 bg-white p-4 text-left font-semibold text-torns-ink/70">{{ __('Feature') }}</th>
                         @foreach ($competitors as $key => $name)
                             <th scope="col" @class(['p-4 text-center font-display', 'bg-torns-primary/5 text-torns-primary text-base font-bold' => $key === 'torns', 'font-semibold' => $key !== 'torns'])>
                                 {{ $name }}
@@ -45,13 +45,13 @@
             @foreach ($others as $key => $name)
                 <details class="group rounded-2xl border border-torns-ink/10 bg-white">
                     <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 font-display font-semibold [&::-webkit-details-marker]:hidden">
-                        <span>Torns <span class="text-torns-ink/40">vs</span> {{ $name }}</span>
+                        <span>Torns <span class="text-torns-ink/70">vs</span> {{ $name }}</span>
                         <svg class="h-5 w-5 shrink-0 text-torns-ink/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </summary>
                     <div class="border-t border-torns-ink/5 px-5 py-2">
                         <table class="w-full text-sm">
                             <thead>
-                                <tr class="text-xs uppercase tracking-wide text-torns-ink/50">
+                                <tr class="text-xs uppercase tracking-wide text-torns-ink/70">
                                     <th scope="col" class="py-2 text-left font-semibold">{{ __('Feature') }}</th>
                                     <th scope="col" class="w-16 py-2 text-center font-bold text-torns-primary">Torns</th>
                                     <th scope="col" class="w-16 py-2 text-center font-semibold">{{ $name }}</th>
@@ -72,7 +72,7 @@
             @endforeach
         </div>
 
-        <p class="mt-6 text-center text-xs leading-relaxed text-torns-ink/50">
+        <p class="mt-6 text-center text-xs leading-relaxed text-torns-ink/70">
             {{ __('Last review') }}: {{ $data['reviewed_at'] }} ·
             {{ __('Information based on the public documentation of each application at the review date.') }}
         </p>

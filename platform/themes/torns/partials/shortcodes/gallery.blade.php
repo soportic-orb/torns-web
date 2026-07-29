@@ -4,19 +4,19 @@
 
     // Screenshot order and captions match the current website.
     $screens = [
-        ['file' => 'screen-2903-thumb.png', 'caption' => 'Calendario integrado'],
-        ['file' => 'screen-2896-thumb.png', 'caption' => 'Muro de cambios publicados'],
-        ['file' => 'screen-2897-thumb.png', 'caption' => 'Turno de cobertura publicado por el centro'],
-        ['file' => 'screen-2894-thumb.png', 'caption' => 'Propuestas de cadenas de turnos'],
-        ['file' => 'screen-2895-thumb.png', 'caption' => 'Detalle de la propuesta de cadena de turno'],
-        ['file' => 'screen-2898-thumb.png', 'caption' => 'Detalle de la propuesta de cadena de cambios de Copilot'],
-        ['file' => 'screen-2899-thumb.png', 'caption' => 'Pantalla Cambios con los turnos publicados y su estado'],
-        ['file' => 'screen-2900-thumb.png', 'caption' => 'Detalle de turno publicado por el usuario'],
-        ['file' => 'screen-2901-thumb.png', 'caption' => 'Publicación de un turno SOS urgente'],
-        ['file' => 'screen-2902-thumb.png', 'caption' => 'Selección de los turnos a visualizar en el calendario'],
-        ['file' => 'screen-2904-thumb.png', 'caption' => 'Sincronización de calendarios'],
-        ['file' => 'screen-2905-thumb.png', 'caption' => 'Sistema de mensajería interno'],
-        ['file' => 'screen-2906-thumb.png', 'caption' => 'Perfil del usuario'],
+        ['file' => 'screen-2903-thumb.webp', 'caption' => 'Calendario integrado'],
+        ['file' => 'screen-2896-thumb.webp', 'caption' => 'Muro de cambios publicados'],
+        ['file' => 'screen-2897-thumb.webp', 'caption' => 'Turno de cobertura publicado por el centro'],
+        ['file' => 'screen-2894-thumb.webp', 'caption' => 'Propuestas de cadenas de turnos'],
+        ['file' => 'screen-2895-thumb.webp', 'caption' => 'Detalle de la propuesta de cadena de turno'],
+        ['file' => 'screen-2898-thumb.webp', 'caption' => 'Detalle de la propuesta de cadena de cambios de Copilot'],
+        ['file' => 'screen-2899-thumb.webp', 'caption' => 'Pantalla Cambios con los turnos publicados y su estado'],
+        ['file' => 'screen-2900-thumb.webp', 'caption' => 'Detalle de turno publicado por el usuario'],
+        ['file' => 'screen-2901-thumb.webp', 'caption' => 'Publicación de un turno SOS urgente'],
+        ['file' => 'screen-2902-thumb.webp', 'caption' => 'Selección de los turnos a visualizar en el calendario'],
+        ['file' => 'screen-2904-thumb.webp', 'caption' => 'Sincronización de calendarios'],
+        ['file' => 'screen-2905-thumb.webp', 'caption' => 'Sistema de mensajería interno'],
+        ['file' => 'screen-2906-thumb.webp', 'caption' => 'Perfil del usuario'],
     ];
 @endphp
 
@@ -39,7 +39,7 @@
                             height="516"
                             loading="lazy"
                         >
-                        <figcaption class="mt-2 px-1 text-center text-xs text-torns-ink/60">{{ $screen['caption'] }}</figcaption>
+                        <figcaption class="mt-2 px-1 text-center text-xs text-torns-ink/70">{{ $screen['caption'] }}</figcaption>
                     </figure>
                 </li>
             @endforeach
@@ -65,7 +65,7 @@
                         loading="lazy"
                     >
                 </button>
-                <figcaption class="mt-2 px-1 text-center text-xs text-torns-ink/60">{{ $screen['caption'] }}</figcaption>
+                <figcaption class="mt-2 px-1 text-center text-xs text-torns-ink/70">{{ $screen['caption'] }}</figcaption>
             </figure>
         @endforeach
     </div>

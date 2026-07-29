@@ -98,7 +98,7 @@
             </div>
             <div class="rounded-3xl bg-torns-primary p-8 text-center text-white lg:p-12">
                 <h2 class="font-display text-2xl font-bold sm:text-3xl">{{ __('Shall we talk?') }}</h2>
-                <p class="mx-auto mt-3 max-w-sm leading-relaxed text-white/85">Cuéntanos cómo es tu centro y te explicamos cómo funcionan las licencias y la prueba de 30 días sin tarjeta de crédito.</p>
+                <p class="mx-auto mt-3 max-w-sm leading-relaxed text-white">Cuéntanos cómo es tu centro y te explicamos cómo funcionan las licencias y la prueba de 30 días sin tarjeta de crédito.</p>
                 <a href="{{ url('contacta') }}" class="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-torns-primary transition hover:bg-torns-bg">
                     {{ __('Contact us') }}
                 </a>

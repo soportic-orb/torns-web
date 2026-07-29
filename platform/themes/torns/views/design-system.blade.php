@@ -4,7 +4,7 @@
 <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <header class="mb-12">
         <h1 class="font-display text-4xl font-bold tracking-tight">Torns — Design system</h1>
-        <p class="mt-2 text-torns-ink/60">Componentes del tema. Ruta solo disponible fuera de producción.</p>
+        <p class="mt-2 text-torns-ink/70">Componentes del tema. Ruta solo disponible fuera de producción.</p>
     </header>
 
     <section class="mb-14">

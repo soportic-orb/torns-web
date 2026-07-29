@@ -140,6 +140,26 @@ if (! function_exists('torns_comparison_data')) {
     }
 }
 
+if (! function_exists('torns_default_faq_items')) {
+    /**
+     * Default FAQ entries, shared by the [torns-faq] shortcode and the
+     * FAQPage JSON-LD schema.
+     */
+    function torns_default_faq_items(): array
+    {
+        return [
+            ['question' => '¿Qué es Torns?', 'answer' => 'Torns es una aplicación móvil para iOS y Android que permite a los profesionales sanitarios gestionar cambios de turno con sus compañeros del mismo centro de trabajo y controlar su calendario de guardias y turnos de todos sus centros.'],
+            ['question' => '¿Cómo funciona la app para cambios de turno?', 'answer' => 'Publicas el turno que necesitas cambiar, tus compañeros reciben una notificación, te proponen un intercambio compatible con su disponibilidad y, al aceptar, se notifica automáticamente al gestor de planillas.'],
+            ['question' => '¿Puedo gestionar mi calendario de turnos en Torns?', 'answer' => 'Sí. Torns no solo te permite gestionar cambios de guardia con tus compañeros: es una completa herramienta de gestión de tu calendario laboral. Puedes introducir tus turnos, sincronizarlos con Apple Calendar o Google Calendar y mantener tu agenda totalmente al día.'],
+            ['question' => '¿Cómo me puedo registrar en Torns?', 'answer' => 'Puedes registrarte con tu e-mail personal, con tus cuentas de Google o Apple, o con la cuenta corporativa de Microsoft de tu centro.'],
+            ['question' => '¿Cuánto cuesta Torns?', 'answer' => 'Puedes crear una cuenta gratis sin tarjeta de crédito y usar el plan Free. El plan Pro cuesta 2,99 €/mes o 29,90 €/año (con el pago anual ahorras 2 meses).'],
+            ['question' => '¿Para qué profesionales sanitarios sirve Torns?', 'answer' => 'Torns está pensada para enfermeras, médicos, TCAE, auxiliares, celadores, matronas, fisioterapeutas, administrativos sanitarios, técnicos en emergencias sanitarias (TES) y cualquier profesional sanitario que trabaje por turnos o guardias.'],
+            ['question' => '¿En qué idiomas está disponible Torns?', 'answer' => 'Torns está disponible en castellano, català, galego y euskara.'],
+            ['question' => '¿En qué se diferencia Torns de otras apps de turnos como aTurnos, Shiftool, Supershift o TurnoClip?', 'answer' => 'Torns combina en una sola app los cambios de turno gestionados entre compañeros del mismo centro y un calendario unificado multi-centro con sincronización Apple/Google Calendar, sin que la empresa tenga que contratar nada. aTurnos es un software de planificación que contrata la empresa; Supershift es un calendario personal sin intercambio de turnos entre compañeros; y a ello Torns añade el SOS de cambios urgentes, la notificación automática al gestor de planillas, chat integrado y los 4 idiomas ES/CA/GL/EU. Puedes ver la comparativa objetiva completa más arriba.'],
+        ];
+    }
+}
+
 if (! function_exists('torns_comparison_cell')) {
     /**
      * Render a comparison cell value as accessible HTML.
@@ -150,7 +170,7 @@ if (! function_exists('torns_comparison_cell')) {
         $normalized = Str::lower($value);
 
         if (in_array($normalized, ['yes', 'si', 'sí', '1', 'true'], true)) {
-            $color = $isTorns ? 'text-torns-primary' : 'text-torns-ink/60';
+            $color = $isTorns ? 'text-torns-primary' : 'text-torns-ink/70';
 
             return '<span class="inline-flex items-center justify-center ' . $color . '" role="img" aria-label="' . e(__('Yes')) . '">'
                 . '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>'
@@ -164,7 +184,7 @@ if (! function_exists('torns_comparison_cell')) {
         }
 
         if (in_array($normalized, ['-', '—', ''], true)) {
-            return '<span class="text-torns-ink/40" aria-label="' . e(__('No public data')) . '">—</span>';
+            return '<span class="text-torns-ink/70" aria-label="' . e(__('No public data')) . '">—</span>';
         }
 
         return '<span class="text-xs font-medium leading-snug text-torns-ink/70">' . e($value) . '</span>';
