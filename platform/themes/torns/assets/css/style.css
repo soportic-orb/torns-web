@@ -208,6 +208,24 @@ body.drawer-locked {
     overflow: hidden;
 }
 
+/* Hide scrollbars on snap carousels while keeping scrollability */
+.scrollbar-none {
+    scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+/* Lightbox open state (toggled from main.js) */
+.lightbox.is-open {
+    display: flex;
+}
+
+body.lightbox-locked {
+    overflow: hidden;
+}
+
 /* Comfortable reading width for CMS page content */
 .prose-torns {
     max-width: 70ch;

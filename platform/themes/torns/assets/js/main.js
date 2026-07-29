@@ -88,6 +88,57 @@
     }
 
     // ------------------------------------------------------------------
+    // Gallery lightbox (vanilla)
+    // ------------------------------------------------------------------
+    const lightbox = document.querySelector('[data-lightbox]')
+    if (lightbox) {
+        const items = Array.from(document.querySelectorAll('[data-gallery-item]'))
+        const image = lightbox.querySelector('[data-lightbox-image]')
+        const caption = lightbox.querySelector('[data-lightbox-caption]')
+        let current = -1
+        let lightboxOpener = null
+
+        const show = (index) => {
+            current = (index + items.length) % items.length
+            const item = items[current]
+            image.src = item.dataset.full
+            image.alt = item.dataset.caption || ''
+            caption.textContent = item.dataset.caption || ''
+        }
+
+        const openLightbox = (index) => {
+            lightboxOpener = document.activeElement
+            show(index)
+            lightbox.classList.add('is-open')
+            document.body.classList.add('lightbox-locked')
+            lightbox.querySelector('[data-lightbox-close]').focus()
+        }
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-open')
+            document.body.classList.remove('lightbox-locked')
+            image.src = ''
+            if (lightboxOpener) lightboxOpener.focus()
+        }
+
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index))
+        })
+        lightbox.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox)
+        lightbox.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => show(current - 1))
+        lightbox.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(current + 1))
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) closeLightbox()
+        })
+        document.addEventListener('keydown', (event) => {
+            if (!lightbox.classList.contains('is-open')) return
+            if (event.key === 'Escape') closeLightbox()
+            if (event.key === 'ArrowLeft') show(current - 1)
+            if (event.key === 'ArrowRight') show(current + 1)
+        })
+    }
+
+    // ------------------------------------------------------------------
     // <details> menus (language switcher) — close on outside click/Escape.
     // ------------------------------------------------------------------
     const detailsMenus = document.querySelectorAll('[data-lang-menu]')
