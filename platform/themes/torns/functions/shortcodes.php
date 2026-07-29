@@ -242,6 +242,56 @@ app('events')->listen(RouteMatched::class, function (): void {
     });
 
     // ------------------------------------------------------------------
+    // Generic page hero (interior pages)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-page-hero', __('Torns: Page hero'), __('Generic hero for interior pages'), function ($shortcode) {
+        return Theme::partial('shortcodes.page-hero', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-page-hero', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title (H1)')))
+            ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
+            ->add(
+                'align',
+                SelectField::class,
+                SelectFieldOption::make()
+                    ->label(__('Alignment'))
+                    ->choices(['center' => __('Centered'), 'left' => __('Left')])
+                    ->defaultValue('center')
+            );
+    });
+
+    // ------------------------------------------------------------------
+    // Centers landing (B2B)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-centers-landing', __('Torns: Centers landing'), __('Full B2B landing content for the centers page'), function ($shortcode) {
+        return Theme::partial('shortcodes.centers-landing', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-centers-landing', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('problem_title', TextField::class, $textField(__('Problem section title')))
+            ->add('benefits_title', TextField::class, $textField(__('Benefits section title')))
+            ->add('panel_title', TextField::class, $textField(__('Panel section title')));
+    });
+
+    // ------------------------------------------------------------------
+    // Contact section (info + form with honeypot)
+    // ------------------------------------------------------------------
+    if (is_plugin_active('contact')) {
+        add_shortcode('torns-contact', __('Torns: Contact section'), __('Contact info and form'), function ($shortcode) {
+            return Theme::partial('shortcodes.contact-section', ['shortcode' => $shortcode]);
+        });
+
+        shortcode()->setAdminConfig('torns-contact', function (array $attributes) use ($textField, $textareaField) {
+            return ShortcodeForm::createFromArray($attributes)
+                ->add('title', TextField::class, $textField(__('Title')))
+                ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')));
+        });
+    }
+
+    // ------------------------------------------------------------------
     // 15. Latest blog posts
     // ------------------------------------------------------------------
     add_shortcode('torns-blog-posts', __('Torns: Blog posts'), __('Latest blog posts with an elegant empty state'), function ($shortcode) {

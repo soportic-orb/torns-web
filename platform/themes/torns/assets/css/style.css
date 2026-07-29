@@ -226,6 +226,88 @@ body.lightbox-locked {
     overflow: hidden;
 }
 
+/* Share links on blog posts */
+.share-link {
+    @apply inline-flex items-center rounded-lg border border-torns-ink/10 px-3.5 py-2 text-sm font-medium text-torns-ink/70 transition hover:border-torns-primary hover:text-torns-primary;
+}
+
+/* Pagination (Laravel default markup restyled) */
+.torns-pagination nav {
+    @apply flex justify-center;
+}
+
+.torns-pagination .pagination {
+    @apply flex flex-wrap items-center gap-1.5;
+}
+
+.torns-pagination .page-item .page-link {
+    @apply inline-flex h-10 min-w-10 items-center justify-center rounded-lg border border-torns-ink/10 px-3 text-sm font-medium text-torns-ink/70 transition hover:border-torns-primary hover:text-torns-primary;
+}
+
+.torns-pagination .page-item.active .page-link {
+    @apply border-torns-primary bg-torns-primary text-white;
+}
+
+.torns-pagination .page-item.disabled .page-link {
+    @apply cursor-default opacity-40 hover:border-torns-ink/10 hover:text-torns-ink/70;
+}
+
+/* Contact form (plugin markup restyled, no plugin CSS/JS loaded) */
+.torns-contact-form .contact-form-group {
+    @apply mb-4;
+}
+
+.torns-contact-form label {
+    @apply mb-1.5 block text-sm font-semibold;
+}
+
+.torns-contact-form input[type='text'],
+.torns-contact-form input[type='email'],
+.torns-contact-form input[type='number'],
+.torns-contact-form select,
+.torns-contact-form textarea {
+    @apply w-full rounded-xl border border-torns-ink/15 bg-white px-4 py-2.5 text-sm transition placeholder:text-torns-ink/40 focus:border-torns-primary focus:outline-none focus:ring-2 focus:ring-torns-primary/20;
+}
+
+.torns-contact-form textarea {
+    @apply min-h-32;
+}
+
+.torns-contact-form button[type='submit'] {
+    @apply inline-flex items-center gap-2 rounded-xl bg-torns-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-torns-primary-dark;
+}
+
+.torns-contact-form .form-check,
+.torns-contact-form .contact-form-group:has(input[type='checkbox']) {
+    @apply flex items-start gap-2 text-sm text-torns-ink/70;
+}
+
+.torns-contact-form input[type='checkbox'] {
+    @apply mt-0.5 h-4 w-4 rounded border-torns-ink/20 text-torns-primary;
+}
+
+/* Honeypot: visually removed, still submittable by naive bots */
+.torns-hp {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Flash messages */
+.flash-message {
+    @apply mx-auto mb-0 mt-6 flex max-w-3xl items-start gap-3 rounded-xl border px-4 py-3 text-sm;
+}
+
+.flash-message--success {
+    @apply border-torns-primary/30 bg-torns-primary/5 text-torns-primary-dark;
+}
+
+.flash-message--error {
+    @apply border-shift-evening/40 bg-shift-evening/5 text-shift-evening;
+}
+
 /* Comfortable reading width for CMS page content */
 .prose-torns {
     max-width: 70ch;

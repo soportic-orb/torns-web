@@ -101,3 +101,16 @@
         </aside>
 
         <main id="main-content">
+            @if (session()->has('success_msg') || session()->has('error_msg') || $errors->getBag('contact')->any())
+                <div class="px-4 sm:px-6">
+                    @if (session()->has('success_msg'))
+                        <p class="flash-message flash-message--success" role="status">{{ session('success_msg') }}</p>
+                    @endif
+                    @if (session()->has('error_msg'))
+                        <p class="flash-message flash-message--error" role="alert">{{ session('error_msg') }}</p>
+                    @endif
+                    @foreach ($errors->getBag('contact')->all() as $error)
+                        <p class="flash-message flash-message--error" role="alert">{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
