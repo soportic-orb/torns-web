@@ -55,6 +55,8 @@ zip -r -q "$ZIP_PATH" . \
     -x "storage/framework/views/*" \
     -x "storage/app/public/*" \
     -x "storage/installed-content-seed.lock" \
+    -x "storage/installed" \
+    -x "storage/installing" \
     -x "bootstrap/cache/*.php" \
     -x "tests/*" \
     -x ".phpunit.result.cache" \
