@@ -1,5 +1,5 @@
 @php
-    $title = $shortcode->title ?: 'Últimas novedades del blog';
+    $title = $shortcode->title ?: __('Últimas novedades del blog');
 @endphp
 
 <section class="py-16 lg:py-24" id="blog">

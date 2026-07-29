@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: 'Cambia turnos con tus compañeros y gestiona el calendario de todos tus centros';
-    $subtitle = $shortcode->subtitle ?: 'Torns es la app de cambios de turno para profesionales sanitarios: publica el turno que no puedes hacer, intercámbialo con compañeros de tu centro y controla todos tus turnos en un calendario unificado sincronizado con Apple y Google Calendar.';
+    $title = $shortcode->title ?: __('Cambia turnos con tus compañeros y gestiona el calendario de todos tus centros');
+    $subtitle = $shortcode->subtitle ?: __('Torns es la app de cambios de turno para profesionales sanitarios: publica el turno que no puedes hacer, intercámbialo con compañeros de tu centro y controla todos tus turnos en un calendario unificado sincronizado con Apple y Google Calendar.');
     $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/hero-mockup-896.webp');
     $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/hero-mockup-480.webp') . ' 480w, ' . Theme::asset()->url('images/home/hero-mockup-896.webp') . ' 896w';
 @endphp

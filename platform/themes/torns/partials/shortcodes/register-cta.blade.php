@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: 'Crea una cuenta en menos de 1 minuto';
-    $subtitle = $shortcode->subtitle ?: 'Crea tu cuenta ahora gratis. Sin tarjeta de crédito.';
+    $title = $shortcode->title ?: __('Crea una cuenta en menos de 1 minuto');
+    $subtitle = $shortcode->subtitle ?: __('Crea tu cuenta ahora gratis. Sin tarjeta de crédito.');
 @endphp
 
 <section class="py-16 lg:py-20">

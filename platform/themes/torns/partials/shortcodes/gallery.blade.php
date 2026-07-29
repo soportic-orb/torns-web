@@ -1,22 +1,22 @@
 @php
-    $title = $shortcode->title ?: 'No querrás salir de la app';
-    $subtitle = $shortcode->subtitle ?: 'Diseño sencillo, claro y minimalista, con la lógica de los profesionales de la salud.';
+    $title = $shortcode->title ?: __('No querrás salir de la app');
+    $subtitle = $shortcode->subtitle ?: __('Diseño sencillo, claro y minimalista, con la lógica de los profesionales de la salud.');
 
     // Screenshot order and captions match the current website.
     $screens = [
-        ['file' => 'screen-2903-thumb.webp', 'caption' => 'Calendario integrado'],
-        ['file' => 'screen-2896-thumb.webp', 'caption' => 'Muro de cambios publicados'],
-        ['file' => 'screen-2897-thumb.webp', 'caption' => 'Turno de cobertura publicado por el centro'],
-        ['file' => 'screen-2894-thumb.webp', 'caption' => 'Propuestas de cadenas de turnos'],
-        ['file' => 'screen-2895-thumb.webp', 'caption' => 'Detalle de la propuesta de cadena de turno'],
-        ['file' => 'screen-2898-thumb.webp', 'caption' => 'Detalle de la propuesta de cadena de cambios de Copilot'],
-        ['file' => 'screen-2899-thumb.webp', 'caption' => 'Pantalla Cambios con los turnos publicados y su estado'],
-        ['file' => 'screen-2900-thumb.webp', 'caption' => 'Detalle de turno publicado por el usuario'],
-        ['file' => 'screen-2901-thumb.webp', 'caption' => 'Publicación de un turno SOS urgente'],
-        ['file' => 'screen-2902-thumb.webp', 'caption' => 'Selección de los turnos a visualizar en el calendario'],
-        ['file' => 'screen-2904-thumb.webp', 'caption' => 'Sincronización de calendarios'],
-        ['file' => 'screen-2905-thumb.webp', 'caption' => 'Sistema de mensajería interno'],
-        ['file' => 'screen-2906-thumb.webp', 'caption' => 'Perfil del usuario'],
+        ['file' => 'screen-2903-thumb.webp', 'caption' => __('Calendario integrado')],
+        ['file' => 'screen-2896-thumb.webp', 'caption' => __('Muro de cambios publicados')],
+        ['file' => 'screen-2897-thumb.webp', 'caption' => __('Turno de cobertura publicado por el centro')],
+        ['file' => 'screen-2894-thumb.webp', 'caption' => __('Propuestas de cadenas de turnos')],
+        ['file' => 'screen-2895-thumb.webp', 'caption' => __('Detalle de la propuesta de cadena de turno')],
+        ['file' => 'screen-2898-thumb.webp', 'caption' => __('Detalle de la propuesta de cadena de cambios de Copilot')],
+        ['file' => 'screen-2899-thumb.webp', 'caption' => __('Pantalla Cambios con los turnos publicados y su estado')],
+        ['file' => 'screen-2900-thumb.webp', 'caption' => __('Detalle de turno publicado por el usuario')],
+        ['file' => 'screen-2901-thumb.webp', 'caption' => __('Publicación de un turno SOS urgente')],
+        ['file' => 'screen-2902-thumb.webp', 'caption' => __('Selección de los turnos a visualizar en el calendario')],
+        ['file' => 'screen-2904-thumb.webp', 'caption' => __('Sincronización de calendarios')],
+        ['file' => 'screen-2905-thumb.webp', 'caption' => __('Sistema de mensajería interno')],
+        ['file' => 'screen-2906-thumb.webp', 'caption' => __('Perfil del usuario')],
     ];
 @endphp
 

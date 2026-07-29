@@ -1,5 +1,5 @@
 @php
-    $title = $shortcode->title ?: 'Descubre Torns en 30 segundos';
+    $title = $shortcode->title ?: __('Descubre Torns en 30 segundos');
     $videoUrl = $shortcode->video_url ?: Theme::asset()->url('videos/presentation-es.mp4');
     $poster = $shortcode->poster ? RvMedia::getImageUrl($shortcode->poster) : Theme::asset()->url('images/home/video-poster.jpg');
 @endphp

@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: '¿Qué es Torns?';
-    $description = $shortcode->description ?: 'Torns es la app para profesionales sanitarios que une en un solo lugar los dos pilares de tu vida laboral: los cambios de turno con tus compañeros y el calendario unificado de todos tus centros de trabajo. Publica el turno que necesitas cambiar, recibe propuestas compatibles con tu disponibilidad y controla toda tu actividad sin salir de la app.';
+    $title = $shortcode->title ?: __('¿Qué es Torns?');
+    $description = $shortcode->description ?: __('Torns es la app para profesionales sanitarios que une en un solo lugar los dos pilares de tu vida laboral: los cambios de turno con tus compañeros y el calendario unificado de todos tus centros de trabajo. Publica el turno que necesitas cambiar, recibe propuestas compatibles con tu disponibilidad y controla toda tu actividad sin salir de la app.');
     $bullets = [];
     for ($i = 1; $i <= 4; $i++) {
         $key = 'bullet_' . $i;
@@ -10,10 +10,10 @@
     }
     if (! $bullets) {
         $bullets = [
-            'Cambios de turno gestionados entre compañeros del mismo centro',
-            'Calendario unificado con los turnos de todos tus centros',
-            'Notificaciones al publicar, recibir o aceptar una propuesta de cambio',
-            'Sincronización con Apple Calendar y Google Calendar',
+            __('Cambios de turno gestionados entre compañeros del mismo centro'),
+            __('Calendario unificado con los turnos de todos tus centros'),
+            __('Notificaciones al publicar, recibir o aceptar una propuesta de cambio'),
+            __('Sincronización con Apple Calendar y Google Calendar'),
         ];
     }
     $accents = ['morning', 'evening', 'night'];

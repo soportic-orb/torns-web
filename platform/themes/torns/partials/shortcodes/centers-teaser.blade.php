@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: 'Torns para centros sanitarios y hospitales';
-    $description = $shortcode->description ?: 'Si eres responsable de un centro sanitario, ofrece Torns a las personas que trabajan en él: facilitarás el intercambio de turnos, mejorarás la conciliación y los cambios se comunicarán automáticamente a quien gestione las planillas.';
+    $title = $shortcode->title ?: __('Torns para centros sanitarios y hospitales');
+    $description = $shortcode->description ?: __('Si eres responsable de un centro sanitario, ofrece Torns a las personas que trabajan en él: facilitarás el intercambio de turnos, mejorarás la conciliación y los cambios se comunicarán automáticamente a quien gestione las planillas.');
     $url = $shortcode->url ?: url('centros');
     $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/centers-teaser-896.webp');
     $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/centers-teaser-448.webp') . ' 448w, ' . Theme::asset()->url('images/home/centers-teaser-896.webp') . ' 896w';

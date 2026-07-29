@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: '¿Por qué Torns?';
-    $subtitle = $shortcode->subtitle ?: 'Comparativa objetiva de características con otras apps de gestión de turnos, según la documentación pública de cada aplicación.';
+    $title = $shortcode->title ?: __('¿Por qué Torns?');
+    $subtitle = $shortcode->subtitle ?: __('Comparativa objetiva de características con otras apps de gestión de turnos, según la documentación pública de cada aplicación.');
     $data = torns_comparison_data();
     $competitors = $data['competitors'];
     $rows = $data['rows'];

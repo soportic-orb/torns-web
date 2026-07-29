@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: '¿Te han dado un código de centro?';
-    $description = $shortcode->description ?: 'Si tu centro de trabajo, tu colegio profesional o tus compañeros te han dado un código de centro, introdúcelo en la pantalla de inicio de la app: te registrarás gratis en segundos y te unirás directamente a tus compañeros.';
+    $title = $shortcode->title ?: __('¿Te han dado un código de centro?');
+    $description = $shortcode->description ?: __('Si tu centro de trabajo, tu colegio profesional o tus compañeros te han dado un código de centro, introdúcelo en la pantalla de inicio de la app: te registrarás gratis en segundos y te unirás directamente a tus compañeros.');
     $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/center-code-mockup-416.webp');
 @endphp
 

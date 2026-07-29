@@ -1,5 +1,5 @@
 @php
-    $title = $shortcode->title ?: 'Preguntas frecuentes';
+    $title = $shortcode->title ?: __('Preguntas frecuentes');
 
     $items = [];
     for ($i = 1; $i <= 10; $i++) {

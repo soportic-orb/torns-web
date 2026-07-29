@@ -1,6 +1,6 @@
 @php
-    $title = $shortcode->title ?: 'Contacta con nosotros';
-    $subtitle = $shortcode->subtitle ?: 'El equipo de Torns está a tu disposición. Utiliza el formulario para iniciar una conversación con nosotros.';
+    $title = $shortcode->title ?: __('Contacta con nosotros');
+    $subtitle = $shortcode->subtitle ?: __('El equipo de Torns está a tu disposición. Utiliza el formulario para iniciar una conversación con nosotros.');
     $email = theme_option('contact_email', 'hola@torns.app');
     $supportUrl = theme_option('support_url', 'https://soporte.torns.app');
 @endphp

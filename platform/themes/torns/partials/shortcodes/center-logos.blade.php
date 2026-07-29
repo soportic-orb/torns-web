@@ -1,5 +1,5 @@
 @php
-    $title = $shortcode->title ?: 'Los profesionales de estos centros ya utilizan Torns';
+    $title = $shortcode->title ?: __('Los profesionales de estos centros ya utilizan Torns');
 
     $logos = [];
     for ($i = 1; $i <= 6; $i++) {
