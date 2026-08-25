@@ -45,7 +45,6 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
         'free' => __('Free plan'),
         'monthly' => __('Pro Monthly plan'),
         'annual' => __('Pro Annual plan'),
-        'copilot' => __('Copilot plan'),
     ];
 
     foreach ($plans as $key => $label) {

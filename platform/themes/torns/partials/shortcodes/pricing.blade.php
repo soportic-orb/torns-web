@@ -7,9 +7,9 @@
 
 <section class="bg-white py-16 lg:py-24" id="precios">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle]) !!}
+        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle, 'eyebrow' => __('Precios')]) !!}
 
-        <div class="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div class="mx-auto mt-14 grid max-w-5xl items-stretch gap-6 md:grid-cols-3">
             @foreach ($plans as $plan)
                 {!! Theme::partial('components.pricing-card', [
                     'name' => $plan['name'],
@@ -19,11 +19,16 @@
                     'badge' => $plan['badge'],
                     'highlighted' => $plan['highlighted'],
                     'disabled' => $plan['disabled'],
+                    'copilot' => ! empty($plan['copilot']),
                     'cta_label' => $plan['cta_label'],
                     'cta_url' => $appStoreUrl,
                     'note' => $plan['description'],
                 ]) !!}
             @endforeach
         </div>
+
+        <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-torns-ink/70">
+            {{ __('Copilot, el asistente de IA para cambios de turno, está incluido en los planes Pro.') }}
+        </p>
     </div>
 </section>

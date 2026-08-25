@@ -15,7 +15,7 @@
 
 <section class="py-16 lg:py-24" id="faq">
     <div class="mx-auto max-w-3xl px-4 sm:px-6">
-        {!! Theme::partial('components.section-heading', ['title' => $title]) !!}
+        {!! Theme::partial('components.section-heading', ['title' => $title, 'eyebrow' => 'FAQ']) !!}
 
         <div class="mt-10 flex flex-col gap-3">
             @foreach ($items as $index => $item)

@@ -9,7 +9,9 @@
     'mx-auto text-center' => $align === 'center',
 ])>
     @if (! empty($eyebrow))
-        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-torns-primary">{{ $eyebrow }}</p>
+        <p class="mb-4">
+            <span class="inline-flex items-center rounded-full bg-torns-primary/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-torns-primary">{{ $eyebrow }}</span>
+        </p>
     @endif
     <{{ $level }} class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{{ $title ?? '' }}</{{ $level }}>
     @if (! empty($subtitle))

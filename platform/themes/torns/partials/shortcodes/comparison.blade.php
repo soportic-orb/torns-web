@@ -9,7 +9,7 @@
 
 <section class="py-16 lg:py-24" id="comparativa">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle]) !!}
+        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle, 'eyebrow' => __('Comparativa')]) !!}
 
         {{-- Desktop / tablet: table with sticky first columns --}}
         <div class="mt-12 hidden overflow-x-auto rounded-2xl border border-torns-ink/10 bg-white md:block">

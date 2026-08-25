@@ -9,7 +9,9 @@
 <section class="bg-white py-16 lg:py-24" id="centros">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
-            <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-torns-primary">{{ __('For centers') }}</p>
+            <p class="mb-4">
+                <span class="inline-flex items-center rounded-full bg-torns-primary/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-torns-primary">{{ __('For centers') }}</span>
+            </p>
             <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{{ $title }}</h2>
             <p class="mt-4 max-w-xl leading-relaxed text-torns-ink/70">{{ $description }}</p>
             <a href="{{ $url }}" class="btn-primary mt-8">{{ __('Discover Torns for centers') }}</a>

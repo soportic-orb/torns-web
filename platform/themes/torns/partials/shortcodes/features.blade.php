@@ -21,7 +21,7 @@
 
 <section class="py-16 lg:py-24" id="funcionalidades">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle]) !!}
+        {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle, 'eyebrow' => __('Funcionalidades')]) !!}
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             @foreach ($features as $index => $feature)
