@@ -13,7 +13,7 @@ return [
         'beforeRenderTheme' => function (Theme $theme): void {
             // Cache-busting for browsers/CDNs: bump this on every release that
             // changes the compiled theme assets (css/js).
-            $themeVersion = '1.1.0';
+            $themeVersion = '1.1.1';
             $version = get_cms_version() . '-' . $themeVersion;
 
             $theme->asset()->usePath()->add('style', 'css/style.css', [], [], $version);

@@ -259,6 +259,45 @@
     }
 }
 
+/* ---------------------------------------------------------------------- */
+/* Pricing billing toggle — pure CSS (radio inputs + sibling selectors),   */
+/* no JS required. The radios live before the toggle and the grid.         */
+/* ---------------------------------------------------------------------- */
+.billing-radio {
+    @apply sr-only;
+}
+
+.billing-toggle {
+    @apply mx-auto mt-10 flex w-fit items-center gap-1 rounded-full border border-torns-ink/10 bg-white p-1.5 shadow-sm;
+}
+
+.billing-toggle label {
+    @apply flex cursor-pointer items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-torns-ink/60 transition;
+}
+
+.billing-toggle .billing-toggle__chip {
+    @apply rounded-full bg-shift-morning/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#a36a05];
+}
+
+#billing-monthly:checked ~ .billing-toggle label[for='billing-monthly'],
+#billing-annual:checked ~ .billing-toggle label[for='billing-annual'] {
+    @apply bg-torns-primary text-white shadow-md shadow-torns-primary/25;
+}
+
+#billing-annual:checked ~ .billing-toggle label[for='billing-annual'] .billing-toggle__chip {
+    @apply bg-white/20 text-white;
+}
+
+#billing-monthly:focus-visible ~ .billing-toggle label[for='billing-monthly'],
+#billing-annual:focus-visible ~ .billing-toggle label[for='billing-annual'] {
+    @apply outline outline-2 outline-offset-2 outline-torns-primary;
+}
+
+#billing-monthly:checked ~ .pricing-grid .billing-annual-card,
+#billing-annual:checked ~ .pricing-grid .billing-monthly-card {
+    display: none;
+}
+
 /* Drawer open state (toggled from main.js) */
 .drawer-backdrop.is-open {
     opacity: 1;
