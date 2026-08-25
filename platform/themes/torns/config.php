@@ -11,7 +11,10 @@ return [
         },
 
         'beforeRenderTheme' => function (Theme $theme): void {
-            $version = get_cms_version();
+            // Cache-busting for browsers/CDNs: bump this on every release that
+            // changes the compiled theme assets (css/js).
+            $themeVersion = '1.1.0';
+            $version = get_cms_version() . '-' . $themeVersion;
 
             $theme->asset()->usePath()->add('style', 'css/style.css', [], [], $version);
             $theme->asset()->container('footer')->usePath()->add('main', 'js/main.js', [], [], $version);
