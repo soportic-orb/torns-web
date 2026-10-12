@@ -1,0 +1,83 @@
+{
+  "_comment": "What the features page states, as values of the Torns production config. scripts/features_diff.py compares these with app_config (and subscription_config) and lists every difference. Paths are app_config key + dotted path inside its JSON value. Update this file together with the page.",
+  "published_on": "2026-10-12",
+  "app_config": {
+    "free_tier_enabled": true,
+    "feature_flags.work_calendar_enabled": true,
+    "feature_flags.google_calendar_enabled": true,
+    "feature_flags.external_swaps_enabled": true,
+    "feature_flags.gamification_enabled": true,
+    "feature_flags.weather_enabled": true,
+    "feature_flags.social_wall_enabled": true,
+    "feature_flags.apple_signin_enabled": true,
+    "feature_flags.google_signin_enabled": true,
+    "feature_flags.microsoft_signin_enabled": true,
+    "feature_flags.maps_enabled": false,
+
+    "social_wall_enabled": true,
+    "social_wall_sharing_enabled": true,
+    "legal_assistant_enabled": true,
+    "schedule_scanner_enabled": true,
+    "shift_patterns_enabled": true,
+    "invitations_enabled": true,
+    "sos_config.enabled": true,
+    "copilot_config.enabled": true,
+    "copilot_config.daily_digest_enabled": true,
+
+    "plans_config.free_tier.enabled": true,
+    "plans_config.free_tier.max_swaps_per_month": 3,
+    "plans_config.free_tier.max_centers": 1,
+    "plans_config.free_tier.can_publish_shifts": true,
+    "plans_config.free_tier.can_use_chat": true,
+    "plans_config.free_tier.has_shift_reminders": true,
+    "plans_config.free_tier.has_sos": false,
+    "plans_config.free_tier.has_copilot": false,
+    "plans_config.free_tier.has_swap_chains": false,
+    "plans_config.free_tier.has_work_stats": false,
+    "plans_config.free_tier.has_public_calendar": false,
+    "plans_config.free_tier.has_calendar_import": false,
+    "plans_config.free_tier.has_calendar_print": false,
+    "plans_config.free_tier.has_schedule_manager_notify": false,
+    "plans_config.free_tier.has_shift_patterns": null,
+    "plans_config.pro_plans[interval=month].price": 2.99,
+    "plans_config.pro_plans[interval=year].price": 29.9,
+
+    "schedule_scanner.free_lifetime_limit": 2,
+    "schedule_scanner.pro_monthly_limit": 30,
+    "schedule_scanner.max_file_size_mb": 10,
+    "schedule_scanner.max_pages": 4,
+
+    "legal_assistant.free_lifetime_queries": 2,
+    "legal_assistant.pro_daily_queries": 20,
+    "legal_assistant.max_turns_per_conversation": 8,
+    "legal_assistant.max_attachments_per_message": 5,
+    "legal_assistant.max_attachment_mb": 10,
+
+    "social_wall.read_only": false,
+    "social_wall.free_can_post_message": true,
+    "social_wall.free_can_comment": true,
+    "social_wall.free_can_react": true,
+    "social_wall.same_category_only": true,
+    "social_wall.moderation_mode": "ai_blocking",
+    "social_wall.max_post_chars": 400,
+    "social_wall.max_comment_chars": 400,
+    "social_wall.max_messages_per_day_free": 20,
+    "social_wall.max_comments_per_day_free": 60,
+    "social_wall.retention_days": 30,
+
+    "panel_trial_defaults.trial_days": 30,
+    "panel_trial_defaults.trial_license_cap": 50,
+    "panel_license_tiers": [
+      {"min_users": 1, "max_users": 50, "price_cents_per_user_month": 99},
+      {"min_users": 51, "max_users": 100, "price_cents_per_user_month": 89},
+      {"min_users": 101, "max_users": 500, "price_cents_per_user_month": 79},
+      {"min_users": 501, "max_users": 1000, "price_cents_per_user_month": 69},
+      {"min_users": 1001, "max_users": 2000, "price_cents_per_user_month": 59},
+      {"min_users": 2001, "max_users": 3000, "price_cents_per_user_month": 49},
+      {"min_users": 3001, "max_users": null, "price_cents_per_user_month": 39}
+    ]
+  },
+  "subscription_config": {
+    "default.trial_days": 30
+  }
+}
