@@ -194,3 +194,27 @@ Roles: propietario y responsable (panel completo), gestor (centros asignados). M
 16. **Resumen diario de Copilot.** Flag ON, pero un comentario del código dice que está «deliberadamente sin anunciar». ¿Lo incluimos?
 17. **Copilot por voz.** El dictado solo funciona en la web (desactivado en iOS/Android). Propongo no mencionarlo. ¿De acuerdo?
 18. **Inglés, francés, portugués.** La app tiene traducciones parciales (caen al castellano). Propongo anunciar solo ES, CA, GL y EU. ¿De acuerdo?
+
+---
+
+## ✅ Respuestas de Octavi (12/10/2026)
+
+1. Muro social: publicar mensajes es **Free**.
+2. Free: **3 cambios al mes**.
+3. Cadenas de cambios: **Pro y periodo de prueba** (30 días). Nombre: «Cadenas de cambios».
+4. Mapas: función anulada. **No se muestra.**
+5. Editor visual del panel: existe, pero **no se menciona**.
+6. Asociaciones: **sí**, LIVE.
+7. Puntos y clasificación: **sí**, sin mencionar sorteos.
+8. Juego T-Rex: **sí**.
+9. Sección Asociaciones: **sí**, precio «bajo presupuesto».
+10. Versión web: **sí**, https://app.torns.app.
+11. Módulos B2B (Cambios, Campañas de correo): se presentan como **estándar** del panel.
+12. Prueba B2B: **30 días**.
+13. Licencias B2B: precios **sin IVA**.
+14. Contactos: **soporte@torns.app** (usuarios) y **hola@torns.app** (organizaciones).
+15. Privacidad: (a) se borra todo, (b) la exportación es completa, (c) **los datos están en España**.
+    - Nota del código (12/10/2026): `copilot_logs` sobrevive al borrado de la cuenta y la exportación no incluye calendario de trabajo, muro, Copilot, cadenas ni rotaciones. Hasta que el código lo cubra, la página dice «exportar tus datos» y «eliminar tu cuenta y tus datos», sin «todo» ni «completa».
+16. Copilot y resumen diario: **sí**, resumen diario para Pro.
+17. Copilot por voz: **no se menciona**.
+18. Idiomas: **castellano, català, galego, euskara**.
