@@ -38,6 +38,8 @@ WEB_APP = "https://app.torns.app"
 PAGE_PATH = {"es": "/funcionalidades/", "ca": "/ca/funcionalidades/", "gl": "/gl/funcionalidades/", "eu": "/eu/funcionalidades/"}
 MD_PATH = {lang: f"/funcionalidades.{lang}.md" if lang != "es" else "/funcionalidades.md" for lang in PAGE_PATH}
 IN_LANGUAGE = {"es": "es-ES", "ca": "ca-ES", "gl": "gl-ES", "eu": "eu-ES"}
+SUBCATEGORY = {"es": "Gestión y cambio de turnos", "ca": "Gestió i canvi de torns",
+               "gl": "Xestión e cambio de quendas", "eu": "Txanden kudeaketa eta aldaketa"}
 
 # Prices from app_config.plans_config.pro_plans (12/10/2026).
 OFFERS = [
@@ -140,16 +142,28 @@ def faq(md: str) -> list[tuple[str, str]]:
     return [(q.strip(), re.sub(r"\s+", " ", a).strip()) for q, a in pairs]
 
 
+# Every language's master has the same 14 H2 sections in the same order:
+# 0 key facts, 1–8 feature areas, 9 plans, 10 organisations, 11 associations,
+# 12 privacy, 13 FAQ. Sections are found by position, not by their
+# (translated) titles.
+H2_COUNT = 14
+NOT_FEATURES = {0, 9, 12, 13}
+ORG_SECTION, ORG_PRICE_H3 = 10, 1  # "Precio de las licencias" is not a feature
+
+
 def feature_list(md: str) -> list[str]:
-    """Every H3 outside plans, organisations, privacy and FAQ: one feature each."""
-    # The first H2 is "Datos clave" and the last one the FAQ.
-    names: list[str] = []
+    """Every H3 of the feature areas, organisations and associations."""
     secs = sections(md)
-    for idx, (title, body) in enumerate(secs):
-        if idx in (0, len(secs) - 1) or slug(title) in ("planes-y-precios", "privacidad-y-seguridad"):
+    if len(secs) != H2_COUNT:
+        raise SystemExit(f"expected {H2_COUNT} H2 sections, found {len(secs)}")
+    names: list[str] = []
+    for idx, (_title, body) in enumerate(secs):
+        if idx in NOT_FEATURES:
             continue
-        names += [h.strip() for h in re.findall(r"^### (.+)$", body, flags=re.M)
-                  if h.strip() != "Tabla resumen" and not h.strip().startswith("Precio")]
+        h3 = [h.strip() for h in re.findall(r"^### (.+)$", body, flags=re.M)]
+        if idx == ORG_SECTION:
+            h3 = [h for k, h in enumerate(h3) if k != ORG_PRICE_H3]
+        names += h3
     return names
 
 
@@ -210,7 +224,7 @@ def build_schema(lang: str, md: str) -> dict:
         "name": "Torns",
         "description": first_paragraph(md),
         "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Gestión y cambio de turnos",
+        "applicationSubCategory": SUBCATEGORY[lang],
         "operatingSystem": "iOS, iPadOS, watchOS, Android, Web",
         "inLanguage": ["es-ES", "ca-ES", "gl-ES", "eu-ES"],
         "url": page_url,
@@ -254,6 +268,10 @@ def build_llms(md: str) -> str:
         f"- [Funcionalidades de Torns]({SITE}{PAGE_PATH['es']}): todas las funcionalidades, planes, límites y preguntas frecuentes.\n"
         f"- [Funcionalidades en Markdown]({SITE}{MD_PATH['es']}): la misma página en texto plano.\n"
         f"- [Texto completo para LLM]({SITE}/llms-full.txt)\n\n"
+        "## Otros idiomas\n\n"
+        f"- [Funcionalitats (català)]({SITE}{PAGE_PATH['ca']}) · [Markdown]({SITE}{MD_PATH['ca']})\n"
+        f"- [Funcionalidades (galego)]({SITE}{PAGE_PATH['gl']}) · [Markdown]({SITE}{MD_PATH['gl']})\n"
+        f"- [Funtzioak (euskara)]({SITE}{PAGE_PATH['eu']}) · [Markdown]({SITE}{MD_PATH['eu']})\n\n"
         "## Planes y precios\n\n"
         f"- [Planes y precios]({SITE}{PAGE_PATH['es']}#planes-y-precios): Free gratuito; Torns Pro 2,99 €/mes o 29,90 €/año; 30 días de prueba.\n"
         f"- [Organizaciones]({SITE}{PAGE_PATH['es']}#organizaciones-panel-de-torns): licencias de 0,39 € a 0,99 € por usuario y mes, sin IVA.\n\n"

@@ -10,6 +10,12 @@ Torns es una app de Soportic para gestionar el calendario de turnos y cambiar tu
 - [Funcionalidades en Markdown](https://www.torns.app/funcionalidades.md): la misma página en texto plano.
 - [Texto completo para LLM](https://www.torns.app/llms-full.txt)
 
+## Otros idiomas
+
+- [Funcionalitats (català)](https://www.torns.app/ca/funcionalidades/) · [Markdown](https://www.torns.app/funcionalidades.ca.md)
+- [Funcionalidades (galego)](https://www.torns.app/gl/funcionalidades/) · [Markdown](https://www.torns.app/funcionalidades.gl.md)
+- [Funtzioak (euskara)](https://www.torns.app/eu/funcionalidades/) · [Markdown](https://www.torns.app/funcionalidades.eu.md)
+
 ## Planes y precios
 
 - [Planes y precios](https://www.torns.app/funcionalidades/#planes-y-precios): Free gratuito; Torns Pro 2,99 €/mes o 29,90 €/año; 30 días de prueba.

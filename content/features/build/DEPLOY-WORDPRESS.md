@@ -18,6 +18,8 @@ Ficheros (en `content/features/build/`, se regeneran con `python3 scripts/build_
 | `llms.txt` | `https://www.torns.app/llms.txt` |
 | `llms-full.txt` | `https://www.torns.app/llms-full.txt` |
 | `funcionalidades.es.md` | `https://www.torns.app/funcionalidades.md` |
+| `funcionalidades.{ca,gl,eu}.html` · `schema.{ca,gl,eu}.json` | Versiones por idioma (punto 9) |
+| `funcionalidades.{ca,gl,eu}.md` | `https://www.torns.app/funcionalidades.{ca,gl,eu}.md` |
 
 ---
 
@@ -121,6 +123,40 @@ No se ha detectado. Si se activa en el futuro:
 - [ ] [Schema Markup Validator](https://validator.schema.org/) con la URL: sin errores; avisos de propiedades recomendadas aceptables.
 - [ ] Ver código fuente: un solo `<h1>`, el JSON-LD íntegro, y todo el texto de la página presente en el HTML.
 
-## 9. Mantener al día
+## 9. Versiones en català, galego y euskara (TranslatePress)
+
+La web gestiona los idiomas con **TranslatePress**: una sola página de WordPress, servida en `/`, `/ca/`, `/gl/` y `/eu/`, con `hreflang` automáticos (ya los imprime en la home: `es-ES`, `ca`, `gl-ES`, `eu`). Por eso cada idioma **no** es otra página: es el mismo `/funcionalidades/` con contenido distinto según el idioma.
+
+URLs resultantes (las del JSON-LD y de `llms.txt`):
+
+| Idioma | Página | Markdown |
+|---|---|---|
+| Castellano | https://www.torns.app/funcionalidades/ | https://www.torns.app/funcionalidades.md |
+| Català | https://www.torns.app/ca/funcionalidades/ | https://www.torns.app/funcionalidades.ca.md |
+| Galego | https://www.torns.app/gl/funcionalidades/ | https://www.torns.app/funcionalidades.gl.md |
+| Euskara | https://www.torns.app/eu/funcionalidades/ | https://www.torns.app/funcionalidades.eu.md |
+
+Si tienes el add-on SEO Pack de TranslatePress y traduces el slug, cambia `PAGE_PATH` en `scripts/build_features.py`, vuelve a compilar y usa las URLs nuevas.
+
+Para que cada idioma muestre su texto y su JSON-LD, usa el shortcode de idioma de TranslatePress:
+
+- [ ] Comprueba los códigos de idioma en TranslatePress › Ajustes (por ejemplo `es_ES`, `ca`, `gl_ES`, `eu`). Los de abajo son un ejemplo: usa los que salgan allí.
+- [ ] En la página `/funcionalidades/`, en lugar de un solo módulo Código, pon **cuatro**, uno por idioma, cada uno envuelto en su shortcode:
+
+  ```
+  [trp_language language="es_ES"]
+  …contenido de funcionalidades.es.html…
+  <script type="application/ld+json">…schema.es.json…</script>
+  [/trp_language]
+  ```
+
+  y lo mismo con `ca` + `funcionalidades.ca.html` + `schema.ca.json`, `gl_ES` + `.gl`, `eu` + `.eu`.
+- [ ] Excluye esos bloques de la traducción automática de TranslatePress (si la tienes activa), para que no vuelva a traducir un texto que ya está traducido.
+- [ ] Sube también `funcionalidades.ca.md`, `funcionalidades.gl.md` y `funcionalidades.eu.md` a la raíz (con esos nombres).
+- [ ] Comprueba en cada URL: un solo `<h1>` en su idioma, el JSON-LD con su `inLanguage` (`ca-ES`, `gl-ES`, `eu-ES`) y las etiquetas `<link rel="alternate" hreflang=…>` de TranslatePress apuntando a las cuatro versiones y a `x-default`.
+- [ ] Search Console: solicita la indexación de las cuatro URLs.
+- [ ] Antes de publicar, que una persona nativa revise el texto en euskara (y, si es posible, el gallego).
+
+## 10. Mantener al día
 
 Cada vez que cambie una funcionalidad, un precio o un límite: edita `content/features/funcionalidades.es.md`, ejecuta `python3 scripts/build_features.py`, y vuelve a pegar el HTML y el JSON-LD y a subir los tres ficheros de texto. `dateModified` se actualiza solo con la fecha de la compilación; actualiza también «Última actualización» en «Datos clave».

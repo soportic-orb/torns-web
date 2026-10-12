@@ -1,0 +1,342 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.torns.app/#organization",
+      "name": "Torns",
+      "legalName": "Soportic",
+      "brand": {
+        "@type": "Brand",
+        "name": "Torns"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Octavi Rodríguez"
+      },
+      "url": "https://www.torns.app",
+      "email": "hola@torns.app",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "soporte@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hola@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.torns.app/#website",
+      "url": "https://www.torns.app",
+      "name": "Torns",
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://www.torns.app/#app",
+      "name": "Torns",
+      "description": "Torns é unha app para que enfermeiras, médicos, TCAE, TES e outros profesionais sanitarios de España xestionen o seu calendario de quendas e cambien quendas con compañeiros do seu centro. Funciona en iPhone, Android, Apple Watch e no navegador (app.torns.app). Hai un plan gratuíto; Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Xestión e cambio de quendas",
+      "operatingSystem": "iOS, iPadOS, watchOS, Android, Web",
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ],
+      "url": "https://www.torns.app/gl/funcionalidades/",
+      "installUrl": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android",
+        "https://app.torns.app"
+      ],
+      "sameAs": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android"
+      ],
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro mensual",
+          "price": "2.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2.99",
+            "priceCurrency": "EUR",
+            "unitCode": "MON"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro anual",
+          "price": "29.90",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "29.90",
+            "priceCurrency": "EUR",
+            "unitCode": "ANN"
+          }
+        }
+      ],
+      "featureList": [
+        "Calendario de quendas",
+        "Engadir varias quendas",
+        "Lugares habituais",
+        "Rotacións de quendas",
+        "Importar cadrante",
+        "Vacacións e días non dispoñibles",
+        "A miña dispoñibilidade",
+        "Festivos e tempo",
+        "Calendario sen conexión",
+        "Sincronización co calendario do móbil e Google Calendar",
+        "Sincronización bidireccional",
+        "Compartir calendario",
+        "Imprimir e exportar a PDF",
+        "Publicar unha quenda para cambiala",
+        "Muro de quendas",
+        "Propoñer, aceptar e rexeitar cambios",
+        "Cadeas de cambios",
+        "Modo SOS",
+        "Comunicar o cambio ao xestor de cadros",
+        "Rexistrar un cambio manual",
+        "Quendas para cubrir do centro",
+        "Muro social",
+        "Compartir publicacións",
+        "Mensaxes",
+        "Actividade",
+        "Copilot Torns",
+        "Resumo diario de Copilot",
+        "Consultor legal",
+        "Notificacións push e no navegador",
+        "Lembranzas de turnos",
+        "Centros de traballo",
+        "Estatísticas de traballo",
+        "Perfil público",
+        "Puntos e clasificación",
+        "Convidar compañeiros",
+        "Pantalla principal, tema e idioma",
+        "Noticias, soporte e xogo",
+        "Widgets",
+        "App de Apple Watch",
+        "Panel para hospitais, centros e servizos",
+        "Patrocinio de Torns Pro para os socios"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.torns.app/gl/funcionalidades/",
+      "url": "https://www.torns.app/gl/funcionalidades/",
+      "name": "Torns: funcionalidades da app de cambios de quenda para profesionais sanitarios",
+      "inLanguage": "gl-ES",
+      "isPartOf": {
+        "@id": "https://www.torns.app/#website"
+      },
+      "about": {
+        "@id": "https://www.torns.app/#app"
+      },
+      "dateModified": "2026-10-12",
+      "mainEntity": {
+        "@id": "https://www.torns.app/gl/funcionalidades/#faq"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.torns.app/gl/funcionalidades/#faq",
+      "inLanguage": "gl-ES",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hai algunha app para cambiar quendas entre enfermeiras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Torns é unha app para que enfermeiras e outros profesionais sanitarios de España publiquen as quendas que queren cambiar, vexan as dos seus compañeiros de centro e pechen o cambio dentro da app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns é gratuíto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns ten un plan Free gratuíto que inclúe o calendario de quendas, publicar quendas e 3 cambios ao mes. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano, e todas as contas novas teñen 30 días de proba coas funcións Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que inclúe Torns Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns Pro inclúe cambios ilimitados, varios centros, Copilot, cadeas de cambios, modo SOS, comunicar cambios ao xestor, rotacións, sincronización bidireccional, compartir e imprimir o calendario, estatísticas de traballo e máis lecturas de cadrante e consultas legais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns funciona en galego, catalán ou éuscaro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Torns está dispoñible en castelán, catalán, galego e éuscaro, e cada usuario escolle o idioma no seu perfil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "En que dispositivos funciona Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns funciona en iPhone, iPad, Android, Apple Watch e no navegador do ordenador en https://app.torns.app. Tamén ten widgets para a pantalla de inicio de iOS e Android."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Podo pasar o meu cadrante en papel a Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Con «Importar cadrante», Torns le unha foto, un PDF ou unha folla de cálculo do cadrante e extrae as túas quendas para que as revises antes de gardalas. O arquivo do cadrante non se garda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como cambio unha quenda cun compañeiro en Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Publica a quenda na lapela Cambios; os teus compañeiros véna no Muro e propóñenche unha das súas quendas. Cando aceptas a proposta, Torns actualiza o calendario dos dous."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que pasa se ninguén me pode cambiar a quenda directamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns busca cadeas de cambios entre 3 ou 4 compañeiros, nas que cada un cobre a quenda do seguinte, e propónllelas a todos. As cadeas de cambios son de Torns Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como atopo a alguén que me cubra unha quenda urxente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Co modo SOS de Torns Pro, a quenda sobe ao principio do Muro durante 24 horas e os teus compañeiros reciben un aviso urxente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns avisa ao meu supervisor do cambio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Con Torns Pro, o cambio acordado envíase por correo electrónico ao xestor de cadros, ou chégalle ao panel se o teu centro usa o panel de Torns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que é Copilot de Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copilot é o asistente de intelixencia artificial de Torns: xestiona o teu calendario, busca quendas compatibles co teu calendario e a túa dispoñibilidade, e propón e fai cambios a partir dunha frase. Está incluído en Torns Pro e no período de proba."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns resolve dúbidas sobre o meu convenio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. O Consultor legal de Torns responde dúbidas laborais a partir de convenios colectivos e normativa revisados, citando o documento e o artigo. O plan Free inclúe 2 consultas e Torns Pro, 20 ao día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Podo ver as miñas quendas de Torns no calendario do móbil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Torns exporta as túas quendas ao calendario do iPhone ou Android e tamén pode conectarse a Google Calendar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns funciona sen conexión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. O calendario de quendas de Torns pódese consultar e editar sen conexión en iOS e Android, e os cambios sincronízanse ao volver ter conexión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O meu hospital pode contratar Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. Os hospitais, centros sanitarios e servizos de emerxencias contratan o panel de Torns para publicar quendas para cubrir, recibir os cambios do persoal, enviar comunicacións e xestionar centros. As licenzas custan entre 0,39 € e 0,99 € por usuario activo e mes, sen IVE, con 30 días de proba."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A miña asociación profesional pode pagar Torns aos socios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si. As asociacións profesionais poden patrocinar Torns Pro para os seus socios, de forma total ou parcial. O prezo dáse baixo orzamento en hola@torns.app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns garda datos de pacientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Non. Torns trata só datos persoais e laborais dos profesionais, e a moderación do muro social bloquea as publicacións con datos de pacientes ou información clínica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde garda Torns os meus datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os datos de Torns alóxanse en servidores en España. Desde a app podes exportar os teus datos e eliminar a túa conta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como contacto con Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os usuarios poden escribir a soporte@torns.app ou abrir un tícket desde a app; as organizacións e asociacións, a hola@torns.app."
+          }
+        }
+      ]
+    }
+  ]
+}

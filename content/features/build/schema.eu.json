@@ -1,0 +1,342 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.torns.app/#organization",
+      "name": "Torns",
+      "legalName": "Soportic",
+      "brand": {
+        "@type": "Brand",
+        "name": "Torns"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Octavi Rodríguez"
+      },
+      "url": "https://www.torns.app",
+      "email": "hola@torns.app",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "soporte@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hola@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.torns.app/#website",
+      "url": "https://www.torns.app",
+      "name": "Torns",
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://www.torns.app/#app",
+      "name": "Torns",
+      "description": "Torns aplikazio bat da, Espainiako erizainek, medikuek, TCAEek, TESek eta beste osasun-profesional batzuek beren txanden egutegia kudea dezaten eta zentroko lankideekin txandak alda ditzaten. iPhonen, Androiden, Apple Watchen eta nabigatzailean (app.torns.app) dabil. Doako plana dago; Torns Prok 2,99 € balio du hilean edo 29,90 € urtean.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Txanden kudeaketa eta aldaketa",
+      "operatingSystem": "iOS, iPadOS, watchOS, Android, Web",
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ],
+      "url": "https://www.torns.app/eu/funcionalidades/",
+      "installUrl": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android",
+        "https://app.torns.app"
+      ],
+      "sameAs": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android"
+      ],
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro hilekoa",
+          "price": "2.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2.99",
+            "priceCurrency": "EUR",
+            "unitCode": "MON"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro urtekoa",
+          "price": "29.90",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "29.90",
+            "priceCurrency": "EUR",
+            "unitCode": "ANN"
+          }
+        }
+      ],
+      "featureList": [
+        "Txanden egutegia",
+        "Hainbat txanda gehitu",
+        "Ohiko tokiak",
+        "Txanda-errotazioak",
+        "Txanda-koadroa inportatu",
+        "Oporrak eta egun erabilgarri ez direnak",
+        "Nire Erabilgarritasuna",
+        "Jaiegunak eta eguraldia",
+        "Konexiorik gabeko egutegia",
+        "Mugikorreko egutegiarekin eta Google Calendarrekin sinkronizatzea",
+        "Norabide biko sinkronizazioa",
+        "Egutegia partekatu",
+        "Inprimatu eta PDFra esportatu",
+        "Txanda bat argitaratu aldatzeko",
+        "Txanden Murala",
+        "Aldaketak proposatu, onartu eta ukatu",
+        "Aldaketa kateak",
+        "SOS modua",
+        "Aldaketa plantilla kudeatzaileari jakinarazi",
+        "Eskuzko aldaketa erregistratu",
+        "Zentroaren estaltzeko txandak",
+        "Horma soziala",
+        "Argitalpenak partekatu",
+        "Mezuak",
+        "Jarduera",
+        "Copilot Torns",
+        "Copiloten eguneroko laburpena",
+        "Lege-aholkularia",
+        "Push jakinarazpenak eta nabigatzailekoak",
+        "Txanda-oroitzapenak",
+        "Lantokiak",
+        "Lan estatistikak",
+        "Profil publikoa",
+        "Puntuak eta sailkapena",
+        "Lankideak gonbidatu",
+        "Hasierako pantaila, gaia eta hizkuntza",
+        "Berriak, laguntza eta jokoa",
+        "Widgetak",
+        "Apple Watch aplikazioa",
+        "Ospitale, zentro eta zerbitzuentzako panela",
+        "Torns Pro bazkideentzat babestea"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.torns.app/eu/funcionalidades/",
+      "url": "https://www.torns.app/eu/funcionalidades/",
+      "name": "Torns: osasun-profesionalentzako txanda-aldaketen aplikazioaren funtzioak",
+      "inLanguage": "eu-ES",
+      "isPartOf": {
+        "@id": "https://www.torns.app/#website"
+      },
+      "about": {
+        "@id": "https://www.torns.app/#app"
+      },
+      "dateModified": "2026-10-12",
+      "mainEntity": {
+        "@id": "https://www.torns.app/eu/funcionalidades/#faq"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.torns.app/eu/funcionalidades/#faq",
+      "inLanguage": "eu-ES",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ba al dago aplikaziorik erizainen artean txandak aldatzeko?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns aplikazio bat da, Espainiako erizainek eta beste osasun-profesional batzuek aldatu nahi dituzten txandak argitara ditzaten, zentroko lankideenak ikus ditzaten eta aldaketa aplikazioan bertan itxi dezaten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Doakoa al da Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns-ek doako Free plana du, txanden egutegia, txandak argitaratzea eta 3 aldaketa hilean barne. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean, eta kontu berri guztiek 30 eguneko proba dute Pro funtzioekin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zer dakar Torns Prok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns Prok aldaketa mugagabeak, hainbat zentro, Copilot, aldaketa kateak, SOS modua, aldaketak kudeatzaileari jakinaraztea, errotazioak, norabide biko sinkronizazioa, egutegia partekatzea eta inprimatzea, lan estatistikak eta txanda-koadroaren irakurketa eta lege-kontsulta gehiago dakartza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns euskaraz, katalanez edo galegoz dabil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns gaztelaniaz, katalanez, galegoz eta euskaraz dago eskuragarri, eta erabiltzaile bakoitzak bere profilean aukeratzen du hizkuntza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zein gailutan dabil Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns iPhonen, iPaden, Androiden, Apple Watchen eta ordenagailuko nabigatzailean dabil, https://app.torns.app helbidean. iOS eta Androiden hasierako pantailarako widgetak ere baditu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Paperezko txanda-koadroa Torns-era pasa dezaket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. «Txanda-koadroa inportatu» aukerarekin, Torns-ek txanda-koadroaren argazki, PDF edo kalkulu-orri bat irakurtzen du, eta zure txandak ateratzen ditu gorde aurretik berrikus ditzazun. Txanda-koadroaren fitxategia ez da gordetzen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nola aldatzen dut txanda bat lankide batekin Torns-en?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Argitaratu txanda Aldaketak fitxan; zure lankideek Muralan ikusten dute eta beren txandetako bat proposatzen dizute. Proposamena onartzen duzunean, Torns-ek bien egutegia eguneratzen du."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zer gertatzen da inork ezin badit txanda zuzenean aldatu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns-ek 3 edo 4 lankideren arteko aldaketa kateak bilatzen ditu, bakoitzak hurrengoaren txanda estaltzen duela, eta guztiei proposatzen dizkie. Aldaketa kateak Torns Proren parte dira."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nola aurkitu premiazko txanda bat estaliko didan norbait?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns Proren SOS moduarekin, txanda Muralaren hasierara igotzen da 24 orduz eta zure lankideek premiazko abisua jasotzen dute."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns-ek aldaketaz abisatzen dio nire arduradunari?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns Prorekin, adostutako aldaketa posta elektronikoz bidaltzen zaio plantilla kudeatzaileari, edo panelean jasotzen du zure zentroak Torns-en panela erabiltzen badu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zer da Torns-en Copilot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copilot Torns-en adimen artifizialeko laguntzailea da: zure egutegia kudeatzen du, zure egutegiarekin eta erabilgarritasunarekin bateragarriak diren txandak bilatzen ditu, eta aldaketak proposatu eta egiten ditu esaldi batetik abiatuta. Torns Pron eta proba-aldian sartuta dago."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns-ek nire hitzarmenari buruzko zalantzak argitzen ditu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns-en Lege-aholkulariak lan-zalantzak erantzuten ditu berrikusitako hitzarmen kolektiboetan eta araudian oinarrituta, dokumentua eta artikulua aipatuz. Free planak 2 kontsulta ditu, eta Torns Prok, 20 egunean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nire Torns-eko txandak mugikorreko egutegian ikus ditzaket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns-ek zure txandak iPhone edo Android egutegira esportatzen ditu, eta Google Calendarrera ere konekta daiteke."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Konexiorik gabe dabil Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Torns-en txanden egutegia konexiorik gabe kontsultatu eta edita daiteke iOSen eta Androiden, eta aldaketak konexioa berreskuratzean sinkronizatzen dira."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nire ospitaleak Torns kontrata dezake?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Ospitaleek, osasun-zentroek eta larrialdi-zerbitzuek Torns-en panela kontratatzen dute estaltzeko txandak argitaratzeko, langileen aldaketak jasotzeko, komunikazioak bidaltzeko eta zentroak kudeatzeko. Lizentziek 0,39 €-tik 0,99 €-ra balio dute erabiltzaile aktibo eta hileko, BEZik gabe, 30 eguneko probarekin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nire elkarte profesionalak Torns ordain diezaieke bazkideei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bai. Elkarte profesionalek Torns Pro babes dezakete beren bazkideentzat, osorik edo zati batean. Prezioa aurrekontu bidez ematen da hola@torns.app helbidean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Torns-ek pazienteen daturik gordetzen du?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ez. Torns-ek profesionalen datu pertsonal eta laboralak bakarrik tratatzen ditu, eta horma sozialeko moderazioak pazienteen datuak edo informazio klinikoa dituzten argitalpenak blokeatzen ditu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Non gordetzen ditu Torns-ek nire datuak?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns-en datuak Espainiako zerbitzarietan ostatatzen dira. Aplikaziotik zure datuak esporta ditzakezu eta zure kontua ezaba dezakezu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Nola jarri harremanetan Torns-ekin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Erabiltzaileek soporte@torns.app helbidera idatz dezakete edo aplikaziotik txartel bat ireki; erakundeek eta elkarteek, hola@torns.app helbidera."
+          }
+        }
+      ]
+    }
+  ]
+}
