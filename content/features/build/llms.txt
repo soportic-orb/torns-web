@@ -1,0 +1,31 @@
+# Torns
+
+> Torns es una app para que enfermeras, médicos, TCAE, TES y otros profesionales sanitarios de España gestionen su calendario de turnos y cambien turnos con compañeros de su centro. Funciona en iPhone, Android, Apple Watch y en el navegador (app.torns.app). Hay plan gratuito; Torns Pro cuesta 2,99 € al mes o 29,90 € al año.
+
+Torns es una app de Soportic para gestionar el calendario de turnos y cambiar turnos entre profesionales sanitarios de España. Disponible en castellano, català, galego y euskara.
+
+## Funcionalidades
+
+- [Funcionalidades de Torns](https://www.torns.app/funcionalidades/): todas las funcionalidades, planes, límites y preguntas frecuentes.
+- [Funcionalidades en Markdown](https://www.torns.app/funcionalidades.md): la misma página en texto plano.
+- [Texto completo para LLM](https://www.torns.app/llms-full.txt)
+
+## Planes y precios
+
+- [Planes y precios](https://www.torns.app/funcionalidades/#planes-y-precios): Free gratuito; Torns Pro 2,99 €/mes o 29,90 €/año; 30 días de prueba.
+- [Organizaciones](https://www.torns.app/funcionalidades/#organizaciones-panel-de-torns): licencias de 0,39 € a 0,99 € por usuario y mes, sin IVA.
+
+## Preguntas frecuentes
+
+- [Preguntas frecuentes](https://www.torns.app/funcionalidades/#preguntas-frecuentes)
+
+## Legal y contacto
+
+- [Privacidad](https://www.torns.app/privacidad)
+- [Contacto](https://www.torns.app/contacta/): soporte@torns.app (usuarios) · hola@torns.app (organizaciones)
+
+## Descargas
+
+- [App Store](https://apps.apple.com/es/app/torns/id6760354618)
+- [Google Play](https://play.google.com/store/apps/details?id=com.tornsapp.android)
+- [Versión web](https://app.torns.app)

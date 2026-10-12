@@ -1,0 +1,342 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.torns.app/#organization",
+      "name": "Torns",
+      "legalName": "Soportic",
+      "brand": {
+        "@type": "Brand",
+        "name": "Torns"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Octavi Rodríguez"
+      },
+      "url": "https://www.torns.app",
+      "email": "hola@torns.app",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "soporte@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "hola@torns.app",
+          "availableLanguage": [
+            "es",
+            "ca",
+            "gl",
+            "eu"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.torns.app/#website",
+      "url": "https://www.torns.app",
+      "name": "Torns",
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ]
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://www.torns.app/#app",
+      "name": "Torns",
+      "description": "Torns es una app para que enfermeras, médicos, TCAE, TES y otros profesionales sanitarios de España gestionen su calendario de turnos y cambien turnos con compañeros de su centro. Funciona en iPhone, Android, Apple Watch y en el navegador (app.torns.app). Hay plan gratuito; Torns Pro cuesta 2,99 € al mes o 29,90 € al año.",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Gestión y cambio de turnos",
+      "operatingSystem": "iOS, iPadOS, watchOS, Android, Web",
+      "inLanguage": [
+        "es-ES",
+        "ca-ES",
+        "gl-ES",
+        "eu-ES"
+      ],
+      "url": "https://www.torns.app/funcionalidades/",
+      "installUrl": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android",
+        "https://app.torns.app"
+      ],
+      "sameAs": [
+        "https://apps.apple.com/es/app/torns/id6760354618",
+        "https://play.google.com/store/apps/details?id=com.tornsapp.android"
+      ],
+      "publisher": {
+        "@id": "https://www.torns.app/#organization"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro mensual",
+          "price": "2.99",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2.99",
+            "priceCurrency": "EUR",
+            "unitCode": "MON"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Torns Pro anual",
+          "price": "29.90",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "29.90",
+            "priceCurrency": "EUR",
+            "unitCode": "ANN"
+          }
+        }
+      ],
+      "featureList": [
+        "Calendario de turnos",
+        "Añadir varios turnos",
+        "Lugares habituales",
+        "Rotaciones de turnos",
+        "Importar cuadrante",
+        "Vacaciones y días no disponibles",
+        "Mi disponibilidad",
+        "Festivos y tiempo",
+        "Calendario sin conexión",
+        "Sincronización con el calendario del móvil y Google Calendar",
+        "Sincronización bidireccional",
+        "Compartir calendario",
+        "Imprimir y exportar a PDF",
+        "Publicar un turno para cambiarlo",
+        "Muro de turnos",
+        "Proponer, aceptar y rechazar cambios",
+        "Cadenas de cambios",
+        "Modo SOS",
+        "Comunicar el cambio al gestor de planillas",
+        "Registrar un cambio manual",
+        "Turnos a cubrir del centro",
+        "Muro social",
+        "Compartir publicaciones",
+        "Mensajes",
+        "Actividad",
+        "Copilot Torns",
+        "Resumen diario de Copilot",
+        "Consultor legal",
+        "Notificaciones push y en el navegador",
+        "Recordatorios de turnos",
+        "Centros de trabajo",
+        "Estadísticas de trabajo",
+        "Perfil público",
+        "Puntos y clasificación",
+        "Invitar compañeros",
+        "Pantalla principal, tema e idioma",
+        "Noticias, soporte y juego",
+        "Widgets",
+        "App de Apple Watch",
+        "Panel para hospitales, centros y servicios",
+        "Patrocinio de Torns Pro para socios"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.torns.app/funcionalidades/",
+      "url": "https://www.torns.app/funcionalidades/",
+      "name": "Torns: funcionalidades de la app de cambios de turno para profesionales sanitarios",
+      "inLanguage": "es-ES",
+      "isPartOf": {
+        "@id": "https://www.torns.app/#website"
+      },
+      "about": {
+        "@id": "https://www.torns.app/#app"
+      },
+      "dateModified": "2026-10-12",
+      "mainEntity": {
+        "@id": "https://www.torns.app/funcionalidades/#faq"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.torns.app/funcionalidades/#faq",
+      "inLanguage": "es-ES",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Hay alguna app para cambiar turnos entre enfermeras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Torns es una app para que enfermeras y otros profesionales sanitarios de España publiquen los turnos que quieren cambiar, vean los de sus compañeros de centro y cierren el cambio dentro de la app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns es gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns tiene un plan Free gratuito que incluye el calendario de turnos, publicar turnos y 3 cambios al mes. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué incluye Torns Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns Pro incluye cambios ilimitados, varios centros, Copilot, cadenas de cambios, modo SOS, comunicar cambios al gestor, rotaciones, sincronización bidireccional, compartir e imprimir el calendario, estadísticas de trabajo y más lecturas de cuadrante y consultas legales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns funciona en catalán, gallego o euskera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Torns está disponible en castellano, catalán, gallego y euskera, y cada usuario elige el idioma en su perfil."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué dispositivos funciona Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns funciona en iPhone, iPad, Android, Apple Watch y en el navegador del ordenador en https://app.torns.app. También tiene widgets para la pantalla de inicio de iOS y Android."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo pasar mi cuadrante en papel a Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Con «Importar cuadrante», Torns lee una foto, un PDF o una hoja de cálculo del cuadrante y extrae tus turnos para que los revises antes de guardarlos. El archivo del cuadrante no se guarda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo cambio un turno con un compañero en Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Publica el turno en la pestaña Cambios; tus compañeros lo ven en el Muro y te proponen uno de sus turnos. Cuando aceptas la propuesta, Torns actualiza el calendario de los dos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si nadie puede cambiarme el turno directamente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Torns busca cadenas de cambios entre 3 o 4 compañeros, en las que cada uno cubre el turno del siguiente, y se las propone a todos. Las cadenas de cambios son de Torns Pro."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo encuentro a alguien que me cubra un turno urgente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con el modo SOS de Torns Pro, el turno sube al principio del Muro durante 24 horas y tus compañeros reciben un aviso urgente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns avisa a mi supervisor del cambio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Con Torns Pro, el cambio acordado se envía por email al gestor de planillas, o le llega al panel si tu centro usa el panel de Torns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es Copilot de Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Copilot es el asistente de inteligencia artificial de Torns: gestiona tu calendario, busca turnos compatibles con tu calendario y tu disponibilidad, y propone y hace cambios a partir de una frase. Está incluido en Torns Pro y en el periodo de prueba."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns resuelve dudas sobre mi convenio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El Consultor legal de Torns responde dudas laborales a partir de convenios colectivos y normativa revisados, citando el documento y el artículo. El plan Free incluye 2 consultas y Torns Pro, 20 al día."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo ver mis turnos de Torns en el calendario del móvil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Torns exporta tus turnos al calendario del iPhone o Android y también puede conectarse a Google Calendar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns funciona sin conexión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El calendario de turnos de Torns se puede consultar y editar sin conexión en iOS y Android, y los cambios se sincronizan al volver a tener conexión."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Mi hospital puede contratar Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Los hospitales, centros sanitarios y servicios de emergencias contratan el panel de Torns para publicar turnos a cubrir, recibir los cambios del personal, enviar comunicaciones y gestionar centros. Las licencias cuestan entre 0,39 € y 0,99 € por usuario activo y mes, sin IVA, con 30 días de prueba."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Mi asociación profesional puede pagar Torns a sus socios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las asociaciones profesionales pueden patrocinar Torns Pro para sus socios, de forma total o parcial. El precio se da bajo presupuesto en hola@torns.app."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Torns guarda datos de pacientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Torns trata solo datos personales y laborales de los profesionales, y la moderación del muro social bloquea las publicaciones con datos de pacientes o información clínica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde guarda Torns mis datos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los datos de Torns se alojan en servidores en España. Desde la app puedes exportar tus datos y eliminar tu cuenta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo contacto con Torns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los usuarios pueden escribir a soporte@torns.app o abrir un ticket desde la app; las organizaciones y asociaciones, a hola@torns.app."
+          }
+        }
+      ]
+    }
+  ]
+}
