@@ -1,0 +1,112 @@
+{
+    "menus": {
+        "main-menu": {
+            "location": "main-menu",
+            "name": "Main menu",
+            "items": [
+                {
+                    "label": {
+                        "es": "Calendario",
+                        "ca": "Calendari",
+                        "gl": "Calendario",
+                        "eu": "Egutegia"
+                    },
+                    "url": "/#calendario"
+                },
+                {
+                    "label": {
+                        "es": "Funcionalidades",
+                        "ca": "Funcionalitats",
+                        "gl": "Funcionalidades",
+                        "eu": "Funtzionalitateak"
+                    },
+                    "url": "/#funcionalidades"
+                },
+                {
+                    "label": {
+                        "es": "IA",
+                        "ca": "IA",
+                        "gl": "IA",
+                        "eu": "AA"
+                    },
+                    "url": "/#ia"
+                },
+                {
+                    "label": {
+                        "es": "Precios",
+                        "ca": "Preus",
+                        "gl": "Prezos",
+                        "eu": "Prezioak"
+                    },
+                    "url": "/#precios"
+                },
+                {
+                    "label": {
+                        "es": "Torns para centros",
+                        "ca": "Torns per a centres",
+                        "gl": "Torns para centros",
+                        "eu": "Torns zentroentzat"
+                    },
+                    "url": "/centros"
+                },
+                {
+                    "label": {
+                        "es": "Noticias",
+                        "ca": "Notícies",
+                        "gl": "Novas",
+                        "eu": "Albisteak"
+                    },
+                    "url": "/blog"
+                }
+            ]
+        },
+        "footer-menu": {
+            "location": "footer-menu",
+            "name": "Footer menu",
+            "items": [
+                {
+                    "label": {
+                        "es": "Inicio",
+                        "ca": "Inici",
+                        "gl": "Inicio",
+                        "eu": "Hasiera"
+                    },
+                    "url": "/"
+                },
+                {
+                    "label": {
+                        "es": "Torns para centros",
+                        "ca": "Torns per a centres",
+                        "gl": "Torns para centros",
+                        "eu": "Torns zentroentzat"
+                    },
+                    "url": "/centros"
+                },
+                {
+                    "label": {
+                        "es": "Blog",
+                        "ca": "Blog",
+                        "gl": "Blog",
+                        "eu": "Bloga"
+                    },
+                    "url": "/blog"
+                }
+            ]
+        },
+        "footer-legal": {
+            "location": "footer-legal-menu",
+            "name": "Footer legal",
+            "items": [
+                {
+                    "label": {
+                        "es": "Términos y condiciones",
+                        "ca": "Termes i condicions",
+                        "gl": "Termos e condicións",
+                        "eu": "Baldintzak eta erabilera-baldintzak"
+                    },
+                    "url": "/terminos"
+                }
+            ]
+        }
+    }
+}

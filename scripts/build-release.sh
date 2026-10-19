@@ -54,6 +54,7 @@ zip -r -q "$ZIP_PATH" . \
     -x "storage/framework/sessions/*" \
     -x "storage/framework/views/*" \
     -x "storage/app/public/*" \
+    -x "storage/app/ota/*" \
     -x "storage/installed-content-seed.lock" \
     -x "bootstrap/cache/*.php" \
     -x "tests/*" \

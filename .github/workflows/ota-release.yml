@@ -1,0 +1,96 @@
+# Publishes an OTA release of the theme and the site content (docs/OTA.md).
+#
+# Every push to main that touches the theme or content/site builds the theme
+# assets, packs the allowed folders, signs the manifest with OTA_SIGNING_KEY
+# and creates a GitHub release "ota-<version>". The sites only list it as
+# available: an administrator applies it from Admin → Platform → System →
+# Site updates.
+name: OTA release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'platform/themes/torns/**'
+      - 'content/site/**'
+      - 'scripts/ota-bundle.sh'
+      - '.github/workflows/ota-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ota-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build theme assets
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: '1'
+        run: |
+          npm ci --no-audit --no-fund --ignore-scripts
+          npm run build:torns
+
+      - name: Check content files
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          root = pathlib.Path('content/site')
+          pages = json.loads((root / 'pages.json').read_text())
+          json.loads((root / 'menus.json').read_text())
+          missing = [f'{k}.{l}.html' for k in pages['pages'] for l in pages['locales'] if not (root / 'pages' / f'{k}.{l}.html').is_file()]
+          if missing:
+              sys.exit('Missing page files: ' + ', '.join(missing))
+          PY
+
+      - name: Version
+        id: version
+        run: echo "version=$(date -u +%Y%m%d.%H%M)-$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Pack and sign
+        env:
+          OTA_SIGNING_KEY: ${{ secrets.OTA_SIGNING_KEY }}
+        run: |
+          if [ -z "$OTA_SIGNING_KEY" ]; then
+            echo "::error::The OTA_SIGNING_KEY secret is not set (see docs/OTA.md)."
+            exit 1
+          fi
+          KEY="$RUNNER_TEMP/ota-signing-key.pem"
+          printf '%s\n' "$OTA_SIGNING_KEY" > "$KEY"
+          bash scripts/ota-bundle.sh "${{ steps.version.outputs.version }}" "$KEY"
+          rm -f "$KEY"
+
+      - name: Release notes
+        run: |
+          PREVIOUS="$(git tag --list 'ota-*' --sort=-creatordate | head -n1)"
+          {
+            echo "Commits:"
+            if [ -n "$PREVIOUS" ]; then
+              git log --no-merges --format='- %s' "$PREVIOUS..HEAD" -- platform/themes/torns content/site
+            else
+              git log --no-merges --format='- %s' -n 20 -- platform/themes/torns content/site
+            fi
+          } > "$RUNNER_TEMP/notes.md"
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "ota-${{ steps.version.outputs.version }}" \
+            dist/ota/ota-bundle.zip dist/ota/ota-manifest.json dist/ota/ota-manifest.json.sig \
+            --target "$GITHUB_SHA" \
+            --title "Web ${{ steps.version.outputs.version }}" \
+            --notes-file "$RUNNER_TEMP/notes.md"
