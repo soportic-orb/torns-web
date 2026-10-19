@@ -1,0 +1,144 @@
+{
+    "locales": [
+        "es",
+        "ca",
+        "gl",
+        "eu"
+    ],
+    "pages": {
+        "home": {
+            "slug": "",
+            "template": "full-width",
+            "role": "homepage",
+            "name": {
+                "es": "Inicio",
+                "ca": "Inici",
+                "gl": "Inicio",
+                "eu": "Hasiera"
+            },
+            "seo_title": {
+                "es": "App de cambios de turno y calendario sanitario | Torns",
+                "ca": "App de canvis de torn i calendari sanitari | Torns",
+                "gl": "App de cambios de quenda e calendario sanitario | Torns",
+                "eu": "Txanda-aldaketen eta osasun-egutegiaren appa | Torns"
+            },
+            "seo_description": {
+                "es": "Cambia turnos con tus compañeros del mismo centro y gestiona el calendario de todos tus centros con sincronización Apple y Google Calendar. Gratis, sin tarjeta.",
+                "ca": "Canvia torns amb els teus companys del mateix centre i gestiona el calendari de tots els teus centres amb sincronització Apple i Google Calendar. Gratis, sense targeta.",
+                "gl": "Cambia quendas cos teus compañeiros do mesmo centro e xestiona o calendario de todos os teus centros con sincronización Apple e Google Calendar. Gratis, sen tarxeta.",
+                "eu": "Aldatu txandak zentro bereko lankideekin eta kudeatu zure zentro guztietako egutegia Apple eta Google Calendar sinkronizazioarekin. Doan, txartelik gabe."
+            }
+        },
+        "centros": {
+            "slug": "centros",
+            "template": "full-width",
+            "name": {
+                "es": "Torns para centros",
+                "ca": "Torns per a centres",
+                "gl": "Torns para centros",
+                "eu": "Torns zentroentzat"
+            },
+            "seo_title": {
+                "es": "Torns para centros sanitarios y hospitales",
+                "ca": "Torns per a centres sanitaris i hospitals",
+                "gl": "Torns para centros sanitarios e hospitais",
+                "eu": "Torns osasun-zentro eta ospitaleentzat"
+            },
+            "seo_description": {
+                "es": "Ofrece a tus profesionales una app para gestionar sus cambios de turno y mejora el clima laboral, con panel de gestión para tu centro. Prueba de 30 días.",
+                "ca": "Ofereix als teus professionals una app per gestionar els seus canvis de torn i millora el clima laboral, amb panell de gestió per al teu centre. Prova de 30 dies.",
+                "gl": "Ofrece aos teus profesionais unha app para xestionar os seus cambios de quenda e mellora o clima laboral, con panel de xestión para o teu centro. Proba de 30 días.",
+                "eu": "Eskaini zure profesionalei txanda-aldaketak kudeatzeko app bat eta hobetu lan-giroa, zure zentrorako kudeaketa-panelarekin. 30 eguneko proba."
+            }
+        },
+        "contacta": {
+            "slug": "contacta",
+            "template": "full-width",
+            "name": {
+                "es": "Contacta",
+                "ca": "Contacta",
+                "gl": "Contacta",
+                "eu": "Kontaktua"
+            },
+            "seo_title": {
+                "es": "Contacta con el equipo de Torns",
+                "ca": "Contacta amb l'equip de Torns",
+                "gl": "Contacta co equipo de Torns",
+                "eu": "Jarri harremanetan Torns taldearekin"
+            },
+            "seo_description": {
+                "es": "Escríbenos y te ayudamos: dudas sobre la app de cambios de turno, licencias para centros sanitarios o soporte. Respondemos en hola@torns.app.",
+                "ca": "Escriu-nos i t'ajudem: dubtes sobre l'app de canvis de torn, llicències per a centres sanitaris o suport. Responem a hola@torns.app.",
+                "gl": "Escríbenos e axudámosche: dúbidas sobre a app de cambios de quenda, licenzas para centros sanitarios ou soporte. Respondemos en hola@torns.app.",
+                "eu": "Idatzi eta lagunduko dizugu: txanda-aldaketen appari, osasun-zentroetarako lizentziei edo laguntzari buruzko zalantzak. hola@torns.app helbidean erantzuten dugu."
+            }
+        },
+        "terminos": {
+            "slug": "terminos",
+            "template": "default",
+            "name": {
+                "es": "Términos y condiciones de uso",
+                "ca": "Termes i condicions d'ús",
+                "gl": "Termos e condicións de uso",
+                "eu": "Erabilera-baldintzak"
+            },
+            "seo_title": {
+                "es": "Términos y condiciones de uso | Torns",
+                "ca": "Termes i condicions d'ús | Torns",
+                "gl": "Termos e condicións de uso | Torns",
+                "eu": "Erabilera-baldintzak | Torns"
+            },
+            "seo_description": {
+                "es": "Términos y condiciones de uso de la aplicación y los servicios de Torns.",
+                "ca": "Termes i condicions d'ús de l'aplicació i els serveis de Torns.",
+                "gl": "Termos e condicións de uso da aplicación e os servizos de Torns.",
+                "eu": "Torns aplikazioaren eta zerbitzuen erabilera-baldintzak."
+            }
+        },
+        "privacidad": {
+            "slug": "privacidad",
+            "template": "default",
+            "name": {
+                "es": "Política de Privacidad",
+                "ca": "Política de Privacitat",
+                "gl": "Política de Privacidade",
+                "eu": "Pribatutasun Politika"
+            },
+            "seo_title": {
+                "es": "Política de privacidad | Torns",
+                "ca": "Política de privacitat | Torns",
+                "gl": "Política de privacidade | Torns",
+                "eu": "Pribatutasun-politika | Torns"
+            },
+            "seo_description": {
+                "es": "Política de privacidad de Torns: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos.",
+                "ca": "Política de privacitat de Torns: quines dades tractem, amb quina finalitat i com exercir els teus drets.",
+                "gl": "Política de privacidade de Torns: que datos tratamos, con que finalidade e como exercer os teus dereitos.",
+                "eu": "Torns-en pribatutasun-politika: zein datu tratatzen ditugun, zein helbururekin eta nola erabili zure eskubideak."
+            }
+        },
+        "blog": {
+            "slug": "blog",
+            "template": "full-width",
+            "role": "blog",
+            "name": {
+                "es": "Blog",
+                "ca": "Blog",
+                "gl": "Blog",
+                "eu": "Bloga"
+            },
+            "seo_title": {
+                "es": "Blog de Torns — turnos y sanidad",
+                "ca": "Blog de Torns — torns i sanitat",
+                "gl": "Blog de Torns — quendas e sanidade",
+                "eu": "Torns bloga — txandak eta osasuna"
+            },
+            "seo_description": {
+                "es": "Novedades de Torns y consejos para profesionales sanitarios que trabajan a turnos: cambios de turno, calendario laboral y conciliación.",
+                "ca": "Novetats de Torns i consells per a professionals sanitaris que treballen a torns: canvis de torn, calendari laboral i conciliació.",
+                "gl": "Novidades de Torns e consellos para profesionais sanitarios que traballan a quendas: cambios de quenda, calendario laboral e conciliación.",
+                "eu": "Torns-en berriak eta txandaka lan egiten duten osasun-profesionalentzako aholkuak: txanda-aldaketak, lan-egutegia eta kontziliazioa."
+            }
+        }
+    }
+}

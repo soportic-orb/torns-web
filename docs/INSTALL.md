@@ -74,6 +74,8 @@ Copia `.env.example` a `.env` y rellena:
 
 El seeder crea idiomas, páginas en 4 idiomas, menús, categorías del blog,
 metas SEO y opciones del tema. Es idempotente: re-ejecutarlo no duplica nada.
+Las páginas y los menús salen de `content/site/` (los mismos ficheros que
+actualiza la OTA, ver `docs/OTA.md`).
 
 - **Con SSH:**
 
@@ -88,9 +90,10 @@ metas SEO y opciones del tema. Es idempotente: re-ejecutarlo no duplica nada.
      `storage/installed-content-seed.lock`). Borra `INSTALL_SEED_TOKEN`
      del `.env`.
 
-## 8. Cron del scheduler (opcional, recomendado)
+## 8. Cron del scheduler (recomendado)
 
-Para publicaciones de blog programadas, añade en el panel del hosting:
+Para publicaciones de blog programadas y para que el panel avise de las
+actualizaciones OTA (`docs/OTA.md`), añade en el panel del hosting:
 
 ```
 * * * * * php /ruta/al/proyecto/artisan schedule:run >> /dev/null 2>&1
