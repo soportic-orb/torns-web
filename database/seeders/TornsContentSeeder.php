@@ -291,11 +291,10 @@ class TornsContentSeeder extends Seeder
     {
         $t = fn (string $key) => str_replace('"', '”', $this->t($key, $locale));
 
+        // Sharing, SOS and Copilot now live in [torns-swaps] and [torns-ai].
         $rows = [
-            ['title' => 'Comparte los turnos por mensajería', 'image' => 'row-share-messaging', 'side' => 'left', 'p1' => 'Comparte el turno que has publicado en Torns a través de WhatsApp o tu app de mensajería favorita. Tus contactos o el grupo del trabajo recibirán una imagen con toda la información del turno que necesitas cambiar.', 'p2' => 'Así tus compañeros, aunque aún no estén registrados en la app, también sabrán que necesitas cambiar un turno y todos sus detalles.'],
-            ['title' => 'Turnos SOS: cambios de turno urgentes', 'image' => 'row-sos', 'side' => 'right', 'p1' => '¿Necesitas cambiar un turno con urgencia? Activa el modo SOS y todos los usuarios de tu centro recibirán una notificación solicitando su colaboración para ayudarte con el cambio.', 'p2' => 'Una de esas funcionalidades que te van a encantar.'],
-            ['title' => 'En tu propio idioma', 'image' => 'row-languages', 'side' => 'left', 'p1' => 'Creemos en la diversidad y la inclusión. Torns está disponible en distintos idiomas: castellano, català, galego y euskara.', 'p2' => 'Configura la app en tu idioma y todas las funcionalidades, mensajes, notificaciones y correos se ajustarán a tus preferencias.'],
-            ['title' => 'Copilot: asistente IA para cambios de turno', 'image' => 'row-copilot', 'side' => 'right', 'p1' => 'Copilot es el asistente de inteligencia artificial que te ayudará a encontrar cambio de turno más rápido. Utiliza la disponibilidad de tu calendario, los turnos que necesitas cambiar y los de tus compañeros para hacer match.', 'p2' => 'Te propondrá los cambios que mejor se adapten a tu agenda y a los lugares donde prefieres trabajar. Copilot aprende de tus rutinas.'],
+            ['title' => 'Tu próximo turno, sin abrir la app', 'image' => 'row-watch', 'side' => 'left', 'p1' => 'Widgets en la pantalla de inicio de tu iPhone o Android y Torns en el Apple Watch: tus próximos turnos y el estado de tus cambios, de un vistazo.', 'p2' => 'Y los recordatorios te avisan unas horas antes de cada turno, también de los recién cambiados.'],
+            ['title' => 'En tu propio idioma', 'image' => 'row-languages', 'side' => 'right', 'p1' => 'Creemos en la diversidad y la inclusión. Torns está disponible en distintos idiomas: castellano, català, galego y euskara.', 'p2' => 'Configura la app en tu idioma y todas las funcionalidades, mensajes, notificaciones y correos se ajustarán a tus preferencias.'],
         ];
 
         $rowShortcodes = '';
@@ -312,19 +311,21 @@ class TornsContentSeeder extends Seeder
 
         return <<<HTML
 [torns-hero][/torns-hero]
-[torns-video][/torns-video]
 [torns-about][/torns-about]
 [torns-unified-calendar][/torns-unified-calendar]
-[torns-features][/torns-features]
+[torns-import-roster][/torns-import-roster]
+[torns-swaps][/torns-swaps]
+[torns-ai][/torns-ai]
 {$rowShortcodes}[torns-gallery][/torns-gallery]
+[torns-video][/torns-video]
 [torns-comparison][/torns-comparison]
-[torns-center-code][/torns-center-code]
 [torns-pricing][/torns-pricing]
-[torns-register-cta][/torns-register-cta]
+[torns-center-code][/torns-center-code]
 [torns-centers-teaser][/torns-centers-teaser]
-[torns-faq][/torns-faq]
 [torns-center-logos][/torns-center-logos]
 [torns-blog-posts][/torns-blog-posts]
+[torns-faq][/torns-faq]
+[torns-register-cta][/torns-register-cta]
 HTML;
     }
 
@@ -357,9 +358,12 @@ HTML;
                 'location' => 'main-menu',
                 'name' => 'Main menu',
                 'items' => [
-                    ['label' => 'Inicio', 'url' => '/'],
+                    ['label' => 'Calendario', 'url' => '/#calendario'],
+                    ['label' => 'Funcionalidades', 'url' => '/#funcionalidades'],
+                    ['label' => 'IA', 'url' => '/#ia'],
+                    ['label' => 'Precios', 'url' => '/#precios'],
                     ['label' => 'Torns para centros', 'url' => '/centros'],
-                    ['label' => 'Blog', 'url' => '/blog'],
+                    ['label' => 'Noticias', 'url' => '/blog'],
                     ['label' => 'Contacta', 'url' => '/contacta'],
                 ],
             ],

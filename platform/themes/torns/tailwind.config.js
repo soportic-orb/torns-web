@@ -17,16 +17,19 @@ export default {
     theme: {
         extend: {
             colors: {
-                'torns-primary': '#0E7E8A',
-                'torns-primary-dark': '#0A5A63',
-                'torns-bg': '#FAFBFB',
-                'torns-ink': '#16232A',
+                'torns-primary': '#227A96',
+                'torns-primary-dark': '#176079',
+                'torns-bg': '#F4F7F8',
+                'torns-ink': '#0F2430',
                 'shift-morning': '#F5A623',
                 'shift-evening': '#F0685B',
                 'shift-night': '#4A5BC7',
+                'torns-deep': '#16384A',
+                'torns-mist': '#DDEEF3',
+                'torns-sky': '#7FD0E6',
             },
             fontFamily: {
-                display: ['Bricolage Grotesque', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                display: ['Poppins', 'Helvetica', 'Arial', 'ui-sans-serif', 'system-ui', 'sans-serif'],
                 sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
             },
         },

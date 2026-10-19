@@ -15,7 +15,7 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '0 €',
                 'period' => '',
                 'description' => __('Utiliza gratis las funcionalidades básicas de la app'),
-                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 2 cambios al mes\nChat individual y grupal\nSincronización con Apple y Google"),
+                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nSincronización con Apple y Google\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 3 cambios al mes\nChat individual y grupal"),
                 'badge' => '',
                 'cta_label' => __('Empieza gratis'),
                 'highlighted' => false,
@@ -26,7 +26,7 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '2,99 €',
                 'period' => __('/mes'),
                 'description' => __('Acceso mensual a todas las funcionalidades Pro. Cancela cuando quieras.'),
-                'features' => __("Todas las funcionalidades del plan Free\nCentros de trabajo ilimitados\nAceptar turnos ilimitados\nPropuestas de cambios a 3\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nEstadísticas de trabajo\nCompartir calendario de turnos"),
+                'features' => __("Todas las funcionalidades del plan Free\nCopilot: asistente con IA\nConsultor legal\nCentros de trabajo ilimitados\nAceptar cambios ilimitados\nCadenas de cambios a 3 y 4\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nRotaciones y estadísticas de trabajo\nCompartir e imprimir el calendario en PDF"),
                 'badge' => '',
                 'cta_label' => __('Hazte Pro'),
                 'highlighted' => false,
@@ -37,22 +37,11 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '29,90 €',
                 'period' => __('/año'),
                 'description' => __('Acceso anual a todas las funcionalidades Pro.'),
-                'features' => __("Todas las funcionalidades del plan Free\nCentros de trabajo ilimitados\nAceptar turnos ilimitados\nPropuestas de cambios a 3\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nEstadísticas de trabajo\nCompartir calendario de turnos"),
+                'features' => __("Todas las funcionalidades del plan Free\nCopilot: asistente con IA\nConsultor legal\nCentros de trabajo ilimitados\nAceptar cambios ilimitados\nCadenas de cambios a 3 y 4\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nRotaciones y estadísticas de trabajo\nCompartir e imprimir el calendario en PDF"),
                 'badge' => __('Ahorras 2 meses'),
                 'cta_label' => __('Hazte Pro'),
                 'highlighted' => true,
                 'disabled' => false,
-            ],
-            'copilot' => [
-                'name' => 'Copilot',
-                'price' => __('Próximamente'),
-                'period' => '',
-                'description' => __('La IA que te ayudará a gestionar tus cambios con tus compañeros. Adicional a la suscripción.'),
-                'features' => __("Cadenas de cambios a 3 y 4 con IA\nSugerencias según tu disponibilidad\nAprende de tus rutinas"),
-                'badge' => '',
-                'cta_label' => __('Próximamente'),
-                'highlighted' => false,
-                'disabled' => true,
             ],
         ];
 
@@ -135,7 +124,7 @@ if (! function_exists('torns_comparison_data')) {
         return [
             'competitors' => $competitors,
             'rows' => $rows,
-            'reviewed_at' => theme_option('comparison_reviewed_at', '29/07/2026'),
+            'reviewed_at' => theme_option('comparison_reviewed_at', '26/08/2026'),
         ];
     }
 }
@@ -151,6 +140,9 @@ if (! function_exists('torns_default_faq_items')) {
             ['question' => __('¿Qué es Torns?'), 'answer' => __('Torns es una aplicación móvil para iOS y Android que permite a los profesionales sanitarios gestionar cambios de turno con sus compañeros del mismo centro de trabajo y controlar su calendario de guardias y turnos de todos sus centros.')],
             ['question' => __('¿Cómo funciona la app para cambios de turno?'), 'answer' => __('Publicas el turno que necesitas cambiar, tus compañeros reciben una notificación, te proponen un intercambio compatible con su disponibilidad y, al aceptar, se notifica automáticamente al gestor de planillas.')],
             ['question' => __('¿Puedo gestionar mi calendario de turnos en Torns?'), 'answer' => __('Sí. Torns no solo te permite gestionar cambios de guardia con tus compañeros: es una completa herramienta de gestión de tu calendario laboral. Puedes introducir tus turnos, sincronizarlos con Apple Calendar o Google Calendar y mantener tu agenda totalmente al día.')],
+            ['question' => __('¿Puedo llevar en Torns los turnos de varios centros?'), 'answer' => __('Sí. Todos tus turnos y guardias aparecen en el mismo calendario, cada centro con su color. El plan Free incluye 1 centro de trabajo y Torns Pro, centros ilimitados.')],
+            ['question' => __('¿Sirve para guardias de 24 horas?'), 'answer' => __('Sí. Puedes crear turnos y guardias de cualquier duración, incluidas las de 12 y 24 horas, con su horario real.')],
+            ['question' => __('¿Puedo pasar a Torns mi cuadrante en papel?'), 'answer' => __('Sí. Haz una foto del cuadrante o súbelo en un documento: Copilot encuentra tu fila y te propone los turnos para que los revises antes de guardarlos. El archivo no se guarda.')],
             ['question' => __('¿Cómo me puedo registrar en Torns?'), 'answer' => __('Puedes registrarte con tu e-mail personal, con tus cuentas de Google o Apple, o con la cuenta corporativa de Microsoft de tu centro.')],
             ['question' => __('¿Cuánto cuesta Torns?'), 'answer' => __('Puedes crear una cuenta gratis sin tarjeta de crédito y usar el plan Free. El plan Pro cuesta 2,99 €/mes o 29,90 €/año (con el pago anual ahorras 2 meses).')],
             ['question' => __('¿Para qué profesionales sanitarios sirve Torns?'), 'answer' => __('Torns está pensada para enfermeras, médicos, TCAE, auxiliares, celadores, matronas, fisioterapeutas, administrativos sanitarios, técnicos en emergencias sanitarias (TES) y cualquier profesional sanitario que trabaje por turnos o guardias.')],

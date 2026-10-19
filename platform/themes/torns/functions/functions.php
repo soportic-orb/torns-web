@@ -13,7 +13,7 @@ app()->booted(function (): void {
     // so the typography system never injects remote font-face CSS.
     Theme::typography()->registerFontFamilies([
         new TypographyItem('primary', __('Primary'), 'Instrument Sans', [400, 500, 600, 700], false),
-        new TypographyItem('display', __('Display'), 'Bricolage Grotesque', [400, 600, 700, 800], false),
+        new TypographyItem('display', __('Display'), 'Poppins', [600, 700, 800], false),
     ]);
 
     register_page_template([

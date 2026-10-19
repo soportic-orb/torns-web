@@ -1,49 +1,45 @@
 @php
-    $title = $shortcode->title ?: __('Cambia turnos con tus compañeros y gestiona el calendario de todos tus centros');
-    $subtitle = $shortcode->subtitle ?: __('Torns es la app de cambios de turno para profesionales sanitarios: publica el turno que no puedes hacer, intercámbialo con compañeros de tu centro y controla todos tus turnos en un calendario unificado sincronizado con Apple y Google Calendar.');
-    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/hero-mockup-896.webp');
-    $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/hero-mockup-480.webp') . ' 480w, ' . Theme::asset()->url('images/home/hero-mockup-896.webp') . ' 896w';
+    $title = $shortcode->title ?: __('Tus turnos y guardias de todos tus centros, en un solo calendario');
+    $subtitle = $shortcode->subtitle ?: __('Torns es tu calendario laboral: el hospital, el centro de salud y la ambulancia, juntos. Y cuando necesitas cambiar un turno, tus compañeros lo ven y te proponen uno suyo.');
+
+    // One tag per work centre around the phone: the calendar is multi-centre.
+    $tags = [
+        ['color' => 'bg-[#1B2A4A]', 'shift' => __('Noche'), 'center' => __('Hospital'), 'time' => '22:00 – 08:00', 'position' => '-left-6 top-24 sm:-left-24'],
+        ['color' => 'bg-[#C2185B]', 'shift' => __('Guardia 24 h'), 'center' => __('SEM'), 'time' => __('Sábado'), 'position' => '-right-6 top-1/2 sm:-right-24'],
+        ['color' => 'bg-shift-morning', 'shift' => __('Mañana'), 'center' => __('Centro de salud'), 'time' => '08:00 – 15:00', 'position' => '-left-4 bottom-16 sm:-left-20'],
+    ];
 @endphp
 
 <section class="overflow-hidden bg-gradient-to-b from-white to-torns-bg">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:pb-24 lg:pt-20">
+    <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[7fr_5fr] lg:gap-10 lg:px-8 lg:pb-24 lg:pt-16">
         <div class="text-center lg:text-left">
-            <h1 class="font-display text-4xl font-bold tracking-tight sm:text-5xl">{{ $title }}</h1>
-            <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-torns-ink/70 lg:mx-0">{{ $subtitle }}</p>
+            <p class="mb-5 inline-flex rounded-full bg-torns-mist px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-torns-primary-dark">{{ __('Para enfermeras, médicos, TCAE, TES y más') }}</p>
+            <h1 class="font-display text-4xl font-bold leading-[1.1] tracking-tight [text-wrap:balance] sm:text-5xl lg:text-[3.4rem]">{{ $title }}</h1>
+            <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-torns-ink/70 lg:mx-0">{{ $subtitle }}</p>
 
-            <div class="mt-8">
+            <div class="mt-8 flex flex-col items-center gap-4 lg:items-start">
                 {!! Theme::partial('components.store-badges', ['center' => true, 'size' => 'md']) !!}
+                <a href="https://app.torns.app" rel="noopener" class="btn-secondary">{{ __('Abrir en el navegador') }}</a>
             </div>
 
-            {{-- Signature animation: two shift chips swapping between two avatars --}}
-            <div class="swap-demo mt-12" aria-label="{{ __('Two shifts being swapped between two colleagues') }}">
-                <div class="swap-demo__row">
-                    <span class="swap-demo__avatar" aria-hidden="true">L</span>
-                    <span class="swap-demo__chip swap-demo__chip--a">
-                        {!! Theme::partial('components.shift-chip', ['type' => 'morning', 'time' => '07–15']) !!}
-                    </span>
-                    <span class="swap-demo__arrows" aria-hidden="true">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l4 4-4 4M21 7H7M7 21l-4-4 4-4M3 17h14"/></svg>
-                    </span>
-                    <span class="swap-demo__chip swap-demo__chip--b">
-                        {!! Theme::partial('components.shift-chip', ['type' => 'night', 'time' => '23–07']) !!}
-                    </span>
-                    <span class="swap-demo__avatar swap-demo__avatar--b" aria-hidden="true">M</span>
-                </div>
-            </div>
+            <p class="mt-6 text-sm text-torns-ink/70">{{ __('Gratis para empezar · Pro 2,99 €/mes · 30 días de prueba con todo incluido · sin tarjeta') }}</p>
         </div>
 
-        <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
-            <div class="absolute -inset-8 rounded-full bg-torns-primary/5 blur-2xl" aria-hidden="true"></div>
-            <img
-                src="{{ $image }}"
-                @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 1024px) 28rem, 90vw" @endif
-                alt="{{ __('Torns app on an iPhone') }}"
-                class="relative w-full"
-                width="896"
-                height="1041"
-                fetchpriority="high"
-            >
+        <div class="relative mx-auto w-56 sm:w-64">
+            <div class="absolute -inset-10 rounded-full bg-torns-primary/10 blur-3xl" aria-hidden="true"></div>
+            {!! Theme::partial('components.phone', [
+                'name' => 'calendar-month',
+                'framed' => true,
+                'alt' => __('Calendario mensual de Torns con turnos de varios centros y vacaciones'),
+                'sizes' => '(min-width: 640px) 16rem, 14rem',
+                'eager' => true,
+            ]) !!}
+            @foreach ($tags as $i => $tag)
+                <span class="center-tag center-tag--{{ $i + 1 }} {{ $tag['position'] }}" aria-hidden="true">
+                    <span class="center-tag__dot {{ $tag['color'] }}"></span>
+                    <span><b>{{ $tag['shift'] }}</b> · {{ $tag['center'] }}<br><span class="text-torns-ink/60">{{ $tag['time'] }}</span></span>
+                </span>
+            @endforeach
         </div>
     </div>
 </section>
