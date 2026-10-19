@@ -57,6 +57,15 @@
                         "eu": "Albisteak"
                     },
                     "url": "/blog"
+                },
+                {
+                    "label": {
+                        "es": "Contacta",
+                        "ca": "Contacta",
+                        "gl": "Contacta",
+                        "eu": "Jarri harremanetan"
+                    },
+                    "url": "/contacta"
                 }
             ]
         },
@@ -90,6 +99,15 @@
                         "eu": "Bloga"
                     },
                     "url": "/blog"
+                },
+                {
+                    "label": {
+                        "es": "Contacta",
+                        "ca": "Contacta",
+                        "gl": "Contacta",
+                        "eu": "Jarri harremanetan"
+                    },
+                    "url": "/contacta"
                 }
             ]
         },
@@ -105,6 +123,15 @@
                         "eu": "Baldintzak eta erabilera-baldintzak"
                     },
                     "url": "/terminos"
+                },
+                {
+                    "label": {
+                        "es": "Política de privacidad",
+                        "ca": "Política de privacitat",
+                        "gl": "Política de privacidade",
+                        "eu": "Pribatutasun-politika"
+                    },
+                    "url": "/privacidad"
                 }
             ]
         }
