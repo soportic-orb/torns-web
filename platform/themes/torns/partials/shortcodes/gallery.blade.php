@@ -1,8 +1,10 @@
 @php
     $title = $shortcode->title ?: __('No querrás salir de la app');
+    $screenUrl = fn (string $file, int $width) => Theme::asset()->url('images/home/screens/' . str_replace('-thumb.webp', '', $file) . "-{$width}.webp");
     $subtitle = $shortcode->subtitle ?: __('Diseño sencillo, claro y minimalista, con la lógica de los profesionales de la salud.');
 
-    // Screenshot order and captions match the current website.
+    // Screenshot order and captions match the current website (minus the
+    // published-shift detail, already shown in [torns-swaps]): 12 fill the grid.
     $screens = [
         ['file' => 'screen-2903-thumb.webp', 'caption' => __('Calendario integrado')],
         ['file' => 'screen-2896-thumb.webp', 'caption' => __('Muro de cambios publicados')],
@@ -11,7 +13,6 @@
         ['file' => 'screen-2895-thumb.webp', 'caption' => __('Detalle de la propuesta de cadena de turno')],
         ['file' => 'screen-2898-thumb.webp', 'caption' => __('Detalle de la propuesta de cadena de cambios de Copilot')],
         ['file' => 'screen-2899-thumb.webp', 'caption' => __('Pantalla Cambios con los turnos publicados y su estado')],
-        ['file' => 'screen-2900-thumb.webp', 'caption' => __('Detalle de turno publicado por el usuario')],
         ['file' => 'screen-2901-thumb.webp', 'caption' => __('Publicación de un turno SOS urgente')],
         ['file' => 'screen-2902-thumb.webp', 'caption' => __('Selección de los turnos a visualizar en el calendario')],
         ['file' => 'screen-2904-thumb.webp', 'caption' => __('Sincronización de calendarios')],
@@ -20,23 +21,25 @@
     ];
 @endphp
 
-<section class="bg-white py-16 lg:py-24">
+<section class="bg-white py-16 lg:py-24" id="pantallas">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle]) !!}
     </div>
 
     {{-- Mobile: horizontal scroll with snap. Desktop: grid + vanilla lightbox. --}}
     <div class="mt-10 lg:hidden">
-        <ul class="scrollbar-none flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:px-6">
+        <ul class="scrollbar-none flex list-none snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:px-6">
             @foreach ($screens as $screen)
-                <li class="w-56 shrink-0 snap-center">
+                <li class="w-44 shrink-0 snap-center">
                     <figure>
                         <img
-                            src="{{ Theme::asset()->url('images/home/gallery/' . $screen['file']) }}"
+                            src="{{ $screenUrl($screen['file'], 560) }}"
+                            srcset="{{ $screenUrl($screen['file'], 280) }} 280w, {{ $screenUrl($screen['file'], 560) }} 560w"
+                            sizes="11rem"
                             alt="{{ $screen['caption'] }}"
-                            class="w-full rounded-2xl border border-torns-ink/10 shadow-sm"
-                            width="400"
-                            height="516"
+                            class="w-full drop-shadow-lg"
+                            width="560"
+                            height="1132"
                             loading="lazy"
                         >
                         <figcaption class="mt-2 px-1 text-center text-xs text-torns-ink/70">{{ $screen['caption'] }}</figcaption>
@@ -46,22 +49,24 @@
         </ul>
     </div>
 
-    <div class="mx-auto mt-10 hidden max-w-6xl grid-cols-4 gap-5 px-4 sm:px-6 lg:grid lg:px-8 xl:grid-cols-5" data-gallery>
+    <div class="mx-auto mt-10 hidden max-w-6xl grid-cols-4 gap-5 px-4 sm:px-6 lg:grid lg:px-8 xl:grid-cols-6" data-gallery>
         @foreach ($screens as $screen)
             <figure>
                 <button
                     type="button"
-                    class="group block w-full overflow-hidden rounded-2xl border border-torns-ink/10 transition hover:shadow-lg focus-visible:shadow-lg"
+                    class="group block w-full rounded-[2rem] transition"
                     data-gallery-item
                     data-caption="{{ $screen['caption'] }}"
-                    data-full="{{ Theme::asset()->url('images/home/gallery/' . $screen['file']) }}"
+                    data-full="{{ $screenUrl($screen['file'], 560) }}"
                 >
                     <img
-                        src="{{ Theme::asset()->url('images/home/gallery/' . $screen['file']) }}"
+                        src="{{ $screenUrl($screen['file'], 280) }}"
+                        srcset="{{ $screenUrl($screen['file'], 280) }} 280w, {{ $screenUrl($screen['file'], 560) }} 560w"
+                        sizes="(min-width: 1280px) 12rem, 14rem"
                         alt="{{ $screen['caption'] }}"
-                        class="w-full transition duration-200 group-hover:scale-[1.02] motion-reduce:transition-none"
-                        width="400"
-                        height="516"
+                        class="w-full drop-shadow-lg transition duration-200 group-hover:-translate-y-1 motion-reduce:transition-none"
+                        width="560"
+                        height="1132"
                         loading="lazy"
                     >
                 </button>

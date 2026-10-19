@@ -8,8 +8,9 @@
 <section class="bg-white py-16 lg:py-24" id="precios">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {!! Theme::partial('components.section-heading', ['title' => $title, 'subtitle' => $subtitle]) !!}
+        <p class="mt-4 text-center text-sm font-semibold text-torns-primary-dark">{{ __('Crea tu cuenta en menos de un minuto, sin tarjeta. Al registrarte tienes 30 días con todas las funciones Pro.') }}</p>
 
-        <div class="mt-14 grid items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div class="mt-14 grid items-stretch gap-6 md:grid-cols-3">
             @foreach ($plans as $plan)
                 {!! Theme::partial('components.pricing-card', [
                     'name' => $plan['name'],

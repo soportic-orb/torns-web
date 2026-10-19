@@ -45,7 +45,6 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
         'free' => __('Free plan'),
         'monthly' => __('Pro Monthly plan'),
         'annual' => __('Pro Annual plan'),
-        'copilot' => __('Copilot plan'),
     ];
 
     foreach ($plans as $key => $label) {
@@ -97,7 +96,7 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
                 TextField::make()
                     ->name('comparison_reviewed_at')
                     ->label(__('Last review date'))
-                    ->defaultValue('29/07/2026')
+                    ->defaultValue('26/08/2026')
                     ->helperText(__('Shown under the table. Update it whenever you verify the data again.')),
                 RepeaterField::make()
                     ->name('comparison_rows')

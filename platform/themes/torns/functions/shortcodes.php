@@ -24,7 +24,7 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 1. Hero
     // ------------------------------------------------------------------
-    add_shortcode('torns-hero', __('Torns: Hero'), __('Main hero with dual value proposition, store badges and swap animation'), function ($shortcode) {
+    add_shortcode('torns-hero', __('Torns: Hero'), __('Main hero: multi-centre calendar on a phone, store badges and web app link'), function ($shortcode) {
         return Theme::partial('shortcodes.hero', ['shortcode' => $shortcode]);
     });
 
@@ -52,17 +52,16 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 3. What is Torns
     // ------------------------------------------------------------------
-    add_shortcode('torns-about', __('Torns: What is Torns'), __('Introduction to the two pillars: shift swaps + unified calendar'), function ($shortcode) {
+    add_shortcode('torns-about', __('Torns: What is Torns'), __('Three cards: work calendar, shift swaps and the AI assistant'), function ($shortcode) {
         return Theme::partial('shortcodes.about', ['shortcode' => $shortcode]);
     });
 
     shortcode()->setAdminConfig('torns-about', function (array $attributes) use ($textField, $textareaField) {
         $form = ShortcodeForm::createFromArray($attributes)
-            ->add('title', TextField::class, $textField(__('Title')))
-            ->add('description', TextareaField::class, $textareaField(__('Description')));
+            ->add('title', TextField::class, $textField(__('Title')));
 
-        for ($i = 1; $i <= 4; $i++) {
-            $form->add('bullet_' . $i, TextField::class, $textField(__('Bullet :number', ['number' => $i])));
+        for ($i = 1; $i <= 3; $i++) {
+            $form->add('bullet_' . $i, TextField::class, $textField(__('Card :number title', ['number' => $i])));
         }
 
         return $form;
@@ -71,7 +70,7 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 4. Unified calendar spotlight
     // ------------------------------------------------------------------
-    add_shortcode('torns-unified-calendar', __('Torns: Unified calendar'), __('Calendar spotlight with central mockup and benefits around'), function ($shortcode) {
+    add_shortcode('torns-unified-calendar', __('Torns: Unified calendar'), __('Calendar spotlight: three screenshots and the calendar features with their plan'), function ($shortcode) {
         return Theme::partial('shortcodes.unified-calendar', ['shortcode' => $shortcode]);
     });
 
@@ -81,6 +80,45 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
             ->add('closing', TextField::class, $textField(__('Closing highlight')))
             ->add('image', MediaImageField::class, ['label' => __('Calendar mockup image')]);
+    });
+
+    // ------------------------------------------------------------------
+    // 4b. Import your roster (photo of the roster → reviewed shifts)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-import-roster', __('Torns: Import roster'), __('Roster photo turning into shifts, with two paragraphs'), function ($shortcode) {
+        return Theme::partial('shortcodes.import-roster', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-import-roster', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('content_1', TextareaField::class, $textareaField(__('First paragraph')))
+            ->add('content_2', TextareaField::class, $textareaField(__('Second paragraph')));
+    });
+
+    // ------------------------------------------------------------------
+    // 4c. Shift swaps (wall, chains, SOS, chat) with two screenshots each
+    // ------------------------------------------------------------------
+    add_shortcode('torns-swaps', __('Torns: Shift swaps'), __('Four alternating rows with two app screenshots each'), function ($shortcode) {
+        return Theme::partial('shortcodes.swaps', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-swaps', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')));
+    });
+
+    // ------------------------------------------------------------------
+    // 4d. AI: Copilot and legal consultant
+    // ------------------------------------------------------------------
+    add_shortcode('torns-ai', __('Torns: AI'), __('Copilot and legal consultant cards'), function ($shortcode) {
+        return Theme::partial('shortcodes.ai', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-ai', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')));
     });
 
     // ------------------------------------------------------------------

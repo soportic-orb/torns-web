@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1" name="viewport">
 
-        <link rel="preload" href="{{ Theme::asset()->url('fonts/bricolage-grotesque-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{{ Theme::asset()->url('fonts/poppins-700-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ Theme::asset()->url('fonts/instrument-sans-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
 
         {!! Theme::header() !!}

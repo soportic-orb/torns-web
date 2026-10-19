@@ -6,10 +6,10 @@
 
 @layer base {
     :root {
-        --torns-primary: #0e7e8a;
-        --torns-primary-dark: #0a5a63;
-        --torns-bg: #fafbfb;
-        --torns-ink: #16232a;
+        --torns-primary: #227a96;
+        --torns-primary-dark: #176079;
+        --torns-bg: #f4f7f8;
+        --torns-ink: #0f2430;
         --shift-morning: #f5a623;
         --shift-evening: #f0685b;
         --shift-night: #4a5bc7;
@@ -193,6 +193,77 @@
     100% {
         transform: translate(0, 0);
     }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Phone frame for raw app screenshots (the store mockups already carry    */
+/* their own frame and are shown as they are).                             */
+/* ---------------------------------------------------------------------- */
+.phone-frame {
+    @apply relative overflow-hidden rounded-[2.4rem] border-[9px] border-torns-ink bg-white shadow-2xl shadow-torns-ink/20;
+}
+
+.phone-frame--on-dark {
+    border-color: #000;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.12), 0 25px 50px -12px rgb(0 0 0 / 0.5);
+}
+
+.phone-frame img {
+    @apply block h-auto w-full;
+}
+
+/* Shift labels floating around the hero phone (one per work centre) */
+.center-tag {
+    @apply absolute flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-sm leading-tight text-torns-ink shadow-xl shadow-torns-ink/10;
+}
+
+.center-tag__dot {
+    @apply h-3 w-3 shrink-0 rounded;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .center-tag {
+        animation: torns-float 5s ease-in-out infinite;
+    }
+
+    .center-tag--2 {
+        animation-delay: 1.6s;
+    }
+
+    .center-tag--3 {
+        animation-delay: 3.2s;
+    }
+}
+
+@keyframes torns-float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Page content is wrapped in .ck-content, whose list styles would put
+   bullets on the shortcode sections' card lists. */
+.ck-content section ul,
+.ck-content section ol {
+    list-style: none;
+}
+
+/* Free / Pro tag on calendar feature tiles */
+.plan-tag {
+    @apply inline-flex self-start rounded-md px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wider;
+}
+
+.plan-tag--free {
+    @apply bg-white/10 text-torns-sky;
+}
+
+.plan-tag--pro {
+    @apply bg-shift-morning/20 text-shift-morning;
 }
 
 /* Drawer open state (toggled from main.js) */
