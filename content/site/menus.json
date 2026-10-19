@@ -18,9 +18,9 @@
                         "es": "Funcionalidades",
                         "ca": "Funcionalitats",
                         "gl": "Funcionalidades",
-                        "eu": "Funtzionalitateak"
+                        "eu": "Funtzioak"
                     },
-                    "url": "/#funcionalidades"
+                    "url": "/funcionalidades"
                 },
                 {
                     "label": {
@@ -84,6 +84,15 @@
                 },
                 {
                     "label": {
+                        "es": "Funcionalidades",
+                        "ca": "Funcionalitats",
+                        "gl": "Funcionalidades",
+                        "eu": "Funtzioak"
+                    },
+                    "url": "/funcionalidades"
+                },
+                {
+                    "label": {
                         "es": "Torns para centros",
                         "ca": "Torns per a centres",
                         "gl": "Torns para centros",
@@ -93,10 +102,10 @@
                 },
                 {
                     "label": {
-                        "es": "Blog",
-                        "ca": "Blog",
-                        "gl": "Blog",
-                        "eu": "Bloga"
+                        "es": "Noticias",
+                        "ca": "Notícies",
+                        "gl": "Novas",
+                        "eu": "Albisteak"
                     },
                     "url": "/blog"
                 },

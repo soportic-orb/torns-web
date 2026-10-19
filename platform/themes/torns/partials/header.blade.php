@@ -7,7 +7,7 @@
         <link rel="preload" href="{{ Theme::asset()->url('fonts/poppins-700-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="{{ Theme::asset()->url('fonts/instrument-sans-normal-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
 
-        {!! Theme::header() !!}
+        {!! torns_strip_default_schemas(Theme::header()) !!}
     </head>
     <body {!! Theme::bodyAttributes() !!} class="bg-torns-bg font-sans text-torns-ink antialiased">
         {!! apply_filters(THEME_FRONT_BODY, null) !!}

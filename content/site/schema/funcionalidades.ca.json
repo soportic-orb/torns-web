@@ -1,0 +1,157 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hi ha alguna app per canviar torns entre infermeres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns és una app perquè infermeres i altres professionals sanitaris d'Espanya publiquin els torns que volen canviar, vegin els dels seus companys de centre i tanquin el canvi dins de l'app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns és gratuït?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns té un pla Free gratuït que inclou el calendari de torns, publicar torns i 3 canvis al mes. Torns Pro costa 2,99 € al mes o 29,90 € a l'any, i tots els comptes nous tenen 30 dies de prova amb les funcions Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Què inclou Torns Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns Pro inclou canvis il·limitats, diversos centres, el Copilot, cadenes de canvis, mode SOS, comunicar canvis al gestor, rotacions, sincronització bidireccional, compartir i imprimir el calendari, estadístiques de treball i més lectures de quadrant i consultes legals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns funciona en català, gallec o basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns està disponible en castellà, català, gallec i basc, i cada usuari tria l'idioma al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "En quins dispositius funciona Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns funciona a iPhone, iPad, Android, Apple Watch i al navegador de l'ordinador a https://app.torns.app. També té widgets per a la pantalla d'inici d'iOS i Android."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc passar el meu quadrant en paper a Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Amb «Importar quadrant», Torns llegeix una foto, un PDF o un full de càlcul del quadrant i n'extreu els teus torns perquè els revisis abans de desar-los. L'arxiu del quadrant no es desa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com canvio un torn amb un company a Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publica el torn a la pestanya Canvis; els teus companys el veuen al Mur i et proposen un dels seus torns. Quan acceptes la proposta, Torns actualitza el calendari de tots dos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Què passa si ningú no em pot canviar el torn directament?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns busca cadenes de canvis entre 3 o 4 companys, en què cadascun cobreix el torn del següent, i les proposa a tots. Les cadenes de canvis són de Torns Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com trobo algú que em cobreixi un torn urgent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amb el mode SOS de Torns Pro, el torn puja al principi del Mur durant 24 hores i els teus companys reben un avís urgent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns avisa el meu supervisor del canvi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Amb Torns Pro, el canvi acordat s'envia per correu electrònic al gestor de plantilles, o li arriba al panell si el teu centre fa servir el panell de Torns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Què és el Copilot de Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Copilot és l'assistent d'intel·ligència artificial de Torns: gestiona el teu calendari, busca torns compatibles amb el teu calendari i la teva disponibilitat, i proposa i fa canvis a partir d'una frase. Està inclòs a Torns Pro i al període de prova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns resol dubtes sobre el meu conveni?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El Consultor legal de Torns respon dubtes laborals a partir de convenis col·lectius i normativa revisats, citant el document i l'article. El pla Free inclou 2 consultes i Torns Pro, 20 al dia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc veure els meus torns de Torns al calendari del mòbil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns exporta els teus torns al calendari de l'iPhone o Android i també es pot connectar a Google Calendar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns funciona sense connexió?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El calendari de torns de Torns es pot consultar i editar sense connexió a iOS i Android, i els canvis se sincronitzen en tornar a tenir connexió."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "El meu hospital pot contractar Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Els hospitals, centres sanitaris i serveis d'emergències contracten el panell de Torns per publicar torns per cobrir, rebre els canvis del personal, enviar comunicacions i gestionar centres. Les llicències costen entre 0,39 € i 0,99 € per usuari actiu i mes, sense IVA, amb 30 dies de prova."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La meva associació professional pot pagar Torns als socis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Les associacions professionals poden patrocinar Torns Pro per als seus socis, de manera total o parcial. El preu es dona sota pressupost a hola@torns.app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns desa dades de pacients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Torns tracta només dades personals i laborals dels professionals, i la moderació del mur social bloqueja les publicacions amb dades de pacients o informació clínica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "On desa Torns les meves dades?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les dades de Torns s'allotgen en servidors a Espanya. Des de l'app pots exportar les teves dades i eliminar el teu compte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com contacto amb Torns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Els usuaris poden escriure a soporte@torns.app o obrir un tiquet des de l'app; les organitzacions i associacions, a hola@torns.app."
+      }
+    }
+  ]
+}

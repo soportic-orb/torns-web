@@ -17,17 +17,42 @@
                 "eu": "Hasiera"
             },
             "seo_title": {
-                "es": "App de cambios de turno y calendario sanitario | Torns",
-                "ca": "App de canvis de torn i calendari sanitari | Torns",
-                "gl": "App de cambios de quenda e calendario sanitario | Torns",
-                "eu": "Txanda-aldaketen eta osasun-egutegiaren appa | Torns"
+                "es": "Calendario de turnos y guardias multicentro y cambios de turno | Torns",
+                "ca": "Calendari de torns i guàrdies multicentre i canvis de torn | Torns",
+                "gl": "Calendario de quendas e gardas multicentro e cambios de quenda | Torns",
+                "eu": "Zentro anitzeko txanda eta guardien egutegia eta txanda-aldaketak | Torns"
             },
             "seo_description": {
-                "es": "Cambia turnos con tus compañeros del mismo centro y gestiona el calendario de todos tus centros con sincronización Apple y Google Calendar. Gratis, sin tarjeta.",
-                "ca": "Canvia torns amb els teus companys del mateix centre i gestiona el calendari de tots els teus centres amb sincronització Apple i Google Calendar. Gratis, sense targeta.",
-                "gl": "Cambia quendas cos teus compañeiros do mesmo centro e xestiona o calendario de todos os teus centros con sincronización Apple e Google Calendar. Gratis, sen tarxeta.",
-                "eu": "Aldatu txandak zentro bereko lankideekin eta kudeatu zure zentro guztietako egutegia Apple eta Google Calendar sinkronizazioarekin. Doan, txartelik gabe."
-            }
+                "es": "La app para profesionales sanitarios: todos tus turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros. Gratis, sin tarjeta.",
+                "ca": "L'app per a professionals sanitaris: tots els teus torns i guàrdies de tots els teus centres en un sol calendari, i canvis de torn amb els teus companys. Gratis, sense targeta.",
+                "gl": "A app para profesionais sanitarios: todas as túas quendas e gardas de todos os teus centros nun só calendario, e cambios de quenda cos teus compañeiros. Gratis, sen tarxeta.",
+                "eu": "Osasun-profesionalentzako appa: zure zentro guztietako txanda eta guardia guztiak egutegi bakarrean, eta txanda-aldaketak lankideekin. Doan, txartelik gabe."
+            },
+            "schema": false
+        },
+        "funcionalidades": {
+            "slug": "funcionalidades",
+            "template": "full-width",
+            "schema": true,
+            "name": {
+                "es": "Funcionalidades",
+                "ca": "Funcionalitats",
+                "gl": "Funcionalidades",
+                "eu": "Funtzioak"
+            },
+            "seo_title": {
+                "es": "Funcionalidades de Torns: calendario de turnos, cambios y Copilot",
+                "ca": "Funcionalitats de Torns: calendari de torns, canvis i Copilot",
+                "gl": "Funcionalidades de Torns: calendario de quendas, cambios e Copilot",
+                "eu": "Torns-en funtzioak: txanden egutegia, aldaketak eta Copilot"
+            },
+            "seo_description": {
+                "es": "Todo lo que hace Torns, con planes y límites: calendario multicentro, importar el cuadrante, cambios y cadenas, SOS, Copilot, consultor legal, Apple Watch y panel para centros.",
+                "ca": "Tot el que fa Torns, amb plans i límits: calendari multicentre, importar el quadrant, canvis i cadenes, SOS, Copilot, consultor legal, Apple Watch i panell per a centres.",
+                "gl": "Todo o que fai Torns, con plans e límites: calendario multicentro, importar o cadro de quendas, cambios e cadeas, SOS, Copilot, consultor legal, Apple Watch e panel para centros.",
+                "eu": "Torns-ek egiten duen guztia, planekin eta mugekin: zentro anitzeko egutegia, koadrantea inportatzea, aldaketak eta kateak, SOS, Copilot, lege-aholkularia, Apple Watch eta zentroentzako panela."
+            },
+            "markdown": true
         },
         "centros": {
             "slug": "centros",
@@ -45,10 +70,10 @@
                 "eu": "Torns osasun-zentro eta ospitaleentzat"
             },
             "seo_description": {
-                "es": "Ofrece a tus profesionales una app para gestionar sus cambios de turno y mejora el clima laboral, con panel de gestión para tu centro. Prueba de 30 días.",
-                "ca": "Ofereix als teus professionals una app per gestionar els seus canvis de torn i millora el clima laboral, amb panell de gestió per al teu centre. Prova de 30 dies.",
-                "gl": "Ofrece aos teus profesionais unha app para xestionar os seus cambios de quenda e mellora o clima laboral, con panel de xestión para o teu centro. Proba de 30 días.",
-                "eu": "Eskaini zure profesionalei txanda-aldaketak kudeatzeko app bat eta hobetu lan-giroa, zure zentrorako kudeaketa-panelarekin. 30 eguneko proba."
+                "es": "Torns para hospitales, centros de salud y servicios de emergencias: el calendario de turnos y los cambios de tu personal en un panel, con aviso al gestor. Desde 0,39 € por usuario y mes; 30 días de prueba.",
+                "ca": "Torns per a hospitals, CAP i serveis d'emergències: el calendari de torns i els canvis del teu personal en un panell, amb avís al gestor. Des de 0,39 € per usuari i mes; 30 dies de prova.",
+                "gl": "Torns para hospitais, centros de saúde e servizos de emerxencias: o calendario de quendas e os cambios do teu persoal nun panel, con aviso ao xestor. Desde 0,39 € por usuario e mes; 30 días de proba.",
+                "eu": "Torns ospitale, osasun-zentro eta larrialdi-zerbitzuentzat: zure langileen txanden egutegia eta aldaketak panel batean, kudeatzaileari abisuarekin. 0,39 €-tik aurrera erabiltzaile eta hilabeteko; 30 eguneko proba."
             }
         },
         "contacta": {
