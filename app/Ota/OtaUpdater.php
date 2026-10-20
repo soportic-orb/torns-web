@@ -3,6 +3,7 @@
 namespace App\Ota;
 
 use App\Support\SiteContent;
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
@@ -30,12 +31,17 @@ use ZipArchive;
 class OtaUpdater
 {
     public const VERSION_KEY = 'torns_ota_version';
+
     public const AVAILABLE_KEY = 'torns_ota_available';
+
     public const HISTORY_KEY = 'torns_ota_history';
+
     public const CHECKED_KEY = 'torns_ota_checked_at';
 
     protected const MANIFEST = 'ota-manifest.json';
+
     protected const SIGNATURE = 'ota-manifest.json.sig';
+
     protected const BUNDLE = 'ota-bundle.zip';
 
     public function __construct(protected SiteContent $content)
@@ -74,18 +80,18 @@ class OtaUpdater
     {
         $problems = [];
         if (! class_exists(ZipArchive::class)) {
-            $problems[] = 'The PHP zip extension is missing.';
+            $problems[] = trans('torns.ota_req_zip');
         }
         if (! function_exists('sodium_crypto_sign_verify_detached')) {
-            $problems[] = 'The PHP sodium extension is missing.';
+            $problems[] = trans('torns.ota_req_sodium');
         }
         if (! $this->publicKey()) {
-            $problems[] = 'OTA_PUBLIC_KEY is not set in .env (see docs/OTA.md).';
+            $problems[] = trans('torns.ota_req_key');
         }
         foreach ($this->roots() as $root) {
             // Swapping a folder means renaming it inside its parent.
             if (! is_writable(dirname(base_path($root)))) {
-                $problems[] = "The web server cannot write the folder that contains {$root}.";
+                $problems[] = trans('torns.ota_req_write', ['root' => $root]);
             }
         }
 
@@ -99,7 +105,7 @@ class OtaUpdater
     {
         $res = $this->github()->get('https://api.github.com/repos/' . config('torns-ota.repository') . '/releases', ['per_page' => 20]);
         if ($res->failed()) {
-            throw new RuntimeException('GitHub did not answer (' . $res->status() . ').');
+            throw new RuntimeException(trans('torns.ota_err_github', ['status' => $res->status()]));
         }
 
         $latest = null;
@@ -146,7 +152,7 @@ class OtaUpdater
         }
         $release = $this->available() ?? $this->check();
         if (! $release) {
-            throw new RuntimeException('There is no new version to apply.');
+            throw new RuntimeException(trans('torns.ota_err_nothing'));
         }
 
         return $this->locked(function () use ($release, $userName) {
@@ -161,7 +167,7 @@ class OtaUpdater
                 }
                 $manifest = $this->verify($work);
                 if (($manifest['version'] ?? null) !== $release['version']) {
-                    throw new RuntimeException('The manifest is for another version.');
+                    throw new RuntimeException(trans('torns.ota_err_manifest_version'));
                 }
 
                 // 2. Unpack into a staging folder, refusing anything outside the roots.
@@ -206,7 +212,7 @@ class OtaUpdater
         return $this->locked(function () use ($userName) {
             $backup = collect(File::directories(storage_path('app/ota/backups')))->sort()->last();
             if (! $backup) {
-                throw new RuntimeException('There is no backup to go back to.');
+                throw new RuntimeException(trans('torns.ota_err_no_backup'));
             }
             $meta = json_decode((string) @file_get_contents("{$backup}/meta.json"), true) ?: [];
 
@@ -241,7 +247,7 @@ class OtaUpdater
             ->sink($target)
             ->get($assetUrl);
         if ($res->failed() || ! is_file($target) || filesize($target) === 0) {
-            throw new RuntimeException('Could not download ' . basename($target) . ' (' . $res->status() . ').');
+            throw new RuntimeException(trans('torns.ota_err_download', ['file' => basename($target), 'status' => $res->status()]));
         }
     }
 
@@ -253,15 +259,15 @@ class OtaUpdater
 
         if (! $signature || strlen($signature) !== SODIUM_CRYPTO_SIGN_BYTES
             || ! sodium_crypto_sign_verify_detached($signature, $manifestRaw, $key)) {
-            throw new RuntimeException('The update signature is not valid: it was not published by the Torns release workflow.');
+            throw new RuntimeException(trans('torns.ota_err_signature'));
         }
 
         $manifest = json_decode($manifestRaw, true);
         if (! is_array($manifest) || ($manifest['format'] ?? null) !== 1) {
-            throw new RuntimeException('Unknown manifest format.');
+            throw new RuntimeException(trans('torns.ota_err_format'));
         }
         if (! hash_equals((string) ($manifest['sha256'] ?? ''), hash_file('sha256', "{$work}/" . self::BUNDLE))) {
-            throw new RuntimeException('The downloaded bundle does not match the signed manifest.');
+            throw new RuntimeException(trans('torns.ota_err_hash'));
         }
 
         return $manifest;
@@ -271,7 +277,7 @@ class OtaUpdater
     {
         $zip = new ZipArchive();
         if ($zip->open($zipPath) !== true) {
-            throw new RuntimeException('The bundle is not a valid zip file.');
+            throw new RuntimeException(trans('torns.ota_err_zip'));
         }
 
         $present = [];
@@ -280,7 +286,7 @@ class OtaUpdater
             $root = collect($this->roots())->first(fn (string $root) => str_starts_with($name, $root . '/'));
             if (! $root || str_contains($name, '..') || str_contains($name, '\\') || str_starts_with($name, '/')) {
                 $zip->close();
-                throw new RuntimeException("The bundle contains a file outside the allowed folders: {$name}");
+                throw new RuntimeException(trans('torns.ota_err_outside', ['name' => $name]));
             }
             $present[$root] = true;
         }
@@ -288,14 +294,14 @@ class OtaUpdater
         foreach ($this->roots() as $root) {
             if (empty($present[$root])) {
                 $zip->close();
-                throw new RuntimeException("The bundle has no {$root} folder.");
+                throw new RuntimeException(trans('torns.ota_err_missing_root', ['root' => $root]));
             }
         }
 
         File::ensureDirectoryExists($staging);
         if (! $zip->extractTo($staging)) {
             $zip->close();
-            throw new RuntimeException('Could not unpack the bundle.');
+            throw new RuntimeException(trans('torns.ota_err_unpack'));
         }
         $zip->close();
     }
@@ -332,13 +338,13 @@ class OtaUpdater
                 $old = $target . '.ota-old';
                 File::deleteDirectory($old);
                 if (is_dir($target) && ! @rename($target, $old)) {
-                    throw new RuntimeException("Could not move {$root} aside.");
+                    throw new RuntimeException(trans('torns.ota_err_move', ['root' => $root]));
                 }
                 if (! @rename($new, $target)) {
                     // Different filesystem: copy instead of rename.
                     if (! File::copyDirectory($new, $target)) {
                         @rename($old, $target);
-                        throw new RuntimeException("Could not put the new {$root} in place.");
+                        throw new RuntimeException(trans('torns.ota_err_place', ['root' => $root]));
                     }
                 }
                 $done[] = $root;
@@ -396,7 +402,7 @@ class OtaUpdater
     {
         $lock = Cache::lock('torns-ota', 900);
         if (! $lock->get()) {
-            throw new RuntimeException('Another update is already running. Try again in a few minutes.');
+            throw new RuntimeException(trans('torns.ota_err_locked'));
         }
         try {
             @set_time_limit(600);
@@ -419,7 +425,7 @@ class OtaUpdater
         return $key !== false && strlen($key) === SODIUM_CRYPTO_SIGN_PUBLICKEYBYTES ? $key : null;
     }
 
-    protected function github(string $accept = 'application/vnd.github+json'): \Illuminate\Http\Client\PendingRequest
+    protected function github(string $accept = 'application/vnd.github+json'): PendingRequest
     {
         $http = Http::withHeaders(['Accept' => $accept, 'User-Agent' => 'torns-web-ota'])->timeout(30);
         if ($token = config('torns-ota.github_token')) {

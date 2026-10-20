@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Ai\BlogAi;
 use Botble\Base\Http\Controllers\BaseController;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
+use Botble\Base\Http\Responses\BaseHttpResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\View\View;
+use RuntimeException;
 
 /**
  * AI writing for blog posts: the endpoints the post editor calls, and the
@@ -20,7 +20,7 @@ class BlogAiController extends BaseController
     {
     }
 
-    public function text(Request $request): JsonResponse
+    public function text(Request $request): BaseHttpResponse
     {
         $this->authorizeEditor($request);
         $data = $request->validate([
@@ -34,16 +34,10 @@ class BlogAiController extends BaseController
             'current' => ['nullable', 'string', 'max:60000'],
         ]);
 
-        try {
-            $result = $this->ai->text($data['provider'], $data['prompt'], Arr::except($data, ['provider', 'prompt']), $request->user()->getKey());
-        } catch (\RuntimeException $e) {
-            return response()->json(['message' => $e->getMessage()], 422);
-        }
-
-        return response()->json($result);
+        return $this->respond(fn () => $this->ai->text($data['provider'], $data['prompt'], Arr::except($data, ['provider', 'prompt']), $request->user()->getKey()));
     }
 
-    public function image(Request $request): JsonResponse
+    public function image(Request $request): BaseHttpResponse
     {
         $this->authorizeEditor($request);
         $data = $request->validate([
@@ -52,19 +46,13 @@ class BlogAiController extends BaseController
             'style' => ['nullable', 'string'],
         ]);
 
-        try {
-            $result = $this->ai->image($data['prompt'], (string) ($data['shape'] ?? 'landscape'), (string) ($data['style'] ?? 'photo'), $request->user()->getKey());
-        } catch (\RuntimeException $e) {
-            return response()->json(['message' => $e->getMessage()], 422);
-        }
-
-        return response()->json($result);
+        return $this->respond(fn () => $this->ai->image($data['prompt'], (string) ($data['shape'] ?? 'landscape'), (string) ($data['style'] ?? 'photo'), $request->user()->getKey()));
     }
 
     public function settings(Request $request): View
     {
         $this->authorizeSuperUser($request);
-        $this->pageTitle('IA para el blog');
+        $this->pageTitle(trans('torns.ai_settings_title'));
 
         return view('admin.ai.settings', [
             'ai' => $this->ai,
@@ -72,7 +60,7 @@ class BlogAiController extends BaseController
         ]);
     }
 
-    public function saveSettings(Request $request): RedirectResponse
+    public function saveSettings(Request $request): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
         $data = $request->validate([
@@ -87,16 +75,27 @@ class BlogAiController extends BaseController
         $data['torns_ai_enabled'] = $request->boolean('torns_ai_enabled') ? '1' : '0';
         $this->ai->save($data);
 
-        return redirect()->route('torns-ai.settings')->with('ai_ok', 'Ajustes guardados.');
+        return $this->httpResponse()->setNextRoute('torns-ai.settings')->withUpdatedSuccessMessage();
     }
 
-    public function test(Request $request): RedirectResponse
+    public function test(Request $request): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
 
-        return redirect()->route('torns-ai.settings')->with('ai_tests', $this->ai->test($request->user()->getKey()) ?: [
-            'none' => ['ok' => false, 'message' => 'No hay ningún servicio activo: activa la IA y añade al menos una clave.'],
-        ]);
+        return $this->httpResponse()
+            ->setNextRoute('torns-ai.settings')
+            ->with(['ai_tests' => $this->ai->test($request->user()->getKey()) ?: [
+                'none' => ['ok' => false, 'message' => trans('torns.ai_test_none')],
+            ]]);
+    }
+
+    protected function respond(callable $action): BaseHttpResponse
+    {
+        try {
+            return $this->httpResponse()->setData($action());
+        } catch (RuntimeException $e) {
+            return $this->httpResponse()->setError()->setCode(422)->setMessage($e->getMessage());
+        }
     }
 
     protected function authorizeEditor(Request $request): void

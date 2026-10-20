@@ -50,7 +50,7 @@ if (! function_exists('torns_strip_default_schemas')) {
     /**
      * Remove the JSON-LD blocks Botble adds by itself (WebSite, the page
      * Organization with an empty logo, the blog NewsArticle): the theme's
-     * @graph describes the same things once, with @ids. Breadcrumbs stay.
+     * JSON-LD graph describes the same things once, with ids. Breadcrumbs stay.
      */
     function torns_strip_default_schemas(string $html): string
     {

@@ -2,8 +2,8 @@
 
 use Botble\Theme\Events\RenderingThemeOptionSettings;
 use Botble\Theme\ThemeOption\Fields\RepeaterField;
-use Botble\Theme\ThemeOption\Fields\TextField;
 use Botble\Theme\ThemeOption\Fields\TextareaField;
+use Botble\Theme\ThemeOption\Fields\TextField;
 use Botble\Theme\ThemeOption\Fields\ToggleField;
 use Botble\Theme\ThemeOption\ThemeOptionSection;
 

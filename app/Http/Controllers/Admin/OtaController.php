@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Ota\OtaUpdater;
 use App\Support\SiteContent;
+use Botble\Base\Facades\Assets;
 use Botble\Base\Http\Controllers\BaseController;
-use Illuminate\Http\RedirectResponse;
+use Botble\Base\Http\Responses\BaseHttpResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
@@ -24,7 +25,9 @@ class OtaController extends BaseController
     public function index(Request $request): View
     {
         $this->authorizeSuperUser($request);
-        $this->pageTitle('Actualizaciones de la web');
+        $this->pageTitle(trans('torns.ota_title'));
+        Assets::addStylesDirectly('vendor/torns/css/ota.css')
+            ->addScriptsDirectly('vendor/torns/js/confirm-forms.js');
 
         return view('admin.ota', [
             'current' => $this->ota->currentVersion(),
@@ -38,62 +41,65 @@ class OtaController extends BaseController
         ]);
     }
 
-    public function check(Request $request): RedirectResponse
+    public function check(Request $request): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
 
-        return $this->run(fn () => $this->ota->check()
-            ? 'Hay una versión nueva lista para aplicar.'
-            : 'La web está al día.');
+        return $this->run(fn () => trans($this->ota->check() ? 'torns.ota_msg_available' : 'torns.ota_msg_up_to_date'));
     }
 
-    public function apply(Request $request): RedirectResponse
+    public function apply(Request $request): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
 
         return $this->run(function () use ($request) {
-            $result = $this->ota->apply($request->user()->name ?? (string) $request->user()->getKey());
+            $result = $this->ota->apply($this->userName($request));
             $kept = count($result['report']['conflicts']);
 
-            return "Versión {$result['version']} aplicada."
-                . ($kept ? " {$kept} página(s) o menú(s) editados en /admin no se han tocado: revísalos abajo." : '');
+            return trans('torns.ota_msg_applied', ['version' => $result['version']])
+                . ($kept ? ' ' . trans('torns.ota_msg_kept', ['count' => $kept]) : '');
         });
     }
 
-    public function rollback(Request $request): RedirectResponse
+    public function rollback(Request $request): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
 
         return $this->run(function () use ($request) {
-            $version = $this->ota->rollback($request->user()->name ?? (string) $request->user()->getKey());
+            $version = $this->ota->rollback($this->userName($request));
 
-            return 'Restaurada la versión anterior' . ($version ? " ({$version})" : '') . '.';
+            return trans('torns.ota_msg_rolled_back', ['version' => $version ?: trans('torns.ota_manual_install')]);
         });
     }
 
     /** Overwrite the pages and menus kept because of /admin edits with the repository version. */
-    public function useRepositoryContent(Request $request, SiteContent $content): RedirectResponse
+    public function useRepositoryContent(Request $request, SiteContent $content): BaseHttpResponse
     {
         $this->authorizeSuperUser($request);
 
         return $this->run(function () use ($content) {
             $report = $content->sync(force: true);
 
-            return 'Contenido del repositorio aplicado: ' . (count($report['updated']) + count($report['created'])) . ' página(s) o menú(s) actualizados.';
+            return trans('torns.ota_msg_repository_content', ['count' => count($report['updated']) + count($report['created'])]);
         });
     }
 
-    protected function run(callable $action): RedirectResponse
+    protected function run(callable $action): BaseHttpResponse
     {
-        try {
-            $message = $action();
+        $response = $this->httpResponse()->setNextRoute('torns-ota.index');
 
-            return redirect()->route('torns-ota.index')->with('ota_ok', $message);
+        try {
+            return $response->setMessage($action());
         } catch (\Throwable $e) {
             Log::error('Torns OTA failed', ['error' => $e->getMessage()]);
 
-            return redirect()->route('torns-ota.index')->with('ota_error', $e->getMessage());
+            return $response->setError()->setMessage($e->getMessage());
         }
+    }
+
+    protected function userName(Request $request): string
+    {
+        return $request->user()->name ?? (string) $request->user()->getKey();
     }
 
     protected function authorizeSuperUser(Request $request): void

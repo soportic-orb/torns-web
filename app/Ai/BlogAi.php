@@ -23,14 +23,13 @@ use RuntimeException;
 class BlogAi
 {
     public const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
+
     public const OPENAI_URL = 'https://api.openai.com/v1';
 
-    public const FORMATS = [
-        'article' => 'Artículo completo',
-        'title' => 'Título',
-        'summary' => 'Resumen (descripción)',
-    ];
+    /** Labels: torns.ai_format_<key>. */
+    public const FORMATS = ['article', 'title', 'summary'];
 
+    /** Tone as written in the prompt; labels: torns.ai_tone_<key>. */
     public const TONES = [
         'cercano' => 'Cercano',
         'informativo' => 'Informativo',
@@ -39,11 +38,12 @@ class BlogAi
     ];
 
     public const LENGTHS = [
-        'corto' => ['label' => 'Corto', 'prompt' => 'Unas 400 palabras, con 2 o 3 apartados.'],
-        'medio' => ['label' => 'Medio', 'prompt' => 'Unas 800 palabras, con 3 o 4 apartados.'],
-        'largo' => ['label' => 'Largo', 'prompt' => 'Unas 1.300 palabras, con 4 a 6 apartados.'],
+        'corto' => 'Unas 400 palabras, con 2 o 3 apartados.',
+        'medio' => 'Unas 800 palabras, con 3 o 4 apartados.',
+        'largo' => 'Unas 1.300 palabras, con 4 a 6 apartados.',
     ];
 
+    /** Language as named in the prompt; labels: torns.ai_lang_<key>. */
     public const LANGUAGES = [
         'es' => 'castellano',
         'ca' => 'catalán',
@@ -52,14 +52,14 @@ class BlogAi
     ];
 
     public const SHAPES = [
-        'landscape' => ['label' => 'Horizontal', 'size' => '1536x1024'],
-        'square' => ['label' => 'Cuadrada', 'size' => '1024x1024'],
+        'landscape' => '1536x1024',
+        'square' => '1024x1024',
     ];
 
     public const STYLES = [
-        'photo' => ['label' => 'Fotografía', 'prompt' => 'Realistic editorial photograph, natural light, clean composition, Spanish healthcare setting.'],
-        'illustration' => ['label' => 'Ilustración', 'prompt' => 'Modern editorial illustration, soft colours with touches of teal #227A96 and warm yellow #F5A623.'],
-        'flat' => ['label' => 'Dibujo plano', 'prompt' => 'Flat minimalist illustration, simple shapes, light background, teal #227A96, navy #0F2430 and warm yellow #F5A623.'],
+        'photo' => 'Realistic editorial photograph, natural light, clean composition, Spanish healthcare setting.',
+        'illustration' => 'Modern editorial illustration, soft colours with touches of teal #227A96 and warm yellow #F5A623.',
+        'flat' => 'Flat minimalist illustration, simple shapes, light background, teal #227A96, navy #0F2430 and warm yellow #F5A623.',
     ];
 
     /** Setting key => fallback in config/torns-ai.php (.env). */
@@ -205,13 +205,13 @@ class BlogAi
     public function text(string $provider, string $prompt, array $opts, ?int $userId = null): array
     {
         if (! isset($this->textProviders()[$provider])) {
-            throw new RuntimeException('Este servicio de IA no está configurado. Pídelo a una persona administradora.');
+            throw new RuntimeException(trans('torns.ai_err_not_configured'));
         }
         $prompt = $this->plain($prompt, 4000);
         if ($prompt === '') {
-            throw new RuntimeException('Escribe sobre qué quieres que escriba la IA.');
+            throw new RuntimeException(trans('torns.ai_err_prompt'));
         }
-        $format = isset(self::FORMATS[$opts['format'] ?? '']) ? $opts['format'] : 'article';
+        $format = in_array($opts['format'] ?? '', self::FORMATS, true) ? $opts['format'] : 'article';
         $system = $this->system($format, $opts);
         $message = $this->userMessage($prompt, $opts);
         $max = $format === 'article' ? 6000 : 400;
@@ -229,7 +229,7 @@ class BlogAi
     {
         $language = self::LANGUAGES[$opts['language'] ?? ''] ?? self::LANGUAGES['es'];
         $tone = self::TONES[$opts['tone'] ?? ''] ?? self::TONES['cercano'];
-        $length = (self::LENGTHS[$opts['length'] ?? ''] ?? self::LENGTHS['medio'])['prompt'];
+        $length = self::LENGTHS[$opts['length'] ?? ''] ?? self::LENGTHS['medio'];
 
         $base = 'Escribes para el blog de Torns (www.torns.app), leído por profesionales sanitarios en España que trabajan a turnos y guardias. '
             . "Escribe en {$language} correcto y natural, aunque la petición esté en otro idioma. Tono: {$tone}. "
@@ -267,7 +267,7 @@ class BlogAi
     {
         $raw = trim((string) preg_replace('/^```[a-z]*\s*|\s*```$/i', '', trim($raw)));
         if ($raw === '') {
-            throw new RuntimeException('La IA no ha devuelto ningún texto. Vuelve a intentarlo.');
+            throw new RuntimeException(trans('torns.ai_err_empty'));
         }
         if ($format !== 'article') {
             $quotes = " \t\"'«»“”*#";
@@ -283,7 +283,7 @@ class BlogAi
         }
         $html = $this->clean($raw);
         if ($html === '') {
-            throw new RuntimeException('La IA no ha devuelto un texto aprovechable. Vuelve a intentarlo.');
+            throw new RuntimeException(trans('torns.ai_err_unusable'));
         }
 
         return ['html' => $html, 'text' => trim(strip_tags($html))];
@@ -307,10 +307,10 @@ class BlogAi
 
         $res = Http::withHeaders($headers)->acceptJson()->timeout(180)->post(self::ANTHROPIC_URL, $body);
         if ($res->failed()) {
-            throw new RuntimeException('Claude no ha respondido: ' . ($res->json('error.message') ?: 'error ' . $res->status()) . '.');
+            throw new RuntimeException(trans('torns.ai_err_claude', ['error' => $res->json('error.message') ?: 'error ' . $res->status()]));
         }
         if ($res->json('stop_reason') === 'refusal') {
-            throw new RuntimeException('Claude no ha querido generar este texto. Prueba a pedirlo de otra manera.');
+            throw new RuntimeException(trans('torns.ai_err_claude_refusal'));
         }
         $text = '';
         foreach ((array) $res->json('content', []) as $block) {
@@ -332,7 +332,7 @@ class BlogAi
         }
         $res = Http::withToken($this->get('torns_ai_openai_key'))->acceptJson()->timeout(180)->post(self::OPENAI_URL . '/responses', $body);
         if ($res->failed()) {
-            throw new RuntimeException('ChatGPT no ha respondido: ' . ($res->json('error.message') ?: 'error ' . $res->status()) . '.');
+            throw new RuntimeException(trans('torns.ai_err_openai', ['error' => $res->json('error.message') ?: 'error ' . $res->status()]));
         }
         $text = (string) ($res->json('output_text') ?? '');
         if ($text === '') {
@@ -341,7 +341,7 @@ class BlogAi
                     if (($content['type'] ?? '') === 'output_text') {
                         $text .= (string) ($content['text'] ?? '');
                     } elseif (($content['type'] ?? '') === 'refusal') {
-                        throw new RuntimeException('ChatGPT no ha querido generar este texto. Prueba a pedirlo de otra manera.');
+                        throw new RuntimeException(trans('torns.ai_err_openai_refusal'));
                     }
                 }
             }
@@ -360,14 +360,14 @@ class BlogAi
     public function image(string $prompt, string $shape, string $style, ?int $userId = null): array
     {
         if (! $this->imageReady()) {
-            throw new RuntimeException('Para crear imágenes hace falta la clave de OpenAI (Claude no genera imágenes). Pídelo a una persona administradora.');
+            throw new RuntimeException(trans('torns.ai_err_image_key'));
         }
         $prompt = $this->plain($prompt, 3000);
         if ($prompt === '') {
-            throw new RuntimeException('Describe la imagen que quieres.');
+            throw new RuntimeException(trans('torns.ai_err_image_prompt'));
         }
-        $size = (self::SHAPES[$shape] ?? self::SHAPES['landscape'])['size'];
-        $full = $prompt . "\n\n" . (self::STYLES[$style] ?? self::STYLES['photo'])['prompt']
+        $size = self::SHAPES[$shape] ?? self::SHAPES['landscape'];
+        $full = $prompt . "\n\n" . (self::STYLES[$style] ?? self::STYLES['photo'])
             . ' Featured image for an article on a blog for healthcare workers in Spain who work shifts: respectful and positive,'
             . ' no blood, no injuries, no identifiable patients, no hospital brand names.'
             . ' No text, letters, logos or watermarks in the image.';
@@ -385,12 +385,12 @@ class BlogAi
         if ($res->failed()) {
             $message = (string) ($res->json('error.message') ?: 'error ' . $res->status());
             throw new RuntimeException(str_contains(strtolower($message), 'safety') || $res->json('error.code') === 'moderation_blocked'
-                ? 'OpenAI no ha querido crear esta imagen. Prueba a describirla de otra manera.'
-                : 'OpenAI no ha creado la imagen: ' . $message . '.');
+                ? trans('torns.ai_err_image_moderation')
+                : trans('torns.ai_err_image_failed', ['error' => $message]));
         }
         $bytes = base64_decode((string) $res->json('data.0.b64_json'), true);
         if (! $bytes) {
-            throw new RuntimeException('OpenAI no ha devuelto ninguna imagen. Vuelve a intentarlo.');
+            throw new RuntimeException(trans('torns.ai_err_image_empty'));
         }
 
         $tmp = tempnam(sys_get_temp_dir(), 'ai') . '.jpg';
@@ -401,7 +401,7 @@ class BlogAi
             @unlink($tmp);
         }
         if (! empty($result['error']) || empty($result['data'])) {
-            throw new RuntimeException('No se ha podido guardar la imagen en la biblioteca de medios: ' . ($result['message'] ?? '') . '.');
+            throw new RuntimeException(trans('torns.ai_err_image_save', ['error' => $result['message'] ?? '']));
         }
         $path = (string) $result['data']->url;
         Log::info('Torns blog AI: image', ['user' => $userId, 'model' => $model, 'path' => $path]);
@@ -419,7 +419,8 @@ class BlogAi
             try {
                 $result = $this->text($provider, 'Escribe solo la palabra «Correcto».', ['format' => 'title'], $userId);
                 $model = $provider === 'claude' ? $this->claudeModel() : $this->openaiTextModel();
-                $out[$provider] = ['ok' => true, 'message' => "{$label} ({$model}) responde: «{$result['text']}»." . ($provider === 'openai' ? ' Imágenes con ' . $this->openaiImageModel() . '.' : '')];
+                $out[$provider] = ['ok' => true, 'message' => trans('torns.ai_test_ok', ['service' => $label, 'model' => $model, 'answer' => $result['text']])
+                    . ($provider === 'openai' ? ' ' . trans('torns.ai_test_images', ['model' => $this->openaiImageModel()]) : '')];
             } catch (\Throwable $e) {
                 $out[$provider] = ['ok' => false, 'message' => $e->getMessage()];
             }

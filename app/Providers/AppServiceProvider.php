@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Ai\BlogAi;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
+use Botble\Base\Facades\Assets;
 use Botble\Base\Facades\PanelSectionManager;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
 use Botble\Base\Forms\Fields\HtmlField;
@@ -13,10 +14,10 @@ use Botble\Base\PanelSections\PanelSectionItem;
 use Botble\Base\PanelSections\System\SystemPanelSection;
 use Botble\Blog\Forms\PostForm;
 use Botble\Blog\Models\Post;
+use Botble\Installer\Events\EnvironmentSaved;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Setting\PanelSections\SettingOthersPanelSection;
-use Botble\Installer\Events\EnvironmentSaved;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
@@ -62,9 +63,9 @@ class AppServiceProvider extends ServiceProvider
             PanelSectionManager::registerItem(
                 SystemPanelSection::class,
                 fn () => PanelSectionItem::make('torns-ota')
-                    ->setTitle('Actualizaciones de la web')
+                    ->setTitle(trans('torns.ota_title'))
                     ->withIcon('ti ti-cloud-download')
-                    ->withDescription('Aplica las nuevas versiones del tema y del contenido publicadas desde el repositorio.')
+                    ->withDescription(trans('torns.ota_panel_description'))
                     ->withPriority(5)
                     ->withRoute('torns-ota.index')
             );
@@ -79,9 +80,9 @@ class AppServiceProvider extends ServiceProvider
             PanelSectionManager::registerItem(
                 SettingOthersPanelSection::class,
                 fn () => PanelSectionItem::make('torns-ai')
-                    ->setTitle('IA para el blog')
+                    ->setTitle(trans('torns.ai_settings_title'))
                     ->withIcon('ti ti-sparkles')
-                    ->withDescription('Claude y ChatGPT para redactar las publicaciones, y OpenAI para sus imágenes destacadas.')
+                    ->withDescription(trans('torns.ai_panel_description'))
                     ->withPriority(150)
                     ->withRoute('torns-ai.settings')
             );
@@ -104,17 +105,20 @@ class AppServiceProvider extends ServiceProvider
                 ?: (class_exists(Language::class) ? Language::getCurrentAdminLocaleCode() : null)
                 ?: 'es';
 
+            Assets::addStylesDirectly('vendor/torns/css/blog-ai.css')
+                ->addScriptsDirectly('vendor/torns/js/blog-ai.js');
+
             return $form->addBefore('content', 'torns_ai_panel', HtmlField::class, HtmlFieldOption::make()->content(view('admin.ai.post-panel', [
                 'providers' => $ai->textProviders(),
                 'defaultProvider' => $ai->defaultTextProvider(),
                 'imageReady' => $ai->imageReady(),
                 'language' => array_key_exists($language, BlogAi::LANGUAGES) ? $language : 'es',
                 'formats' => BlogAi::FORMATS,
-                'tones' => BlogAi::TONES,
-                'lengths' => BlogAi::LENGTHS,
-                'languages' => BlogAi::LANGUAGES,
-                'shapes' => BlogAi::SHAPES,
-                'styles' => BlogAi::STYLES,
+                'tones' => array_keys(BlogAi::TONES),
+                'lengths' => array_keys(BlogAi::LENGTHS),
+                'languages' => array_keys(BlogAi::LANGUAGES),
+                'shapes' => array_keys(BlogAi::SHAPES),
+                'styles' => array_keys(BlogAi::STYLES),
             ])->render())->toArray());
         }, 120, 2);
     }
