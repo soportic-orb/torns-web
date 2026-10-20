@@ -147,7 +147,8 @@ const initTornsAi = () => {
         const json = await res.json().catch(() => ({}))
         if (!res.ok || json.error) {
             const firstError = json.errors ? Object.values(json.errors)[0]?.[0] : null
-            throw new Error(firstError || json.message || `Error ${res.status}`)
+            const timeout = [502, 503, 504, 524].includes(res.status) && t.translateTimeout
+            throw new Error(firstError || json.message || timeout || `Error ${res.status}`)
         }
         return json.data
     }
@@ -156,22 +157,47 @@ const initTornsAi = () => {
     async function translate() {
         const button = $('[data-ai-translate]')
         const summary = $('[data-ai-translate-summary]')
+        const progress = $('[data-ai-translate-progress]')
+        const bar = $('[data-ai-translate-bar]')
         const languages = [...dialog.querySelectorAll('[data-ai-translate-language]:checked')].map((el) => el.value)
+        const labelOf = (code) => dialog.querySelector(`label[for="torns-ai-tr-${code}"]`)?.firstChild?.textContent.trim() || code
+        const badge = (code, text, tone) => {
+            const el = $(`[data-ai-translate-status="${code}"]`)
+            el.hidden = false
+            el.className = `badge ms-2 bg-${tone}-lt text-${tone}`
+            el.textContent = text
+        }
+        const setProgress = (done) => {
+            const percent = Math.round((done / languages.length) * 100)
+            bar.style.width = `${Math.max(percent, 4)}%`
+            bar.parentElement.setAttribute('aria-valuenow', String(percent))
+            $('[data-ai-translate-count]').textContent = t.translateCount.replace(':done', done).replace(':total', languages.length)
+        }
+
+        summary.className = 'small'
         if (!languages.length) {
+            summary.classList.add('text-danger')
             summary.textContent = t.translateNone
             return
         }
+
         button.disabled = true
+        $('[data-ai-translate-spinner]').hidden = false
+        $('[data-ai-translate-label]').textContent = t.translateRunning
         summary.textContent = ''
-        dialog.querySelectorAll('[data-ai-translate-status]').forEach((el) => {
-            el.textContent = ''
-            el.className = 'small ms-2'
-        })
+        dialog.querySelectorAll('[data-ai-translate-status]').forEach((el) => { el.hidden = true })
+        languages.forEach((code) => badge(code, t.translatePending, 'secondary'))
+        progress.hidden = false
+        bar.classList.add('progress-bar-animated', 'progress-bar-striped')
+        bar.classList.remove('bg-success', 'bg-warning')
+        $('[data-ai-translate-wait]').hidden = false
+        setProgress(0)
+
         let saved = 0
-        for (const language of languages) {
-            const status = $(`[data-ai-translate-status="${language}"]`)
-            status.textContent = t.translating
-            status.classList.add('text-secondary')
+        let failed = 0
+        for (const [index, language] of languages.entries()) {
+            $('[data-ai-translate-current]').textContent = t.translateCurrent.replace(':language', labelOf(language))
+            badge(language, t.translating, 'blue')
             try {
                 const result = await post(root.dataset.translateUrl, {
                     post_id: root.dataset.postId,
@@ -179,17 +205,27 @@ const initTornsAi = () => {
                     provider: $('#torns-ai-tr-provider').value,
                     overwrite: $('#torns-ai-tr-overwrite').checked,
                 })
-                status.classList.remove('text-secondary')
-                status.classList.add(result.status === 'saved' ? 'text-success' : 'text-secondary')
-                status.textContent = result.status === 'saved' ? t.translated : t.skipped
-                if (result.status === 'saved') saved++
+                if (result.status === 'saved') {
+                    saved++
+                    badge(language, t.translated, 'green')
+                } else {
+                    badge(language, t.skipped, 'secondary')
+                }
             } catch (error) {
-                status.classList.remove('text-secondary')
-                status.classList.add('text-danger')
-                status.textContent = error.message
+                failed++
+                badge(language, error.message, 'red')
             }
+            setProgress(index + 1)
         }
-        summary.textContent = t.translateDone.replace(':count', saved)
+
+        bar.classList.remove('progress-bar-animated', 'progress-bar-striped')
+        bar.classList.add(failed ? 'bg-warning' : 'bg-success')
+        $('[data-ai-translate-current]').textContent = ''
+        $('[data-ai-translate-wait]').hidden = true
+        summary.classList.add(failed ? 'text-warning' : 'text-success')
+        summary.textContent = t.translateDone.replace(':count', saved) + (failed ? ' ' + t.translateFailed.replace(':count', failed) : '')
+        $('[data-ai-translate-spinner]').hidden = true
+        $('[data-ai-translate-label]').textContent = t.translateRun
         button.disabled = false
     }
 

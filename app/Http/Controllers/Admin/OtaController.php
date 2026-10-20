@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Ota\OtaUpdater;
 use App\Support\SiteContent;
+use App\Support\VersionedAsset;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Http\Controllers\BaseController;
 use Botble\Base\Http\Responses\BaseHttpResponse;
@@ -26,8 +27,8 @@ class OtaController extends BaseController
     {
         $this->authorizeSuperUser($request);
         $this->pageTitle(trans('torns.ota_title'));
-        Assets::addStylesDirectly('vendor/torns/css/ota.css')
-            ->addScriptsDirectly('vendor/torns/js/confirm-forms.js');
+        Assets::addStylesDirectly(VersionedAsset::path('vendor/torns/css/ota.css'))
+            ->addScriptsDirectly(VersionedAsset::path('vendor/torns/js/confirm-forms.js'));
 
         return view('admin.ota', [
             'current' => $this->ota->currentVersion(),
