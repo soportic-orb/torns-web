@@ -169,6 +169,16 @@ if (! function_exists('torns_comparison_cell')) {
                 . '</span>';
         }
 
+        // Paid plan: the feature is there, with the plan next to the check.
+        if ($normalized === 'pro') {
+            $color = $isTorns ? 'text-torns-primary' : 'text-torns-ink/70';
+
+            return '<span class="inline-flex items-center justify-center gap-1.5 ' . $color . '">'
+                . '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>'
+                . '<span class="rounded-full bg-torns-primary/10 px-2 py-0.5 text-xs font-semibold text-torns-primary-dark">' . e(__('Pro')) . '</span>'
+                . '</span>';
+        }
+
         if (in_array($normalized, ['no', '0', 'false'], true)) {
             return '<span class="inline-flex items-center justify-center text-torns-ink/30" role="img" aria-label="' . e(__('No')) . '">'
                 . '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>'
