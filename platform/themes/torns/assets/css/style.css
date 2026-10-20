@@ -358,9 +358,30 @@ body.drawer-locked {
     @apply cursor-default opacity-40 hover:border-torns-ink/10 hover:text-torns-ink/70;
 }
 
-/* Contact form (plugin markup restyled, no plugin CSS/JS loaded) */
+/* Contact form (plugin markup restyled over contact-public.css) */
 .torns-contact-form .contact-form-group {
     @apply mb-4;
+}
+
+/* The plugin floats the half-width columns from 992px and does not clear
+   them: the full-width field after them lay underneath and its label took
+   the clicks meant for Name and Email. A grid has no floats to clear
+   (.contact-form in the selectors: contact-public.css loads after ours). */
+.torns-contact-form .contact-form .contact-form-row {
+    @apply mx-0 grid grid-cols-1 gap-x-4 md:grid-cols-2;
+}
+
+.torns-contact-form .contact-form .contact-form-row::before,
+.torns-contact-form .contact-form .contact-form-row::after {
+    content: none;
+}
+
+.torns-contact-form .contact-form [class*='contact-column-'] {
+    @apply float-none w-auto px-0;
+}
+
+.torns-contact-form .contact-form .contact-column-12 {
+    @apply md:col-span-2;
 }
 
 .torns-contact-form label {
