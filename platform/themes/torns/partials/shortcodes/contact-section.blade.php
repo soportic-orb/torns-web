@@ -3,6 +3,9 @@
     $subtitle = $shortcode->subtitle ?: __('El equipo de Torns está a tu disposición. Utiliza el formulario para iniciar una conversación con nosotros.');
     $email = theme_option('contact_email', 'hola@torns.app');
     $supportUrl = theme_option('support_url', 'https://soporte.torns.app');
+    // Without JavaScript the form posts and comes back with the success message.
+    $sent = session()->has('success_msg');
+    $home = torns_current_locale() === 'es' ? url('/') : url(torns_current_locale());
 @endphp
 
 <section class="py-14 lg:py-20">
@@ -43,3 +46,23 @@
         </div>
     </div>
 </section>
+
+{{-- Confirmation screen: shown by main.js when the form is sent (contact-form.submitted). --}}
+<div
+    class="contact-sent fixed inset-0 z-[60] flex items-center justify-center bg-white/95 px-6 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="contact-sent-title"
+    data-contact-sent
+    @unless ($sent) hidden @endunless
+>
+    <canvas class="pointer-events-none fixed inset-0 h-full w-full" data-confetti aria-hidden="true"></canvas>
+    <div class="relative mx-auto max-w-2xl text-center">
+        <p class="contact-sent__emoji text-7xl sm:text-8xl" aria-hidden="true">🎉</p>
+        <h2 class="mt-6 font-display text-3xl font-bold leading-tight tracking-tight [text-wrap:balance] sm:text-4xl lg:text-5xl" id="contact-sent-title" tabindex="-1" style="outline: none">{{ __('¡Genial! Hemos recibido tu mensaje y contactaremos contigo en breve.') }}</h2>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href="{{ $home }}" class="btn-primary px-6 py-3 text-base">{{ __('Volver al inicio') }}</a>
+            <button type="button" class="btn-secondary px-6 py-3 text-base" data-contact-sent-close>{{ __('Cerrar') }}</button>
+        </div>
+    </div>
+</div>
