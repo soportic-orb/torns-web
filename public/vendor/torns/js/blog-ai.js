@@ -42,7 +42,10 @@ const initTornsAi = () => {
         dialog.querySelectorAll('[data-ai-mode]').forEach((el) => {
             el.hidden = el.dataset.aiMode !== mode
         })
-        $('[data-ai-heading]').textContent = mode === 'image' ? t.image : t.write
+        $('[data-ai-heading]').textContent = { image: t.image, translate: t.translate }[mode] || t.write
+        dialog.querySelectorAll('[data-ai-common]').forEach((el) => {
+            el.hidden = mode === 'translate'
+        })
         $('[data-ai-result]').hidden = true
         $('[data-ai-status]').textContent = ''
         const title = field('name')?.value?.trim()
@@ -135,6 +138,61 @@ const initTornsAi = () => {
             },
         }
 
+    const post = async (url, body) => {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'X-CSRF-TOKEN': csrf },
+            body: JSON.stringify(body),
+        })
+        const json = await res.json().catch(() => ({}))
+        if (!res.ok || json.error) {
+            const firstError = json.errors ? Object.values(json.errors)[0]?.[0] : null
+            throw new Error(firstError || json.message || `Error ${res.status}`)
+        }
+        return json.data
+    }
+
+    // One request per language: each translation is saved as soon as it is ready.
+    async function translate() {
+        const button = $('[data-ai-translate]')
+        const summary = $('[data-ai-translate-summary]')
+        const languages = [...dialog.querySelectorAll('[data-ai-translate-language]:checked')].map((el) => el.value)
+        if (!languages.length) {
+            summary.textContent = t.translateNone
+            return
+        }
+        button.disabled = true
+        summary.textContent = ''
+        dialog.querySelectorAll('[data-ai-translate-status]').forEach((el) => {
+            el.textContent = ''
+            el.className = 'small ms-2'
+        })
+        let saved = 0
+        for (const language of languages) {
+            const status = $(`[data-ai-translate-status="${language}"]`)
+            status.textContent = t.translating
+            status.classList.add('text-secondary')
+            try {
+                const result = await post(root.dataset.translateUrl, {
+                    post_id: root.dataset.postId,
+                    language,
+                    provider: $('#torns-ai-tr-provider').value,
+                    overwrite: $('#torns-ai-tr-overwrite').checked,
+                })
+                status.classList.remove('text-secondary')
+                status.classList.add(result.status === 'saved' ? 'text-success' : 'text-secondary')
+                status.textContent = result.status === 'saved' ? t.translated : t.skipped
+                if (result.status === 'saved') saved++
+            } catch (error) {
+                status.classList.remove('text-secondary')
+                status.classList.add('text-danger')
+                status.textContent = error.message
+            }
+        }
+        summary.textContent = t.translateDone.replace(':count', saved)
+        button.disabled = false
+    }
+
     async function generate() {
         const status = $('[data-ai-status]')
         const button = $('[data-ai-generate]')
@@ -143,19 +201,10 @@ const initTornsAi = () => {
         status.classList.remove('text-danger')
         status.textContent = mode === 'image' ? t.creating : t.writing
         try {
-            const res = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'X-CSRF-TOKEN': csrf },
-                body: JSON.stringify(body),
-            })
-            const json = await res.json().catch(() => ({}))
-            if (!res.ok || json.error) {
-                const firstError = json.errors ? Object.values(json.errors)[0]?.[0] : null
-                throw new Error(firstError || json.message || `Error ${res.status}`)
-            }
+            const data = await post(url, body)
             status.textContent = ''
             $('[data-ai-result]').hidden = false
-            mode === 'image' ? showImage(json.data) : showText(body.format, json.data)
+            mode === 'image' ? showImage(data) : showText(body.format, data)
         } catch (error) {
             status.textContent = error.message
             status.classList.add('text-danger')
@@ -170,6 +219,7 @@ const initTornsAi = () => {
         dialog.showModal()
     }))
     $('#torns-ai-format').addEventListener('change', syncFormat)
+    $('[data-ai-translate]')?.addEventListener('click', translate)
     $('[data-ai-close]').addEventListener('click', () => dialog.close())
     $('[data-ai-generate]').addEventListener('click', generate)
 }

@@ -1,7 +1,10 @@
 <?php
 
+use App\Ai\BlogAi;
+use App\Ai\PostTranslator;
 use App\Ota\OtaUpdater;
 use App\Support\SiteContent;
+use Botble\Blog\Models\Post;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -59,6 +62,38 @@ Artisan::command('torns:content:sync {--force : Overwrite pages and menus edited
         $this->warn("Kept the /admin edit of {$item}.");
     }
 })->purpose('Write content/site pages and menus into the database');
+
+/*
+|--------------------------------------------------------------------------
+| Blog translation with AI (docs/blog-ai.md)
+|--------------------------------------------------------------------------
+*/
+
+Artisan::command('torns:blog:translate {post?* : Post ids (all posts if empty)} {--lang=* : Target languages (all if empty)} {--provider= : claude or openai} {--overwrite : Replace existing translations}', function (BlogAi $ai, PostTranslator $translator) {
+    $provider = $this->option('provider') ?: $ai->defaultTextProvider();
+    if (! $provider || ! isset($ai->textProviders()[$provider])) {
+        $this->error('No AI text service is enabled and configured (Admin → Settings → AI for the blog).');
+
+        return 1;
+    }
+    $languages = $this->option('lang') ?: $translator->languages();
+    $posts = Post::query()->when($this->argument('post'), fn ($query, $ids) => $query->whereIn('id', $ids))->orderBy('id')->get();
+
+    $failed = 0;
+    foreach ($posts as $post) {
+        foreach ($languages as $language) {
+            try {
+                $result = $translator->translate($post, $language, $provider, (bool) $this->option('overwrite'));
+                $this->line("#{$post->getKey()} {$language}: {$result['status']}");
+            } catch (Throwable $e) {
+                $failed++;
+                $this->error("#{$post->getKey()} {$language}: {$e->getMessage()}");
+            }
+        }
+    }
+
+    return $failed ? 1 : 0;
+})->purpose('Translate blog posts from Spanish with AI (skips existing translations unless --overwrite)');
 
 // The update is applied by hand from the panel; the check only tells it there is one.
 Schedule::command('torns:ota:check')->hourly()->withoutOverlapping();

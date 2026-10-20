@@ -1,7 +1,8 @@
 # IA para el blog
 
 El editor de publicaciones (Blog → Publicaciones) puede redactar con IA el
-cuerpo, el título y el resumen de una noticia, y crear su imagen destacada.
+cuerpo, el título y el resumen de una noticia, crear su imagen destacada y
+traducirla al catalán, gallego y euskera.
 Es el mismo planteamiento que el editor de Mailing del Tauler de iSEM.
 
 ## Activarla
@@ -23,7 +24,7 @@ También se pueden dar por `.env` (los ajustes del panel tienen prioridad):
 
 ## En el editor
 
-Encima del contenido aparecen dos botones:
+Encima del contenido aparecen hasta tres botones:
 
 - **✨ Escribir con IA**: petición libre, servicio (Claude o ChatGPT), qué
   escribir (artículo completo, título o resumen), idioma (por defecto el de
@@ -37,7 +38,43 @@ Encima del contenido aparecen dos botones:
   «Usar como imagen destacada», queda puesta en el campo Imagen (hay que
   guardar la publicación).
 
-Nada se publica solo: la persona que edita revisa, ajusta y guarda.
+- **✨ Traducir con IA** (en una publicación ya guardada, desde la versión en
+  castellano): idiomas (los activos, salvo el principal), servicio y «Sustituir
+  las traducciones que ya existen» (apagado: las que ya hay no se tocan).
+  Traduce un idioma tras otro y **guarda** cada traducción en cuanto llega;
+  el diálogo indica el estado de cada uno. Se revisan en la pestaña de cada
+  idioma del editor.
+
+Escribir y crear la imagen no publica nada solo: la persona que edita revisa,
+ajusta y guarda. La traducción sí se guarda, en la versión de cada idioma.
+
+## Traducción
+
+`App\Ai\PostTranslator` parte de la versión **guardada** en el idioma
+principal (lo que no se haya guardado no se traduce) y escribe donde lo hace el
+plugin language-advanced de Botble:
+
+| Qué | Dónde |
+|---|---|
+| Título, descripción, contenido | `posts_translations` |
+| Título y descripción SEO (y el valor de indexación del original) | meta `<idioma>_seo_meta` |
+| URL: el título traducido en formato slug, único dentro de `blog/` | `slugs_translations` |
+
+El contenido conserva su HTML (imágenes, enlaces, códigos cortos); solo se
+quitan `<script>`, `<style>`, atributos `on…` y enlaces `javascript:`. Si la
+respuesta llega incompleta (texto muy largo), no se guarda nada de ese idioma.
+Las publicaciones creadas como publicación aparte en otro idioma (antiguo
+sistema de idiomas) no se traducen desde aquí.
+
+El sitemap, `llms.txt`, `llms-full.txt` y las URL `.md` incluyen las
+traducciones (`App\Support\SiteIndex`).
+
+Para traducir muchas a la vez, por SSH (sin límite de tiempo de la petición):
+
+```bash
+php artisan torns:blog:translate              # todas, a todos los idiomas, sin tocar las ya traducidas
+php artisan torns:blog:translate 12 15 --lang=ca --provider=openai --overwrite
+```
 
 ## Qué sabe la IA de Torns
 
@@ -50,7 +87,8 @@ precios (las mismas fuentes que `content/site`).
 
 ## Límites y registro
 
-- 20 textos y 10 imágenes por minuto y persona.
-- Pueden usarla quienes tienen permiso para crear o editar publicaciones.
+- 20 textos, 20 traducciones (una por idioma) y 10 imágenes por minuto y persona.
+- Pueden usarla quienes tienen permiso para crear o editar publicaciones
+  (traducir: editar).
 - Cada llamada se anota en el log de Laravel (`Torns blog AI`) con la
   persona, el servicio, el modelo y los tokens de entrada y salida.

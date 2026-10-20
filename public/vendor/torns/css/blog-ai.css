@@ -30,3 +30,8 @@
     height: auto;
     border-radius: 6px;
 }
+
+/* Bootstrap display utilities (d-flex) would otherwise beat [hidden]. */
+.torns-ai [hidden] {
+    display: none !important;
+}

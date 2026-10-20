@@ -9,6 +9,8 @@ use DOMDocument;
 use DOMNode;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 /**
  * Everything search engines and AI assistants read about the site, built
@@ -129,6 +131,14 @@ class SiteIndex
             ->limit($limit)
             ->get();
 
+        $translations = Schema::hasTable('posts_translations')
+            ? DB::table('posts_translations')->whereIn('posts_id', $posts->modelKeys())->get()->groupBy('posts_id')
+            : collect();
+        $slugKeys = Schema::hasTable('slugs_translations')
+            ? DB::table('slugs_translations')->whereIn('slugs_id', $posts->pluck('slugable.id')->filter()->all())->get()
+                ->mapWithKeys(fn ($row) => [$row->slugs_id . '.' . $row->lang_code => $row->key])
+            : collect();
+
         $groups = [];
         foreach ($posts as $post) {
             $meta = $metas->get($post->getKey());
@@ -144,6 +154,21 @@ class SiteIndex
                 'url' => $this->url($locale, $slug),
                 'md' => $this->url($locale, $slug . '.md'),
             ];
+
+            // Translations stored on the same post (language-advanced, as the AI translation does).
+            foreach ($translations->get($post->getKey(), []) as $row) {
+                if ($row->lang_code === $locale || ! in_array($row->lang_code, $this->locales(), true) || isset($groups[$origin]['locales'][$row->lang_code])) {
+                    continue;
+                }
+                $translated = (clone $post)->forceFill(['name' => $row->name ?: $post->name, 'description' => $row->description, 'content' => $row->content ?: $post->content]);
+                $key = $slugKeys->get($post->slugable->getKey() . '.' . $row->lang_code) ?: $post->slugable->key;
+                $translatedSlug = trim(($post->slugable->prefix ? $post->slugable->prefix . '/' : '') . $key, '/');
+                $groups[$origin]['locales'][$row->lang_code] = [
+                    'post' => $translated,
+                    'url' => $this->url($row->lang_code, $translatedSlug),
+                    'md' => $this->url($row->lang_code, $translatedSlug . '.md'),
+                ];
+            }
         }
 
         return collect(array_values($groups));

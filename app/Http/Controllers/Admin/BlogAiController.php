@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Ai\BlogAi;
+use App\Ai\PostTranslator;
 use Botble\Base\Http\Controllers\BaseController;
 use Botble\Base\Http\Responses\BaseHttpResponse;
+use Botble\Blog\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\View\View;
@@ -47,6 +49,20 @@ class BlogAiController extends BaseController
         ]);
 
         return $this->respond(fn () => $this->ai->image($data['prompt'], (string) ($data['shape'] ?? 'landscape'), (string) ($data['style'] ?? 'photo'), $request->user()->getKey()));
+    }
+
+    public function translate(Request $request, PostTranslator $translator): BaseHttpResponse
+    {
+        abort_unless($request->user()?->hasPermission('posts.edit'), 403);
+        $data = $request->validate([
+            'post_id' => ['required', 'integer'],
+            'language' => ['required', 'string'],
+            'provider' => ['required', 'string'],
+            'overwrite' => ['nullable', 'boolean'],
+        ]);
+        $post = Post::query()->findOrFail($data['post_id']);
+
+        return $this->respond(fn () => $translator->translate($post, $data['language'], $data['provider'], (bool) ($data['overwrite'] ?? false), $request->user()->getKey()));
     }
 
     public function settings(Request $request): View
