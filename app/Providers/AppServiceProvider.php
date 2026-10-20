@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Ai\BlogAi;
+use App\Ai\PostTranslator;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
 use Botble\Base\Facades\Assets;
@@ -105,6 +106,14 @@ class AppServiceProvider extends ServiceProvider
                 ?: (class_exists(Language::class) ? Language::getCurrentAdminLocaleCode() : null)
                 ?: 'es';
 
+            // Translation: from the saved post in the default language, when there is a text service.
+            $translate = null;
+            $translator = $this->app->make(PostTranslator::class);
+            if ($ai->textProviders() && $model instanceof Post && $model->getKey() && $translator->languages()
+                && (! request('ref_lang') || request('ref_lang') === Language::getDefaultLocaleCode())) {
+                $translate = ['post_id' => $model->getKey(), 'languages' => $translator->languages(), 'translated' => $translator->translated($model)];
+            }
+
             Assets::addStylesDirectly('vendor/torns/css/blog-ai.css')
                 ->addScriptsDirectly('vendor/torns/js/blog-ai.js');
 
@@ -119,6 +128,7 @@ class AppServiceProvider extends ServiceProvider
                 'languages' => array_keys(BlogAi::LANGUAGES),
                 'shapes' => array_keys(BlogAi::SHAPES),
                 'styles' => array_keys(BlogAi::STYLES),
+                'translate' => $translate,
             ])->render())->toArray());
         }, 120, 2);
     }

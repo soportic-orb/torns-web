@@ -47,7 +47,7 @@ and `public/themes/torns`.
 - SEO and AI readability: `functions/seo.php` (JSON-LD graph),
   `app/Support/SiteIndex.php` (sitemap, llms.txt, llms-full.txt, `.md` URLs) — `docs/seo-geo.md`.
 - OTA: `app/Ota`, `app/Support/SiteContent.php` — `docs/OTA.md`.
-- AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app) — `docs/blog-ai.md`.
+- AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app), translation of posts in `app/Ai/PostTranslator.php` — `docs/blog-ai.md`.
 - Install: `docs/CLOUDPANEL.md` (SSH) or `docs/INSTALL.md` (shared hosting).
 
 ## Checks before a PR

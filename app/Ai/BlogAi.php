@@ -290,7 +290,7 @@ class BlogAi
     }
 
     /** @return array{0: string, 1: array<string, int>} text and token usage */
-    protected function claude(string $system, string $prompt, int $max): array
+    protected function claude(string $system, string $prompt, int $max, int $timeout = 180): array
     {
         $model = $this->claudeModel();
         $body = ['model' => $model, 'max_tokens' => $max, 'system' => $system, 'messages' => [['role' => 'user', 'content' => $prompt]]];
@@ -305,7 +305,7 @@ class BlogAi
             $headers['anthropic-beta'] = 'server-side-fallback-2026-07-01';
         }
 
-        $res = Http::withHeaders($headers)->acceptJson()->timeout(180)->post(self::ANTHROPIC_URL, $body);
+        $res = Http::withHeaders($headers)->acceptJson()->timeout($timeout)->post(self::ANTHROPIC_URL, $body);
         if ($res->failed()) {
             throw new RuntimeException(trans('torns.ai_err_claude', ['error' => $res->json('error.message') ?: 'error ' . $res->status()]));
         }
@@ -323,14 +323,14 @@ class BlogAi
     }
 
     /** OpenAI Responses API. @return array{0: string, 1: array<string, int>} */
-    protected function openaiText(string $system, string $prompt, int $max): array
+    protected function openaiText(string $system, string $prompt, int $max, int $timeout = 180): array
     {
         $model = $this->openaiTextModel();
         $body = ['model' => $model, 'instructions' => $system, 'input' => $prompt, 'max_output_tokens' => $max + 2000];
         if (preg_match('/^(gpt-5|o\d)/', $model)) {
             $body['reasoning'] = ['effort' => 'low'];
         }
-        $res = Http::withToken($this->get('torns_ai_openai_key'))->acceptJson()->timeout(180)->post(self::OPENAI_URL . '/responses', $body);
+        $res = Http::withToken($this->get('torns_ai_openai_key'))->acceptJson()->timeout($timeout)->post(self::OPENAI_URL . '/responses', $body);
         if ($res->failed()) {
             throw new RuntimeException(trans('torns.ai_err_openai', ['error' => $res->json('error.message') ?: 'error ' . $res->status()]));
         }
@@ -348,6 +348,85 @@ class BlogAi
         }
 
         return [$text, ['model' => $model, 'input_tokens' => (int) $res->json('usage.input_tokens'), 'output_tokens' => (int) $res->json('usage.output_tokens')]];
+    }
+
+    // ------------------------------------------------------------------ translation
+
+    /** Fields of a post that are translated, in the order the model returns them. */
+    public const TRANSLATED_FIELDS = ['name', 'description', 'seo_title', 'seo_description', 'content'];
+
+    /**
+     * Translate a post from Spanish. Empty source fields come back empty.
+     *
+     * @param  array<string, string>  $source  keys of TRANSLATED_FIELDS
+     * @return array<string, string>
+     */
+    public function translate(string $provider, array $source, string $language, ?int $userId = null): array
+    {
+        if (! isset($this->textProviders()[$provider])) {
+            throw new RuntimeException(trans('torns.ai_err_not_configured'));
+        }
+        if ($language === 'es' || ! isset(self::LANGUAGES[$language])) {
+            throw new RuntimeException(trans('torns.ai_err_translate_language'));
+        }
+
+        $fields = array_filter(array_map(fn ($value) => trim((string) $value), array_intersect_key($source, array_flip(self::TRANSLATED_FIELDS))), 'strlen');
+        if (! isset($fields['name'])) {
+            throw new RuntimeException(trans('torns.ai_err_translate_empty'));
+        }
+
+        $target = self::LANGUAGES[$language];
+        $system = "Traduces del castellano al {$target} las publicaciones del blog de Torns (www.torns.app), leído por profesionales sanitarios en España que trabajan a turnos y guardias. "
+            . "Escribe un {$target} correcto y natural, con el vocabulario sanitario y laboral que se usa en ese idioma; no traduzcas palabra por palabra. "
+            . 'Traduce todo el texto y nada más: no añadas, quites ni resumas información, ni comentes la traducción. '
+            . 'No traduzcas los nombres Torns, Torns Pro ni Copilot, ni las direcciones web, correos electrónicos o nombres de marcas. '
+            . 'En el contenido HTML conserva exactamente las mismas etiquetas, en el mismo orden, con los mismos atributos y valores (href, src, class, id, style); traduce solo el texto visible y los atributos alt y title. '
+            . 'Deja intacto lo que vaya entre corchetes como [nombre ...] (códigos cortos), y los marcadores como [dato] o [fuente]. '
+            . 'Responde solo con los campos que recibas, cada uno dentro de su misma etiqueta: <name>, <description>, <seo_title>, <seo_description> y <content>.';
+
+        $message = '';
+        foreach (self::TRANSLATED_FIELDS as $field) {
+            if (isset($fields[$field])) {
+                $message .= "<{$field}>\n{$fields[$field]}\n</{$field}>\n\n";
+            }
+        }
+        // Room for the whole content: roughly one token per three characters, plus margin.
+        $max = (int) min(32000, 1500 + mb_strlen($message) / 2);
+
+        [$raw, $usage] = $provider === 'claude'
+            ? $this->claude($system, trim($message), $max, 600)
+            : $this->openaiText($system, trim($message), $max, 600);
+
+        Log::info('Torns blog AI: translation', ['user' => $userId, 'provider' => $provider, 'language' => $language] + $usage);
+
+        $out = [];
+        foreach (self::TRANSLATED_FIELDS as $field) {
+            if (! isset($fields[$field])) {
+                $out[$field] = '';
+
+                continue;
+            }
+            if (! preg_match("#<{$field}>\s*(.*?)\s*</{$field}>#s", $raw, $match) || trim($match[1]) === '') {
+                throw new RuntimeException(trans('torns.ai_err_translate_incomplete'));
+            }
+            $out[$field] = $field === 'content'
+                ? $this->safeHtml($match[1])
+                : trim(strip_tags(html_entity_decode($match[1], ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+        }
+
+        return $out;
+    }
+
+    /**
+     * Translated post body: keep its markup (images, embeds, shortcodes),
+     * drop only what could run code.
+     */
+    protected function safeHtml(string $html): string
+    {
+        $html = (string) preg_replace('#<(script|style)\b[^>]*>.*?</\1\s*>#is', '', $html);
+        $html = (string) preg_replace('#\s+on[a-z]+\s*=\s*("[^"]*"|\'[^\']*\'|[^\s>]+)#i', '', $html);
+
+        return trim((string) preg_replace('#(href|src)\s*=\s*(["\']?)\s*javascript:[^"\'>\s]*\2#i', '$1="#"', $html));
     }
 
     // ------------------------------------------------------------------ images
