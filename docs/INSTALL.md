@@ -63,8 +63,13 @@ Copia `.env.example` a `.env` y rellena:
 
 ## 6. Instalador web de Botble
 
-1. Visita `https://tu-dominio/install` y sigue el asistente (genera la
-   `APP_KEY`, ejecuta migraciones y crea el usuario administrador).
+1. Visita `https://tu-dominio/install` y sigue el asistente (ejecuta las
+   migraciones y crea el usuario administrador). El asistente reescribe el
+   `.env`; la web vuelve a poner la `APP_KEY`, los datos de la base de datos
+   y los valores propios (`APP_ENV`, `ADMIN_DIR`, `OTA_*`…) justo después
+   (`App\Listeners\RepairEnvAfterInstaller`).
+   Con acceso SSH (p. ej. CloudPanel) es más directo instalar por línea de
+   comandos: `docs/CLOUDPANEL.md`.
 2. Entra en `/admin` y comprueba que el tema **torns** está activo
    (Apariencia → Temas); actívalo si no lo está.
 3. Verifica en Admin → Plugins que están activos: Blog, Language,
