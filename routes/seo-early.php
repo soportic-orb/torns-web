@@ -18,3 +18,8 @@ Route::middleware('web')->group(function (): void {
     Route::get('{first}.md', [SeoController::class, 'markdown'])
         ->where('first', '[a-z0-9-]+');
 });
+
+// URLs of the previous WordPress website (config/legacy-redirects.php).
+foreach (config('legacy-redirects', []) as $from => $to) {
+    Route::permanentRedirect($from, $to);
+}

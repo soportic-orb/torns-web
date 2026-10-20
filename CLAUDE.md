@@ -51,6 +51,8 @@ Admin assets in `public/vendor/torns` go through `App\Support\VersionedAsset::pa
 - OTA: `app/Ota`, `app/Support/SiteContent.php` — `docs/OTA.md`.
 - AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app), translation of posts in `app/Ai/PostTranslator.php` — `docs/blog-ai.md`.
 - Install: `docs/CLOUDPANEL.md` (SSH) or `docs/INSTALL.md` (shared hosting).
+- Going live on www.torns.app (replacing WordPress): `docs/PRODUCTION.md`; old
+  WordPress URLs are redirected in `config/legacy-redirects.php`.
 
 ## Checks before a PR
 
