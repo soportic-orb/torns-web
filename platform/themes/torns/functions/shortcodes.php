@@ -83,6 +83,18 @@ app('events')->listen(RouteMatched::class, function (): void {
     });
 
     // ------------------------------------------------------------------
+    // 4a. Share the calendar and export it to PDF (Pro)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-share-export', __('Torns: Share and export'), __('Public calendar link and PDF export, with screenshots'), function ($shortcode) {
+        return Theme::partial('shortcodes.share-export', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-share-export', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')));
+    });
+
+    // ------------------------------------------------------------------
     // 4b. Import your roster (photo of the roster → reviewed shifts)
     // ------------------------------------------------------------------
     add_shortcode('torns-import-roster', __('Torns: Import roster'), __('Roster photo turning into shifts, with two paragraphs'), function ($shortcode) {
@@ -290,6 +302,7 @@ app('events')->listen(RouteMatched::class, function (): void {
         return ShortcodeForm::createFromArray($attributes)
             ->add('title', TextField::class, $textField(__('Title (H1)')))
             ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
+            ->add('image_asset', TextField::class, $textField(__('Theme image (e.g. centers-hero)')))
             ->add(
                 'align',
                 SelectField::class,

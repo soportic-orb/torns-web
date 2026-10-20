@@ -88,55 +88,55 @@
     }
 
     // ------------------------------------------------------------------
-    // Gallery lightbox (vanilla)
+    // Screens carousel: the current screen large in the middle, its
+    // neighbours smaller on each side; arrows, swipe and arrow keys.
     // ------------------------------------------------------------------
-    const lightbox = document.querySelector('[data-lightbox]')
-    if (lightbox) {
-        const items = Array.from(document.querySelectorAll('[data-gallery-item]'))
-        const image = lightbox.querySelector('[data-lightbox-image]')
-        const caption = lightbox.querySelector('[data-lightbox-caption]')
-        let current = -1
-        let lightboxOpener = null
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'))
+        const caption = carousel.querySelector('[data-carousel-caption]')
+        const count = slides.length
+        if (!count) return
+        let current = 0
 
-        const show = (index) => {
-            current = (index + items.length) % items.length
-            const item = items[current]
-            image.src = item.dataset.full
-            image.alt = item.dataset.caption || ''
-            caption.textContent = item.dataset.caption || ''
+        const render = () => {
+            slides.forEach((slide, index) => {
+                let offset = index - current
+                if (offset > count / 2) offset -= count
+                if (offset < -count / 2) offset += count
+                const distance = Math.abs(offset)
+                slide.style.setProperty('--offset', offset)
+                slide.style.setProperty('--scale', distance === 0 ? 1 : distance === 1 ? 0.74 : 0.56)
+                slide.style.zIndex = String(10 - distance)
+                slide.dataset.position = distance === 0 ? 'current' : distance <= 2 ? 'side' : 'hidden'
+                slide.setAttribute('aria-hidden', distance === 0 ? 'false' : 'true')
+                slide.tabIndex = distance === 1 ? 0 : -1
+            })
+            if (caption) caption.textContent = slides[current].dataset.caption || ''
+        }
+        const go = (index) => {
+            current = (index + count) % count
+            render()
         }
 
-        const openLightbox = (index) => {
-            lightboxOpener = document.activeElement
-            show(index)
-            lightbox.classList.add('is-open')
-            document.body.classList.add('lightbox-locked')
-            lightbox.querySelector('[data-lightbox-close]').focus()
-        }
+        carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => go(current - 1))
+        carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => go(current + 1))
+        slides.forEach((slide, index) => slide.addEventListener('click', () => go(index)))
+        carousel.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') go(current - 1)
+            if (event.key === 'ArrowRight') go(current + 1)
+        })
 
-        const closeLightbox = () => {
-            lightbox.classList.remove('is-open')
-            document.body.classList.remove('lightbox-locked')
-            image.src = ''
-            if (lightboxOpener) lightboxOpener.focus()
-        }
+        let startX = null
+        carousel.addEventListener('touchstart', (event) => { startX = event.touches[0].clientX }, { passive: true })
+        carousel.addEventListener('touchend', (event) => {
+            if (startX === null) return
+            const delta = event.changedTouches[0].clientX - startX
+            if (Math.abs(delta) > 40) go(current + (delta < 0 ? 1 : -1))
+            startX = null
+        })
 
-        items.forEach((item, index) => {
-            item.addEventListener('click', () => openLightbox(index))
-        })
-        lightbox.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox)
-        lightbox.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => show(current - 1))
-        lightbox.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(current + 1))
-        lightbox.addEventListener('click', (event) => {
-            if (event.target === lightbox) closeLightbox()
-        })
-        document.addEventListener('keydown', (event) => {
-            if (!lightbox.classList.contains('is-open')) return
-            if (event.key === 'Escape') closeLightbox()
-            if (event.key === 'ArrowLeft') show(current - 1)
-            if (event.key === 'ArrowRight') show(current + 1)
-        })
-    }
+        render()
+    })
 
     // ------------------------------------------------------------------
     // <details> menus (language switcher) — close on outside click/Escape.
