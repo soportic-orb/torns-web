@@ -234,8 +234,9 @@ class OtaUpdater
 
     protected function download(string $assetUrl, string $target): void
     {
-        $res = $this->github()
-            ->withHeaders(['Accept' => 'application/octet-stream'])
+        // Only "application/octet-stream" returns the file itself; with the
+        // JSON media type too, GitHub answers with the asset's metadata.
+        $res = $this->github('application/octet-stream')
             ->timeout(300)
             ->sink($target)
             ->get($assetUrl);
@@ -418,9 +419,9 @@ class OtaUpdater
         return $key !== false && strlen($key) === SODIUM_CRYPTO_SIGN_PUBLICKEYBYTES ? $key : null;
     }
 
-    protected function github(): \Illuminate\Http\Client\PendingRequest
+    protected function github(string $accept = 'application/vnd.github+json'): \Illuminate\Http\Client\PendingRequest
     {
-        $http = Http::withHeaders(['Accept' => 'application/vnd.github+json', 'User-Agent' => 'torns-web-ota'])->timeout(30);
+        $http = Http::withHeaders(['Accept' => $accept, 'User-Agent' => 'torns-web-ota'])->timeout(30);
         if ($token = config('torns-ota.github_token')) {
             $http = $http->withToken($token);
         }
