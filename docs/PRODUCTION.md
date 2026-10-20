@@ -1,40 +1,42 @@
 # Paso a producción: www.torns.app con la nueva web
 
-`www.torns.app` (WordPress) y `nueva.torns.app` (staging de esta web) están en
-el mismo servidor de CloudPanel (187.33.149.129), así que **no hay que tocar
-el DNS**. El cambio consiste en sustituir el sitio de WordPress por una
-instalación nueva de esta web, con el contenido de staging.
+La web nueva ya está instalada en CloudPanel como el sitio `nueva.torns.app`
+(usuario `torns-nueva`), en el mismo servidor que el WordPress de
+`www.torns.app` (187.33.149.129), así que **no hay que tocar el DNS**. El
+cambio consiste en que esa misma instalación responda a `www.torns.app`:
 
-- Staging **se queda** como está (`APP_ENV=staging`, no indexable) para
-  seguir probando cambios.
-- Producción es una instalación aparte (su usuario, su base de datos y su
-  `.env` con `APP_ENV=production`), con una copia de la base de datos de
-  staging: páginas, publicaciones, traducciones, menús, usuarios y ajustes
-  (también las claves de IA, por eso se reutiliza la misma `APP_KEY`).
-- CloudPanel no admite dos sitios con el mismo dominio: hay que borrar el
-  sitio de WordPress antes de crear el nuevo. Con todo preparado, la web
-  está caída unos **10–15 minutos**. Hazlo en una hora de poco tráfico.
+- `www.torns.app` → la web nueva (dominio principal).
+- `torns.app` y `nueva.torns.app` → redirección 301 a `https://www.torns.app`,
+  para que Google no vea dos copias de la web.
+- La instalación pasa a `APP_ENV=production` (indexable). Desde ese momento
+  **no hay staging**: lo que se edita en /admin se publica.
+- El sitio de WordPress se borra (después de hacer copia), porque dos sitios
+  no pueden tener el mismo dominio en nginx.
 
-Nombres de ejemplo (cámbialos si usas otros):
-
-| | Staging | Producción |
-|---|---|---|
-| Dominio | `nueva.torns.app` | `www.torns.app` (y `torns.app` → www) |
-| Usuario del sitio | `torns-nueva` | `torns-www` |
-| Carpeta | `/home/torns-nueva/htdocs/nueva.torns.app` | `/home/torns-www/htdocs/www.torns.app` |
-| Base de datos | la de staging (míralo en CloudPanel → Databases) | `tornsweb_prod` |
+La web está caída solo entre el borrado de WordPress y el certificado nuevo:
+unos **5 minutos**. Hazlo en una hora de poco tráfico.
 
 Las órdenes con `clpctl` se ejecutan como **root**; las de la web, como el
-usuario del sitio (`sudo -u <usuario> …`).
+usuario del sitio (`sudo -u torns-nueva …`). Cambia `<usuario-wordpress>` y
+`<bd-wordpress>` por los del WordPress actual (CloudPanel → Sites y
+Databases).
 
 ## Antes del día del cambio
 
-1. **Staging al día**: aplica la última actualización de la web y deja el
-   código en `main` (`docs/CLOUDPANEL.md`, «Después»). Revisa páginas, menús
-   y publicaciones: es lo que se copiará a producción.
-2. **Usuario del WordPress actual**: anota en CloudPanel → Sites el usuario
-   del sitio `www.torns.app` y el nombre de su base de datos.
-3. **Bajada del TTL**: no hace falta, el DNS no cambia.
+1. **Código al día** en `nueva.torns.app`, con las redirecciones de las URL de
+   WordPress (`config/legacy-redirects.php`):
+
+   ```bash
+   cd /home/torns-nueva/htdocs/nueva.torns.app
+   sudo -u torns-nueva git fetch origin main
+   sudo -u torns-nueva git reset --hard origin/main
+   sudo -u torns-nueva php artisan migrate --force
+   sudo -u torns-nueva php artisan optimize:clear
+   ```
+
+   Y la última actualización de la web aplicada desde el panel.
+2. **Contenido revisado**: páginas, menús, publicaciones y traducciones de
+   `nueva.torns.app` son los que se publicarán.
 
 ## Día del cambio
 
@@ -44,158 +46,156 @@ usuario del sitio (`sudo -u <usuario> …`).
 mkdir -p /root/backup-wordpress && cd /root/backup-wordpress
 clpctl db:export --databaseName=<bd-wordpress> --file=/root/backup-wordpress/wordpress.sql.gz
 tar -czf wordpress-files.tar.gz -C /home/<usuario-wordpress>/htdocs www.torns.app
+cp /etc/nginx/sites-enabled/www.torns.app.conf vhost-wordpress.conf 2>/dev/null
 ls -lh
 ```
 
-Guarda también una copia fuera del servidor (descárgala con SFTP). Con esto
-se puede volver atrás (ver «Volver a WordPress»).
+Descarga también una copia fuera del servidor (SFTP).
 
-### 2. Copia de la base de datos de staging (sin caída)
+### 2. Imágenes antiguas de WordPress (sin caída, recomendado)
 
-```bash
-cd /root
-clpctl db:export --databaseName=<bd-staging> --file=/root/staging.sql.gz
-zcat staging.sql.gz | grep -c 'nueva.torns.app'
-```
-
-Si el último número no es 0, hay direcciones absolutas de staging en la base
-de datos; se cambian por las de producción:
+Las imágenes de la web anterior (`/wp-content/uploads/…`) pueden estar
+enlazadas desde Google Imágenes, redes sociales o correos ya enviados. Se
+copian a la web nueva tal cual (nginx las sirve como ficheros; git no las
+sigue y las actualizaciones no las tocan):
 
 ```bash
-zcat staging.sql.gz | sed 's#https://nueva\.torns\.app#https://www.torns.app#g; s#nueva\.torns\.app#www.torns.app#g' | gzip > produccion.sql.gz
+cd /home/torns-nueva/htdocs/nueva.torns.app
+mkdir -p public/wp-content
+cp -a /home/<usuario-wordpress>/htdocs/www.torns.app/wp-content/uploads public/wp-content/
+chown -R torns-nueva:torns-nueva public/wp-content
 ```
-
-Si era 0: `cp staging.sql.gz produccion.sql.gz`.
 
 ### 3. Borrar el sitio de WordPress (empieza la caída)
 
-CloudPanel → **Sites** → `www.torns.app` → **Delete** (o
-`clpctl site:delete --domainName=www.torns.app --force`). Borra también su
-base de datos si CloudPanel lo pregunta: ya está en la copia del paso 1.
+CloudPanel → **Sites** → `www.torns.app` → **Delete**. Su base de datos puede
+quedarse de momento (ya está en la copia del paso 1).
 
-### 4. Crear el sitio nuevo
+### 4. Vhost de nueva.torns.app
 
-1. **Sites → Add Site → Create a PHP Site**
-   - Application: **Laravel**
-   - Domain Name: **`www.torns.app`**. Después, en **Vhost**, comprueba que
-     `torns.app` también aparece y redirige a `https://www.torns.app`; si no,
-     añade al principio del vhost un bloque `server` con
-     `server_name torns.app;` y `return 301 https://www.torns.app$request_uri;`
-     (puertos 80 y 443, con el mismo certificado).
-   - PHP Version: **8.4**
-   - Site User: **`torns-www`** y una contraseña
-2. En el sitio, **SSL/TLS → Actions → New Let's Encrypt Certificate**, con los
-   dominios `www.torns.app` y `torns.app`.
-3. **Databases → Add Database**: `tornsweb_prod`, con su usuario y contraseña
-   (anótalos).
-4. **Cron Jobs → Add Cron Job**:
+CloudPanel → **Sites** → `nueva.torns.app` → **Vhost**.
 
-   ```
-   * * * * * php8.4 /home/torns-www/htdocs/www.torns.app/artisan schedule:run >> /dev/null 2>&1
+1. En el bloque `server { … }` principal (el que tiene `root` y las reglas de
+   PHP), cambia la línea `server_name`:
+
+   ```nginx
+   server_name www.torns.app;
    ```
 
-### 5. Código y `.env`
+2. Añade **al principio** del vhost, antes de ese bloque, este otro bloque
+   para los dominios que redirigen:
+
+   ```nginx
+   server {
+     listen 80;
+     listen [::]:80;
+     listen 443 ssl;
+     listen [::]:443 ssl;
+     http2 on;
+     {{ssl_certificate_key}}
+     {{ssl_certificate}}
+     server_name torns.app nueva.torns.app;
+     location /.well-known/acme-challenge/ {
+       root {{root}};
+     }
+     location / {
+       return 301 https://www.torns.app$request_uri;
+     }
+   }
+   ```
+
+   `{{ssl_certificate}}`, `{{ssl_certificate_key}}` y `{{root}}` se escriben
+   tal cual: CloudPanel los sustituye. Si las líneas `listen` del bloque
+   principal son distintas (por ejemplo `listen 443 ssl http2;` sin
+   `http2 on;`), copia las suyas en lugar de estas. La excepción de
+   `/.well-known/acme-challenge/` permite renovar el certificado de los tres
+   dominios.
+
+3. **Save**. Si CloudPanel da un error de nginx, no guarda nada: revisa que
+   las llaves `{ }` estén completas.
+
+### 5. Certificado
+
+`nueva.torns.app` → **SSL/TLS** → **Actions** → **New Let's Encrypt
+Certificate**, con los dominios `www.torns.app`, `torns.app` y
+`nueva.torns.app` → **Create and Install**.
+
+### 6. La web en modo producción (termina la caída)
 
 ```bash
-cd /home/torns-www/htdocs/www.torns.app
-sudo -u torns-www bash -c 'rm -rf ./* ./.[!.]* && git clone https://github.com/soportic-orb/torns-web.git . && composer install --no-dev --optimize-autoloader'
-cp /home/torns-nueva/htdocs/nueva.torns.app/.env .env
-chown torns-www:torns-www .env
-nano .env
+cd /home/torns-nueva/htdocs/nueva.torns.app
+sudo -u torns-nueva nano .env
 ```
-
-En `.env` cambia solo esto (el resto, incluida `APP_KEY`, se queda igual que
-en staging):
 
 ```
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://www.torns.app
-DB_DATABASE=tornsweb_prod
-DB_USERNAME=<usuario de la base de datos de producción>
-DB_PASSWORD=<contraseña>
 ```
-
-### 6. Base de datos e imágenes
-
-La versión instalada de las actualizaciones de la web se guarda en la base de
-datos, así que viene con la copia; las copias de seguridad de esas
-actualizaciones (`storage/app/ota`) no se copian, son de staging.
 
 ```bash
-clpctl db:import --databaseName=tornsweb_prod --file=/root/produccion.sql.gz
-
-# Imágenes subidas en /admin (Medios)
-sudo -u torns-www mkdir -p storage/app
-cp -a /home/torns-nueva/htdocs/nueva.torns.app/storage/app/public storage/app/
-chown -R torns-www:torns-www storage
-
-sudo -u torns-www php artisan migrate --force
-sudo -u torns-www php artisan storage:link
-sudo -u torns-www php artisan optimize:clear
-sudo -u torns-www php artisan optimize
+sudo -u torns-nueva php artisan optimize:clear
+sudo -u torns-nueva php artisan optimize
 ```
 
-### 7. Imágenes antiguas de WordPress (recomendado)
-
-Las imágenes de la web anterior (`/wp-content/uploads/…`) pueden estar
-enlazadas desde Google Imágenes, redes sociales o correos ya enviados. Para
-que sigan funcionando, se copian tal cual (nginx las sirve como ficheros):
+¿Hay direcciones de staging guardadas en la base de datos (en ajustes o en el
+contenido)? Compruébalo:
 
 ```bash
-cd /home/torns-www/htdocs/www.torns.app
-tar -xzf /root/backup-wordpress/wordpress-files.tar.gz -C /tmp www.torns.app/wp-content/uploads
-mkdir -p public/wp-content && mv /tmp/www.torns.app/wp-content/uploads public/wp-content/
-chown -R torns-www:torns-www public/wp-content
+clpctl db:export --databaseName=<bd-de-nueva> --file=/root/nueva.sql.gz
+zcat /root/nueva.sql.gz | grep -o 'https\?://nueva\.torns\.app[^"<> ]*' | sort | uniq -c | sort -rn | head
 ```
 
-Git no las sigue y las actualizaciones no las tocan.
+Si sale algo, redirige igualmente a www, pero conviene cambiarlo desde /admin
+(o pásamelo y lo vemos).
 
-### 8. Comprobar (termina la caída)
+### 7. Comprobar
 
 - `https://www.torns.app`, `/ca`, `/gl`, `/eu`, `/centros`, `/funcionalidades`,
   `/blog`, `/privacidad`, `/terminos`.
-- `https://torns.app` y `http://www.torns.app` redirigen a `https://www.torns.app`.
-- `https://www.torns.app/robots.txt` **permite** el rastreo y enlaza el sitemap
-  (si dice `Disallow: /`, `APP_ENV` no es `production`: corrige `.env` y
-  `php artisan optimize`).
+- `https://torns.app/centros`, `http://www.torns.app` y
+  `https://nueva.torns.app/ca` redirigen a la misma ruta en
+  `https://www.torns.app`.
+- `https://www.torns.app/robots.txt` **permite** el rastreo y enlaza el
+  sitemap (si dice `Disallow: /`, `APP_ENV` no es `production`).
 - Direcciones antiguas: `/centros/`, `/ca/centres/`, `/torns-vs-aturnos/`,
   `/digitalizacion-cambios-turno-hospital/`, `/sitemap_index.xml` redirigen a
   la nueva (lista completa en `config/legacy-redirects.php`).
-- `/<ADMIN_DIR>`: entra con tu usuario de staging; Sistema → Actualizaciones de
-  la web sin avisos; Ajustes → Otros → IA para el blog → «Probar la conexión».
+- `https://www.torns.app/wp-content/uploads/2026/03/tornsapp-logo.png` se ve.
+- `https://www.torns.app/<ADMIN_DIR>`: entra (la sesión de nueva.torns.app no
+  vale, hay que volver a iniciarla); Sistema → Actualizaciones de la web sin
+  avisos; Ajustes → Otros → IA para el blog → «Probar la conexión».
 - El formulario de contacto envía el correo.
-- Si algo da un 500: `tail -n 30 /home/torns-www/logs/php/error.log` y
+- Si algo da un 500: `tail -n 30 /home/torns-nueva/logs/php/error.log` y
   `grep -h '\.ERROR:' storage/logs/laravel-*.log | tail -n 3`.
 
 ## Después del cambio
 
 - **Google Search Console** (propiedad `https://www.torns.app/`): Sitemaps →
   quita `sitemap_index.xml` y envía `sitemap.xml`. Revisa «Páginas» las
-  semanas siguientes por si aparecen 404 de direcciones antiguas que falten en
+  semanas siguientes por si salen 404 de direcciones antiguas que falten en
   `config/legacy-redirects.php`.
-- **Actualizaciones**: igual que en staging. El tema y el contenido, con el
-  botón de actualizaciones en el panel de cada sitio (aplícalo primero en
-  staging); el código, por SSH en cada carpeta (`docs/CLOUDPANEL.md`).
-- **Staging**: a partir de ahora los cambios hechos en /admin de staging **no**
-  pasan a producción (son bases de datos distintas). Las publicaciones y las
-  páginas se editan en producción.
-- Guarda la copia de WordPress unas semanas antes de borrarla.
+- **Actualizaciones**: igual que hasta ahora, en el mismo sitio. Las de la web
+  (tema y contenido) se aplican directamente en producción; si quieres
+  probarlas antes, hará falta montar otro staging.
+- Guarda la copia de WordPress unas semanas; después borra su base de datos y
+  `/root/backup-wordpress`.
 
 ## Volver a WordPress
 
-Si algo sale mal y no se puede arreglar en el momento:
-
-1. CloudPanel → Sites → borra `www.torns.app` (la nueva).
-2. Crea de nuevo el sitio como estaba: **WordPress** (o PHP genérico) con
-   dominio `www.torns.app` y el usuario anterior; certificado Let's Encrypt.
-3. Restaura los ficheros y la base de datos:
+1. Vhost de `nueva.torns.app`: deja solo el bloque principal con
+   `server_name nueva.torns.app;` y vuelve a `APP_ENV=staging` en `.env`
+   (`php artisan optimize`).
+2. CloudPanel → **Add Site** → **WordPress** (o PHP), dominio `www.torns.app`,
+   el usuario anterior; certificado Let's Encrypt para `www.torns.app` y
+   `torns.app`.
+3. Restaura ficheros y base de datos:
 
    ```bash
    tar -xzf /root/backup-wordpress/wordpress-files.tar.gz -C /home/<usuario-wordpress>/htdocs
    chown -R <usuario-wordpress>:<usuario-wordpress> /home/<usuario-wordpress>/htdocs/www.torns.app
-   clpctl db:add --domainName=www.torns.app --databaseName=<bd-wordpress> --databaseUserName=<usuario-bd> --databaseUserPassword='<contraseña de wp-config.php>'
    clpctl db:import --databaseName=<bd-wordpress> --file=/root/backup-wordpress/wordpress.sql.gz
    ```
 
-   Los datos de la base de datos están en `wp-config.php` dentro de la copia.
+   Si borraste la base de datos, créala antes en CloudPanel → Databases con el
+   nombre, usuario y contraseña de `wp-config.php` (está en la copia).

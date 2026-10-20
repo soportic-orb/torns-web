@@ -23,7 +23,9 @@ https://docs.botble.com/cms/ai-assistant-guide.html
   Galician and Basque translation in `platform/themes/torns/lang/{ca,gl,eu}.json`
   (the Spanish text is the key). Admin strings use `trans('torns.*')` in
   `lang/{es,en}/torns.php`.
-- Staging must never be indexed: keep `APP_ENV=staging` there.
+- A site that is not www.torns.app must never be indexed: keep `APP_ENV=staging`
+  there. Go-live (`docs/PRODUCTION.md`) turns the nueva.torns.app install into
+  www.torns.app and redirects nueva.torns.app to it; after that there is no staging.
 - Do not touch Botble core (`platform/core`, `platform/packages`) or the
   bundled plugins; extend them with hooks, filters and the theme.
 
@@ -51,8 +53,9 @@ Admin assets in `public/vendor/torns` go through `App\Support\VersionedAsset::pa
 - OTA: `app/Ota`, `app/Support/SiteContent.php` — `docs/OTA.md`.
 - AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app), translation of posts in `app/Ai/PostTranslator.php` — `docs/blog-ai.md`.
 - Install: `docs/CLOUDPANEL.md` (SSH) or `docs/INSTALL.md` (shared hosting).
-- Going live on www.torns.app (replacing WordPress): `docs/PRODUCTION.md`; old
-  WordPress URLs are redirected in `config/legacy-redirects.php`.
+- Going live on www.torns.app (the nueva.torns.app install takes over the domain,
+  WordPress is removed): `docs/PRODUCTION.md`; old WordPress URLs are
+  redirected in `config/legacy-redirects.php`.
 
 ## Checks before a PR
 
