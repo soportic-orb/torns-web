@@ -350,6 +350,96 @@ class BlogAi
         return [$text, ['model' => $model, 'input_tokens' => (int) $res->json('usage.input_tokens'), 'output_tokens' => (int) $res->json('usage.output_tokens')]];
     }
 
+    // ------------------------------------------------------------------ SEO
+
+    /** Lengths search engines show without cutting. */
+    public const SEO_TITLE_MAX = 60;
+
+    public const SEO_DESCRIPTION_MAX = 155;
+
+    /**
+     * SEO title and description for a post, from its title, summary and body.
+     *
+     * @param  array{title?: string, description?: string, content?: string, language?: string}  $post
+     * @return array{seo_title: string, seo_description: string}
+     */
+    public function seo(string $provider, array $post, ?int $userId = null): array
+    {
+        if (! isset($this->textProviders()[$provider])) {
+            throw new RuntimeException(trans('torns.ai_err_not_configured'));
+        }
+        $title = $this->plain($post['title'] ?? '', 255);
+        $content = $this->plain($post['content'] ?? '', 12000);
+        if ($title === '' && $content === '') {
+            throw new RuntimeException(trans('torns.ai_err_seo_empty'));
+        }
+        $language = self::LANGUAGES[$post['language'] ?? ''] ?? self::LANGUAGES['es'];
+
+        $system = 'Escribes el título y la descripción para buscadores (Google, Bing) y asistentes de IA de una publicación del blog de Torns (www.torns.app), leído por profesionales sanitarios en España que trabajan a turnos y guardias. '
+            . "Escribe en {$language}. "
+            . 'Título SEO: de 45 a ' . self::SEO_TITLE_MAX . ' caracteres, con la búsqueda principal al principio, natural (no una lista de palabras clave), sin comillas; si cabe, termina en « | Torns». '
+            . 'Descripción SEO: de 120 a ' . self::SEO_DESCRIPTION_MAX . ' caracteres, una o dos frases que resuman lo que aporta la publicación e inviten a leerla, sin comillas ni emojis. '
+            . 'Usa solo lo que dice la publicación: no añadas datos, cifras ni funciones de Torns que no estén en ella. '
+            . 'Responde solo con <seo_title>…</seo_title> y <seo_description>…</seo_description>.';
+
+        $message = "<title>\n{$title}\n</title>\n\n";
+        $summary = $this->plain($post['description'] ?? '', 1000);
+        if ($summary !== '') {
+            $message .= "<summary>\n{$summary}\n</summary>\n\n";
+        }
+        $message .= "<content>\n{$content}\n</content>";
+
+        [$raw, $usage] = $provider === 'claude'
+            ? $this->claude($system, $message, 400)
+            : $this->openaiText($system, $message, 400);
+
+        Log::info('Torns blog AI: seo', ['user' => $userId, 'provider' => $provider] + $usage);
+
+        $out = [];
+        foreach (['seo_title' => self::SEO_TITLE_MAX, 'seo_description' => self::SEO_DESCRIPTION_MAX] as $field => $max) {
+            if (! preg_match("#<{$field}>\s*(.*?)\s*</{$field}>#s", $raw, $match)) {
+                throw new RuntimeException(trans('torns.ai_err_unusable'));
+            }
+            $value = (string) preg_replace('/^[\s"\'«»“”]+|[\s"\'«»“”]+$/u', '', strip_tags(html_entity_decode($match[1], ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+            $out[$field] = $this->fit($value, $max);
+        }
+
+        return $out;
+    }
+
+    /** Short words a cut text must not end on (es, ca, gl, eu). */
+    protected const DANGLING = ['a', 'al', 'amb', 'con', 'da', 'de', 'del', 'do', 'e', 'el', 'els', 'en', 'eta', 'i', 'la', 'las', 'les', 'lo', 'los', 'na', 'no', 'o', 'os', 'para', 'per', 'por', 'que', 'sen', 'sin', 'su', 'sus', 'tu', 'un', 'una', 'y'];
+
+    /**
+     * Make a text fit: drop a trailing " | Torns" first, then prefer ending
+     * at a full sentence, else at a whole word that is not a connector.
+     */
+    protected function fit(string $value, int $max): string
+    {
+        $value = trim(preg_replace('/\s+/', ' ', $value) ?? '');
+        if (mb_strlen($value) <= $max) {
+            return $value;
+        }
+        $bare = (string) preg_replace('/\s*\|\s*Torns$/u', '', $value);
+        if (mb_strlen($bare) <= $max) {
+            return $bare;
+        }
+
+        $cut = mb_substr($bare, 0, $max);
+        $sentence = mb_strrpos($cut, '. ');
+        if ($sentence !== false && $sentence >= $max * 0.6) {
+            return mb_substr($cut, 0, $sentence + 1);
+        }
+
+        $words = explode(' ', mb_substr($bare, 0, $max + 1));
+        array_pop($words);
+        while (count($words) > 1 && in_array(mb_strtolower((string) end($words)), self::DANGLING, true)) {
+            array_pop($words);
+        }
+
+        return (string) preg_replace('/[\s,;:|–-]+$/u', '', implode(' ', $words));
+    }
+
     // ------------------------------------------------------------------ translation
 
     /** Fields of a post that are translated, in the order the model returns them. */

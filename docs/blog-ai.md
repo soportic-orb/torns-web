@@ -24,7 +24,7 @@ También se pueden dar por `.env` (los ajustes del panel tienen prioridad):
 
 ## En el editor
 
-Encima del contenido aparecen hasta tres botones:
+Encima del contenido aparecen hasta cuatro botones:
 
 - **✨ Escribir con IA**: petición libre, servicio (Claude o ChatGPT), qué
   escribir (artículo completo, título o resumen), idioma (por defecto el de
@@ -32,6 +32,11 @@ Encima del contenido aparecen hasta tres botones:
   texto que ya hay» reescribe o resume el contenido actual. El resultado se
   previsualiza y se puede **sustituir el contenido**, **añadir al final**,
   usarlo como **título** o **descripción**, o **volver a generar**.
+- **✨ Generar SEO con IA**: con el título, la descripción y el contenido que
+  hay en el editor, rellena el **título SEO** (60 caracteres como máximo) y
+  la **descripción SEO** (155) de la caja «Optimización SEO», en el idioma de
+  la versión que se edita. Si el modelo se pasa de largo, se recorta por una
+  frase o palabra completa. Hay que guardar la publicación.
 - **✨ Crear la imagen destacada con IA**: descripción, formato (horizontal
   1536×1024 o cuadrada) y estilo (fotografía, ilustración o dibujo plano con
   los colores de Torns). La imagen se guarda en Medios → `blog-ia` y, con
@@ -87,7 +92,7 @@ precios (las mismas fuentes que `content/site`).
 
 ## Límites y registro
 
-- 20 textos, 20 traducciones (una por idioma) y 10 imágenes por minuto y persona.
+- 20 textos, 20 SEO, 20 traducciones (una por idioma) y 10 imágenes por minuto y persona.
 - Pueden usarla quienes tienen permiso para crear o editar publicaciones
   (traducir: editar).
 - Cada llamada se anota en el log de Laravel (`Torns blog AI`) con la

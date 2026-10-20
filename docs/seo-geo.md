@@ -56,13 +56,36 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
 
 ## Al publicar una noticia
 
-1. Título claro (50–70 caracteres) y **descripción** de una o dos frases: es
-   la meta description, el resumen de `llms.txt` y la cita de los asistentes.
-   «✨ Escribir con IA» → «Título» o «Resumen» las propone.
-2. Imagen destacada (si no, se usa la imagen general de la web).
-3. Categoría y etiquetas.
-4. Si existe en varios idiomas, crea las traducciones desde la misma noticia
-   (selector de idioma de Botble), para que se enlacen con `hreflang`.
+1. Título claro y **descripción** de una o dos frases: la descripción es el
+   resumen de `llms.txt` y lo que citan los asistentes. «✨ Escribir con IA» →
+   «Título» o «Resumen» las propone.
+2. **SEO** (caja «Optimización SEO»): título de 60 caracteres como máximo y
+   descripción de 155, que es lo que muestran Google y Bing sin cortar. Si se
+   dejan vacíos se usan el título y la descripción de la noticia, que suelen
+   ser más largos. «✨ Generar SEO con IA» los rellena a partir del contenido.
+3. Imagen destacada (si no, se usa la imagen general de la web).
+4. Categoría y etiquetas.
+5. Traducciones con «✨ Traducir con IA», **después** de rellenar el SEO: el
+   título y la descripción SEO solo se traducen si existen en castellano. Así
+   las versiones quedan enlazadas con `hreflang`.
+
+## IndexNow
+
+Al guardar o traducir una noticia **publicada**, la web avisa a los buscadores
+que usan IndexNow (Bing, Yandex, Seznam, Naver…) con su dirección en cada
+idioma y la portada del blog. El índice de Bing es el que usan las búsquedas
+de ChatGPT y Copilot. Google no usa IndexNow: para Google, el sitemap y
+Search Console.
+
+- Solo en producción (`APP_ENV=production`); se apaga con
+  `INDEXNOW_ENABLED=false` en `.env`.
+- La clave se genera sola la primera vez (ajuste `torns_indexnow_key`) y se
+  publica en `https://www.torns.app/<clave>.txt`, como pide el protocolo.
+- El aviso se envía después de responder, así que guardar no espera.
+- Para enviar todas las direcciones del sitemap (por ejemplo, después del
+  cambio de dominio): `php artisan torns:indexnow`. Una o varias:
+  `php artisan torns:indexnow https://www.torns.app/blog/…`.
+- Queda anotado en el log de Laravel (`Torns IndexNow`).
 
 ## Qué mantener
 

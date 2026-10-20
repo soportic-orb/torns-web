@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('robots.txt', [SeoController::class, 'robots']);
 Route::get('llms-full.txt', [SeoController::class, 'llmsFull']);
+Route::get('{key}.txt', [SeoController::class, 'indexNowKey'])->where('key', '[a-f0-9]{32}');
 
 Route::middleware('web')->group(function (): void {
     Route::get('{first}/{second}.md', [SeoController::class, 'markdown'])

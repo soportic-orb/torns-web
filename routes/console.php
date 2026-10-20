@@ -3,6 +3,7 @@
 use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
 use App\Ota\OtaUpdater;
+use App\Support\IndexNow;
 use App\Support\SiteContent;
 use Botble\Blog\Models\Post;
 use Illuminate\Foundation\Inspiring;
@@ -94,6 +95,23 @@ Artisan::command('torns:blog:translate {post?* : Post ids (all posts if empty)} 
 
     return $failed ? 1 : 0;
 })->purpose('Translate blog posts from Spanish with AI (skips existing translations unless --overwrite)');
+
+Artisan::command('torns:indexnow {url?* : Absolute URLs (all the sitemap URLs if empty)}', function (IndexNow $indexNow) {
+    if (! $indexNow->enabled()) {
+        $this->warn('IndexNow is off: it only runs with APP_ENV=production and INDEXNOW_ENABLED not false.');
+
+        return 1;
+    }
+    $urls = $this->argument('url') ?: $indexNow->allUrls();
+    $result = $indexNow->submit($urls);
+    $this->line(match ($result) {
+        true => 'Sent ' . count($urls) . ' URLs to IndexNow.',
+        false => 'IndexNow did not accept the request (see storage/logs).',
+        default => 'Nothing to send.',
+    });
+
+    return $result === false ? 1 : 0;
+})->purpose('Tell search engines (IndexNow: Bing, Yandex…) about new or changed URLs');
 
 // The update is applied by hand from the panel; the check only tells it there is one.
 Schedule::command('torns:ota:check')->hourly()->withoutOverlapping();

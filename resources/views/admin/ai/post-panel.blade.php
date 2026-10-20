@@ -3,6 +3,9 @@
     id="torns-ai-panel"
     data-text-url="{{ route('torns-ai.text') }}"
     data-image-url="{{ route('torns-ai.image') }}"
+    data-seo-url="{{ route('torns-ai.seo') }}"
+    data-language="{{ $language }}"
+    data-provider="{{ $defaultProvider }}"
     @if ($translate)
         data-translate-url="{{ route('torns-ai.translate') }}"
         data-post-id="{{ $translate['post_id'] }}"
@@ -31,6 +34,9 @@
         'translateDone' => trans('torns.ai_translate_done'),
         'translateNone' => trans('torns.ai_translate_none'),
         'translateRun' => trans('torns.ai_translate_run'),
+        'seo' => trans('torns.ai_seo'),
+        'seoRunning' => trans('torns.ai_seo_running'),
+        'seoDone' => trans('torns.ai_seo_done'),
         'translateRunning' => trans('torns.ai_translate_running'),
         'translateCurrent' => trans('torns.ai_translate_current', ['language' => ':language']),
         'translateCount' => trans('torns.ai_translate_count', ['done' => ':done', 'total' => ':total']),
@@ -42,6 +48,12 @@
     <div class="d-flex flex-wrap gap-2">
         @if ($providers)
             <button type="button" class="btn btn-outline-primary" data-ai-open="text">✨ {{ trans('torns.ai_write') }}</button>
+        @endif
+        @if ($providers)
+            <button type="button" class="btn btn-outline-primary" data-ai-seo>
+                <span class="spinner-border spinner-border-sm me-1" aria-hidden="true" data-ai-seo-spinner hidden></span>
+                <span data-ai-seo-label>✨ {{ trans('torns.ai_seo') }}</span>
+            </button>
         @endif
         @if ($imageReady)
             <button type="button" class="btn btn-outline-primary" data-ai-open="image">✨ {{ trans('torns.ai_image') }}</button>

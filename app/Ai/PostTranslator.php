@@ -2,6 +2,7 @@
 
 namespace App\Ai;
 
+use App\Support\IndexNow;
 use Botble\Blog\Models\Post;
 use Botble\Language\Facades\Language;
 use Botble\LanguageAdvanced\Supports\LanguageAdvancedManager;
@@ -85,6 +86,8 @@ class PostTranslator
 
             $this->saveSlug($post, $language, $result['name']);
         });
+
+        app(IndexNow::class)->submitPostLater($post);
 
         return ['language' => $language, 'status' => 'saved'];
     }
