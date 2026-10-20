@@ -164,6 +164,121 @@
                 "gl": "Novidades de Torns e consellos para profesionais sanitarios que traballan a quendas: cambios de quenda, calendario laboral e conciliación.",
                 "eu": "Torns-en berriak eta txandaka lan egiten duten osasun-profesionalentzako aholkuak: txanda-aldaketak, lan-egutegia eta kontziliazioa."
             }
+        },
+        "comparativas": {
+            "slug": "comparativas",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Comparativas",
+                "ca": "Comparatives",
+                "gl": "Comparativas",
+                "eu": "Konparaketak"
+            },
+            "seo_title": {
+                "es": "Torns frente a otras apps de turnos: comparativas",
+                "ca": "Torns davant d'altres apps de torns: comparatives",
+                "gl": "Torns fronte a outras apps de quendas: comparativas",
+                "eu": "Torns eta txanden beste aplikazioak: konparaketak"
+            },
+            "seo_description": {
+                "es": "Comparativas de funcionalidades entre Torns y aTurnos, Shiftool, Supershift y TurnoClip: calendario de turnos, cambios entre compañeros, idiomas, precios y fuentes de cada dato.",
+                "ca": "Comparatives de funcionalitats entre Torns i aTurnos, Shiftool, Supershift i TurnoClip: calendari de torns, canvis entre companys, idiomes, preus i fonts de cada dada.",
+                "gl": "Comparativas de funcionalidades entre Torns e aTurnos, Shiftool, Supershift e TurnoClip: calendario de quendas, cambios entre compañeiros, idiomas, prezos e fontes de cada dato.",
+                "eu": "Torns eta aTurnos, Shiftool, Supershift eta TurnoClip arteko funtzio-konparaketak: txanden egutegia, lankideen arteko aldaketak, hizkuntzak, prezioak eta datu bakoitzaren iturriak."
+            }
+        },
+        "vs-aturnos": {
+            "slug": "torns-vs-aturnos",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs aTurnos",
+                "ca": "Torns vs aTurnos",
+                "gl": "Torns vs aTurnos",
+                "eu": "Torns vs aTurnos"
+            },
+            "seo_title": {
+                "es": "Torns vs aTurnos: comparativa de funcionalidades",
+                "ca": "Torns vs aTurnos: comparativa de funcionalitats",
+                "gl": "Torns vs aTurnos: comparativa de funcionalidades",
+                "eu": "Torns vs aTurnos: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y aTurnos, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i aTurnos, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e aTurnos, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta aTurnos, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-shiftool": {
+            "slug": "torns-vs-shiftool",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs Shiftool",
+                "ca": "Torns vs Shiftool",
+                "gl": "Torns vs Shiftool",
+                "eu": "Torns vs Shiftool"
+            },
+            "seo_title": {
+                "es": "Torns vs Shiftool: comparativa de funcionalidades",
+                "ca": "Torns vs Shiftool: comparativa de funcionalitats",
+                "gl": "Torns vs Shiftool: comparativa de funcionalidades",
+                "eu": "Torns vs Shiftool: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y Shiftool, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i Shiftool, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e Shiftool, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta Shiftool, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-supershift": {
+            "slug": "torns-vs-supershift",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs Supershift",
+                "ca": "Torns vs Supershift",
+                "gl": "Torns vs Supershift",
+                "eu": "Torns vs Supershift"
+            },
+            "seo_title": {
+                "es": "Torns vs Supershift: comparativa de funcionalidades",
+                "ca": "Torns vs Supershift: comparativa de funcionalitats",
+                "gl": "Torns vs Supershift: comparativa de funcionalidades",
+                "eu": "Torns vs Supershift: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y Supershift, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i Supershift, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e Supershift, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta Supershift, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-turnoclip": {
+            "slug": "torns-vs-turnoclip",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs TurnoClip",
+                "ca": "Torns vs TurnoClip",
+                "gl": "Torns vs TurnoClip",
+                "eu": "Torns vs TurnoClip"
+            },
+            "seo_title": {
+                "es": "Torns vs TurnoClip: comparativa de funcionalidades",
+                "ca": "Torns vs TurnoClip: comparativa de funcionalitats",
+                "gl": "Torns vs TurnoClip: comparativa de funcionalidades",
+                "eu": "Torns vs TurnoClip: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y TurnoClip, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i TurnoClip, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e TurnoClip, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta TurnoClip, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
         }
     }
 }

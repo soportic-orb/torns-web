@@ -1,0 +1,479 @@
+{
+  "name": "Supershift",
+  "slug": "supershift",
+  "website": "https://supershift.app/",
+  "checked_on": "2026-10-20",
+  "summary": {
+    "es": "Supershift es una app de calendario de turnos para iOS, Android, Mac y Apple Watch desarrollada por Supershift GmbH (Hamburgo, Alemania). Está dirigida a personas que trabajan a turnos, como personal sanitario, policías, bomberos, industria, comercio y transporte. Funciona sin cuenta ni conexión, y ofrece una suscripción Supershift Pro con funciones adicionales.",
+    "ca": "Supershift és una app de calendari de torns per a iOS, Android, Mac i Apple Watch desenvolupada per Supershift GmbH (Hamburg, Alemanya). S'adreça a persones que treballen a torns, com ara personal sanitari, policies, bombers, indústria, comerç i transport. Funciona sense compte ni connexió, i ofereix una subscripció Supershift Pro amb funcions addicionals.",
+    "gl": "Supershift é unha app de calendario de quendas para iOS, Android, Mac e Apple Watch desenvolvida por Supershift GmbH (Hamburgo, Alemaña). Está dirixida a persoas que traballan a quendas, como persoal sanitario, policías, bombeiros, industria, comercio e transporte. Funciona sen conta nin conexión, e ofrece unha subscrición Supershift Pro con funcións adicionais.",
+    "eu": "Supershift iOS, Android, Mac eta Apple Watcherako txanden egutegi-aplikazio bat da, Supershift GmbH-k (Hamburgo, Alemania) garatua. Txandaka lan egiten duten pertsonei zuzenduta dago, hala nola osasun-langileei, poliziei, suhiltzaileei, industriari, merkataritzari eta garraioari. Konturik eta konexiorik gabe dabil, eta Supershift Pro harpidetza eskaintzen du funtzio gehigarriekin."
+  },
+  "sources": [
+    {
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "title": "Supershift - Calendario Turnos (App Store España)"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=app.supershift&hl=es",
+      "title": "Supershift - Calendario Turnos (Google Play)"
+    },
+    {
+      "url": "https://supershift.app/",
+      "title": "supershift.app"
+    },
+    {
+      "url": "https://supershift.app/help.html",
+      "title": "Help - Supershift"
+    },
+    {
+      "url": "https://supershift.app/privacy.html",
+      "title": "Privacy - Supershift"
+    }
+  ],
+  "rows": {
+    "focus": {
+      "value": {
+        "es": "App individual de turnos",
+        "ca": "App individual de torns",
+        "gl": "App individual de quendas",
+        "eu": "Txandetarako banakako aplikazioa"
+      },
+      "detail": {
+        "es": "App de calendario de turnos para la persona trabajadora, orientada a profesiones con turnos rotativos (sanidad, policía, bomberos, industria, comercio, transporte).",
+        "ca": "App de calendari de torns per a la persona treballadora, orientada a professions amb torns rotatius (sanitat, policia, bombers, indústria, comerç, transport).",
+        "gl": "App de calendario de quendas para a persoa traballadora, orientada a profesións con quendas rotativas (sanidade, policía, bombeiros, industria, comercio, transporte).",
+        "eu": "Langilearentzako txanden egutegi-aplikazioa, txanda errotatiboak dituzten lanbideetara bideratua (osasuna, polizia, suhiltzaileak, industria, merkataritza, garraioa)."
+      },
+      "quote": "Está diseñada específicamente para personal de enfermería, médicos, paramédicos, policías, bomberos, trabajadores de fábricas y del sector industrial, personal de comercio",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "platforms": {
+      "value": {
+        "es": "iOS, Android, Mac, Watch",
+        "ca": "iOS, Android, Mac, Watch",
+        "gl": "iOS, Android, Mac, Watch",
+        "eu": "iOS, Android, Mac, Watch"
+      },
+      "detail": {
+        "es": "La ficha del App Store indica compatibilidad con iPhone, iPad, Mac (chip M1 o posterior), Apple Vision y Apple Watch; existe también ficha en Google Play para Android. No consta versión web.",
+        "ca": "La fitxa de l'App Store indica compatibilitat amb iPhone, iPad, Mac (xip M1 o posterior), Apple Vision i Apple Watch; també hi ha fitxa a Google Play per a Android. No consta versió web.",
+        "gl": "A ficha da App Store indica compatibilidade con iPhone, iPad, Mac (chip M1 ou posterior), Apple Vision e Apple Watch; existe tamén ficha en Google Play para Android. Non consta versión web.",
+        "eu": "App Storeko fitxak iPhone, iPad, Mac (M1 txipa edo berriagoa), Apple Vision eta Apple Watchekin bateragarritasuna adierazten du; Google Playn ere badu fitxa Androiderako. Ez da ageri web-bertsiorik."
+      },
+      "quote": "Mac | Requiere macOS 14.0 o posterior y un Mac con el chip M1 de Apple o posterior. | Apple Vision | Requiere visionOS 2.0 o posterior. | Apple Watch | Requiere watchOS 11.0 o posterior.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "languages": {
+      "value": {
+        "es": "13 idiomas; sin catalán/gallego/euskera",
+        "ca": "13 idiomes; sense català/gallec/basc",
+        "gl": "13 idiomas; sen catalán/galego/éuscaro",
+        "eu": "13 hizkuntza; katalana/galiziera/euskara gabe"
+      },
+      "detail": {
+        "es": "El App Store lista 13 idiomas: español, alemán, chino simplificado, chino tradicional, coreano, francés, inglés, italiano, japonés, neerlandés, portugués, ruso y turco; no incluye catalán, gallego ni euskera.",
+        "ca": "L'App Store llista 13 idiomes: espanyol, alemany, xinès simplificat, xinès tradicional, coreà, francès, anglès, italià, japonès, neerlandès, portuguès, rus i turc; no inclou el català, el gallec ni el basc.",
+        "gl": "A App Store lista 13 idiomas: español, alemán, chinés simplificado, chinés tradicional, coreano, francés, inglés, italiano, xaponés, neerlandés, portugués, ruso e turco; non inclúe catalán, galego nin éuscaro.",
+        "eu": "App Storek 13 hizkuntza zerrendatzen ditu: gaztelania, alemana, txinera sinplifikatua, txinera tradizionala, koreera, frantsesa, ingelesa, italiera, japoniera, nederlandera, portugesa, errusiera eta turkiera; ez ditu katalana, galiziera eta euskara barne hartzen."
+      },
+      "quote": "Español, Alemán, Chino simplificado, Chino tradicional, Coreano, Francés, Inglés, Italiano, Japonés, Neerlandés, Portugués, Ruso, Turco",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": false
+    },
+    "price": {
+      "value": {
+        "es": "Gratis; Pro 3,99 €/mes",
+        "ca": "Gratis; Pro 3,99 €/mes",
+        "gl": "Gratis; Pro 3,99 €/mes",
+        "eu": "Doan; Pro 3,99 €/hilean"
+      },
+      "detail": {
+        "es": "Descarga gratuita con compras integradas: Supershift Pro mensual 3,99 €, anual 9,99 € y de por vida 39,99 € (precios del App Store España).",
+        "ca": "Descàrrega gratuïta amb compres integrades: Supershift Pro mensual 3,99 €, anual 9,99 € i de per vida 39,99 € (preus de l'App Store Espanya).",
+        "gl": "Descarga gratuíta con compras integradas: Supershift Pro mensual 3,99 €, anual 9,99 € e de por vida 39,99 € (prezos da App Store España).",
+        "eu": "Doako deskarga, aplikazio barneko erosketekin: Supershift Pro hilekoa 3,99 €, urtekoa 9,99 € eta betiko 39,99 € (Espainiako App Storeko prezioak)."
+      },
+      "quote": "Supershift Pro De por vida | 39,99 € | Supershift Pro Anual | 9,99 € | Supershift Pro Mensual | 3,99 €",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "account": {
+      "value": {
+        "es": "Sin cuenta; opcional",
+        "ca": "Sense compte; opcional",
+        "gl": "Sen conta; opcional",
+        "eu": "Konturik gabe; aukerakoa"
+      },
+      "detail": {
+        "es": "Funciona sin cuenta; la cuenta (correo y contraseña) es opcional y sirve para la sincronización en la nube entre dispositivos.",
+        "ca": "Funciona sense compte; el compte (correu i contrasenya) és opcional i serveix per a la sincronització al núvol entre dispositius.",
+        "gl": "Funciona sen conta; a conta (correo e contrasinal) é opcional e serve para a sincronización na nube entre dispositivos.",
+        "eu": "Konturik gabe dabil; kontua (posta eta pasahitza) aukerakoa da eta gailuen arteko hodeiko sinkronizaziorako balio du."
+      },
+      "quote": "Sin cuenta. Sin internet. Abre la app y empieza a planificar al instante",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "healthcare": {
+      "value": {
+        "es": "No exclusivo; incluye sanitarios",
+        "ca": "No exclusiu; inclou sanitaris",
+        "gl": "Non exclusivo; inclúe sanitarios",
+        "eu": "Ez esklusiboa; osasun-langileak barne"
+      },
+      "detail": {
+        "es": "Menciona a enfermería, médicos y paramédicos entre sus destinatarios, junto con otras profesiones con turnos; no está dirigida exclusivamente al sector sanitario.",
+        "ca": "Esmenta infermeria, metges i paramèdics entre els seus destinataris, juntament amb altres professions amb torns; no s'adreça exclusivament al sector sanitari.",
+        "gl": "Menciona enfermaría, médicos e paramédicos entre os seus destinatarios, xunto con outras profesións con quendas; non está dirixida exclusivamente ao sector sanitario.",
+        "eu": "Erizaintza, medikuak eta paramedikoak aipatzen ditu bere hartzaileen artean, txandak dituzten beste lanbide batzuekin batera; ez dago osasun-sektoreari soilik zuzenduta."
+      },
+      "quote": "Está diseñada específicamente para personal de enfermería, médicos, paramédicos, policías, bomberos, trabajadores de fábricas",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": false
+    },
+    "calendar_views": {
+      "value": {
+        "es": "Mes; informes semana/mes/año",
+        "ca": "Mes; informes setmana/mes/any",
+        "gl": "Mes; informes semana/mes/ano",
+        "eu": "Hilabetea; asteko/hileko/urteko txostenak"
+      },
+      "detail": {
+        "es": "Las fuentes mencionan la vista del mes, widgets de día, 2 y 4 semanas y agenda, y PDF mensual y anual; no se detallan vistas de día o lista dentro de la app.",
+        "ca": "Les fonts esmenten la vista del mes, widgets de dia, 2 i 4 setmanes i agenda, i PDF mensual i anual; no es detallen vistes de dia o llista dins de l'app.",
+        "gl": "As fontes mencionan a vista do mes, widgets de día, 2 e 4 semanas e axenda, e PDF mensual e anual; non se detallan vistas de día ou lista dentro da app.",
+        "eu": "Iturriek hileko ikuspegia, eguneko, 2 eta 4 asteko eta agendako widgetak, eta hileko eta urteko PDFa aipatzen dituzte; ez dira zehazten aplikazio barruko eguneko edo zerrendako ikuspegiak."
+      },
+      "quote": "Create and print PDF documents of your monthly and yearly schedule.",
+      "url": "https://supershift.app/",
+      "has": true
+    },
+    "shift_types": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite crear tipos de turno con colores, emojis/iconos y plantillas con horarios.",
+        "ca": "Permet crear tipus de torn amb colors, emojis/icones i plantilles amb horaris.",
+        "gl": "Permite crear tipos de quenda con cores, emojis/iconas e modelos con horarios.",
+        "eu": "Txanda motak sortzeko aukera ematen du, kolore, emoji/ikono eta ordutegidun txantiloiekin."
+      },
+      "quote": "Emojis y colores personalizados: Asigna colores e iconos específicos a cada tipo de turno para ver tu mes de un vistazo.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "multi_job": {
+      "value": {
+        "es": "Varios turnos/día y calendarios",
+        "ca": "Diversos torns/dia i calendaris",
+        "gl": "Varias quendas/día e calendarios",
+        "eu": "Hainbat txanda/egun eta egutegi"
+      },
+      "detail": {
+        "es": "Permite varios turnos por día, incluido un segundo trabajo, y según las notas de versión, crear varios calendarios de eventos separados.",
+        "ca": "Permet diversos torns per dia, inclosa una segona feina, i, segons les notes de versió, crear diversos calendaris d'esdeveniments separats.",
+        "gl": "Permite varias quendas por día, incluído un segundo traballo, e, segundo as notas de versión, crear varios calendarios de eventos separados.",
+        "eu": "Egun bakoitzeko hainbat txanda onartzen ditu, bigarren lan bat barne, eta, bertsio-oharren arabera, gertaeren egutegi bereizi batzuk sortzeko aukera ematen du."
+      },
+      "quote": "Varios turnos por día: Planifica fácilmente turnos de día y de noche, guardias, turnos partidos o un segundo trabajo.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "rotations": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite definir un patrón de rotación y aplicarlo hasta con 2 años de antelación.",
+        "ca": "Permet definir un patró de rotació i aplicar-lo amb fins a 2 anys d'antelació.",
+        "gl": "Permite definir un patrón de rotación e aplicalo ata con 2 anos de antelación.",
+        "eu": "Errotazio-eredu bat definitzeko eta 2 urte arteko aurrerapenarekin aplikatzeko aukera ematen du."
+      },
+      "quote": "Define tu patrón de rotación una vez y aplícalo hasta con 2 años de antelación.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "import_roster": {
+      "value": {
+        "es": "Beta, con IA (OpenAI)",
+        "ca": "Beta, amb IA (OpenAI)",
+        "gl": "Beta, con IA (OpenAI)",
+        "eu": "Beta, IArekin (OpenAI)"
+      },
+      "detail": {
+        "es": "La política de privacidad describe una función opcional en beta, «Intelligent Import», que detecta turnos a partir de una foto, archivo o escaneo del cuadrante enviándolo a OpenAI.",
+        "ca": "La política de privadesa descriu una funció opcional en beta, «Intelligent Import», que detecta torns a partir d'una foto, un fitxer o un escaneig del quadrant enviant-lo a OpenAI.",
+        "gl": "A política de privacidade describe unha función opcional en beta, «Intelligent Import», que detecta quendas a partir dunha foto, ficheiro ou escaneo do cadro de quendas enviándoo a OpenAI.",
+        "eu": "Pribatutasun-politikak beta fasean dagoen aukerako funtzio bat deskribatzen du, «Intelligent Import», koadrantearen argazki, fitxategi edo eskaneatze batetik txandak detektatzen dituena, OpenAIra bidaliz."
+      },
+      "quote": "This optional feature (opt-in only) lets you add shifts by uploading a photo, file, or scan of your shift schedule",
+      "url": "https://supershift.app/privacy.html",
+      "has": true
+    },
+    "offline": {
+      "value": "yes",
+      "detail": {
+        "es": "Indica que funciona totalmente sin conexión y que los datos se guardan en el dispositivo.",
+        "ca": "Indica que funciona totalment sense connexió i que les dades es desen al dispositiu.",
+        "gl": "Indica que funciona totalmente sen conexión e que os datos se gardan no dispositivo.",
+        "eu": "Erabat konexiorik gabe dabilela eta datuak gailuan gordetzen direla adierazten du."
+      },
+      "quote": "Funciona totalmente sin conexión: Tu horario siempre está disponible, incluso sin cobertura ni Wi-Fi.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "calendar_sync": {
+      "value": "Pro",
+      "detail": {
+        "es": "La exportación a Apple Calendar, Google Calendar u Outlook figura entre las funciones de Supershift Pro.",
+        "ca": "L'exportació a Apple Calendar, Google Calendar o Outlook figura entre les funcions de Supershift Pro.",
+        "gl": "A exportación a Apple Calendar, Google Calendar ou Outlook figura entre as funcións de Supershift Pro.",
+        "eu": "Apple Calendar, Google Calendar edo Outlookera esportatzea Supershift Pro-ren funtzioen artean dago."
+      },
+      "quote": "Exportación al Calendario de iOS: Envía tus turnos directamente a Apple Calendar, Google Calendar o Outlook.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "two_way_sync": {
+      "value": "Pro",
+      "detail": {
+        "es": "La integración para ver eventos de calendarios externos junto a los turnos figura entre las funciones de Supershift Pro.",
+        "ca": "La integració per veure esdeveniments de calendaris externs al costat dels torns figura entre les funcions de Supershift Pro.",
+        "gl": "A integración para ver eventos de calendarios externos xunto ás quendas figura entre as funcións de Supershift Pro.",
+        "eu": "Kanpoko egutegietako gertaerak txandekin batera ikusteko integrazioa Supershift Pro-ren funtzioen artean dago."
+      },
+      "quote": "Integración con calendarios externos: Consulta cumpleaños, citas y eventos personales de tus calendarios externos junto a tus turnos.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "share_calendar": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite compartir el horario con familia, amigos o compañeros; la política de privacidad indica que se comparte mediante enlace.",
+        "ca": "Permet compartir l'horari amb família, amics o companys; la política de privadesa indica que es comparteix mitjançant un enllaç.",
+        "gl": "Permite compartir o horario coa familia, amigos ou compañeiros; a política de privacidade indica que se comparte mediante ligazón.",
+        "eu": "Ordutegia familiarekin, lagunekin edo lankideekin partekatzeko aukera ematen du; pribatutasun-politikak dio esteka baten bidez partekatzen dela."
+      },
+      "quote": "Anyone with the sharing link will be able to join your calendar.",
+      "url": "https://supershift.app/privacy.html"
+    },
+    "print_pdf": {
+      "value": "Pro",
+      "detail": {
+        "es": "La exportación a PDF del calendario mensual figura entre las funciones de Supershift Pro; la web menciona PDF mensual y anual imprimible.",
+        "ca": "L'exportació a PDF del calendari mensual figura entre les funcions de Supershift Pro; el web esmenta PDF mensual i anual imprimible.",
+        "gl": "A exportación a PDF do calendario mensual figura entre as funcións de Supershift Pro; a web menciona PDF mensual e anual imprimible.",
+        "eu": "Hileko egutegia PDFra esportatzea Supershift Pro-ren funtzioen artean dago; webguneak hileko eta urteko PDF inprimagarria aipatzen du."
+      },
+      "quote": "Exportación a PDF: Crea y comparte un PDF elegante de tu calendario mensual con título, horarios, descansos, notas, ubicación y total de horas trabajadas.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041",
+      "has": true
+    },
+    "statistics": {
+      "value": "yes",
+      "detail": {
+        "es": "Ofrece informes de ingresos, pluses, horas por tipo de turno, horas extra y recuento de turnos, por semana, mes, año o rango personalizado.",
+        "ca": "Ofereix informes d'ingressos, plusos, hores per tipus de torn, hores extra i recompte de torns, per setmana, mes, any o interval personalitzat.",
+        "gl": "Ofrece informes de ingresos, plus, horas por tipo de quenda, horas extra e reconto de quendas, por semana, mes, ano ou intervalo personalizado.",
+        "eu": "Diru-sarreren, plusen, txanda motaren araberako orduen, aparteko orduen eta txanda-kopuruaren txostenak eskaintzen ditu, asteka, hilabeteka, urteka edo tarte pertsonalizatu batean."
+      },
+      "quote": "Lleva el control de tus ingresos, pluses por turno, horas por tipo de turno, horas extra y recuento de turnos",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "holidays": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "widgets_watch": {
+      "value": "yes",
+      "detail": {
+        "es": "Ofrece widgets de pantalla de inicio y bloqueo y app para Apple Watch con complicaciones; en Android la ficha menciona widgets de día o 2 semanas, sin app de reloj.",
+        "ca": "Ofereix widgets de pantalla d'inici i de bloqueig i app per a Apple Watch amb complicacions; a Android la fitxa esmenta widgets de dia o 2 setmanes, sense app de rellotge.",
+        "gl": "Ofrece widgets de pantalla de inicio e de bloqueo e app para Apple Watch con complicacións; en Android a ficha menciona widgets de día ou 2 semanas, sen app de reloxo.",
+        "eu": "Hasierako eta blokeo-pantailako widgetak eta Apple Watcherako aplikazioa konplikazioekin eskaintzen ditu; Androiden, fitxak eguneko edo 2 asteko widgetak aipatzen ditu, erloju-aplikaziorik gabe."
+      },
+      "quote": "Consulta tus turnos actuales y próximos directamente desde la muñeca. Las complicaciones del Watch incluyen temporizadores con cuenta atrás",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "swaps_between_colleagues": {
+      "value": "no",
+      "detail": {
+        "es": "La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo.",
+        "ca": "L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu.",
+        "gl": "A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo.",
+        "eu": "Aplikazioak ez ditu aldaketa-eskaerak kudeatzen; egutegia partekatuz txanda-aldaketak koordinatzea aipatzen du, eta konturik eta internetik gabe dabil, datuak gailuan gordeta."
+      },
+      "quote": "Comparte tu horario laboral con familia, pareja, amigos o compañeros de trabajo para que todos estén al día. Coordina cambios de turno, consulta la disponibilidad al instante",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "swap_board": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "swap_chains": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "urgent_mode": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "anonymous_post": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "manager_notification": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "manual_swap_record": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "availability": {
+      "value": "-",
+      "detail": {
+        "es": "Al compartir el calendario se puede consultar la disponibilidad de otros, pero no consta que la app sugiera turnos compatibles.",
+        "ca": "En compartir el calendari es pot consultar la disponibilitat d'altres persones, però no consta que l'app suggereixi torns compatibles.",
+        "gl": "Ao compartir o calendario pódese consultar a dispoñibilidade doutros, pero non consta que a app suxira quendas compatibles.",
+        "eu": "Egutegia partekatzean besteen erabilgarritasuna kontsulta daiteke, baina ez da ageri aplikazioak txanda bateragarriak iradokitzen dituenik."
+      },
+      "quote": "Coordina cambios de turno, consulta la disponibilidad al instante y olvídate de los mensajes interminables.",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "chat": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "push_notifications": {
+      "value": "-",
+      "detail": {
+        "es": "La política de privacidad menciona notificaciones por correo sobre la actividad en calendarios compartidos; no consta información sobre notificaciones push de cambios.",
+        "ca": "La política de privadesa esmenta notificacions per correu sobre l'activitat en calendaris compartits; no consta informació sobre notificacions push de canvis.",
+        "gl": "A política de privacidade menciona notificacións por correo sobre a actividade en calendarios compartidos; non consta información sobre notificacións push de cambios.",
+        "eu": "Pribatutasun-politikak partekatutako egutegietako jarduerari buruzko posta bidezko jakinarazpenak aipatzen ditu; ez da ageri aldaketen push jakinarazpenei buruzko informaziorik."
+      },
+      "quote": "Notifications about activity in shared features, such as when another user joins a shared calendar",
+      "url": "https://supershift.app/privacy.html"
+    },
+    "reminders": {
+      "value": {
+        "es": "Alarmas por turno (solo iOS)",
+        "ca": "Alarmes per torn (només iOS)",
+        "gl": "Alarmas por quenda (só iOS)",
+        "eu": "Alarmak txandaka (iOS soilik)"
+      },
+      "detail": {
+        "es": "Configura automáticamente una alarma para cada tipo de turno; la web indica que la función de alarmas es solo para iOS.",
+        "ca": "Configura automàticament una alarma per a cada tipus de torn; el web indica que la funció d'alarmes és només per a iOS.",
+        "gl": "Configura automaticamente unha alarma para cada tipo de quenda; a web indica que a función de alarmas é só para iOS.",
+        "eu": "Txanda mota bakoitzerako alarma bat konfiguratzen du automatikoki; webguneak dio alarmen funtzioa iOSerako soilik dela."
+      },
+      "quote": "Supershift uses your work schedule to set the right alarm for every day, late, or night shift. (iOS only)",
+      "url": "https://supershift.app/",
+      "has": true
+    },
+    "ai_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta un asistente de IA; constan una importación inteligente de cuadrantes con OpenAI (beta) y, en iOS 27, entrada en lenguaje natural con Apple Intelligence.",
+        "ca": "No consta un assistent d'IA; consten una importació intel·ligent de quadrants amb OpenAI (beta) i, a iOS 27, entrada en llenguatge natural amb Apple Intelligence.",
+        "gl": "Non consta un asistente de IA; constan unha importación intelixente de cadros de quendas con OpenAI (beta) e, en iOS 27, entrada en linguaxe natural con Apple Intelligence.",
+        "eu": "Ez da ageri IA laguntzailerik; koadranteen inportazio adimenduna OpenAIrekin (beta) eta, iOS 27n, hizkuntza naturaleko sarrera Apple Intelligence-rekin ageri dira."
+      },
+      "quote": "Gracias a Apple Intelligence, crear eventos es más fácil que nunca. Escribe con naturalidad, por ejemplo «Gimnasio a las 7:30»",
+      "url": "https://apps.apple.com/es/app/supershift-calendario-turnos/id1104165041"
+    },
+    "legal_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "organisations": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "data_privacy": {
+      "value": {
+        "es": "Local; nube opcional",
+        "ca": "Local; núvol opcional",
+        "gl": "Local; nube opcional",
+        "eu": "Lokala; hodeia aukerakoa"
+      },
+      "detail": {
+        "es": "Sin cuenta, los datos se guardan en el dispositivo; con cuenta se sincronizan con un servidor de la empresa, sin indicar su ubicación; la importación inteligente envía datos a OpenAI, posiblemente fuera de la UE.",
+        "ca": "Sense compte, les dades es desen al dispositiu; amb compte se sincronitzen amb un servidor de l'empresa, sense indicar-ne la ubicació; la importació intel·ligent envia dades a OpenAI, possiblement fora de la UE.",
+        "gl": "Sen conta, os datos gárdanse no dispositivo; con conta sincronízanse cun servidor da empresa, sen indicar a súa localización; a importación intelixente envía datos a OpenAI, posiblemente fóra da UE.",
+        "eu": "Konturik gabe, datuak gailuan gordetzen dira; kontuarekin, enpresaren zerbitzari batekin sinkronizatzen dira, haren kokapena adierazi gabe; inportazio adimendunak datuak OpenAIra bidaltzen ditu, agian EBtik kanpo."
+      },
+      "quote": "When Supershift is used solely offline, the data you enter will be stored de-centrally on your storage medium. In such a case, we will not be able to access the data.",
+      "url": "https://supershift.app/privacy.html",
+      "has": true
+    }
+  }
+}

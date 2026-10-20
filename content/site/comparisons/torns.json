@@ -1,0 +1,345 @@
+{
+  "name": "Torns",
+  "slug": "torns",
+  "website": "https://www.torns.app",
+  "checked_on": "2026-10-20",
+  "source": "https://www.torns.app/funcionalidades",
+  "rows": {
+    "focus": {
+      "value": {
+        "es": "App individual: cambios + calendario",
+        "ca": "App individual: canvis + calendari",
+        "gl": "App individual: cambios + calendario",
+        "eu": "Banakako aplikazioa: aldaketak + egutegia"
+      },
+      "detail": {
+        "es": "App para profesionales sanitarios que reúne su calendario de turnos de todos sus centros y los cambios de turno con compañeros del mismo centro y categoría.",
+        "ca": "App per a professionals sanitaris que reuneix el seu calendari de torns de tots els seus centres i els canvis de torn amb companys del mateix centre i categoria.",
+        "gl": "App para profesionais sanitarios que reúne o seu calendario de quendas de todos os seus centros e os cambios de quenda con compañeiros do mesmo centro e categoría.",
+        "eu": "Osasun-profesionalentzako aplikazioa, bere zentro guztietako txanden egutegia eta zentro eta kategoria bereko lankideekin egindako txanda-aldaketak biltzen dituena."
+      }
+    },
+    "healthcare": {
+      "value": "yes",
+      "detail": {
+        "es": "Pensada para enfermeras, médicos, TCAE, TES, matronas, fisioterapeutas y otros profesionales sanitarios que trabajan a turnos en España.",
+        "ca": "Pensada per a infermeres, metges, TCAI, TES, llevadores, fisioterapeutes i altres professionals sanitaris que treballen a torns a Espanya.",
+        "gl": "Pensada para enfermeiras, médicos, TCAE, TES, matronas, fisioterapeutas e outros profesionais sanitarios que traballan a quendas en España.",
+        "eu": "Espainian txandaka lan egiten duten erizain, mediku, TCAE, TES, emagin, fisioterapeuta eta beste osasun-profesional batzuentzat pentsatua."
+      }
+    },
+    "platforms": {
+      "value": {
+        "es": "iOS, Android, web, Apple Watch",
+        "ca": "iOS, Android, web, Apple Watch",
+        "gl": "iOS, Android, web, Apple Watch",
+        "eu": "iOS, Android, weba, Apple Watch"
+      },
+      "detail": {
+        "es": "iPhone y iPad, Android, navegador (app.torns.app), Apple Watch (watchOS 9 o posterior) y widgets para iOS y Android.",
+        "ca": "iPhone i iPad, Android, navegador (app.torns.app), Apple Watch (watchOS 9 o posterior) i widgets per a iOS i Android.",
+        "gl": "iPhone e iPad, Android, navegador (app.torns.app), Apple Watch (watchOS 9 ou posterior) e widgets para iOS e Android.",
+        "eu": "iPhone eta iPad, Android, nabigatzailea (app.torns.app), Apple Watch (watchOS 9 edo berriagoa) eta iOS eta Androiderako widgetak."
+      }
+    },
+    "languages": {
+      "value": "yes",
+      "detail": {
+        "es": "Castellano, català, galego y euskara; cada usuario elige el idioma en su perfil.",
+        "ca": "Castellà, català, gallec i basc; cada usuari tria l'idioma al seu perfil.",
+        "gl": "Castelán, catalán, galego e éuscaro; cada usuario escolle o idioma no seu perfil.",
+        "eu": "Gaztelania, katalana, galiziera eta euskara; erabiltzaile bakoitzak bere profilean aukeratzen du hizkuntza."
+      }
+    },
+    "price": {
+      "value": {
+        "es": "Free + Pro 2,99 €/mes",
+        "ca": "Free + Pro 2,99 €/mes",
+        "gl": "Free + Pro 2,99 €/mes",
+        "eu": "Free + Pro 2,99 €/hilean"
+      },
+      "detail": {
+        "es": "Plan Free gratuito; Torns Pro a 2,99 € al mes o 29,90 € al año, con 30 días de prueba de Pro al registrarse, sin tarjeta.",
+        "ca": "Pla Free gratuït; Torns Pro a 2,99 € al mes o 29,90 € a l'any, amb 30 dies de prova de Pro en registrar-se, sense targeta.",
+        "gl": "Plan Free gratuíto; Torns Pro a 2,99 € ao mes ou 29,90 € ao ano, con 30 días de proba de Pro ao rexistrarse, sen tarxeta.",
+        "eu": "Free plana doakoa; Torns Pro hilean 2,99 € edo urtean 29,90 €, eta Pro 30 egunez probatzeko aukera erregistratzean, txartelik gabe."
+      }
+    },
+    "account": {
+      "value": "yes",
+      "detail": {
+        "es": "Cualquier profesional se da de alta y se une a sus centros con un código, sin que su empresa contrate nada.",
+        "ca": "Qualsevol professional es dona d'alta i s'uneix als seus centres amb un codi, sense que la seva empresa contracti res.",
+        "gl": "Calquera profesional dáse de alta e únese aos seus centros cun código, sen que a súa empresa contrate nada.",
+        "eu": "Edozein profesionalek alta eman eta bere zentroetara batu daiteke kode baten bidez, bere enpresak ezer kontratatu gabe."
+      }
+    },
+    "calendar_views": {
+      "value": {
+        "es": "Mes, día, lista y año",
+        "ca": "Mes, dia, llista i any",
+        "gl": "Mes, día, lista e ano",
+        "eu": "Hilabetea, eguna, zerrenda eta urtea"
+      },
+      "detail": {
+        "es": "Vista mensual, diaria, de lista y anual.",
+        "ca": "Vista mensual, diària, de llista i anual.",
+        "gl": "Vista mensual, diaria, de lista e anual.",
+        "eu": "Hileko, eguneko, zerrenda eta urteko ikuspegia."
+      }
+    },
+    "shift_types": {
+      "value": "yes",
+      "detail": {
+        "es": "Tipos Mañana, Tarde, Noche, Día, 24h y Localizable, con color, centro, unidad, área, horario y notas; se pueden marcar horas extra y JAC.",
+        "ca": "Tipus Matí, Tarda, Nit, Dia, 24h i Localitzable, amb color, centre, unitat, àrea, horari i notes; es poden marcar hores extra i JAC.",
+        "gl": "Tipos Mañá, Tarde, Noite, Día, 24h e Localizable, con cor, centro, unidade, área, horario e notas; pódense marcar horas extra e JAC.",
+        "eu": "Goiza, Arratsaldea, Gaua, Eguna, 24h eta Lokalizagarria motak, kolorea, zentroa, unitatea, arloa, ordutegia eta oharrak dituztela; aparteko orduak eta JAC marka daitezke."
+      }
+    },
+    "multi_job": {
+      "value": "yes",
+      "detail": {
+        "es": "Los turnos de todos los centros en un solo calendario (Free: 1 centro; Pro: varios).",
+        "ca": "Els torns de tots els centres en un sol calendari (Free: 1 centre; Pro: diversos).",
+        "gl": "As quendas de todos os centros nun só calendario (Free: 1 centro; Pro: varios).",
+        "eu": "Zentro guztietako txandak egutegi bakarrean (Free: zentro 1; Pro: zenbait)."
+      }
+    },
+    "rotations": {
+      "value": "Pro",
+      "detail": {
+        "es": "Rellena el calendario a partir de un ciclo que se repite, con vista previa y sin tocar los turnos publicados (Pro, hasta 10 rotaciones).",
+        "ca": "Omple el calendari a partir d'un cicle que es repeteix, amb previsualització i sense tocar els torns publicats (Pro, fins a 10 rotacions).",
+        "gl": "Enche o calendario a partir dun ciclo que se repite, con vista previa e sen tocar as quendas publicadas (Pro, ata 10 rotacións).",
+        "eu": "Errepikatzen den ziklo batetik abiatuta betetzen du egutegia, aurrebista eskainiz eta argitaratutako txandak ukitu gabe (Pro, gehienez 10 errotazio)."
+      }
+    },
+    "import_roster": {
+      "value": "yes",
+      "detail": {
+        "es": "La IA lee una foto, un PDF, una captura o una hoja de cálculo del cuadrante, encuentra la fila del usuario y propone sus turnos para revisarlos; el archivo no se guarda (Free: 2 lecturas; Pro: 30 al mes).",
+        "ca": "La IA llegeix una foto, un PDF, una captura o un full de càlcul del quadrant, troba la fila de l'usuari i proposa els seus torns per revisar-los; el fitxer no es desa (Free: 2 lectures; Pro: 30 al mes).",
+        "gl": "A IA le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, atopa a fila do usuario e propón as súas quendas para revisalas; o ficheiro non se garda (Free: 2 lecturas; Pro: 30 ao mes).",
+        "eu": "IAk koadrantearen argazki, PDF, pantaila-argazki edo kalkulu-orri bat irakurtzen du, erabiltzailearen errenkada aurkitzen du eta haren txandak proposatzen ditu berrikusteko; fitxategia ez da gordetzen (Free: 2 irakurketa; Pro: 30 hilean)."
+      }
+    },
+    "offline": {
+      "value": "yes",
+      "detail": {
+        "es": "El calendario se consulta y edita sin conexión en iOS y Android y se sincroniza al recuperarla.",
+        "ca": "El calendari es consulta i s'edita sense connexió a iOS i Android i se sincronitza quan es recupera.",
+        "gl": "O calendario consúltase e edítase sen conexión en iOS e Android e sincronízase ao recuperala.",
+        "eu": "Egutegia konexiorik gabe kontsultatu eta editatu daiteke iOSen eta Androiden, eta konexioa berreskuratzean sinkronizatzen da."
+      }
+    },
+    "calendar_sync": {
+      "value": "yes",
+      "detail": {
+        "es": "Exporta los turnos al calendario del iPhone o Android con alarmas y se conecta con Google Calendar.",
+        "ca": "Exporta els torns al calendari de l'iPhone o Android amb alarmes i es connecta amb Google Calendar.",
+        "gl": "Exporta as quendas ao calendario do iPhone ou Android con alarmas e conéctase con Google Calendar.",
+        "eu": "Txandak iPhone edo Android gailuko egutegira esportatzen ditu alarmekin, eta Google Calendar-ekin konektatzen da."
+      }
+    },
+    "two_way_sync": {
+      "value": "Pro",
+      "detail": {
+        "es": "Busca en Google Calendar o en el calendario del móvil eventos que parecen turnos y propone importarlos (Pro).",
+        "ca": "Cerca a Google Calendar o al calendari del mòbil esdeveniments que semblen torns i proposa importar-los (Pro).",
+        "gl": "Busca en Google Calendar ou no calendario do móbil eventos que parecen quendas e propón importalos (Pro).",
+        "eu": "Google Calendar-en edo mugikorreko egutegian txanden itxura duten gertaerak bilatzen ditu eta inportatzea proposatzen du (Pro)."
+      }
+    },
+    "share_calendar": {
+      "value": "Pro",
+      "detail": {
+        "es": "Enlace público de solo lectura, con contraseña opcional, y exportación ICS (Pro).",
+        "ca": "Enllaç públic de només lectura, amb contrasenya opcional, i exportació ICS (Pro).",
+        "gl": "Ligazón pública de só lectura, con contrasinal opcional, e exportación ICS (Pro).",
+        "eu": "Irakurtzeko soilik den esteka publikoa, aukerako pasahitzarekin, eta ICS esportazioa (Pro)."
+      }
+    },
+    "print_pdf": {
+      "value": "Pro",
+      "detail": {
+        "es": "En formato de lista, mensual o anual (Pro).",
+        "ca": "En format de llista, mensual o anual (Pro).",
+        "gl": "En formato de lista, mensual ou anual (Pro).",
+        "eu": "Zerrenda, hileko edo urteko formatuan (Pro)."
+      }
+    },
+    "statistics": {
+      "value": "Pro",
+      "detail": {
+        "es": "Turnos y horas por mes o año, horas extra, sábados, domingos y festivos, reparto por tipo de turno, área y día, y cambios realizados (Pro).",
+        "ca": "Torns i hores per mes o any, hores extra, dissabtes, diumenges i festius, distribució per tipus de torn, àrea i dia, i canvis fets (Pro).",
+        "gl": "Quendas e horas por mes ou ano, horas extra, sábados, domingos e festivos, repartición por tipo de quenda, área e día, e cambios realizados (Pro).",
+        "eu": "Txandak eta orduak hilabeteka edo urteka, aparteko orduak, larunbatak, igandeak eta jaiegunak, txanda motaren, arloaren eta egunaren araberako banaketa, eta egindako aldaketak (Pro)."
+      }
+    },
+    "holidays": {
+      "value": "yes",
+      "detail": {
+        "es": "Festivos nacionales, autonómicos y locales, y la previsión del tiempo de cada día.",
+        "ca": "Festius estatals, autonòmics i locals, i la previsió del temps de cada dia.",
+        "gl": "Festivos estatais, autonómicos e locais, e a previsión do tempo de cada día.",
+        "eu": "Estatuko, autonomia-erkidegoko eta tokiko jaiegunak, eta egun bakoitzeko eguraldi-iragarpena."
+      }
+    },
+    "widgets_watch": {
+      "value": "yes",
+      "detail": {
+        "es": "Cuatro widgets para iOS y Android y app de Apple Watch con complicaciones.",
+        "ca": "Quatre widgets per a iOS i Android i app d'Apple Watch amb complicacions.",
+        "gl": "Catro widgets para iOS e Android e app de Apple Watch con complicacións.",
+        "eu": "Lau widget iOS eta Androiderako, eta Apple Watcherako aplikazioa konplikazioekin."
+      }
+    },
+    "swaps_between_colleagues": {
+      "value": "yes",
+      "detail": {
+        "es": "Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).",
+        "ca": "Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).",
+        "gl": "Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).",
+        "eu": "Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak)."
+      }
+    },
+    "swap_board": {
+      "value": "yes",
+      "detail": {
+        "es": "El Muro reúne los turnos publicados en los centros del usuario, con filtros y el filtro «Turnos compatibles».",
+        "ca": "El Mur reuneix els torns publicats als centres de l'usuari, amb filtres i el filtre «Torns compatibles».",
+        "gl": "O Muro reúne as quendas publicadas nos centros do usuario, con filtros e o filtro «Turnos compatibles».",
+        "eu": "Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu, iragazkiekin eta «Txanda bateragarriak» iragazkiarekin."
+      }
+    },
+    "swap_chains": {
+      "value": "Pro",
+      "detail": {
+        "es": "Detecta cambios circulares entre 3 o 4 compañeros y los propone a todos, con chat de grupo (Pro).",
+        "ca": "Detecta canvis circulars entre 3 o 4 companys i els proposa a tots, amb xat de grup (Pro).",
+        "gl": "Detecta cambios circulares entre 3 ou 4 compañeiros e propónllelos a todos, con chat de grupo (Pro).",
+        "eu": "3 edo 4 lankideren arteko aldaketa zirkularrak detektatzen ditu eta guztiei proposatzen dizkie, talde-txatarekin (Pro)."
+      }
+    },
+    "urgent_mode": {
+      "value": "Pro",
+      "detail": {
+        "es": "El turno sube al principio del Muro 24 horas y los compañeros reciben un aviso urgente (Pro).",
+        "ca": "El torn puja al principi del Mur durant 24 hores i els companys reben un avís urgent (Pro).",
+        "gl": "A quenda sobe ao principio do Muro durante 24 horas e os compañeiros reciben un aviso urxente (Pro).",
+        "eu": "Txanda Muralaren hasierara igotzen da 24 orduz, eta lankideek abisu urgentea jasotzen dute (Pro)."
+      }
+    },
+    "anonymous_post": {
+      "value": "yes",
+      "detail": {
+        "es": "Opción «Ocultar mi identidad» al publicar un turno.",
+        "ca": "Opció «Ocultar la meva identitat» en publicar un torn.",
+        "gl": "Opción «Ocultar a miña identidade» ao publicar unha quenda.",
+        "eu": "«Ezkutatu nire nortasuna» aukera txanda bat argitaratzean."
+      }
+    },
+    "manager_notification": {
+      "value": "Pro",
+      "detail": {
+        "es": "Envía el cambio acordado por email al gestor de planillas, o a su panel si el centro usa el panel de Torns (Pro).",
+        "ca": "Envia el canvi acordat per correu electrònic al gestor dels quadrants, o al seu panell si el centre fa servir el panell de Torns (Pro).",
+        "gl": "Envía o cambio acordado por correo electrónico ao xestor dos cadros de quendas, ou ao seu panel se o centro usa o panel de Torns (Pro).",
+        "eu": "Adostutako aldaketa posta elektronikoz bidaltzen dio koadranteen kudeatzaileari, edo haren panelera zentroak Torns-en panela erabiltzen badu (Pro)."
+      }
+    },
+    "manual_swap_record": {
+      "value": "yes",
+      "detail": {
+        "es": "Registra un cambio acordado fuera de la app, aunque el compañero no use Torns.",
+        "ca": "Registra un canvi acordat fora de l'app, encara que el company no faci servir Torns.",
+        "gl": "Rexistra un cambio acordado fóra da app, aínda que o compañeiro non use Torns.",
+        "eu": "Aplikaziotik kanpo adostutako aldaketa bat erregistratzen du, lankideak Torns erabiltzen ez badu ere."
+      }
+    },
+    "availability": {
+      "value": "yes",
+      "detail": {
+        "es": "«Mi disponibilidad» indica los días y tipos de turno que se pueden cubrir y alimenta el filtro de turnos compatibles.",
+        "ca": "«La meva disponibilitat» indica els dies i els tipus de torn que es poden cobrir i alimenta el filtre de torns compatibles.",
+        "gl": "«A miña dispoñibilidade» indica os días e tipos de quenda que se poden cubrir e alimenta o filtro de quendas compatibles.",
+        "eu": "«Nire eskuragarritasuna» atalak bete daitezkeen egunak eta txanda motak adierazten ditu, eta txanda bateragarrien iragazkia elikatzen du."
+      }
+    },
+    "chat": {
+      "value": "yes",
+      "detail": {
+        "es": "Mensajes individuales y de grupo, y chat de grupo en las cadenas de cambios.",
+        "ca": "Missatges individuals i de grup, i xat de grup a les cadenes de canvis.",
+        "gl": "Mensaxes individuais e de grupo, e chat de grupo nas cadeas de cambios.",
+        "eu": "Banakako eta taldeko mezuak, eta talde-txata aldaketa-kateetan."
+      }
+    },
+    "push_notifications": {
+      "value": "yes",
+      "detail": {
+        "es": "Avisos de propuestas, cambios, mensajes, SOS, cadenas y turnos a cubrir, configurables por centro y área.",
+        "ca": "Avisos de propostes, canvis, missatges, SOS, cadenes i torns per cobrir, configurables per centre i àrea.",
+        "gl": "Avisos de propostas, cambios, mensaxes, SOS, cadeas e quendas por cubrir, configurables por centro e área.",
+        "eu": "Proposamen, aldaketa, mezu, SOS, kate eta bete beharreko txanden abisuak, zentroaren eta arloaren arabera konfiguragarriak."
+      }
+    },
+    "reminders": {
+      "value": "yes",
+      "detail": {
+        "es": "Recordatorio del próximo turno la víspera o el mismo día, según la hora de inicio.",
+        "ca": "Recordatori del pròxim torn la vigília o el mateix dia, segons l'hora d'inici.",
+        "gl": "Recordatorio da próxima quenda a véspera ou o mesmo día, segundo a hora de inicio.",
+        "eu": "Hurrengo txandaren oroigarria aurreko egunean edo egun berean, hasiera-orduaren arabera."
+      }
+    },
+    "ai_assistant": {
+      "value": "Pro",
+      "detail": {
+        "es": "Copilot gestiona el calendario, busca turnos compatibles y propone y hace cambios a partir de una frase (Pro y periodo de prueba).",
+        "ca": "Copilot gestiona el calendari, cerca torns compatibles i proposa i fa canvis a partir d'una frase (Pro i període de prova).",
+        "gl": "Copilot xestiona o calendario, busca quendas compatibles e propón e fai cambios a partir dunha frase (Pro e período de proba).",
+        "eu": "Copilotek egutegia kudeatzen du, txanda bateragarriak bilatzen ditu eta esaldi batetik abiatuta aldaketak proposatu eta egiten ditu (Pro eta proba-aldia)."
+      }
+    },
+    "legal_assistant": {
+      "value": "yes",
+      "detail": {
+        "es": "El Consultor legal responde sobre permisos, jornada y descansos citando el convenio o la norma (Free: 2 consultas; Pro: 20 al día).",
+        "ca": "El Consultor legal respon sobre permisos, jornada i descansos citant el conveni o la norma (Free: 2 consultes; Pro: 20 al dia).",
+        "gl": "O Consultor legal responde sobre permisos, xornada e descansos citando o convenio ou a norma (Free: 2 consultas; Pro: 20 ao día).",
+        "eu": "Lege-aholkulariak baimenei, lanaldiari eta atsedenei buruz erantzuten du, hitzarmena edo araua aipatuz (Free: 2 kontsulta; Pro: 20 eguneko)."
+      }
+    },
+    "organisations": {
+      "value": {
+        "es": "Desde 0,39 €/usuario y mes",
+        "ca": "Des de 0,39 €/usuari i mes",
+        "gl": "Desde 0,39 €/usuario e mes",
+        "eu": "0,39 €-tik aurrera erabiltzaile eta hileko"
+      },
+      "detail": {
+        "es": "Panel web para hospitales, centros y servicios de emergencias: turnos a cubrir, cambios del personal, mensajes y campañas; de 0,39 € a 0,99 € por usuario activo y mes sin IVA, con 30 días de prueba.",
+        "ca": "Panell web per a hospitals, centres i serveis d'emergències: torns per cobrir, canvis del personal, missatges i campanyes; de 0,39 € a 0,99 € per usuari actiu i mes sense IVA, amb 30 dies de prova.",
+        "gl": "Panel web para hospitais, centros e servizos de emerxencias: quendas por cubrir, cambios do persoal, mensaxes e campañas; de 0,39 € a 0,99 € por usuario activo e mes sen IVE, con 30 días de proba.",
+        "eu": "Web panela ospitale, zentro eta larrialdi-zerbitzuentzat: bete beharreko txandak, langileen aldaketak, mezuak eta kanpainak; 0,39 €-tik 0,99 €-ra erabiltzaile aktibo eta hileko, BEZik gabe, 30 eguneko probarekin."
+      }
+    },
+    "data_privacy": {
+      "value": {
+        "es": "Servidores en España",
+        "ca": "Servidors a Espanya",
+        "gl": "Servidores en España",
+        "eu": "Zerbitzariak Espainian"
+      },
+      "detail": {
+        "es": "Datos alojados en servidores en España; sin datos clínicos ni de pacientes; el usuario puede exportar sus datos y eliminar su cuenta.",
+        "ca": "Dades allotjades en servidors a Espanya; sense dades clíniques ni de pacients; l'usuari pot exportar les seves dades i eliminar el seu compte.",
+        "gl": "Datos aloxados en servidores en España; sen datos clínicos nin de pacientes; o usuario pode exportar os seus datos e eliminar a súa conta.",
+        "eu": "Datuak Espainiako zerbitzarietan ostatatuta; datu klinikorik eta pazienteen daturik gabe; erabiltzaileak bere datuak esporta ditzake eta bere kontua ezabatu."
+      }
+    }
+  }
+}

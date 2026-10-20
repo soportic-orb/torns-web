@@ -282,6 +282,17 @@ class SiteIndex
         }
         $lines[] = '';
 
+        $comparisons = array_filter($pages, fn ($page, $key) => $key === 'comparativas' || str_starts_with($key, 'vs-'), ARRAY_FILTER_USE_BOTH);
+        if ($comparisons) {
+            $lines[] = '## Comparativas con otras apps';
+            foreach ($comparisons as $page) {
+                if ($item = $page['locales'][$default] ?? null) {
+                    $lines[] = "- [{$item['name']}](" . ($item['md'] ?: $item['url']) . "): {$item['description']}";
+                }
+            }
+            $lines[] = '';
+        }
+
         $posts = $this->posts(60);
         if ($posts->isNotEmpty()) {
             $lines[] = '## Noticias y artículos';
@@ -312,6 +323,12 @@ class SiteIndex
     {
         $default = $this->defaultLocale();
         $out = $this->pageMarkdown('funcionalidades', $default) ?? ('# Torns' . "\n\n" . $this->summary($default) . "\n");
+
+        foreach (array_keys($this->pages()) as $key) {
+            if (str_starts_with($key, 'vs-') && ($markdown = $this->pageMarkdown($key, $default))) {
+                $out .= "\n\n---\n\n" . $markdown;
+            }
+        }
 
         $posts = $this->posts(30);
         if ($posts->isNotEmpty()) {

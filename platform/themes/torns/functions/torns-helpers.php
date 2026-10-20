@@ -182,3 +182,95 @@ if (! function_exists('torns_comparison_cell')) {
         return '<span class="text-xs font-medium leading-snug text-torns-ink/70">' . e($value) . '</span>';
     }
 }
+
+if (! function_exists('torns_comparison_text')) {
+    /** A text from content/site/comparisons: a plain string (Spanish) or {es, ca, gl, eu}. */
+    function torns_comparison_text(mixed $value, ?string $locale = null): string
+    {
+        if (is_array($value)) {
+            $locale ??= function_exists('torns_current_locale') ? torns_current_locale() : 'es';
+
+            return (string) ($value[$locale] ?? $value['es'] ?? reset($value) ?: '');
+        }
+
+        return (string) $value;
+    }
+}
+
+if (! function_exists('torns_comparison_competitors')) {
+    /**
+     * Apps with a comparison page: content/site/comparisons/<slug>.json
+     * (features.json and torns.json are the shared parts).
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    function torns_comparison_competitors(): array
+    {
+        static $cache = null;
+        if ($cache !== null) {
+            return $cache;
+        }
+        $cache = [];
+        foreach (glob(base_path('content/site/comparisons/*.json')) ?: [] as $file) {
+            $slug = basename($file, '.json');
+            if (in_array($slug, ['features', 'torns'], true)) {
+                continue;
+            }
+            $data = json_decode((string) file_get_contents($file), true);
+            if (is_array($data) && ! empty($data['rows'])) {
+                $cache[$slug] = $data;
+            }
+        }
+        ksort($cache);
+
+        return $cache;
+    }
+}
+
+if (! function_exists('torns_comparison')) {
+    /**
+     * Torns side by side with one app, grouped by feature area, in the
+     * current language. Null when there is no data for that app.
+     */
+    function torns_comparison(string $slug): ?array
+    {
+        $other = torns_comparison_competitors()[$slug] ?? null;
+        $base = base_path('content/site/comparisons');
+        $features = json_decode((string) @file_get_contents("{$base}/features.json"), true);
+        $torns = json_decode((string) @file_get_contents("{$base}/torns.json"), true);
+        if (! $other || ! is_array($features) || ! is_array($torns)) {
+            return null;
+        }
+
+        $cell = fn (?array $row) => [
+            'value' => torns_comparison_text($row['value'] ?? '-'),
+            // Whether the app offers what the row describes; for free-text values it is stated in the data.
+            'has' => isset($row['has']) ? (bool) $row['has'] : ! in_array(torns_comparison_text($row['value'] ?? '-', 'es'), ['no', '-', '—', ''], true),
+            'detail' => torns_comparison_text($row['detail'] ?? ''),
+            'url' => (string) ($row['url'] ?? ''),
+        ];
+
+        $groups = [];
+        foreach ($features['features'] as $feature) {
+            $group = $feature['group'];
+            $groups[$group] ??= ['label' => torns_comparison_text($features['groups'][$group] ?? $group), 'rows' => []];
+            $groups[$group]['rows'][] = [
+                'key' => $feature['key'],
+                'label' => torns_comparison_text($feature['label']),
+                'torns' => $cell($torns['rows'][$feature['key']] ?? null),
+                'other' => $cell($other['rows'][$feature['key']] ?? null),
+            ];
+        }
+
+        return [
+            'slug' => $slug,
+            'name' => (string) $other['name'],
+            'website' => (string) ($other['website'] ?? ''),
+            'checked_on' => (string) ($other['checked_on'] ?? ''),
+            'summary' => torns_comparison_text($other['summary'] ?? ''),
+            'sources' => $other['sources'] ?? [],
+            'torns_source' => (string) ($torns['source'] ?? ''),
+            'groups' => $groups,
+        ];
+    }
+}

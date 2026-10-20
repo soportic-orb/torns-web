@@ -93,6 +93,15 @@
                 },
                 {
                     "label": {
+                        "es": "Comparativas",
+                        "ca": "Comparatives",
+                        "gl": "Comparativas",
+                        "eu": "Konparaketak"
+                    },
+                    "url": "/comparativas"
+                },
+                {
+                    "label": {
                         "es": "Noticias",
                         "ca": "Notícies",
                         "gl": "Novas",

@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que diferenza hai entre Torns e aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "aTurnos é un software de recursos humanos da empresa española aTurnos Solutions para planificar cadros de quendas, rexistrar a xornada e xestionar vacacións, permisos e cambios de quenda. Contrátano empresas de distintos sectores, entre eles o sanitario e o sociosanitario, e os traballadores acceden cun usuario facilitado pola súa empresa mediante web ou app móbil. En Torns: App para profesionais sanitarios que reúne o seu calendario de quendas de todos os seus centros e os cambios de quenda con compañeiros do mesmo centro e categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos permite cambiar quendas con compañeiros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos está en catalán, galego e éuscaro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A guía indica que permite usar varios idiomas sen enumeralos; a web está en español, portugués, inglés e francés, a ficha de App Store lista só inglés e non se mencionan catalán, galego nin éuscaro. En Torns: Castelán, catalán, galego e éuscaro; cada usuario escolle o idioma no seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Canto custa aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O plan Standard publícase desde 2 € ao mes por empregado (para 100 empregados e pagamento anual) e os plans Enterprise e Smart son con orzamento personalizado; a páxina de rexistro indica unha proba e unha versión gratuíta de 5 traballadores con funcións reducidas. En Torns: Plan Free gratuíto; Torns Pro a 2,99 € ao mes ou 29,90 € ao ano, con 30 días de proba de Pro ao rexistrarse, sen tarxeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos importa o cadro de quendas desde unha foto ou un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A guía describe pegar no cadro de quendas unha planificación creada en Excel usando as abreviaturas de quenda; non se menciona importación desde foto ou PDF nin OCR ou IA para iso. En Torns: A IA le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, atopa a fila do usuario e propón as súas quendas para revisalas; o ficheiro non se garda (Free: 2 lecturas; Pro: 30 ao mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos comunica o cambio de quenda ao xestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A solicitude debe ser aprobada polo compañeiro e/ou o administrador do equipo, e a empresa pode definir fluxos de aprobación e notificacións por roles en cada fase. En Torns: Envía o cambio acordado por correo electrónico ao xestor dos cadros de quendas, ou ao seu panel se o centro usa o panel de Torns (Pro)."
+      }
+    }
+  ]
+}
