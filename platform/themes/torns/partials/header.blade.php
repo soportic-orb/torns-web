@@ -14,31 +14,39 @@
 
         <a href="#main-content" class="skip-link">{{ __('Skip to content') }}</a>
 
+        @php
+            $centersUrl = url(torns_current_locale() === 'es' ? 'centros' : torns_current_locale() . '/centros');
+        @endphp
+
         <header class="site-header sticky top-0 z-40 border-b border-torns-ink/5 bg-torns-bg/90 backdrop-blur" data-header>
-            <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
+            <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
                 <a href="{{ BaseHelper::getHomepageUrl() }}" class="flex shrink-0 items-center" aria-label="Torns">
                     <img src="{{ Theme::asset()->url('images/logo.webp') }}" alt="Torns" class="h-8 w-auto lg:h-9" width="152" height="32">
                 </a>
 
-                <nav class="hidden lg:block" aria-label="{{ __('Main navigation') }}">
+                <nav class="hidden xl:block" aria-label="{{ __('Main navigation') }}">
                     {!!
                         Menu::renderMenuLocation('main-menu', [
                             'view' => 'menu',
-                            'options' => ['class' => 'flex items-center gap-1'],
+                            'options' => ['class' => 'flex items-center'],
                         ])
                     !!}
                 </nav>
 
                 <div class="flex items-center gap-2 sm:gap-3">
                     @if (is_plugin_active('language'))
-                        <div class="hidden lg:block">
+                        <div class="hidden xl:block">
                             {!! Theme::partial('language-switcher') !!}
                         </div>
                     @endif
 
+                    <a href="{{ $centersUrl }}" class="btn-dark hidden whitespace-nowrap sm:inline-flex xl:px-4">
+                        {{ __('For centers') }}
+                    </a>
+
                     <a
                         href="{{ theme_option('app_store_url', 'https://apps.apple.com/es/app/torns/id6760354618') }}"
-                        class="btn-primary hidden sm:inline-flex"
+                        class="btn-primary hidden whitespace-nowrap sm:inline-flex xl:px-4"
                         data-download-cta
                     >
                         {{ __('Download the app') }}
@@ -46,7 +54,7 @@
 
                     <button
                         type="button"
-                        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-torns-ink transition hover:bg-torns-ink/5 lg:hidden"
+                        class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-torns-ink transition hover:bg-torns-ink/5 xl:hidden"
                         data-drawer-open
                         aria-controls="mobile-drawer"
                         aria-expanded="false"
@@ -63,7 +71,7 @@
         <div class="drawer-backdrop fixed inset-0 z-40 bg-torns-ink/40 opacity-0 transition-opacity" data-drawer-backdrop hidden></div>
         <aside
             id="mobile-drawer"
-            class="drawer fixed inset-y-0 right-0 z-50 flex w-80 max-w-[85vw] translate-x-full flex-col bg-white shadow-xl transition-transform lg:hidden"
+            class="drawer fixed inset-y-0 right-0 z-50 flex w-80 max-w-[85vw] translate-x-full flex-col bg-white shadow-xl transition-transform xl:hidden"
             data-drawer
             aria-label="{{ __('Main navigation') }}"
             hidden
@@ -96,7 +104,10 @@
                     </div>
                 @endif
             </div>
-            <div class="border-t border-torns-ink/5 p-4">
+            <div class="flex flex-col gap-2 border-t border-torns-ink/5 p-4">
+                <a href="{{ $centersUrl }}" class="btn-dark w-full justify-center">
+                    {{ __('For centers') }}
+                </a>
                 <a href="{{ theme_option('app_store_url', 'https://apps.apple.com/es/app/torns/id6760354618') }}" class="btn-primary w-full justify-center">
                     {{ __('Download the app') }}
                 </a>
