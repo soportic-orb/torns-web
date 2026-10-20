@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\IndexNow;
 use App\Support\SiteIndex;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 
 /**
- * robots.txt, sitemap.xml, llms.txt, llms-full.txt and the Markdown version
- * of pages and posts (docs/seo-geo.md).
+ * robots.txt, sitemap.xml, llms.txt, llms-full.txt, the Markdown version
+ * of pages and posts, and the IndexNow key file (docs/seo-geo.md).
  */
 class SeoController extends Controller
 {
@@ -86,6 +87,14 @@ class SeoController extends Controller
         $url = $this->index->url($locale, $path);
 
         return $this->text($this->index->postMarkdown($post, $url), 'text/markdown', $url);
+    }
+
+    /** IndexNow key file: /<key>.txt, the key as its only content. */
+    public function indexNowKey(string $key, IndexNow $indexNow): Response
+    {
+        abort_unless($indexNow->enabled() && hash_equals($indexNow->key(), $key), 404);
+
+        return response($key, 200, ['Content-Type' => 'text/plain; charset=UTF-8']);
     }
 
     protected function text(string $body, string $type = 'text/plain', ?string $canonical = null): Response

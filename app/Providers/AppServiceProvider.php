@@ -6,7 +6,10 @@ use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
+use App\Support\IndexNow;
 use App\Support\VersionedAsset;
+use Botble\Base\Events\CreatedContentEvent;
+use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Facades\PanelSectionManager;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
@@ -48,6 +51,13 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->app['router']->pushMiddlewareToGroup('web', NoIndexOutsideProduction::class);
+
+        // IndexNow: tell search engines when a published post is saved or translated.
+        Event::listen([CreatedContentEvent::class, UpdatedContentEvent::class], function (CreatedContentEvent|UpdatedContentEvent $event): void {
+            if ($event->data instanceof Post) {
+                $this->app->make(IndexNow::class)->submitPostLater($event->data);
+            }
+        });
 
         // Site updates (OTA) page: Admin → Platform → System.
         $this->loadRoutesFrom(base_path('routes/admin.php'));

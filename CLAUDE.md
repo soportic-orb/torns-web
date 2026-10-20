@@ -49,7 +49,8 @@ Admin assets in `public/vendor/torns` go through `App\Support\VersionedAsset::pa
   views in `partials/shortcodes/`; page content in `content/site/pages/<key>.<lang>.html`,
   definitions (slug, template, SEO) in `content/site/pages.json`, menus in `content/site/menus.json`.
 - SEO and AI readability: `functions/seo.php` (JSON-LD graph),
-  `app/Support/SiteIndex.php` (sitemap, llms.txt, llms-full.txt, `.md` URLs) — `docs/seo-geo.md`.
+  `app/Support/SiteIndex.php` (sitemap, llms.txt, llms-full.txt, `.md` URLs),
+  `app/Support/IndexNow.php` (pings Bing & co. when a post is saved) — `docs/seo-geo.md`.
 - OTA: `app/Ota`, `app/Support/SiteContent.php` — `docs/OTA.md`.
 - AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app), translation of posts in `app/Ai/PostTranslator.php` — `docs/blog-ai.md`.
 - Install: `docs/CLOUDPANEL.md` (SSH) or `docs/INSTALL.md` (shared hosting).

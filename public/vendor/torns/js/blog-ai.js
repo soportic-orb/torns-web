@@ -249,6 +249,48 @@ const initTornsAi = () => {
         }
     }
 
+    // SEO title and description from the post as it is in the editor.
+    async function generateSeo() {
+        const button = root.querySelector('[data-ai-seo]')
+        const label = root.querySelector('[data-ai-seo-label]')
+        const original = label.textContent
+        button.disabled = true
+        root.querySelector('[data-ai-seo-spinner]').hidden = false
+        label.textContent = t.seoRunning
+        try {
+            const data = await post(root.dataset.seoUrl, {
+                provider: root.dataset.provider,
+                title: field('name')?.value || '',
+                description: field('description')?.value || '',
+                content: editor.get(),
+                language: root.dataset.language,
+            })
+            // The SEO box starts folded; open it so the new values are visible.
+            const section = document.querySelector('.seo-edit-section')
+            if (section && getComputedStyle(section).display === 'none') {
+                document.querySelector('.btn-trigger-show-seo-detail')?.click()
+            }
+            setField('seo_meta[seo_title]', data.seo_title)
+            setField('seo_meta[seo_description]', data.seo_description)
+            // Search preview above the fields (Botble only refreshes it for #seo_title).
+            const previewTitle = document.querySelector('.page-title-seo')
+            const previewDescription = document.querySelector('.page-description-seo')
+            if (previewTitle) previewTitle.textContent = data.seo_title
+            if (previewDescription) previewDescription.textContent = data.seo_description
+            document.querySelector('.default-seo-description')?.classList.add('hidden')
+            document.querySelector('.existed-seo-meta')?.classList.remove('hidden')
+            window.Botble?.showSuccess?.(t.seoDone)
+        } catch (error) {
+            if (window.Botble?.showError) window.Botble.showError(error.message)
+            else window.alert(error.message)
+        } finally {
+            label.textContent = original
+            root.querySelector('[data-ai-seo-spinner]').hidden = true
+            button.disabled = false
+        }
+    }
+
+    root.querySelector('[data-ai-seo]')?.addEventListener('click', generateSeo)
     root.querySelectorAll('[data-ai-open]').forEach((button) => button.addEventListener('click', () => {
         setMode(button.dataset.aiOpen)
         syncFormat()

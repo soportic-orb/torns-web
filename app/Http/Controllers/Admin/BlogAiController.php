@@ -51,6 +51,20 @@ class BlogAiController extends BaseController
         return $this->respond(fn () => $this->ai->image($data['prompt'], (string) ($data['shape'] ?? 'landscape'), (string) ($data['style'] ?? 'photo'), $request->user()->getKey()));
     }
 
+    public function seo(Request $request): BaseHttpResponse
+    {
+        $this->authorizeEditor($request);
+        $data = $request->validate([
+            'provider' => ['required', 'string'],
+            'title' => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:2000'],
+            'content' => ['nullable', 'string', 'max:200000'],
+            'language' => ['nullable', 'string'],
+        ]);
+
+        return $this->respond(fn () => $this->ai->seo($data['provider'], Arr::except($data, ['provider']), $request->user()->getKey()));
+    }
+
     public function translate(Request $request, PostTranslator $translator): BaseHttpResponse
     {
         abort_unless($request->user()?->hasPermission('posts.edit'), 403);
