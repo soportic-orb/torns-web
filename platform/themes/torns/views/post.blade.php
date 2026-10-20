@@ -47,6 +47,8 @@
             {!! BaseHelper::clean($post->content) !!}
         </div>
 
+        {!! Theme::partial('blog.download-banner') !!}
+
         @if ($post->tags->isNotEmpty())
             <ul class="mt-10 flex flex-wrap gap-2">
                 @foreach ($post->tags as $tag)
