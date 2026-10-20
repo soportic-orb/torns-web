@@ -30,6 +30,13 @@
         'skipped' => trans('torns.ai_translate_skipped'),
         'translateDone' => trans('torns.ai_translate_done'),
         'translateNone' => trans('torns.ai_translate_none'),
+        'translateRun' => trans('torns.ai_translate_run'),
+        'translateRunning' => trans('torns.ai_translate_running'),
+        'translateCurrent' => trans('torns.ai_translate_current', ['language' => ':language']),
+        'translateCount' => trans('torns.ai_translate_count', ['done' => ':done', 'total' => ':total']),
+        'translateFailed' => trans('torns.ai_translate_failed', ['count' => ':count']),
+        'translatePending' => trans('torns.ai_translate_pending'),
+        'translateTimeout' => trans('torns.ai_err_translate_timeout'),
     ]) }}"
 >
     <div class="d-flex flex-wrap gap-2">

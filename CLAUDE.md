@@ -38,6 +38,8 @@ https://docs.botble.com/cms/ai-assistant-guide.html
 Theme assets are compiled and committed: after editing `assets/` or Blade
 classes run `npm run build:torns` and commit `platform/themes/torns/public`
 and `public/themes/torns`.
+Admin assets in `public/vendor/torns` go through `App\Support\VersionedAsset::path()`
+(content hash in the URL): public files have a ten-year cache.
 
 ## Where things live
 

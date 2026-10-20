@@ -6,6 +6,7 @@ use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
+use App\Support\VersionedAsset;
 use Botble\Base\Facades\Assets;
 use Botble\Base\Facades\PanelSectionManager;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
@@ -114,8 +115,8 @@ class AppServiceProvider extends ServiceProvider
                 $translate = ['post_id' => $model->getKey(), 'languages' => $translator->languages(), 'translated' => $translator->translated($model)];
             }
 
-            Assets::addStylesDirectly('vendor/torns/css/blog-ai.css')
-                ->addScriptsDirectly('vendor/torns/js/blog-ai.js');
+            Assets::addStylesDirectly(VersionedAsset::path('vendor/torns/css/blog-ai.css'))
+                ->addScriptsDirectly(VersionedAsset::path('vendor/torns/js/blog-ai.js'));
 
             return $form->addBefore('content', 'torns_ai_panel', HtmlField::class, HtmlFieldOption::make()->content(view('admin.ai.post-panel', [
                 'providers' => $ai->textProviders(),

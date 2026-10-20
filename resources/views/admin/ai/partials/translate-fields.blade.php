@@ -12,7 +12,7 @@
                         <span class="text-secondary small">— {{ trans('torns.ai_translate_exists') }}</span>
                     @endif
                 </label>
-                <span class="small ms-2" data-ai-translate-status="{{ $code }}" role="status"></span>
+                <span class="badge ms-2" data-ai-translate-status="{{ $code }}" hidden></span>
             </div>
         @endforeach
     </fieldset>
@@ -38,7 +38,21 @@
     </div>
 
     <div class="d-flex gap-2 align-items-center">
-        <button type="button" class="btn btn-primary" data-ai-translate>{{ trans('torns.ai_translate_run') }}</button>
-        <span class="text-secondary small" data-ai-translate-summary role="status"></span>
+        <button type="button" class="btn btn-primary" data-ai-translate>
+            <span class="spinner-border spinner-border-sm me-1" aria-hidden="true" data-ai-translate-spinner hidden></span>
+            <span data-ai-translate-label>{{ trans('torns.ai_translate_run') }}</span>
+        </button>
+        <span class="small" data-ai-translate-summary role="status"></span>
+    </div>
+
+    <div class="mt-3" data-ai-translate-progress hidden>
+        <div class="d-flex justify-content-between small mb-1">
+            <span class="fw-semibold" data-ai-translate-current aria-live="polite"></span>
+            <span class="text-secondary" data-ai-translate-count></span>
+        </div>
+        <div class="progress" style="height: 0.6rem" role="progressbar" aria-label="{{ trans('torns.ai_translate') }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%" data-ai-translate-bar></div>
+        </div>
+        <p class="small text-secondary mt-2 mb-0" data-ai-translate-wait>{{ trans('torns.ai_translate_wait') }}</p>
     </div>
 </div>

@@ -61,6 +61,8 @@ class BlogAiController extends BaseController
             'overwrite' => ['nullable', 'boolean'],
         ]);
         $post = Post::query()->findOrFail($data['post_id']);
+        // A long post can take a few minutes to translate.
+        @set_time_limit(600);
 
         return $this->respond(fn () => $translator->translate($post, $data['language'], $data['provider'], (bool) ($data['overwrite'] ?? false), $request->user()->getKey()));
     }
