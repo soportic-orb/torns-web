@@ -284,3 +284,18 @@ if (! function_exists('torns_comparison')) {
         ];
     }
 }
+
+if (! function_exists('torns_asset')) {
+    /**
+     * URL of a theme file with a content hash: public files are served with a
+     * ten-year cache, so a changed image under the same name needs a new URL.
+     */
+    function torns_asset(string $path): string
+    {
+        static $versions = [];
+        $file = public_path('themes/torns/' . ltrim($path, '/'));
+        $versions[$path] ??= is_file($file) ? substr(md5_file($file), 0, 10) : null;
+
+        return Theme::asset()->url($path) . ($versions[$path] ? '?v=' . $versions[$path] : '');
+    }
+}

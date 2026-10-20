@@ -10,7 +10,7 @@
 <div class="flex flex-wrap items-center gap-3 {{ ! empty($center) ? 'justify-center' : '' }}">
     <a href="{{ $appStoreUrl }}" rel="noopener" class="inline-flex shrink-0 rounded-lg transition hover:opacity-80">
         <img
-            src="{{ Theme::asset()->url('images/badge-appstore-es.svg') }}"
+            src="{{ torns_asset('images/badge-appstore-es.svg') }}"
             alt="{{ __('Download on the App Store') }}"
             class="{{ $height }} w-auto"
             width="120"
@@ -20,7 +20,7 @@
     </a>
     <a href="{{ $playStoreUrl }}" rel="noopener" class="inline-flex shrink-0 rounded-lg transition hover:opacity-80">
         <img
-            src="{{ Theme::asset()->url('images/badge-playstore-es.png') }}"
+            src="{{ torns_asset('images/badge-playstore-es.png') }}"
             alt="{{ __('Get it on Google Play') }}"
             class="{{ $height }} w-auto"
             width="135"
