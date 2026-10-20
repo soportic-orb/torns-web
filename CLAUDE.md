@@ -33,7 +33,7 @@ https://docs.botble.com/cms/ai-assistant-guide.html
 |---|---|
 | Theme (`platform/themes/torns`, `public/themes/torns`) | OTA: merge → release → "Apply" in Admin → System → Site updates |
 | Pages and menus (`content/site`) | OTA (edits made in /admin are kept unless "Use the repository version") |
-| `app/`, `config/`, `routes/`, `lang/`, `public/vendor/torns`, migrations | `git pull` on the server (`docs/CLOUDPANEL.md`) |
+| `app/`, `config/`, `routes/`, `lang/`, `resources/`, `public/vendor/torns`, migrations | On the server, `git fetch` + `git reset --hard origin/main`, never `git pull`: OTA rewrites tracked theme files (`docs/CLOUDPANEL.md`) |
 
 Theme assets are compiled and committed: after editing `assets/` or Blade
 classes run `npm run build:torns` and commit `platform/themes/torns/public`
