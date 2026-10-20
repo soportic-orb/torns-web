@@ -42,15 +42,6 @@
                 },
                 {
                     "label": {
-                        "es": "Torns para centros",
-                        "ca": "Torns per a centres",
-                        "gl": "Torns para centros",
-                        "eu": "Torns zentroentzat"
-                    },
-                    "url": "/centros"
-                },
-                {
-                    "label": {
                         "es": "Noticias",
                         "ca": "Notícies",
                         "gl": "Novas",

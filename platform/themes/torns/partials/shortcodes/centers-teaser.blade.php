@@ -2,8 +2,8 @@
     $title = $shortcode->title ?: __('Torns para centros sanitarios y hospitales');
     $description = $shortcode->description ?: __('Si eres responsable de un centro sanitario, ofrece Torns a las personas que trabajan en él: facilitarás el intercambio de turnos, mejorarás la conciliación y los cambios se comunicarán automáticamente a quien gestione las planillas.');
     $url = $shortcode->url ?: url('centros');
-    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/centers-teaser-896.webp');
-    $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/centers-teaser-448.webp') . ' 448w, ' . Theme::asset()->url('images/home/centers-teaser-896.webp') . ' 896w';
+    $image = $shortcode->image ? RvMedia::getImageUrl($shortcode->image) : Theme::asset()->url('images/home/centers-hero-1600.webp');
+    $imageSrcset = $shortcode->image ? null : Theme::asset()->url('images/home/centers-hero-800.webp') . ' 800w, ' . Theme::asset()->url('images/home/centers-hero-1600.webp') . ' 1600w';
 @endphp
 
 <section class="bg-white py-16 lg:py-24" id="centros">
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div>
-            <img src="{{ $image }}" @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 1024px) 28rem, 90vw" @endif alt="{{ $title }}" class="mx-auto w-full max-w-md" width="896" height="962" loading="lazy">
+            <img src="{{ $image }}" @if ($imageSrcset) srcset="{{ $imageSrcset }}" sizes="(min-width: 1024px) 34rem, 92vw" @endif alt="{{ $title }}" class="w-full" width="1600" height="892" loading="lazy">
         </div>
     </div>
 </section>
