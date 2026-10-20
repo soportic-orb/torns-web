@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogAiController;
 use App\Http\Controllers\Admin\OtaController;
 use Botble\Base\Facades\AdminHelper;
 use Illuminate\Support\Facades\Route;
@@ -15,5 +16,13 @@ AdminHelper::registerRoutes(function (): void {
         Route::post('apply', [OtaController::class, 'apply'])->name('apply');
         Route::post('rollback', [OtaController::class, 'rollback'])->name('rollback');
         Route::post('use-repository-content', [OtaController::class, 'useRepositoryContent'])->name('use-repository-content');
+    });
+
+    Route::group(['prefix' => 'blog/ai', 'as' => 'torns-ai.'], function (): void {
+        Route::post('text', [BlogAiController::class, 'text'])->name('text')->middleware('throttle:20,1');
+        Route::post('image', [BlogAiController::class, 'image'])->name('image')->middleware('throttle:10,1');
+        Route::get('settings', [BlogAiController::class, 'settings'])->name('settings');
+        Route::post('settings', [BlogAiController::class, 'saveSettings'])->name('settings.save');
+        Route::post('settings/test', [BlogAiController::class, 'test'])->name('settings.test');
     });
 });
