@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Ai\BlogAi;
 use App\Http\Middleware\NoIndexOutsideProduction;
+use App\Listeners\RepairEnvAfterInstaller;
 use Botble\Base\Facades\PanelSectionManager;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
 use Botble\Base\Forms\Fields\HtmlField;
@@ -15,6 +16,8 @@ use Botble\Blog\Models\Post;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Setting\PanelSections\SettingOthersPanelSection;
+use Botble\Installer\Events\EnvironmentSaved;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -36,6 +39,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Botble's web installer rewrites .env without APP_KEY and our own values.
+        if (class_exists(EnvironmentSaved::class)) {
+            Event::listen(EnvironmentSaved::class, RepairEnvAfterInstaller::class);
+        }
+
         $this->app['router']->pushMiddlewareToGroup('web', NoIndexOutsideProduction::class);
 
         // Site updates (OTA) page: Admin → Platform → System.
