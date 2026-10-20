@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quina diferència hi ha entre Torns i Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shiftool és una app mòbil (iOS i Android, amb accés web) de Shiftool S.L. per gestionar torns de feina, proposar canvis a companys que també la facin servir i compartir el calendari en mode de només lectura. S'adreça a treballadors per torns en general i ofereix un pla gratuït amb publicitat i un pla Premium sense publicitat. A Torns: App per a professionals sanitaris que reuneix el seu calendari de torns de tots els seus centres i els canvis de torn amb companys del mateix centre i categoria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool permet canviar torns amb companys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool està en català, gallec i basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La fitxa espanyola de l'App Store declara com a únic idioma l'anglès, mentre que el web i les descripcions de les botigues són en espanyol; no s'esmenten el català, el gallec ni el basc. A Torns: Castellà, català, gallec i basc; cada usuari tria l'idioma al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quant costa Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pla gratuït amb publicitat i pla Premium sense publicitat a 1,99 € al mes (l'App Store també llista Premium anual a 19,99 €), amb una promoció de 3 mesos gratis. A Torns: Pla Free gratuït; Torns Pro a 2,99 € al mes o 29,90 € a l'any, amb 30 dies de prova de Pro en registrar-se, sense targeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool importa el quadrant des d'una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No consta la importació de quadrants des de foto, PDF o full de càlcul; el web només descriu la introducció manual, massiva o per patrons. A Torns: La IA llegeix una foto, un PDF, una captura o un full de càlcul del quadrant, troba la fila de l'usuari i proposa els seus torns per revisar-los; el fitxer no es desa (Free: 2 lectures; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool comunica el canvi de torn al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La versió 0.7.2 afegeix un permís de visibilitat del tauler per a supervisors; les condicions indiquen que la validació oficial del canvi es fa segons les normes de cada centre i que Shiftool no hi intervé. A Torns: Envia el canvi acordat per correu electrònic al gestor dels quadrants, o al seu panell si el centre fa servir el panell de Torns (Pro)."
+      }
+    }
+  ]
+}

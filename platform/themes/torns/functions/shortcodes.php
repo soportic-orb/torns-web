@@ -225,6 +225,19 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 11. Register CTA
     // ------------------------------------------------------------------
+    add_shortcode('torns-comparison-page', __('Torns: Comparison with an app'), __('Full comparison page between Torns and one app (content/site/comparisons/<app>.json)'), function ($shortcode) {
+        return Theme::partial('shortcodes.comparison-page', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-comparison-page', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('competitor', TextField::class, $textField(__('App (aturnos, shiftool, supershift, turnoclip)')));
+    });
+
+    add_shortcode('torns-comparison-hub', __('Torns: Comparisons index'), __('List of the comparison pages'), function ($shortcode) {
+        return Theme::partial('shortcodes.comparison-hub', ['shortcode' => $shortcode]);
+    });
+
     add_shortcode('torns-centers-signup', __('Torns: Centers sign-up'), __('Banner to create a centre account in the management panel'), function ($shortcode) {
         return Theme::partial('shortcodes.centers-signup', ['shortcode' => $shortcode]);
     });

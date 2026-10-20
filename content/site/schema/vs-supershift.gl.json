@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que diferenza hai entre Torns e Supershift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supershift é unha app de calendario de quendas para iOS, Android, Mac e Apple Watch desenvolvida por Supershift GmbH (Hamburgo, Alemaña). Está dirixida a persoas que traballan a quendas, como persoal sanitario, policías, bombeiros, industria, comercio e transporte. Funciona sen conta nin conexión, e ofrece unha subscrición Supershift Pro con funcións adicionais. En Torns: App para profesionais sanitarios que reúne o seu calendario de quendas de todos os seus centros e os cambios de quenda con compañeiros do mesmo centro e categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift permite cambiar quendas con compañeiros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift está en catalán, galego e éuscaro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A App Store lista 13 idiomas: español, alemán, chinés simplificado, chinés tradicional, coreano, francés, inglés, italiano, xaponés, neerlandés, portugués, ruso e turco; non inclúe catalán, galego nin éuscaro. En Torns: Castelán, catalán, galego e éuscaro; cada usuario escolle o idioma no seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Canto custa Supershift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Descarga gratuíta con compras integradas: Supershift Pro mensual 3,99 €, anual 9,99 € e de por vida 39,99 € (prezos da App Store España). En Torns: Plan Free gratuíto; Torns Pro a 2,99 € ao mes ou 29,90 € ao ano, con 30 días de proba de Pro ao rexistrarse, sen tarxeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift importa o cadro de quendas desde unha foto ou un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A política de privacidade describe unha función opcional en beta, «Intelligent Import», que detecta quendas a partir dunha foto, ficheiro ou escaneo do cadro de quendas enviándoo a OpenAI. En Torns: A IA le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, atopa a fila do usuario e propón as súas quendas para revisalas; o ficheiro non se garda (Free: 2 lecturas; Pro: 30 ao mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift comunica o cambio de quenda ao xestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non consta na documentación pública consultada. En Torns: Envía o cambio acordado por correo electrónico ao xestor dos cadros de quendas, ou ao seu panel se o centro usa o panel de Torns (Pro)."
+      }
+    }
+  ]
+}

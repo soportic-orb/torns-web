@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quina diferència hi ha entre Torns i Supershift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Supershift és una app de calendari de torns per a iOS, Android, Mac i Apple Watch desenvolupada per Supershift GmbH (Hamburg, Alemanya). S'adreça a persones que treballen a torns, com ara personal sanitari, policies, bombers, indústria, comerç i transport. Funciona sense compte ni connexió, i ofereix una subscripció Supershift Pro amb funcions addicionals. A Torns: App per a professionals sanitaris que reuneix el seu calendari de torns de tots els seus centres i els canvis de torn amb companys del mateix centre i categoria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift permet canviar torns amb companys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift està en català, gallec i basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'App Store llista 13 idiomes: espanyol, alemany, xinès simplificat, xinès tradicional, coreà, francès, anglès, italià, japonès, neerlandès, portuguès, rus i turc; no inclou el català, el gallec ni el basc. A Torns: Castellà, català, gallec i basc; cada usuari tria l'idioma al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quant costa Supershift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Descàrrega gratuïta amb compres integrades: Supershift Pro mensual 3,99 €, anual 9,99 € i de per vida 39,99 € (preus de l'App Store Espanya). A Torns: Pla Free gratuït; Torns Pro a 2,99 € al mes o 29,90 € a l'any, amb 30 dies de prova de Pro en registrar-se, sense targeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift importa el quadrant des d'una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La política de privadesa descriu una funció opcional en beta, «Intelligent Import», que detecta torns a partir d'una foto, un fitxer o un escaneig del quadrant enviant-lo a OpenAI. A Torns: La IA llegeix una foto, un PDF, una captura o un full de càlcul del quadrant, troba la fila de l'usuari i proposa els seus torns per revisar-los; el fitxer no es desa (Free: 2 lectures; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Supershift comunica el canvi de torn al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No consta a la documentació pública consultada. A Torns: Envia el canvi acordat per correu electrònic al gestor dels quadrants, o al seu panell si el centre fa servir el panell de Torns (Pro)."
+      }
+    }
+  ]
+}

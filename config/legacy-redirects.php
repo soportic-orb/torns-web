@@ -25,12 +25,6 @@ return [
     'ca/centres' => '/ca/centros',
     'eu/zentroak' => '/eu/centros',
 
-    // Comparison page: now a section of the home page.
-    'torns-vs-aturnos' => '/#comparativa',
-    'ca/torns-vs-aturnos' => '/ca#comparativa',
-    'gl/torns-vs-aturnos' => '/gl#comparativa',
-    'eu/torns-vs-aturnos' => '/eu#comparativa',
-
     // Rules of a past giveaway.
     'bases-sorteo-smartbox' => '/',
     'ca/bases-del-sorteig-smartbox' => '/ca',

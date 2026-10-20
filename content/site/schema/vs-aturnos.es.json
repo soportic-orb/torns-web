@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre Torns y aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "aTurnos es un software de recursos humanos de la empresa española aTurnos Solutions para planificar cuadrantes de turnos, registrar la jornada y gestionar vacaciones, permisos y cambios de turno. Se contrata por empresas de distintos sectores, entre ellos el sanitario y sociosanitario, y los trabajadores acceden con un usuario facilitado por su empresa mediante web o app móvil. En Torns: App para profesionales sanitarios que reúne su calendario de turnos de todos sus centros y los cambios de turno con compañeros del mismo centro y categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿aTurnos permite cambiar turnos con compañeros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿aTurnos está en catalán, gallego y euskera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La guía indica que permite usar varios idiomas sin enumerarlos; la web está en español, portugués, inglés y francés, la ficha de App Store lista solo inglés y no se mencionan catalán, gallego ni euskera. En Torns: Castellano, català, galego y euskara; cada usuario elige el idioma en su perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plan Standard se publica desde 2 € al mes por empleado (para 100 empleados y pago anual) y los planes Enterprise y Smart son con presupuesto personalizado; la página de registro indica una prueba y una versión gratuita de 5 trabajadores con funciones reducidas. En Torns: Plan Free gratuito; Torns Pro a 2,99 € al mes o 29,90 € al año, con 30 días de prueba de Pro al registrarse, sin tarjeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿aTurnos importa el cuadrante desde una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La guía describe pegar en el cuadrante una planificación creada en Excel usando las abreviaturas de turno; no se menciona importación desde foto o PDF ni OCR o IA para ello. En Torns: La IA lee una foto, un PDF, una captura o una hoja de cálculo del cuadrante, encuentra la fila del usuario y propone sus turnos para revisarlos; el archivo no se guarda (Free: 2 lecturas; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿aTurnos comunica el cambio de turno al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La solicitud debe ser aprobada por el compañero y/o el administrador del equipo, y la empresa puede definir flujos de aprobación y notificaciones por roles en cada fase. En Torns: Envía el cambio acordado por email al gestor de planillas, o a su panel si el centro usa el panel de Torns (Pro)."
+      }
+    }
+  ]
+}

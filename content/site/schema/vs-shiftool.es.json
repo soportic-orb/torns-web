@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre Torns y Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shiftool es una app móvil (iOS y Android, con acceso web) de Shiftool S.L. para gestionar turnos de trabajo, proponer cambios a compañeros que también la usen y compartir el calendario en modo de solo lectura. Se dirige a trabajadores por turnos en general y ofrece un plan gratuito con publicidad y un plan Premium sin publicidad. En Torns: App para profesionales sanitarios que reúne su calendario de turnos de todos sus centros y los cambios de turno con compañeros del mismo centro y categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Shiftool permite cambiar turnos con compañeros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Shiftool está en catalán, gallego y euskera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La ficha española de App Store declara como único idioma el inglés, mientras que la web y las descripciones de las tiendas están en español; no se mencionan catalán, gallego ni euskera. En Torns: Castellano, català, galego y euskara; cada usuario elige el idioma en su perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan gratuito con publicidad y plan Premium sin publicidad a 1,99 € al mes (App Store lista también Premium anual a 19,99 €), con promoción de 3 meses gratis. En Torns: Plan Free gratuito; Torns Pro a 2,99 € al mes o 29,90 € al año, con 30 días de prueba de Pro al registrarse, sin tarjeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Shiftool importa el cuadrante desde una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No consta importación de cuadrantes desde foto, PDF u hoja de cálculo; la web solo describe introducción manual, masiva o por patrones. En Torns: La IA lee una foto, un PDF, una captura o una hoja de cálculo del cuadrante, encuentra la fila del usuario y propone sus turnos para revisarlos; el archivo no se guarda (Free: 2 lecturas; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Shiftool comunica el cambio de turno al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La versión 0.7.2 añade un permiso de visibilidad del tablón para supervisores; los términos indican que la validación oficial del cambio se hace según las normas de cada centro y que Shiftool no interviene en ella. En Torns: Envía el cambio acordado por email al gestor de planillas, o a su panel si el centro usa el panel de Torns (Pro)."
+      }
+    }
+  ]
+}

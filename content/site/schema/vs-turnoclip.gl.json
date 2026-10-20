@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que diferenza hai entre Torns e TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurnoClip é unha app móbil gratuíta para Android e iOS, desenvolvida por Jesús Clemente Delgado (Dotesus, Toledo), para traballadores a quendas como sanitarios, policías e bombeiros. Combina un calendario persoal de quendas cun taboleiro de ofertas de cambio entre compañeiros do mesmo centro, sinatura dixital do acordo e xeración dun PDF para supervisión. En Torns: App para profesionais sanitarios que reúne o seu calendario de quendas de todos os seus centros e os cambios de quenda con compañeiros do mesmo centro e categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip permite cambiar quendas con compañeiros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip está en catalán, galego e éuscaro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A ficha de App Store indica unicamente español como idioma; non figuran catalán, galego nin éuscaro. En Torns: Castelán, catalán, galego e éuscaro; cada usuario escolle o idioma no seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Canto custa TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas as tendas a ofrecen gratis (0 EUR) e non indican compras integradas; a web di que a descarga e a organización básica son gratuítas e o Match automático preséntase como beta gratuíta durante o lanzamento. En Torns: Plan Free gratuíto; Torns Pro a 2,99 € ao mes ou 29,90 € ao ano, con 30 días de proba de Pro ao rexistrarse, sen tarxeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip importa o cadro de quendas desde unha foto ou un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O historial de versións describe a importación automática de cadros de quendas PDF das bases de Serveo (Madrid, Málaga, Sevilla e Barcelona); non menciona IA, OCR, fotos nin follas de cálculo. En Torns: A IA le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, atopa a fila do usuario e propón as súas quendas para revisalas; o ficheiro non se garda (Free: 2 lecturas; Pro: 30 ao mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip comunica o cambio de quenda ao xestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Xera un PDF asinado para entregar a supervisión ou a RR. HH. e pode preparar un correo de solicitude que se abre no cliente de correo do móbil para que o usuario o envíe. En Torns: Envía o cambio acordado por correo electrónico ao xestor dos cadros de quendas, ou ao seu panel se o centro usa o panel de Torns (Pro)."
+      }
+    }
+  ]
+}

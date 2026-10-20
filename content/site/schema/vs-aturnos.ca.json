@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quina diferència hi ha entre Torns i aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "aTurnos és un programari de recursos humans de l'empresa espanyola aTurnos Solutions per planificar quadrants de torns, registrar la jornada i gestionar vacances, permisos i canvis de torn. El contracten empreses de diversos sectors, entre els quals el sanitari i el sociosanitari, i els treballadors hi accedeixen amb un usuari facilitat per la seva empresa mitjançant web o app mòbil. A Torns: App per a professionals sanitaris que reuneix el seu calendari de torns de tots els seus centres i els canvis de torn amb companys del mateix centre i categoria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos permet canviar torns amb companys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos està en català, gallec i basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La guia indica que permet fer servir diversos idiomes sense enumerar-los; el web és en espanyol, portuguès, anglès i francès, la fitxa de l'App Store només llista l'anglès i no s'hi esmenten el català, el gallec ni el basc. A Torns: Castellà, català, gallec i basc; cada usuari tria l'idioma al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quant costa aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El pla Standard es publica des de 2 € al mes per empleat (per a 100 empleats i pagament anual) i els plans Enterprise i Smart són amb pressupost personalitzat; la pàgina de registre indica una prova i una versió gratuïta de 5 treballadors amb funcions reduïdes. A Torns: Pla Free gratuït; Torns Pro a 2,99 € al mes o 29,90 € a l'any, amb 30 dies de prova de Pro en registrar-se, sense targeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos importa el quadrant des d'una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La guia descriu com enganxar al quadrant una planificació creada en Excel fent servir les abreviatures de torn; no s'esmenta la importació des de foto o PDF ni OCR o IA per fer-ho. A Torns: La IA llegeix una foto, un PDF, una captura o un full de càlcul del quadrant, troba la fila de l'usuari i proposa els seus torns per revisar-los; el fitxer no es desa (Free: 2 lectures; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos comunica el canvi de torn al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La sol·licitud l'ha d'aprovar el company i/o l'administrador de l'equip, i l'empresa pot definir fluxos d'aprovació i notificacions per rols en cada fase. A Torns: Envia el canvi acordat per correu electrònic al gestor dels quadrants, o al seu panell si el centre fa servir el panell de Torns (Pro)."
+      }
+    }
+  ]
+}

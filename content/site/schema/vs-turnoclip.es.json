@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué diferencia hay entre Torns y TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurnoClip es una app móvil gratuita para Android e iOS, desarrollada por Jesús Clemente Delgado (Dotesus, Toledo), para trabajadores a turnos como sanitarios, policías y bomberos. Combina un calendario personal de turnos con un tablón de ofertas de cambio entre compañeros del mismo centro, firma digital del acuerdo y generación de un PDF para supervisión. En Torns: App para profesionales sanitarios que reúne su calendario de turnos de todos sus centros y los cambios de turno con compañeros del mismo centro y categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿TurnoClip permite cambiar turnos con compañeros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿TurnoClip está en catalán, gallego y euskera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La ficha de App Store indica únicamente español como idioma; no figuran catalán, gallego ni euskera. En Torns: Castellano, català, galego y euskara; cada usuario elige el idioma en su perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ambas tiendas la ofrecen gratis (0 EUR) y no indican compras integradas; la web dice que la descarga y la organización básica son gratuitas y el Match automático se presenta como beta gratuita durante el lanzamiento. En Torns: Plan Free gratuito; Torns Pro a 2,99 € al mes o 29,90 € al año, con 30 días de prueba de Pro al registrarse, sin tarjeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿TurnoClip importa el cuadrante desde una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El historial de versiones describe la importación automática de cuadrantes PDF de las bases de Serveo (Madrid, Málaga, Sevilla y Barcelona); no menciona IA, OCR, fotos ni hojas de cálculo. En Torns: La IA lee una foto, un PDF, una captura o una hoja de cálculo del cuadrante, encuentra la fila del usuario y propone sus turnos para revisarlos; el archivo no se guarda (Free: 2 lecturas; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿TurnoClip comunica el cambio de turno al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genera un PDF firmado para entregar a supervisión o RR. HH. y puede preparar un email de solicitud que se abre en el cliente de correo del móvil para que el usuario lo envíe. En Torns: Envía el cambio acordado por email al gestor de planillas, o a su panel si el centro usa el panel de Torns (Pro)."
+      }
+    }
+  ]
+}

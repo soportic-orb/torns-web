@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que diferenza hai entre Torns e Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shiftool é unha app móbil (iOS e Android, con acceso web) de Shiftool S.L. para xestionar quendas de traballo, propoñer cambios a compañeiros que tamén a usen e compartir o calendario en modo de só lectura. Diríxese a traballadores por quendas en xeral e ofrece un plan gratuíto con publicidade e un plan Premium sen publicidade. En Torns: App para profesionais sanitarios que reúne o seu calendario de quendas de todos os seus centros e os cambios de quenda con compañeiros do mesmo centro e categoría."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool permite cambiar quendas con compañeiros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool está en catalán, galego e éuscaro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A ficha española de App Store declara como único idioma o inglés, mentres que a web e as descricións das tendas están en español; non se mencionan catalán, galego nin éuscaro. En Torns: Castelán, catalán, galego e éuscaro; cada usuario escolle o idioma no seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Canto custa Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan gratuíto con publicidade e plan Premium sen publicidade a 1,99 € ao mes (App Store lista tamén Premium anual a 19,99 €), con promoción de 3 meses gratis. En Torns: Plan Free gratuíto; Torns Pro a 2,99 € ao mes ou 29,90 € ao ano, con 30 días de proba de Pro ao rexistrarse, sen tarxeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool importa o cadro de quendas desde unha foto ou un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non consta importación de cadros de quendas desde foto, PDF ou folla de cálculo; a web só describe introdución manual, masiva ou por patróns. En Torns: A IA le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, atopa a fila do usuario e propón as súas quendas para revisalas; o ficheiro non se garda (Free: 2 lecturas; Pro: 30 ao mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool comunica o cambio de quenda ao xestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A versión 0.7.2 engade un permiso de visibilidade do taboleiro para supervisores; os termos indican que a validación oficial do cambio se fai segundo as normas de cada centro e que Shiftool non intervén nela. En Torns: Envía o cambio acordado por correo electrónico ao xestor dos cadros de quendas, ou ao seu panel se o centro usa o panel de Torns (Pro)."
+      }
+    }
+  ]
+}

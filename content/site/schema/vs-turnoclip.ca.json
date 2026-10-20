@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quina diferència hi ha entre Torns i TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TurnoClip és una app mòbil gratuïta per a Android i iOS, desenvolupada per Jesús Clemente Delgado (Dotesus, Toledo), per a treballadors a torns com ara sanitaris, policies i bombers. Combina un calendari personal de torns amb un tauler d'ofertes de canvi entre companys del mateix centre, signatura digital de l'acord i generació d'un PDF per a supervisió. A Torns: App per a professionals sanitaris que reuneix el seu calendari de torns de tots els seus centres i els canvis de torn amb companys del mateix centre i categoria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip permet canviar torns amb companys?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip està en català, gallec i basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La fitxa de l'App Store indica únicament l'espanyol com a idioma; no hi figuren el català, el gallec ni el basc. A Torns: Castellà, català, gallec i basc; cada usuari tria l'idioma al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quant costa TurnoClip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Totes dues botigues l'ofereixen gratis (0 EUR) i no indiquen compres integrades; el web diu que la descàrrega i l'organització bàsica són gratuïtes i el Match automàtic es presenta com a beta gratuïta durant el llançament. A Torns: Pla Free gratuït; Torns Pro a 2,99 € al mes o 29,90 € a l'any, amb 30 dies de prova de Pro en registrar-se, sense targeta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip importa el quadrant des d'una foto o un PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'historial de versions descriu la importació automàtica de quadrants PDF de les bases de Serveo (Madrid, Màlaga, Sevilla i Barcelona); no esmenta IA, OCR, fotos ni fulls de càlcul. A Torns: La IA llegeix una foto, un PDF, una captura o un full de càlcul del quadrant, troba la fila de l'usuari i proposa els seus torns per revisar-los; el fitxer no es desa (Free: 2 lectures; Pro: 30 al mes)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "TurnoClip comunica el canvi de torn al gestor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Genera un PDF signat per lliurar a supervisió o a RH i pot preparar un correu de sol·licitud que s'obre al client de correu del mòbil perquè l'usuari l'enviï. A Torns: Envia el canvi acordat per correu electrònic al gestor dels quadrants, o al seu panell si el centre fa servir el panell de Torns (Pro)."
+      }
+    }
+  ]
+}

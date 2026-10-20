@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zer desberdintasun dago Torns eta Shiftool-ren artean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shiftool Shiftool S.L.-ren aplikazio mugikor bat da (iOS eta Android, web bidezko sarbidearekin), lan-txandak kudeatzeko, hura erabiltzen duten lankideei aldaketak proposatzeko eta egutegia irakurtzeko soilik moduan partekatzeko. Oro har txandaka lan egiten dutenei zuzenduta dago, eta publizitatedun doako plan bat eta publizitaterik gabeko Premium plan bat eskaintzen ditu. Torns-en: Osasun-profesionalentzako aplikazioa, bere zentro guztietako txanden egutegia eta zentro eta kategoria bereko lankideekin egindako txanda-aldaketak biltzen dituena."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool-k txandak lankideekin aldatzeko aukera ematen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool katalanez, galizieraz eta euskaraz dago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App Storeko fitxa espainiarrak ingelesa adierazten du hizkuntza bakar gisa; webgunea eta denden deskribapenak, berriz, gaztelaniaz daude; ez dira aipatzen katalana, galiziera ezta euskara ere. Torns-en: Gaztelania, katalana, galiziera eta euskara; erabiltzaile bakoitzak bere profilean aukeratzen du hizkuntza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zenbat kostatzen da Shiftool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publizitatedun doako plana eta publizitaterik gabeko Premium plana hilean 1,99 €-tan (App Storek urteko Premium ere zerrendatzen du, 19,99 €-tan), 3 hilabete doan izateko promozioarekin. Torns-en: Free plana doakoa; Torns Pro hilean 2,99 € edo urtean 29,90 €, eta Pro 30 egunez probatzeko aukera erregistratzean, txartelik gabe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool-k koadrantea argazki edo PDF batetik inportatzen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez da ageri koadranteak argazki, PDF edo kalkulu-orri batetik inportatzeko aukerarik; webguneak eskuzko sarrera, sarrera masiboa edo ereduen bidezkoa baino ez du deskribatzen. Torns-en: IAk koadrantearen argazki, PDF, pantaila-argazki edo kalkulu-orri bat irakurtzen du, erabiltzailearen errenkada aurkitzen du eta haren txandak proposatzen ditu berrikusteko; fitxategia ez da gordetzen (Free: 2 irakurketa; Pro: 30 hilean)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Shiftool-k txanda-aldaketa kudeatzaileari jakinarazten dio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "0.7.2 bertsioak oholaren ikusgaitasun-baimena gehitzen du gainbegiraleentzat; baldintzek diote aldaketaren baliozkotze ofiziala zentro bakoitzaren arauen arabera egiten dela eta Shiftoolek ez duela horretan parte hartzen. Torns-en: Adostutako aldaketa posta elektronikoz bidaltzen dio koadranteen kudeatzaileari, edo haren panelera zentroak Torns-en panela erabiltzen badu (Pro)."
+      }
+    }
+  ]
+}

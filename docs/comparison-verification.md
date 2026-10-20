@@ -1,4 +1,43 @@
-# Comparison table — cell-by-cell verification
+# Comparisons — verification and maintenance
+
+There are two places with comparisons:
+
+1. **The home page table** (10 rows, verified 29/07/2026, below):
+   `torns_comparison_data()` in `platform/themes/torns/functions/torns-helpers.php`,
+   editable from Admin → Appearance → Theme options → Torns: Comparison.
+2. **One page per app** (`/torns-vs-aturnos`, `/torns-vs-shiftool`,
+   `/torns-vs-supershift`, `/torns-vs-turnoclip`, and the index `/comparativas`),
+   34 features each, reviewed **20/10/2026**. Data in `content/site/comparisons/`:
+   - `features.json`: the features, their group and their label in es/ca/gl/eu;
+   - `torns.json`: Torns' values, taken only from `content/site/pages/funcionalidades.*`;
+   - `<app>.json`: the app's values. Every row keeps `value`
+     (`yes` / `no` / `-` / short text), `detail` per language, the verbatim
+     `quote` and the `url` it comes from, and `has` for text values (whether
+     the app offers what the row describes, used for the summary lists).
+     `sources` lists every page consulted and `checked_on` the review date.
+
+   After changing any of these files run `python3 scripts/build-comparisons.py`:
+   it writes the FAQ (`content/site/schema/vs-<app>.<lang>.json`, shown on the
+   page and as FAQPage data) and the Markdown versions
+   (`content/site/markdown/vs-<app>.<lang>.md`, `comparativas.<lang>.md`).
+   Everything ships by OTA.
+
+   **Adding an app**: research its own public sources (web, App Store, Google
+   Play, help centre) with the same 34 keys, write `<app>.json`, add the page
+   `vs-<app>` to `content/site/pages.json` with its four `.html` files
+   (`[torns-comparison-page competitor="<app>"][/torns-comparison-page]`) and run the
+   script.
+
+Rules for both: `yes` only with a quote from the app's own source; `no` only
+when the app's source states it or its own positioning makes it impossible;
+otherwise `-` ("no consta", never shown as a cross). Neutral wording, no value
+judgements, competitor names as plain text without logos, and a visible
+source list with the review date. Review the data at least every six months,
+and whenever an app or Torns changes a feature or a price.
+
+---
+
+## Home page table — cell-by-cell verification
 
 Verification date: **29/07/2026** (session research). The table defaults live in
 `platform/themes/torns/functions/torns-helpers.php` (`torns_comparison_data()`)

@@ -18,7 +18,8 @@ https://docs.botble.com/cms/ai-assistant-guide.html
   truth is the app repository (soportic-orb/Torns) and what Octavi
   confirms; the verified list is `content/site/pages/funcionalidades.*`.
   No comparative claims about other apps outside the verified comparison
-  table (`docs/comparison-verification.md`).
+  table and the comparison pages (`content/site/comparisons`,
+  `docs/comparison-verification.md`).
 - Every user-facing theme string goes through `__()` with its Catalan,
   Galician and Basque translation in `platform/themes/torns/lang/{ca,gl,eu}.json`
   (the Spanish text is the key). Admin strings use `trans('torns.*')` in

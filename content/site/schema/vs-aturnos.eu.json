@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zer desberdintasun dago Torns eta aTurnos-ren artean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "aTurnos aTurnos Solutions enpresa espainiarraren giza baliabideetarako softwarea da, txanden koadranteak planifikatzeko, lanaldia erregistratzeko eta oporrak, baimenak eta txanda-aldaketak kudeatzeko. Hainbat sektoretako enpresek kontratatzen dute, besteak beste osasun-sektorekoek eta gizarte- eta osasun-arlokoek, eta langileak beren enpresak emandako erabiltzaile batekin sartzen dira, web bidez edo aplikazio mugikorraren bidez. Torns-en: Osasun-profesionalentzako aplikazioa, bere zentro guztietako txanden egutegia eta zentro eta kategoria bereko lankideekin egindako txanda-aldaketak biltzen dituena."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos-k txandak lankideekin aldatzeko aukera ematen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos katalanez, galizieraz eta euskaraz dago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gidak dio hainbat hizkuntza erabil daitezkeela, baina ez ditu zerrendatzen; webgunea gaztelaniaz, portugesez, ingelesez eta frantsesez dago, App Storeko fitxak ingelesa baino ez du zerrendatzen, eta ez dira aipatzen katalana, galiziera ezta euskara ere. Torns-en: Gaztelania, katalana, galiziera eta euskara; erabiltzaile bakoitzak bere profilean aukeratzen du hizkuntza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zenbat kostatzen da aTurnos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard plana hilean 2 €-tik aurrera argitaratzen da langileko (100 langilerentzat eta urteko ordainketarekin), eta Enterprise eta Smart planak aurrekontu pertsonalizatuarekin dira; erregistro-orriak proba bat eta 5 langilerentzako doako bertsio bat adierazten ditu, funtzio murriztuekin. Torns-en: Free plana doakoa; Torns Pro hilean 2,99 € edo urtean 29,90 €, eta Pro 30 egunez probatzeko aukera erregistratzean, txartelik gabe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos-k koadrantea argazki edo PDF batetik inportatzen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gidak deskribatzen du nola itsatsi koadrantean Excelen sortutako plangintza bat, txanden laburdurak erabiliz; ez da aipatzen argazki edo PDFtik inportatzerik, ezta horretarako OCRrik edo IArik ere. Torns-en: IAk koadrantearen argazki, PDF, pantaila-argazki edo kalkulu-orri bat irakurtzen du, erabiltzailearen errenkada aurkitzen du eta haren txandak proposatzen ditu berrikusteko; fitxategia ez da gordetzen (Free: 2 irakurketa; Pro: 30 hilean)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "aTurnos-k txanda-aldaketa kudeatzaileari jakinarazten dio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eskaera lankideak eta/edo taldeko administratzaileak onartu behar du, eta enpresak onarpen-fluxuak eta rolen araberako jakinarazpenak defini ditzake fase bakoitzean. Torns-en: Adostutako aldaketa posta elektronikoz bidaltzen dio koadranteen kudeatzaileari, edo haren panelera zentroak Torns-en panela erabiltzen badu (Pro)."
+      }
+    }
+  ]
+}
