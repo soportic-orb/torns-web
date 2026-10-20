@@ -1,5 +1,6 @@
 // Torns theme — vanilla JS. No jQuery, no frameworks.
-// Handles: mobile drawer, sticky header shadow, closing <details> menus.
+// Handles: mobile drawer, sticky header shadow, closing <details> menus,
+// the contact form confirmation screen with confetti.
 
 (() => {
     'use strict'
@@ -154,5 +155,82 @@
                 if (menu.open) menu.open = false
             })
         })
+    }
+
+    // ------------------------------------------------------------------
+    // Contact form: confirmation screen with confetti
+    // ------------------------------------------------------------------
+    const sent = document.querySelector('[data-contact-sent]')
+    if (sent) {
+        const canvas = sent.querySelector('[data-confetti]')
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        let frame = null
+
+        const confetti = () => {
+            if (reduced || !canvas?.getContext) return
+            const ctx = canvas.getContext('2d')
+            const ratio = window.devicePixelRatio || 1
+            canvas.width = window.innerWidth * ratio
+            canvas.height = window.innerHeight * ratio
+            ctx.scale(ratio, ratio)
+            const colors = ['#227A96', '#5BC0DE', '#F5A623', '#C2185B', '#34C759', '#1B2A4A']
+            const pieces = Array.from({ length: 180 }, () => ({
+                x: Math.random() * window.innerWidth,
+                y: -20 - Math.random() * window.innerHeight * 0.6,
+                w: 6 + Math.random() * 6,
+                h: 8 + Math.random() * 8,
+                vx: -1.5 + Math.random() * 3,
+                vy: 2 + Math.random() * 3.5,
+                angle: Math.random() * Math.PI,
+                spin: -0.15 + Math.random() * 0.3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+            }))
+            const started = performance.now()
+            cancelAnimationFrame(frame)
+            const draw = (now) => {
+                ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+                const fading = Math.max(0, Math.min(1, (6000 - (now - started)) / 1500))
+                pieces.forEach((p) => {
+                    p.x += p.vx + Math.sin((now + p.y) / 400) * 0.6
+                    p.y += p.vy
+                    p.angle += p.spin
+                    ctx.save()
+                    ctx.globalAlpha = fading
+                    ctx.translate(p.x, p.y)
+                    ctx.rotate(p.angle)
+                    ctx.fillStyle = p.color
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h)
+                    ctx.restore()
+                })
+                if (fading > 0) frame = requestAnimationFrame(draw)
+                else ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+            }
+            frame = requestAnimationFrame(draw)
+        }
+
+        const show = () => {
+            sent.hidden = false
+            document.documentElement.style.overflow = 'hidden'
+            sent.querySelector('#contact-sent-title')?.focus({ preventScroll: true })
+            confetti()
+        }
+
+        const hide = () => {
+            sent.hidden = true
+            document.documentElement.style.overflow = ''
+            cancelAnimationFrame(frame)
+        }
+
+        // Botble's contact-public.js sends the form by AJAX and fires this
+        // event after the answer; its success box has text only on success.
+        document.addEventListener('contact-form.submitted', () => {
+            if (document.querySelector('.contact-success-message')?.textContent.trim()) show()
+        })
+        sent.querySelector('[data-contact-sent-close]')?.addEventListener('click', hide)
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !sent.hidden) hide()
+        })
+        // Sent without JavaScript: the page came back with the screen open.
+        if (!sent.hidden) show()
     }
 })()

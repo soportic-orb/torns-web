@@ -115,9 +115,13 @@
         </aside>
 
         <main id="main-content">
-            @if (session()->has('success_msg') || session()->has('error_msg') || $errors->getBag('contact')->any())
+            @php
+                // The contact page shows its own confirmation screen instead.
+                $successFlash = session()->has('success_msg') && ! request()->is('contacta', '*/contacta');
+            @endphp
+            @if ($successFlash || session()->has('error_msg') || $errors->getBag('contact')->any())
                 <div class="px-4 sm:px-6">
-                    @if (session()->has('success_msg'))
+                    @if ($successFlash)
                         <p class="flash-message flash-message--success" role="status">{{ session('success_msg') }}</p>
                     @endif
                     @if (session()->has('error_msg'))
