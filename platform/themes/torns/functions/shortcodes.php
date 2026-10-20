@@ -225,6 +225,17 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 11. Register CTA
     // ------------------------------------------------------------------
+    add_shortcode('torns-centers-signup', __('Torns: Centers sign-up'), __('Banner to create a centre account in the management panel'), function ($shortcode) {
+        return Theme::partial('shortcodes.centers-signup', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-centers-signup', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
+            ->add('url', TextField::class, $textField(__('Button URL')));
+    });
+
     add_shortcode('torns-register-cta', __('Torns: Register CTA'), __('Create account call to action with store badges'), function ($shortcode) {
         return Theme::partial('shortcodes.register-cta', ['shortcode' => $shortcode]);
     });
