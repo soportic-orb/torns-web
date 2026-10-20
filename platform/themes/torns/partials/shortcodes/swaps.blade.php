@@ -1,7 +1,8 @@
 @php
     $title = $shortcode->title ?: __('Y cuando necesitas cambiar un turno…');
 
-    // Each row: text + one or two store screenshots (images/home/screens).
+    // Each row: text + one or two screenshots (images/home/screens): store
+    // mockups, or a raw screenshot shown in a CSS phone frame when the third item is true.
     $rows = [
         [
             'eyebrow' => __('Muro de turnos'), 'accent' => 'text-torns-primary',
@@ -29,7 +30,7 @@
             'title' => __('Habláis por Torns y el gestor se entera'),
             'text' => __('Mensajería individual y de grupo, sin dar tu teléfono. Cuando se acepta un cambio, quien hace el cuadrante recibe un e-mail con todos los datos.'),
             'extra' => __('Guarda una vez el contacto de tu gestor de planillas.'),
-            'screens' => [['screen-2905', __('Sistema de mensajería interno')], ['screen-2897', __('Turno de cobertura publicado por el centro')]],
+            'screens' => [['screen-2905', __('Sistema de mensajería interno')], ['notify-manager', __('Comunicar el cambio al gestor de planillas'), true]],
         ],
     ];
 @endphp
@@ -51,11 +52,14 @@
                         <p class="mt-4 font-semibold text-torns-primary-dark">{{ $row['extra'] }}</p>
                     </div>
                     <div @class(['flex justify-center gap-4 sm:gap-6', 'lg:order-1' => $i % 2 === 1])>
-                        @foreach ($row['screens'] as $j => [$name, $alt])
+                        @foreach ($row['screens'] as $j => $screen)
+                            {{-- A raw screenshot in a CSS frame is drawn smaller than the store mockups, which carry their own margin. --}}
+                            @php($framed = $screen[2] ?? false)
                             {!! Theme::partial('components.phone', [
-                                'name' => $name,
-                                'alt' => $alt,
-                                'class' => 'w-40 sm:w-52' . ($j === 1 ? ' mt-12' : ''),
+                                'name' => $screen[0],
+                                'alt' => $screen[1],
+                                'framed' => $framed,
+                                'class' => $framed ? 'w-[9.4rem] sm:w-[12rem] self-start ' . ($j === 1 ? 'mt-14 sm:mt-16' : 'mt-2') : 'w-40 sm:w-52' . ($j === 1 ? ' mt-12' : ''),
                                 'sizes' => '(min-width: 640px) 13rem, 10rem',
                             ]) !!}
                         @endforeach

@@ -350,5 +350,16 @@
     "Aviso por e-mail al gestor del cuadrante": "Koadrantearen kudeatzaileari posta bidezko abisua",
     "Estadísticas de horas trabajadas": "Lan egindako orduen estatistikak",
     "Consultor legal sobre el convenio": "Hitzarmenari buruzko lege-aholkularia",
-    "Apple Watch y widgets": "Apple Watch eta widgetak"
+    "Apple Watch y widgets": "Apple Watch eta widgetak",
+    "Tu calendario, también fuera de la app": "Zure egutegia, aplikaziotik kanpo ere",
+    "Comparte tu calendario": "Partekatu zure egutegia",
+    "Torns genera un enlace público de solo lectura a tu calendario de turnos, con contraseña si quieres, para que tu familia o tu pareja vean cuándo trabajas sin instalar nada.": "Torns-ek irakurtzeko soilik den esteka publiko bat sortzen du zure txanden egutegirako, nahi baduzu pasahitzarekin, zure familiak edo bikoteak noiz lan egiten duzun ikus dezaten ezer instalatu gabe.",
+    "También puedes exportarlo en formato ICS.": "ICS formatuan ere esporta dezakezu.",
+    "Calendario público compartido desde Torns": "Torns-etik partekatutako egutegi publikoa",
+    "Imprímelo o expórtalo en PDF": "Inprimatu edo esportatu PDFn",
+    "Elige la vista (lista, mensual o anual), el periodo, los tipos de turno y los centros, y exporta tu calendario en PDF para imprimirlo o enviarlo.": "Aukeratu ikuspegia (zerrenda, hilekoa edo urtekoa), aldia, txanda motak eta zentroak, eta esportatu zure egutegia PDFn inprimatzeko edo bidaltzeko.",
+    "Perfecto para colgarlo en la nevera o pasarlo a quien hace el cuadrante.": "Hozkailuan zintzilikatzeko edo koadrantea egiten duenari pasatzeko ezin hobea.",
+    "Pantalla de imprimir y exportar el calendario a PDF en Torns": "Egutegia PDFra inprimatzeko eta esportatzeko pantaila Torns-en",
+    "Comunicar el cambio al gestor de planillas": "Aldaketa koadranteen kudeatzaileari jakinarazi",
+    "Panel de gestión de Torns para centros": "Torns-en kudeaketa-panela zentroentzat"
 }

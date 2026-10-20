@@ -288,13 +288,44 @@ body.drawer-locked {
     display: none;
 }
 
-/* Lightbox open state (toggled from main.js) */
-.lightbox.is-open {
-    display: flex;
+/* Screens carousel (main.js): slides stacked in the middle, moved by --offset */
+.screens-carousel__stage {
+    --slide: 15rem;
+    --step: calc(var(--slide) * 0.62);
+    position: relative;
+    height: calc(var(--slide) * 2.03);
 }
 
-body.lightbox-locked {
-    overflow: hidden;
+@media (min-width: 640px) {
+    .screens-carousel__stage {
+        --slide: 17rem;
+        --step: calc(var(--slide) * 0.78);
+    }
+}
+
+.screens-carousel__slide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--slide);
+    cursor: pointer;
+    transform: translateX(calc(-50% + var(--offset, 0) * var(--step))) scale(var(--scale, 1));
+    transform-origin: center 40%;
+    transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+}
+
+.screens-carousel__slide[data-position='current'] {
+    cursor: default;
+}
+
+.screens-carousel__slide[data-position='side'] {
+    opacity: 0.55;
+    filter: saturate(0.8);
+}
+
+.screens-carousel__slide[data-position='hidden'] {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Share links on blog posts */
