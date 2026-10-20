@@ -1,11 +1,14 @@
 <?php
 
 use App\Support\SiteContent;
+use Botble\Base\Facades\BaseHelper;
 use Botble\Blog\Models\Post;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Page\Models\Page;
 use Botble\SeoHelper\Facades\SeoHelper;
+use Botble\Slug\Models\Slug;
+use Botble\Theme\Events\RenderingSingleEvent;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Routing\Events\RouteMatched;
 
@@ -68,6 +71,57 @@ if (! function_exists('torns_strip_default_schemas')) {
         );
     }
 }
+
+if (! function_exists('torns_page_sibling')) {
+    /** The same content/site page in another language (pages are one CMS page per language). */
+    function torns_page_sibling(int|string $pageId, string $locale): ?int
+    {
+        $origin = LanguageMeta::query()->where('reference_type', Page::class)->where('reference_id', $pageId)->value('lang_meta_origin');
+        $id = $origin ? LanguageMeta::query()
+            ->where('reference_type', Page::class)
+            ->where('lang_meta_origin', $origin)
+            ->where('lang_meta_code', $locale)
+            ->value('reference_id') : null;
+
+        return $id ? (int) $id : null;
+    }
+}
+
+/*
+ * Pages are created one per language with the same slug (App\Support\SiteContent),
+ * but Botble resolves /ca/funcionalidades by slug alone and found the Spanish
+ * page. Serve the page of the current language instead, with its own content,
+ * title and description.
+ */
+add_filter(BASE_FILTER_PUBLIC_SINGLE_DATA, function ($slug) {
+    if (! $slug instanceof Slug || $slug->reference_type !== Page::class) {
+        return $slug;
+    }
+    $sibling = torns_page_sibling($slug->reference_id, torns_current_locale());
+    if ($sibling && $sibling !== (int) $slug->reference_id) {
+        $slug = clone $slug;
+        $slug->reference_id = $sibling;
+    }
+
+    return $slug;
+}, 0);
+
+// The home page renders the default-language page: use the SEO texts of the
+// home page in the current language.
+app('events')->listen(RenderingSingleEvent::class, function (RenderingSingleEvent $event): void {
+    if ($event->slug->getKey() || is_in_admin() || ! ($homeId = BaseHelper::getHomepageId())) {
+        return;
+    }
+    $locale = torns_current_locale();
+    $page = ($id = torns_page_sibling($homeId, $locale)) ? Page::query()->find($id) : null;
+    $meta = $page?->getMetaData('seo_meta', true);
+    if (! empty($meta['seo_title'])) {
+        SeoHelper::setTitle($meta['seo_title']);
+    }
+    if (! empty($meta['seo_description'])) {
+        SeoHelper::setDescription($meta['seo_description']);
+    }
+});
 
 if (! function_exists('torns_page_key')) {
     /** content/site key ("home", "funcionalidades"…) of a CMS page. */
@@ -168,6 +222,9 @@ if (! function_exists('torns_schema_graph')) {
             $page = Page::query()->find($pageId);
             $key = torns_page_key($pageId);
             $isHome = BaseHelper::isHomepage($pageId);
+            // Extra nodes kept with the page content (content/site/schema/<key>.<lang>.json).
+            $schemaFile = $key ? base_path("content/site/schema/{$key}.{$locale}.json") : null;
+            $hasSchema = $schemaFile && is_file($schemaFile);
             $graph[] = array_filter([
                 '@type' => 'WebPage',
                 '@id' => $current,
@@ -179,7 +236,7 @@ if (! function_exists('torns_schema_graph')) {
                 'about' => in_array($key, ['home', 'funcionalidades'], true) || $isHome ? ['@id' => "{$site}/#app"] : null,
                 'primaryImageOfPage' => SeoHelper::openGraph()->getProperty('image') ?: null,
                 'dateModified' => $page?->updated_at?->toIso8601String(),
-                'mainEntity' => $isHome || $key === 'funcionalidades' ? ['@id' => "{$current}#faq"] : null,
+                'mainEntity' => $isHome || $hasSchema ? ['@id' => "{$current}#faq"] : null,
             ]);
 
             if ($isHome) {
@@ -195,9 +252,7 @@ if (! function_exists('torns_schema_graph')) {
                 ];
             }
 
-            // Extra nodes kept with the page content (content/site/schema/<key>.<lang>.json).
-            $file = $key ? base_path("content/site/schema/{$key}.{$locale}.json") : null;
-            if ($file && is_file($file) && is_array($node = json_decode((string) file_get_contents($file), true))) {
+            if ($hasSchema && is_array($node = json_decode((string) file_get_contents($schemaFile), true))) {
                 $graph[] = ['@id' => "{$current}#faq", 'inLanguage' => $language] + $node;
             }
         }
