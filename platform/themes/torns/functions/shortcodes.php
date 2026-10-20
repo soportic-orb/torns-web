@@ -4,8 +4,8 @@ use Botble\Base\Forms\FieldOptions\SelectFieldOption;
 use Botble\Base\Forms\Fields\MediaImageField;
 use Botble\Base\Forms\Fields\NumberField;
 use Botble\Base\Forms\Fields\SelectField;
-use Botble\Base\Forms\Fields\TextField;
 use Botble\Base\Forms\Fields\TextareaField;
+use Botble\Base\Forms\Fields\TextField;
 use Botble\Shortcode\Forms\ShortcodeForm;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Routing\Events\RouteMatched;
@@ -56,7 +56,7 @@ app('events')->listen(RouteMatched::class, function (): void {
         return Theme::partial('shortcodes.about', ['shortcode' => $shortcode]);
     });
 
-    shortcode()->setAdminConfig('torns-about', function (array $attributes) use ($textField, $textareaField) {
+    shortcode()->setAdminConfig('torns-about', function (array $attributes) use ($textField) {
         $form = ShortcodeForm::createFromArray($attributes)
             ->add('title', TextField::class, $textField(__('Title')));
 

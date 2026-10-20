@@ -1,5 +1,6 @@
 <?php
 
+use Botble\Theme\Events\ThemeRoutingBeforeEachRouteEvent;
 use Botble\Theme\Facades\Theme;
 
 if (! is_plugin_active('contact')) {
@@ -28,7 +29,7 @@ add_filter('contact_request_rules', function (array $rules): array {
  * The contact plugin queues jQuery + an AJAX helper. The theme is jQuery-free:
  * without them the form degrades gracefully to a standard POST + redirect.
  */
-app('events')->listen(\Botble\Theme\Events\ThemeRoutingBeforeEachRouteEvent::class, function (): void {
+app('events')->listen(ThemeRoutingBeforeEachRouteEvent::class, function (): void {
     Theme::asset()->remove('contact-css');
     Theme::asset()->container('footer')->remove('contact-public-js');
 });
