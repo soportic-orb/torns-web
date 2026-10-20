@@ -45,7 +45,7 @@ cat > "$OUT/ota-manifest.json" <<JSON
 JSON
 
 if [[ -n "$KEY" ]]; then
-    openssl pkeyutl -sign -inkey "$KEY" -rawin -in "$OUT/ota-manifest.json" | base64 -w0 > "$OUT/ota-manifest.json.sig"
+    openssl pkeyutl -sign -inkey "$KEY" -rawin -in "$OUT/ota-manifest.json" | base64 | tr -d '\n' > "$OUT/ota-manifest.json.sig"
 fi
 
 echo "OTA $VERSION: $FILES files, sha256 $SHA"

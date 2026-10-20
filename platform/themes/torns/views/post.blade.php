@@ -1,6 +1,7 @@
 @php
     Theme::layout('full-width');
     Theme::set('post', $post);
+    SeoHelper::openGraph()->addProperty('locale', str_replace('-', '_', TORNS_SCHEMA_LOCALES[torns_current_locale()] ?? 'es-ES'));
     $relatedPosts = get_related_posts($post->id, 3);
     $shareUrl = $post->url;
     $shareTitle = $post->name;

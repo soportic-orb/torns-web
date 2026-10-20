@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Ai\BlogAi;
+use App\Http\Middleware\NoIndexOutsideProduction;
 use Botble\Base\Facades\PanelSectionManager;
 use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
 use Botble\Base\Forms\Fields\HtmlField;
@@ -23,7 +24,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Before any provider boots, so Botble's catch-all page route does not
+        // take robots.txt, llms-full.txt or the /x.md versions.
+        $this->app->booting(function (): void {
+            require base_path('routes/seo-early.php');
+        });
     }
 
     /**
@@ -31,8 +36,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->app['router']->pushMiddlewareToGroup('web', NoIndexOutsideProduction::class);
+
         // Site updates (OTA) page: Admin → Platform → System.
         $this->loadRoutesFrom(base_path('routes/admin.php'));
+
+        // After Botble's routes, so these replace its sitemap and llms.txt.
+        $this->app->booted(function (): void {
+            require base_path('routes/seo.php');
+        });
 
         PanelSectionManager::group('system')->beforeRendering(function (): void {
             if (! auth()->user()?->isSuperUser()) {
