@@ -35,9 +35,9 @@
                     @if ($screenExists($card['screen']))
                         {!! Theme::partial('components.phone', [
                             'name' => $card['screen'],
-                            'framed' => true,
                             'alt' => $card['alt'],
-                            'class' => 'mx-auto w-44 sm:w-full',
+                            'tilt' => $loop->iteration === 2 ? 'right' : 'left',
+                            'class' => 'mx-auto w-40 sm:w-[11rem]',
                             'sizes' => '12rem',
                         ]) !!}
                     @endif

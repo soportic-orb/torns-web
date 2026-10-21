@@ -203,17 +203,22 @@
 /* Phone frame for raw app screenshots (the store mockups already carry    */
 /* their own frame and are shown as they are).                             */
 /* ---------------------------------------------------------------------- */
-.phone-frame {
-    @apply relative overflow-hidden rounded-[2.4rem] border-[9px] border-torns-ink bg-white shadow-2xl shadow-torns-ink/20;
+/* App screenshot without a phone frame (components/phone.blade.php):
+   the phone screen's rounded corners and a soft shadow; optionally a slight
+   turn, so a pair of screens does not stand stiffly side by side. */
+.app-screen {
+    border-radius: 12% / 5.5%;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgb(15 36 48 / 0.06), 0 22px 45px -18px rgb(15 36 48 / 0.45);
+    transition: transform 0.4s ease;
 }
 
-.phone-frame--on-dark {
-    border-color: #000;
-    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.12), 0 25px 50px -12px rgb(0 0 0 / 0.5);
+.app-screen--tilt-left {
+    transform: rotate(-3deg);
 }
 
-.phone-frame img {
-    @apply block h-auto w-full;
+.app-screen--tilt-right {
+    transform: rotate(3deg);
 }
 
 /* Shift labels floating around the hero phone (one per work centre) */
@@ -294,16 +299,17 @@ body.drawer-locked {
 
 /* Screens carousel (main.js): slides stacked in the middle, moved by --offset */
 .screens-carousel__stage {
-    --slide: 15rem;
-    --step: calc(var(--slide) * 0.62);
+    /* Frameless screens (2.19 tall per wide), with room for the side ones' turn. */
+    --slide: 13rem;
+    --step: calc(var(--slide) * 0.7);
     position: relative;
-    height: calc(var(--slide) * 2.03);
+    height: calc(var(--slide) * 2.28);
 }
 
 @media (min-width: 640px) {
     .screens-carousel__stage {
-        --slide: 17rem;
-        --step: calc(var(--slide) * 0.78);
+        --slide: 15rem;
+        --step: calc(var(--slide) * 0.86);
     }
 }
 
@@ -313,7 +319,8 @@ body.drawer-locked {
     left: 50%;
     width: var(--slide);
     cursor: pointer;
-    transform: translateX(calc(-50% + var(--offset, 0) * var(--step))) scale(var(--scale, 1));
+    /* Side screens lean towards the centre one: -3deg on the left, 3deg on the right. */
+    transform: translateX(calc(-50% + var(--offset, 0) * var(--step))) scale(var(--scale, 1)) rotate(calc(var(--offset, 0) * 3deg));
     transform-origin: center 40%;
     transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
 }

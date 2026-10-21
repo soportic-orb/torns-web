@@ -41,9 +41,9 @@
                     <figure class="flex flex-col items-center">
                         {!! Theme::partial('components.phone', [
                             'name' => $screen['name'],
-                            'framed' => true,
                             'alt' => $screen['title'],
-                            'class' => 'phone-frame--on-dark w-full max-w-[16rem]',
+                            'tilt' => $loop->iteration === 2 ? 'right' : null,
+                            'class' => 'w-full max-w-[15rem] ring-1 ring-white/10',
                             'sizes' => '(min-width: 1024px) 16rem, 15rem',
                         ]) !!}
                         <figcaption class="mt-5 text-center">

@@ -53,14 +53,13 @@
                     </div>
                     <div @class(['flex justify-center gap-4 sm:gap-6', 'lg:order-1' => $i % 2 === 1])>
                         @foreach ($row['screens'] as $j => $screen)
-                            {{-- A raw screenshot in a CSS frame is drawn smaller than the store mockups, which carry their own margin. --}}
-                            @php($framed = $screen[2] ?? false)
+                            {{-- The second screen sits lower and slightly turned. --}}
                             {!! Theme::partial('components.phone', [
                                 'name' => $screen[0],
                                 'alt' => $screen[1],
-                                'framed' => $framed,
-                                'class' => $framed ? 'w-[9.4rem] sm:w-[12rem] self-start ' . ($j === 1 ? 'mt-14 sm:mt-16' : 'mt-2') : 'w-40 sm:w-52' . ($j === 1 ? ' mt-12' : ''),
-                                'sizes' => '(min-width: 640px) 13rem, 10rem',
+                                'tilt' => $j === 1 ? 'right' : null,
+                                'class' => 'w-[8.5rem] self-start sm:w-[11rem] ' . ($j === 1 ? 'mt-12 sm:mt-14' : 'mt-2'),
+                                'sizes' => '(min-width: 640px) 11rem, 8.5rem',
                             ]) !!}
                         @endforeach
                     </div>
