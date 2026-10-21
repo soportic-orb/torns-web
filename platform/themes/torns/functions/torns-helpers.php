@@ -1,5 +1,11 @@
 <?php
 
+use Botble\Blog\Models\Category;
+use Botble\Blog\Models\Post;
+use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Language\Facades\Language;
+use Botble\Language\Models\LanguageMeta;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
 if (! function_exists('torns_pricing_plans')) {
@@ -297,5 +303,83 @@ if (! function_exists('torns_asset')) {
         $versions[$path] ??= is_file($file) ? substr(md5_file($file), 0, 10) : null;
 
         return Theme::asset()->url($path) . ($versions[$path] ? '?v=' . $versions[$path] : '');
+    }
+}
+
+if (! function_exists('torns_blog_listing')) {
+    /**
+     * Posts for the blog page and the category pages: the latest featured post
+     * (shown full width on the first page) and the rest, paginated, without it.
+     * Posts are translated with language-advanced; a post written as a separate
+     * post in another language (language_meta other than the default) is left out.
+     *
+     * @return array{featured: ?Post, posts: LengthAwarePaginator}
+     */
+    function torns_blog_listing(?Category $category = null): array
+    {
+        $postClass = Post::class;
+        $default = is_plugin_active('language') ? Language::getDefaultLocaleCode() : 'es';
+        $otherLanguage = LanguageMeta::query()
+            ->where('reference_type', $postClass)
+            ->where('lang_meta_code', '!=', $default)
+            ->pluck('reference_id');
+
+        $query = fn () => app(PostInterface::class)->applyBeforeExecuteQuery(
+            $postClass::query()
+                ->wherePublished()
+                ->with(['slugable', 'categories'])
+                ->whereNotIn('id', $otherLanguage)
+                ->when($category, fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('categories.id', $category->getKey())))
+                ->orderByDesc('created_at')
+        );
+
+        $featured = $query()->where('is_featured', true)->first();
+        $posts = $query()
+            ->when($featured, fn ($q) => $q->whereKeyNot($featured->getKey()))
+            ->paginate((int) theme_option('number_of_posts_in_a_category', 12));
+
+        return ['featured' => $featured, 'posts' => $posts];
+    }
+}
+
+if (! function_exists('torns_blog_categories')) {
+    /**
+     * Categories for the blog filter: the default-language ones that have
+     * published posts, each with its name in the current language when a
+     * translated category exists (same language_meta origin).
+     *
+     * @return list<array{id: int, name: string, url: string}>
+     */
+    function torns_blog_categories(): array
+    {
+        $categoryClass = Category::class;
+        $meta = LanguageMeta::query()->where('reference_type', $categoryClass)->get(['reference_id', 'lang_meta_code', 'lang_meta_origin']);
+        $default = is_plugin_active('language') ? Language::getDefaultLocaleCode() : 'es';
+        $locale = torns_current_locale();
+        $byId = $meta->keyBy('reference_id');
+
+        $categories = $categoryClass::query()
+            ->wherePublished()
+            ->with('slugable')
+            ->whereNotIn('id', $meta->where('lang_meta_code', '!=', $default)->pluck('reference_id'))
+            ->whereHas('posts', fn ($q) => $q->wherePublished())
+            ->orderBy('order')
+            ->orderBy('name')
+            ->get();
+
+        $names = $categoryClass::query()
+            ->whereIn('id', $meta->where('lang_meta_code', $locale)->pluck('reference_id'))
+            ->pluck('name', 'id');
+
+        return $categories->map(function ($category) use ($byId, $meta, $locale, $names) {
+            $origin = $byId->get($category->getKey())?->lang_meta_origin;
+            $translatedId = $origin ? $meta->where('lang_meta_origin', $origin)->firstWhere('lang_meta_code', $locale)?->reference_id : null;
+
+            return [
+                'id' => (int) $category->getKey(),
+                'name' => (string) ($translatedId ? ($names[$translatedId] ?? $category->name) : $category->name),
+                'url' => (string) $category->url,
+            ];
+        })->values()->all();
     }
 }

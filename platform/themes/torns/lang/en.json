@@ -1,5 +1,10 @@
 {
     "shift_letter_morning": "M",
     "shift_letter_evening": "E",
-    "shift_letter_night": "N"
+    "shift_letter_night": "N",
+    "Blog": "Blog",
+    "Noticias y consejos para quien trabaja a turnos": "News and tips for people who work shifts",
+    "Categorías": "Categories",
+    "Todas las publicaciones": "All posts",
+    "Destacada": "Featured"
 }
