@@ -1,7 +1,8 @@
 @php
     $title = $shortcode->title ?: __('No querrás salir de la app');
     $subtitle = $shortcode->subtitle ?: __('Diseño sencillo, claro y minimalista, con la lógica de los profesionales de la salud.');
-    $screenUrl = fn (string $name, int $width) => Theme::asset()->url("images/home/screens/{$name}-{$width}.webp");
+    // Screens extracted from the store mockups, without the phone frame.
+    $screenUrl = fn (string $name, int $width) => Theme::asset()->url("images/home/screens/{$name}-flat-{$width}.webp");
 
     // Store mockups of the current website, in its order.
     $screens = [
@@ -29,16 +30,18 @@
             <ul class="screens-carousel__stage list-none">
                 @foreach ($screens as $screen)
                     <li class="screens-carousel__slide" data-carousel-slide data-caption="{{ $screen['caption'] }}" aria-label="{{ $screen['caption'] }}">
-                        <img
-                            src="{{ $screenUrl($screen['name'], 560) }}"
-                            srcset="{{ $screenUrl($screen['name'], 280) }} 280w, {{ $screenUrl($screen['name'], 560) }} 560w"
-                            sizes="17rem"
-                            alt="{{ $screen['caption'] }}"
-                            class="block h-auto w-full drop-shadow-xl"
-                            width="560"
-                            height="1132"
-                            @if ($loop->index > 2 && $loop->remaining > 2) loading="lazy" @endif
-                        >
+                        <div class="app-screen">
+                            <img
+                                src="{{ $screenUrl($screen['name'], 480) }}"
+                                srcset="{{ $screenUrl($screen['name'], 240) }} 240w, {{ $screenUrl($screen['name'], 480) }} 480w"
+                                sizes="(min-width: 640px) 15rem, 13rem"
+                                alt="{{ $screen['caption'] }}"
+                                class="block h-auto w-full"
+                                width="480"
+                                height="1050"
+                                @if ($loop->index > 2 && $loop->remaining > 2) loading="lazy" @endif
+                            >
+                        </div>
                     </li>
                 @endforeach
             </ul>

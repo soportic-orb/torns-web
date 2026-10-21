@@ -191,7 +191,7 @@ if (! function_exists('torns_schema_graph')) {
                 'inLanguage' => $languages,
                 'screenshot' => [
                     Theme::asset()->url('images/home/screens/calendar-month-600.webp'),
-                    Theme::asset()->url('images/home/screens/screen-2896-560.webp'),
+                    Theme::asset()->url('images/home/screens/screen-2896-flat-480.webp'),
                     Theme::asset()->url('images/home/screens/work-stats-600.webp'),
                 ],
                 'featureList' => [
