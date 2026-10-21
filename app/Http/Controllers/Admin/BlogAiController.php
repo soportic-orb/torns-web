@@ -43,12 +43,21 @@ class BlogAiController extends BaseController
     {
         $this->authorizeEditor($request);
         $data = $request->validate([
-            'prompt' => ['required', 'string', 'max:3000'],
+            'prompt' => ['nullable', 'string', 'max:3000'],
             'shape' => ['nullable', 'string'],
             'style' => ['nullable', 'string'],
+            'title' => ['nullable', 'string', 'max:255'],
+            'description' => ['nullable', 'string', 'max:2000'],
+            'content' => ['nullable', 'string', 'max:60000'],
         ]);
 
-        return $this->respond(fn () => $this->ai->image($data['prompt'], (string) ($data['shape'] ?? 'landscape'), (string) ($data['style'] ?? 'photo'), $request->user()->getKey()));
+        return $this->respond(fn () => $this->ai->image(
+            (string) ($data['prompt'] ?? ''),
+            (string) ($data['shape'] ?? 'landscape'),
+            (string) ($data['style'] ?? 'photo'),
+            $request->user()->getKey(),
+            Arr::only($data, ['title', 'description', 'content'])
+        ));
     }
 
     public function seo(Request $request): BaseHttpResponse
