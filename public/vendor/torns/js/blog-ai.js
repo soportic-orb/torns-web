@@ -48,10 +48,6 @@ const initTornsAi = () => {
         })
         $('[data-ai-result]').hidden = true
         $('[data-ai-status]').textContent = ''
-        const title = field('name')?.value?.trim()
-        if (mode === 'image' && title && !$('#torns-ai-image-prompt').value) {
-            $('#torns-ai-image-prompt').value = t.imagePrompt.replace(':title', title)
-        }
     }
 
     const hasBody = () => editor.get().replace(/<[^>]*>|&nbsp;/g, '').trim() !== ''
@@ -142,7 +138,15 @@ const initTornsAi = () => {
     const request = () => mode === 'image'
         ? {
             url: root.dataset.imageUrl,
-            body: { prompt: $('#torns-ai-image-prompt').value, shape: $('#torns-ai-shape').value, style: $('#torns-ai-style').value },
+            // The image is drawn from the whole post; the prompt only adds the editor's indications.
+            body: {
+                prompt: $('#torns-ai-image-prompt').value,
+                shape: $('#torns-ai-shape').value,
+                style: $('#torns-ai-style').value,
+                title: field('name')?.value || '',
+                description: field('description')?.value || '',
+                content: editor.get(),
+            },
         }
         : {
             url: root.dataset.textUrl,

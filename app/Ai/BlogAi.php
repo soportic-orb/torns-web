@@ -562,17 +562,29 @@ class BlogAi
      *
      * @return array{path: string, url: string, thumb: string}
      */
-    public function image(string $prompt, string $shape, string $style, ?int $userId = null): array
+    /**
+     * @param  string  $prompt  the editor's own indications (optional when the post has a title or text)
+     * @param  array{title?: string, description?: string, content?: string}  $post  the post as it is in the editor
+     */
+    public function image(string $prompt, string $shape, string $style, ?int $userId = null, array $post = []): array
     {
         if (! $this->imageReady()) {
             throw new RuntimeException(trans('torns.ai_err_image_key'));
         }
         $prompt = $this->plain($prompt, 3000);
-        if ($prompt === '') {
+        $post = [
+            'title' => $this->plain($post['title'] ?? '', 255),
+            'description' => $this->plain($post['description'] ?? '', 1000),
+            'content' => $this->blockText($post['content'] ?? '', 20000),
+        ];
+        if ($prompt === '' && implode('', $post) === '') {
             throw new RuntimeException(trans('torns.ai_err_image_prompt'));
         }
+        $scene = implode('', $post) !== '' ? $this->imageScene($post, $prompt, $style, $userId) : '';
         $size = self::SHAPES[$shape] ?? self::SHAPES['landscape'];
-        $full = $prompt . "\n\n" . (self::STYLES[$style] ?? self::STYLES['photo'])
+        $full = ($scene !== '' ? $scene : trim($post['title'] . "\n" . $prompt))
+            . ($prompt !== '' ? "\n\nThe editor's indications, which must be followed: {$prompt}" : '')
+            . "\n\n" . (self::STYLES[$style] ?? self::STYLES['photo'])
             . ' Featured image for an article on a blog for healthcare workers in Spain who work shifts: respectful and positive,'
             . ' no blood, no injuries, no identifiable patients, no hospital brand names.'
             . ' No text, letters, logos or watermarks in the image.';
@@ -644,6 +656,51 @@ class BlogAi
         $text = str_replace("\u{00A0}", ' ', $this->plain($text, $max));
 
         return trim((string) preg_replace('/\n\s*\n\s*\n/', "\n\n", $text));
+    }
+
+    /**
+     * The scene for the featured image, written by the text model from the whole post
+     * so the image fits what the article is about. Empty if no text model answers.
+     */
+    protected function imageScene(array $post, string $prompt, string $style, ?int $userId): string
+    {
+        $provider = $this->defaultTextProvider();
+        if (! $provider) {
+            return '';
+        }
+        $system = 'You write prompts for an image model that creates the featured image of articles on the blog of Torns, '
+            . 'a shift and on-call management app for healthcare workers in Spain (nurses, doctors, technicians). '
+            . 'From the article you receive, describe one concrete scene that conveys its main idea: who appears, what they are doing, where, the light and the mood. '
+            . 'Healthcare professionals at work or in their personal life, respectful and positive; no blood, injuries, identifiable patients or brand names. '
+            . 'No text, letters, numbers, logos or screens with legible content in the image. '
+            . 'If the editor gives indications, follow them: they take precedence over the article. '
+            . 'Write in English, in at most 90 words, as one paragraph. Reply only with the description.';
+        $message = '';
+        foreach (['title' => 'Title', 'description' => 'Summary'] as $key => $label) {
+            if ($post[$key] !== '') {
+                $message .= "{$label}: {$post[$key]}\n";
+            }
+        }
+        if ($post['content'] !== '') {
+            $message .= "\n<article>\n" . mb_substr($post['content'], 0, 12000) . "\n</article>\n";
+        }
+        $message .= "\nStyle of the image: " . (self::STYLES[$style] ?? self::STYLES['photo']);
+        if ($prompt !== '') {
+            $message .= "\nEditor's indications: {$prompt}";
+        }
+
+        try {
+            [$raw, $usage] = $provider === 'claude'
+                ? $this->claude($system, $message, 400)
+                : $this->openaiText($system, $message, 400);
+            Log::info('Torns blog AI: image scene', ['user' => $userId, 'provider' => $provider] + $usage);
+
+            return $this->plain($raw, 1500);
+        } catch (\Throwable $e) {
+            Log::warning('Torns blog AI: image scene failed', ['user' => $userId, 'provider' => $provider, 'error' => $e->getMessage()]);
+
+            return '';
+        }
     }
 
     protected function plain(?string $value, int $max): string
