@@ -1,15 +1,17 @@
 @php
     Theme::layout('full-width');
+    ['featured' => $featured, 'posts' => $posts] = torns_blog_listing($category);
 @endphp
 
-<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-    <header class="mx-auto mb-10 max-w-2xl text-center">
-        <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-torns-primary">{{ __('Category') }}</p>
-        <h1 class="font-display text-3xl font-bold tracking-tight sm:text-4xl">{{ $category->name }}</h1>
-        @if ($category->description)
-            <p class="mt-4 leading-relaxed text-torns-ink/70">{{ $category->description }}</p>
-        @endif
-    </header>
+<div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    {!! Theme::partial('blog.header', compact('category')) !!}
 
-    {!! Theme::partial('blog.post-list', compact('posts')) !!}
+    @if ($featured && $posts->onFirstPage())
+        {!! Theme::partial('blog.featured', ['post' => $featured]) !!}
+    @endif
+
+    {{-- With only the featured post, no "coming soon" under it. --}}
+    @unless ($featured && $posts->isEmpty())
+        {!! Theme::partial('blog.post-list', compact('posts')) !!}
+    @endunless
 </div>
