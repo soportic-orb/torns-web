@@ -10,8 +10,8 @@
     $large = $small * 2;
     $ratio = $flat ? 1054 / 482 : 2000 / 920;
     $base = 'images/home/screens/' . $name . ($flat ? '-flat' : '');
-    $src = Theme::asset()->url("{$base}-{$large}.webp");
-    $srcset = Theme::asset()->url("{$base}-{$small}.webp") . " {$small}w, {$src} {$large}w";
+    $src = torns_asset("{$base}-{$large}.webp");
+    $srcset = torns_asset("{$base}-{$small}.webp") . " {$small}w, {$src} {$large}w";
     $sizes = $sizes ?? '(min-width: 1024px) 16rem, 60vw';
     $eager = $eager ?? false;
     $tilt = $tilt ?? null;
