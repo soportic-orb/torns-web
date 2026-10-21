@@ -74,8 +74,25 @@ Si algo da un 500: `tail -n 30 ~/logs/php/error.log` y
 ## Después
 
 - **Tema y contenido**: con el botón de actualizaciones OTA (`docs/OTA.md`).
-- **Código** (`app/`, plugins, migraciones), como usuario del sitio:
+- **Código** (`app/`, `config/`, `routes/`, `lang/`, `resources/`,
+  `public/vendor/torns`, migraciones): por SSH, como usuario del sitio (desde
+  root, con `sudo -u <usuario>` delante de cada orden; si no, git se niega con
+  «detected dubious ownership»).
 
   ```bash
-  git pull && composer install --no-dev --optimize-autoloader && php artisan migrate --force && php artisan optimize
+  cd ~/htdocs/<dominio>
+  # 1. Solo debe haber cambios de las OTA (tema y content/site). Si sale algo, revísalo antes de seguir.
+  git status --short | grep -v -E '^( M|\?\?) (content/site|platform/themes/torns|public/themes/torns)/'
+  # 2. Dejar la carpeta igual que main.
+  git fetch origin main && git reset --hard origin/main
+  # 3. Dependencias, migraciones y cachés.
+  composer install --no-dev --optimize-autoloader && php artisan migrate --force && php artisan optimize:clear && php artisan optimize
   ```
+
+  No uses `git pull`: cada OTA reescribe el tema y `content/site` dentro de la
+  carpeta y git los ve como cambios locales, así que `git pull` se para con
+  «Your local changes … would be overwritten». Esos ficheros ya están en
+  `main` (las versiones OTA se publican desde `main`), y `git reset --hard`
+  los deja como allí sin tocar `.env`, `storage/` ni `public/storage`, que git
+  no sigue. Las páginas y menús editados en /admin están en la base de datos y
+  tampoco se tocan.
