@@ -3,13 +3,18 @@
 namespace Database\Seeders;
 
 use App\Support\SiteContent;
+use App\Support\TranslatedSlug;
 use Botble\ACL\Models\User;
 use Botble\Blog\Models\Category;
+use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Botble\Contact\Models\CustomField;
 use Botble\Language\Models\Language;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Slug\Models\Slug;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 /**
@@ -89,9 +94,9 @@ class TornsContentSeeder extends Seeder
             ->forceSet('theme-torns-site_title', 'Torns')
             ->forceSet('theme-torns-seo_title', 'App de cambios de turno y calendario sanitario | Torns')
             ->forceSet('theme-torns-seo_description', 'Cambia turnos con tus compañeros del mismo centro y gestiona el calendario de todos tus centros con sincronización Apple y Google Calendar. Gratis, sin tarjeta.')
-            ->forceSet($prefix(\Botble\Blog\Models\Post::class), 'blog')
+            ->forceSet($prefix(Post::class), 'blog')
             ->forceSet($prefix(Category::class), 'blog')
-            ->forceSet($prefix(\Botble\Blog\Models\Tag::class), 'blog/tag')
+            ->forceSet($prefix(Tag::class), 'blog/tag')
             ->save();
     }
 
@@ -107,12 +112,15 @@ class TornsContentSeeder extends Seeder
     }
 
     /**
-     * Base blog categories in the four languages. No sample posts are created:
-     * content will be written from the admin panel.
+     * Base blog categories: one row each, in the default language, with the
+     * other languages as language-advanced translations (name and URL), the
+     * way the blog reads them. No sample posts are created: content will be
+     * written from the admin panel.
      */
     protected function seedBlogCategories(): void
     {
         $userId = User::query()->value('id') ?? 1;
+        $default = array_key_first(array_filter(self::LOCALES, fn ($locale) => $locale['default'])) ?? 'es';
 
         $categories = [
             'novedades' => 'Novedades',
@@ -122,34 +130,47 @@ class TornsContentSeeder extends Seeder
 
         foreach ($categories as $slug => $label) {
             $origin = md5('torns-category-' . $slug);
+            $existingId = LanguageMeta::query()
+                ->where('lang_meta_origin', $origin)
+                ->where('lang_meta_code', $default)
+                ->where('reference_type', Category::class)
+                ->value('reference_id')
+                ?? Slug::query()->where(['reference_type' => Category::class, 'key' => $slug, 'prefix' => 'blog'])->value('reference_id');
+
+            $category = ($existingId ? Category::query()->find($existingId) : null) ?? new Category();
+            $category->forceFill([
+                'name' => $this->t($label, $default),
+                'status' => 'published',
+                'author_id' => $category->author_id ?: $userId,
+                'author_type' => $category->author_type ?: User::class,
+            ])->save();
+
+            LanguageMeta::query()->updateOrCreate(
+                ['reference_id' => $category->getKey(), 'reference_type' => Category::class],
+                ['lang_meta_code' => $default, 'lang_meta_origin' => $origin]
+            );
+            $slugRow = Slug::query()->updateOrCreate(
+                ['reference_id' => $category->getKey(), 'reference_type' => Category::class],
+                ['key' => $slug, 'prefix' => 'blog']
+            );
 
             foreach (array_keys(self::LOCALES) as $locale) {
-                $existingMeta = LanguageMeta::query()
-                    ->where('lang_meta_origin', $origin)
-                    ->where('lang_meta_code', $locale)
-                    ->where('reference_type', Category::class)
-                    ->first();
-
-                $attributes = [
-                    'name' => $this->t($label, $locale),
-                    'status' => 'published',
-                    'author_id' => $userId,
-                    'author_type' => User::class,
-                ];
-
-                $category = $existingMeta
-                    ? tap(Category::query()->find($existingMeta->reference_id) ?? new Category(), fn (Category $model) => $model->forceFill($attributes)->save())
-                    : Category::query()->create($attributes);
-
-                LanguageMeta::query()->updateOrCreate(
-                    ['reference_id' => $category->getKey(), 'reference_type' => Category::class],
-                    ['lang_meta_code' => $locale, 'lang_meta_origin' => $origin]
-                );
-
-                Slug::query()->updateOrCreate(
-                    ['reference_id' => $category->getKey(), 'reference_type' => Category::class],
-                    ['key' => $slug, 'prefix' => 'blog']
-                );
+                if ($locale === $default || ! Schema::hasTable('categories_translations')) {
+                    continue;
+                }
+                $name = $this->t($label, $locale);
+                // A translation written in /admin stays.
+                $current = DB::table('categories_translations')->where(['lang_code' => $locale, 'categories_id' => $category->getKey()])->value('name');
+                if (! $current || $current === $category->name) {
+                    DB::table('categories_translations')->updateOrInsert(
+                        ['lang_code' => $locale, 'categories_id' => $category->getKey()],
+                        ['name' => $name]
+                    );
+                }
+                if (Schema::hasTable('slugs_translations')
+                    && ! DB::table('slugs_translations')->where(['lang_code' => $locale, 'slugs_id' => $slugRow->getKey()])->exists()) {
+                    TranslatedSlug::save(Category::class, $category->getKey(), $locale, $name);
+                }
             }
         }
     }

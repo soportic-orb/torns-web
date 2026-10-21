@@ -2,10 +2,14 @@
 
 use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
+use App\Ai\TaxonomyTranslator;
 use App\Ota\OtaUpdater;
 use App\Support\IndexNow;
 use App\Support\SiteContent;
+use App\Support\TaxonomyMerge;
+use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
@@ -95,6 +99,59 @@ Artisan::command('torns:blog:translate {post?* : Post ids (all posts if empty)} 
 
     return $failed ? 1 : 0;
 })->purpose('Translate blog posts from Spanish with AI (skips existing translations unless --overwrite)');
+
+Artisan::command('torns:blog:taxonomy-merge {--apply : Merge (without it, only shows what would change)}', function (TaxonomyMerge $merge) {
+    $plan = $merge->plan();
+    if (! $plan) {
+        $this->info('Nothing to merge: every category and tag is a single row with its translations.');
+
+        return 0;
+    }
+    foreach ($plan as $group) {
+        $type = class_basename($group['type']);
+        $this->line("{$type} #{$group['keep']['id']} «{$group['keep']['name']}» ({$group['keep']['lang']}) keeps:");
+        foreach ($group['merge'] as $item) {
+            $this->line("  ← #{$item['id']} «{$item['name']}» ({$item['lang']}), URL {$item['slug']}, {$item['posts']} post(s) moved");
+        }
+    }
+    if (! $this->option('apply')) {
+        $this->warn('Dry run: nothing changed. Run again with --apply to merge (back up the database first).');
+
+        return 0;
+    }
+    $stats = $merge->apply();
+    $this->info("Merged {$stats['rows']} row(s) in {$stats['groups']} group(s); {$stats['posts_moved']} post link(s) moved.");
+
+    return 0;
+})->purpose('Merge the blog categories/tags written as one row per language into one row with translations');
+
+Artisan::command('torns:blog:translate-taxonomy {--type=* : category and/or tag (both if empty)} {--lang=* : Target languages (all if empty)} {--provider= : claude or openai} {--overwrite : Replace existing translations}', function (BlogAi $ai, TaxonomyTranslator $translator) {
+    $provider = $this->option('provider') ?: $ai->defaultTextProvider();
+    if (! $provider || ! isset($ai->textProviders()[$provider])) {
+        $this->error('No AI text service is enabled and configured (Admin → Settings → AI for the blog).');
+
+        return 1;
+    }
+    $types = $this->option('type') ?: ['category', 'tag'];
+    $languages = $this->option('lang') ?: $translator->languages();
+    $failed = 0;
+    foreach ($types as $type) {
+        $models = ($type === 'tag' ? Tag::query() : Category::query())->orderBy('id')->get();
+        foreach ($models as $model) {
+            foreach ($languages as $language) {
+                try {
+                    $result = $translator->translate($model, $language, $provider, (bool) $this->option('overwrite'));
+                    $this->line("{$type} #{$model->getKey()} «{$model->getRawOriginal('name')}» {$language}: {$result['status']}");
+                } catch (Throwable $e) {
+                    $failed++;
+                    $this->error("{$type} #{$model->getKey()} {$language}: {$e->getMessage()}");
+                }
+            }
+        }
+    }
+
+    return $failed ? 1 : 0;
+})->purpose('Translate blog categories and tags from Spanish with AI (skips translations written by hand unless --overwrite)');
 
 Artisan::command('torns:indexnow {url?* : Absolute URLs (all the sitemap URLs if empty)}', function (IndexNow $indexNow) {
     if (! $indexNow->enabled()) {

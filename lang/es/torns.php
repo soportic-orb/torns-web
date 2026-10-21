@@ -170,4 +170,11 @@ return [
     'ota_use_repository_content' => 'Usar la versión del repositorio',
     'ota_version_title' => 'Versión de la web',
     'ota_view_on_github' => 'Ver en GitHub',
+    'ai_taxonomy_title' => 'Traducciones',
+    'ai_taxonomy_intro' => 'El nombre, la descripción y la URL se traducen con IA al guardar en castellano. Las traducciones que escribas a mano en la pestaña de cada idioma no se sustituyen.',
+    'ai_taxonomy_done' => 'Traducida',
+    'ai_taxonomy_missing' => 'Pendiente',
+    'ai_taxonomy_run' => 'Traducir con IA',
+    'ai_taxonomy_overwrite' => 'Volver a traducir todas (sustituye también las escritas a mano)',
+    'ai_taxonomy_saved' => 'Traducciones guardadas.',
 ];

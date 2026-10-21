@@ -170,4 +170,11 @@ return [
     'ota_use_repository_content' => 'Use the repository version',
     'ota_version_title' => 'Site version',
     'ota_view_on_github' => 'View on GitHub',
+    'ai_taxonomy_title' => 'Translations',
+    'ai_taxonomy_intro' => 'The name, description and URL are translated with AI when saved in Spanish. Translations you write by hand in each language tab are not replaced.',
+    'ai_taxonomy_done' => 'Translated',
+    'ai_taxonomy_missing' => 'Pending',
+    'ai_taxonomy_run' => 'Translate with AI',
+    'ai_taxonomy_overwrite' => 'Translate all again (also replaces the ones written by hand)',
+    'ai_taxonomy_saved' => 'Translations saved.',
 ];

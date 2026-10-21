@@ -54,6 +54,25 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
   sin datos inventados (marcadores `[dato]`) y sin comparar con otras apps
   (`docs/blog-ai.md`).
 
+## Categorías y etiquetas por idioma
+
+- URL traducida en cada idioma (`/ca/blog/sanitat`, `/eu/blog/osasuna`,
+  `/ca/blog/tag/guardies`). La URL de otro idioma o la anterior a la
+  traducción (`/ca/blog/sanidad`) redirige con **301** a la buena, también
+  en las publicaciones (Botble hacía 302); se conserva `?page=`.
+- `hreflang` y `canonical` con las URL traducidas (plugin language).
+- Título «Sanitat · Blog de Torns» y descripción en el idioma de la página,
+  salvo que la categoría tenga sus propios textos SEO
+  (`torns_blog_taxonomy_seo()` en `functions/seo.php`).
+- JSON-LD: `CollectionPage` y `BreadcrumbList` (Inicio › Blog › Categoría) en
+  categorías y etiquetas, `BreadcrumbList` (Inicio › Blog › Categoría ›
+  Publicación) en cada publicación, con los nombres traducidos; el
+  `articleSection` y las `keywords` del `BlogPosting` también.
+- Las etiquetas con menos de 2 publicaciones (`SiteIndex::TAG_MIN_POSTS`)
+  son `noindex, follow` y no van al sitemap: páginas casi vacías.
+- Sitemap: categorías con publicaciones y etiquetas con 2 o más, en los 4
+  idiomas, con sus alternativas.
+
 ## Al publicar una noticia
 
 1. Título claro y **descripción** de una o dos frases: la descripción es el

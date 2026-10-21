@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
+use App\Ai\TaxonomyTranslator;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
 use App\Support\IndexNow;
@@ -17,8 +18,12 @@ use Botble\Base\Forms\Fields\HtmlField;
 use Botble\Base\Forms\FormAbstract;
 use Botble\Base\PanelSections\PanelSectionItem;
 use Botble\Base\PanelSections\System\SystemPanelSection;
+use Botble\Blog\Forms\CategoryForm;
 use Botble\Blog\Forms\PostForm;
+use Botble\Blog\Forms\TagForm;
+use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Botble\Installer\Events\EnvironmentSaved;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
@@ -57,6 +62,31 @@ class AppServiceProvider extends ServiceProvider
             if ($event->data instanceof Post) {
                 $this->app->make(IndexNow::class)->submitPostLater($event->data);
             }
+        });
+
+        // Categories and tags: translated with AI after they are saved in the
+        // default language, and those of a post when the post is saved, so a
+        // tag typed in the post form gets its translations too. After the
+        // response: the editor does not wait for it. Translations written by
+        // hand are never replaced (TaxonomyTranslator::missing).
+        Event::listen([CreatedContentEvent::class, UpdatedContentEvent::class], function (CreatedContentEvent|UpdatedContentEvent $event): void {
+            $model = $event->data;
+            if (! ($model instanceof Category || $model instanceof Tag || $model instanceof Post) || ! is_in_admin()) {
+                return;
+            }
+            if (request('ref_lang') && class_exists(Language::class) && request('ref_lang') !== Language::getDefaultLocaleCode()) {
+                return; // editing a translation by hand
+            }
+            if (! $this->app->make(BlogAi::class)->defaultTextProvider()) {
+                return;
+            }
+            $this->app->terminating(function () use ($model): void {
+                @set_time_limit(300);
+                $translator = $this->app->make(TaxonomyTranslator::class);
+                $model instanceof Post
+                    ? $translator->translatePostTaxonomy($model->fresh() ?? $model)
+                    : $translator->translateMissing($model->fresh() ?? $model);
+            });
         });
 
         // Site updates (OTA) page: Admin → Platform → System.
@@ -99,6 +129,27 @@ class AppServiceProvider extends ServiceProvider
                     ->withRoute('torns-ai.settings')
             );
         });
+
+        // Category and tag forms: their translations and «Traducir con IA».
+        add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function (FormAbstract $form, $model) {
+            if (! ($form instanceof CategoryForm || $form instanceof TagForm) || ! ($model instanceof Category || $model instanceof Tag) || ! $model->getKey()) {
+                return $form;
+            }
+            if (request('ref_lang') && class_exists(Language::class) && request('ref_lang') !== Language::getDefaultLocaleCode()) {
+                return $form;
+            }
+            $translator = $this->app->make(TaxonomyTranslator::class);
+            if (! $translator->languages() || ! $this->app->make(BlogAi::class)->textProviders()) {
+                return $form;
+            }
+
+            return $form->addAfter('description', 'torns_ai_taxonomy', HtmlField::class, HtmlFieldOption::make()->content(view('admin.ai.taxonomy-panel', [
+                'type' => $model instanceof Category ? 'category' : 'tag',
+                'id' => $model->getKey(),
+                'languages' => $translator->languages(),
+                'missing' => $translator->missing($model),
+            ])->render())->toArray());
+        }, 121, 2);
 
         add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function (FormAbstract $form, $model) {
             if (! $form instanceof PostForm || ! auth()->user()?->hasAnyPermission(['posts.create', 'posts.edit'])) {

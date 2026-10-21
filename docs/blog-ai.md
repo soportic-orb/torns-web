@@ -81,6 +81,50 @@ php artisan torns:blog:translate              # todas, a todos los idiomas, sin 
 php artisan torns:blog:translate 12 15 --lang=ca --provider=openai --overwrite
 ```
 
+## Categorías y etiquetas
+
+Cada categoría y cada etiqueta es **una sola fila**, en castellano, con sus
+traducciones (nombre, descripción y URL) en las tablas de language-advanced
+(`categories_translations`, `tags_translations`, `slugs_translations`), igual
+que las publicaciones.
+
+- **Automático**: al guardar una categoría o una etiqueta en castellano, y al
+  guardar una publicación (para sus etiquetas nuevas), se traducen con IA las
+  que faltan, después de responder (el editor no espera).
+  Al traducir una publicación con «Traducir con IA», también se traducen sus
+  categorías y etiquetas a ese idioma.
+- **Nunca se sustituye una traducción escrita a mano**: solo se rellenan los
+  idiomas sin traducción o con la copia del castellano que Botble crea al
+  guardar (`App\Ai\TaxonomyTranslator::missing()`). Las que la IA ya tradujo
+  quedan anotadas (meta `torns_ai_translated`), así que una palabra igual en
+  los dos idiomas («Funcionalidades» en gallego) no se vuelve a traducir.
+- **En el formulario** de la categoría o la etiqueta, el bloque «Traducciones»
+  muestra cada idioma (Traducida / Pendiente) y el botón «Traducir con IA»;
+  con «Volver a traducir todas» también sustituye las escritas a mano.
+- **URL**: se genera del nombre traducido (`/ca/blog/sanitat`) y es única en
+  su prefijo (`App\Support\TranslatedSlug`). Si se escribe igual que en
+  castellano, se usa la del castellano.
+- **Comando** para las que ya existen:
+  `php artisan torns:blog:translate-taxonomy [--type=category|tag] [--lang=ca] [--overwrite]`.
+
+### Pasar las categorías antiguas a una sola fila
+
+Las primeras categorías (Novedades, Funcionalidades, Sanidad) se crearon como
+una fila por idioma. Para unirlas, una vez desplegado:
+
+```bash
+php artisan torns:blog:taxonomy-merge          # solo muestra qué haría
+php artisan torns:blog:taxonomy-merge --apply  # copia de la base de datos antes
+php artisan torns:blog:translate-taxonomy      # traduce con IA lo que falte
+```
+
+Por cada grupo se queda la fila en castellano. De cada una de las otras:
+sus publicaciones pasan a la de castellano (ninguna pierde su categoría), sus
+subcategorías también, su nombre y descripción pasan a ser la traducción de
+ese idioma (salvo que ya haya una escrita a mano), su URL pasa a ser la URL
+traducida y después se borra. Cada grupo va en una transacción. Volver a
+ejecutarlo no hace nada.
+
 ## Qué sabe la IA de Torns
 
 El prompt de sistema (`App\Ai\BlogAi::FACTS`) lleva una ficha con lo que se

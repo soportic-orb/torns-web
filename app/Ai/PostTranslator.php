@@ -3,12 +3,11 @@
 namespace App\Ai;
 
 use App\Support\IndexNow;
+use App\Support\TranslatedSlug;
 use Botble\Blog\Models\Post;
 use Botble\Language\Facades\Language;
 use Botble\LanguageAdvanced\Supports\LanguageAdvancedManager;
-use Botble\Slug\Facades\SlugHelper;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use RuntimeException;
 
 /**
@@ -88,6 +87,8 @@ class PostTranslator
         });
 
         app(IndexNow::class)->submitPostLater($post);
+        // Its categories and tags in the same language, when they still have none.
+        app(TaxonomyTranslator::class)->translatePostTaxonomy($post, $provider, [$language]);
 
         return ['language' => $language, 'status' => 'saved'];
     }
@@ -116,29 +117,6 @@ class PostTranslator
     /** URL in the translated language, unique within the blog prefix. */
     protected function saveSlug(Post $post, string $language, string $title): void
     {
-        $slug = DB::table('slugs')->where(['reference_type' => Post::class, 'reference_id' => $post->getKey()])->first(['id', 'key', 'prefix']);
-        if (! $slug) {
-            return;
-        }
-        $prefix = (string) ($slug->prefix ?? SlugHelper::getPrefix(Post::class));
-        $base = Str::slug($title) ?: $slug->key;
-
-        $key = $base;
-        for ($i = 2; $this->slugTaken($key, $prefix, $slug->id, $language); $i++) {
-            $key = "{$base}-{$i}";
-        }
-
-        DB::table('slugs_translations')->updateOrInsert(
-            ['lang_code' => $language, 'slugs_id' => $slug->id],
-            ['key' => $key, 'prefix' => $prefix]
-        );
-    }
-
-    protected function slugTaken(string $key, string $prefix, int|string $slugId, string $language): bool
-    {
-        return DB::table('slugs')->where(['key' => $key, 'prefix' => $prefix])->where('id', '!=', $slugId)->exists()
-            || DB::table('slugs_translations')->where(['key' => $key, 'prefix' => $prefix])
-                ->where(fn ($query) => $query->where('slugs_id', '!=', $slugId)->orWhere('lang_code', '!=', $language))
-                ->exists();
+        TranslatedSlug::save(Post::class, $post->getKey(), $language, $title);
     }
 }

@@ -2,7 +2,9 @@
 
 namespace App\Support;
 
+use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Page\Models\Page;
 use DOMDocument;
@@ -174,6 +176,49 @@ class SiteIndex
         return collect(array_values($groups));
     }
 
+    // ------------------------------------------------------------------ categories and tags
+
+    /**
+     * Blog category pages (with published posts) and tag pages (with at
+     * least TAG_MIN_POSTS: thinner ones are noindex), in every language,
+     * with their translated URL when they have one.
+     *
+     * @return list<array{locales: array<string, string>, updated: ?Carbon}>
+     */
+    public function taxonomies(): array
+    {
+        $out = [];
+        foreach ([Category::class => 1, Tag::class => self::TAG_MIN_POSTS] as $type => $minPosts) {
+            $otherLanguage = LanguageMeta::query()->where('reference_type', $type)
+                ->where('lang_meta_code', '!=', $this->defaultLocale())->pluck('reference_id');
+            $models = $type::query()
+                ->where('status', 'published')
+                ->whereNotIn('id', $otherLanguage)
+                ->with('slugable')
+                ->withCount(['posts' => fn ($query) => $query->where('status', 'published')])
+                ->get()
+                ->filter(fn ($model) => $model->posts_count >= $minPosts && $model->slugable);
+            $keys = Schema::hasTable('slugs_translations')
+                ? DB::table('slugs_translations')->whereIn('slugs_id', $models->pluck('slugable.id')->all())->get()
+                    ->mapWithKeys(fn ($row) => [$row->slugs_id . '.' . $row->lang_code => $row->key])
+                : collect();
+            foreach ($models as $model) {
+                $slug = $model->slugable;
+                $prefix = $slug->getRawOriginal('prefix');
+                $locales = [];
+                foreach ($this->locales() as $locale) {
+                    $key = $locale === $this->defaultLocale() ? $slug->getRawOriginal('key') : ($keys->get($slug->getKey() . '.' . $locale) ?: $slug->getRawOriginal('key'));
+                    $locales[$locale] = $this->url($locale, trim(($prefix ? $prefix . '/' : '') . $key, '/'));
+                }
+                $out[] = ['locales' => $locales, 'updated' => $model->updated_at];
+            }
+        }
+
+        return $out;
+    }
+
+    public const TAG_MIN_POSTS = 2;
+
     /** The post published under {prefix}/{key} in a language, if any. */
     public function findPost(string $locale, string $path): ?Post
     {
@@ -224,6 +269,11 @@ class SiteIndex
             $alternates = array_map(fn ($item) => $item['url'], $group['locales']);
             foreach ($group['locales'] as $item) {
                 $entries[] = ['loc' => $item['url'], 'lastmod' => $item['post']->updated_at, 'alternates' => $alternates];
+            }
+        }
+        foreach ($this->taxonomies() as $item) {
+            foreach ($item['locales'] as $url) {
+                $entries[] = ['loc' => $url, 'lastmod' => $item['updated'], 'alternates' => $item['locales']];
             }
         }
 
