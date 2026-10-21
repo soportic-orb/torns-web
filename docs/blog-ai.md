@@ -101,6 +101,12 @@ que las publicaciones.
 - **En el formulario** de la categoría o la etiqueta, el bloque «Traducciones»
   muestra cada idioma (Traducida / Pendiente) y el botón «Traducir con IA»;
   con «Volver a traducir todas» también sustituye las escritas a mano.
+- **En el listado** de etiquetas (Blog → Etiquetas) y de categorías: marca las
+  filas (o todas con la casilla de la cabecera) y elige Acciones → «Traducir
+  con IA». En el diálogo se eligen los idiomas; se traducen una a una con una
+  barra de progreso y, como en el resto, solo las pendientes salvo que se
+  marque «Volver a traducir todas» (`App\Ai\TranslateTaxonomyBulkAction`,
+  `public/vendor/torns/js/taxonomy-bulk-translate.js`).
 - **URL**: se genera del nombre traducido (`/ca/blog/sanitat`) y es única en
   su prefijo (`App\Support\TranslatedSlug`). Si se escribe igual que en
   castellano, se usa la del castellano.
