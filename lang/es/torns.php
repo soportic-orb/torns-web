@@ -5,6 +5,7 @@ return [
     'ai_append' => 'Añadir al final',
     'ai_close' => 'Cerrar',
     'ai_creating' => 'Creando la imagen… (hasta un minuto)',
+    'ai_description_label' => 'Descripción',
     'ai_done_appended' => 'Texto añadido al final.',
     'ai_done_description' => 'Descripción actualizada.',
     'ai_done_image' => 'Imagen destacada actualizada. Guarda la publicación para conservarla.',

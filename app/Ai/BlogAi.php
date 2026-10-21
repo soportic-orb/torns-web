@@ -200,7 +200,7 @@ class BlogAi
 
     /**
      * @param  array{format?: string, tone?: string, length?: string, language?: string, title?: string, current?: string}  $opts
-     * @return array{html: string, text: string, provider: string}
+     * @return array{html: string, text: string, provider: string, description?: string}
      */
     public function text(string $provider, string $prompt, array $opts, ?int $userId = null): array
     {
@@ -222,7 +222,39 @@ class BlogAi
 
         Log::info('Torns blog AI: text', ['user' => $userId, 'provider' => $provider, 'format' => $format] + $usage);
 
-        return $this->shape($raw, $format) + ['provider' => $provider];
+        $result = $this->shape($raw, $format) + ['provider' => $provider];
+        if ($format === 'article') {
+            $result['description'] = $this->articleSummary($provider, $result['html'], $opts, $userId);
+        }
+
+        return $result;
+    }
+
+    /** Summary for the post's Description field, written from the generated article. Empty if it fails. */
+    protected function articleSummary(string $provider, string $html, array $opts, ?int $userId): string
+    {
+        // One line per block, so headings do not run into the next paragraph.
+        $article = strip_tags((string) preg_replace('#</(h\d|p|li|blockquote)>#i', "$0\n", $html));
+        $message = '';
+        $title = $this->plain($opts['title'] ?? '', 255);
+        if ($title !== '') {
+            $message .= "Título de la publicación: {$title}\n\n";
+        }
+        $message .= "<articulo>\n" . $this->plain($article, 20000) . "\n</articulo>\n\nEscribe el resumen de este artículo.";
+        $system = $this->system('summary', $opts);
+
+        try {
+            [$raw, $usage] = $provider === 'claude'
+                ? $this->claude($system, $message, 400)
+                : $this->openaiText($system, $message, 400);
+            Log::info('Torns blog AI: text', ['user' => $userId, 'provider' => $provider, 'format' => 'summary'] + $usage);
+
+            return $this->shape($raw, 'summary')['text'];
+        } catch (\Throwable $e) {
+            Log::warning('Torns blog AI: article summary failed', ['user' => $userId, 'provider' => $provider, 'error' => $e->getMessage()]);
+
+            return '';
+        }
     }
 
     protected function system(string $format, array $opts): string

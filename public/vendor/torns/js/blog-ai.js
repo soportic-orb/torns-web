@@ -79,13 +79,27 @@ const initTornsAi = () => {
         const preview = $('[data-ai-preview]')
         if (format === 'article') {
             preview.innerHTML = result.html
+            // The summary that goes into the Description field, above the article.
+            if (result.description) {
+                const summary = document.createElement('p')
+                summary.className = 'torns-ai__summary'
+                const label = document.createElement('strong')
+                label.textContent = `${t.descriptionLabel}: `
+                summary.append(label, result.description)
+                preview.prepend(summary)
+            }
         } else {
             preview.textContent = result.text
         }
         $('[data-ai-actions]').replaceChildren()
         if (format === 'article') {
-            action(t.replace, () => { editor.set(result.html); done(t.replaced) }, true)
-            action(t.append, () => { editor.set(editor.get() + result.html); done(t.appended) })
+            const withDescription = (message) => {
+                if (!result.description) return message
+                setField('description', result.description)
+                return `${message} ${t.descriptionSet}`
+            }
+            action(t.replace, () => { editor.set(result.html); done(withDescription(t.replaced)) }, true)
+            action(t.append, () => { editor.set(editor.get() + result.html); done(withDescription(t.appended)) })
         } else if (format === 'title') {
             action(t.useTitle, () => { setField('name', result.text); done(t.titleSet) }, true)
         } else {
