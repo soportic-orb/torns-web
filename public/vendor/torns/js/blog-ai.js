@@ -54,11 +54,15 @@ const initTornsAi = () => {
         }
     }
 
+    const hasBody = () => editor.get().replace(/<[^>]*>|&nbsp;/g, '').trim() !== ''
+
     const syncFormat = () => {
-        const article = $('#torns-ai-format').value === 'article'
+        const format = $('#torns-ai-format').value
         dialog.querySelectorAll('[data-ai-article-only]').forEach((el) => {
-            el.hidden = !article
+            el.hidden = format !== 'article'
         })
+        // A summary is normally of the post itself.
+        if (format === 'summary' && hasBody()) $('#torns-ai-rewrite').checked = true
     }
 
     const done = (message) => {
@@ -103,7 +107,9 @@ const initTornsAi = () => {
         } else if (format === 'title') {
             action(t.useTitle, () => { setField('name', result.text); done(t.titleSet) }, true)
         } else {
-            action(t.useDescription, () => { setField('description', result.text); done(t.descriptionSet) }, true)
+            // The summary goes straight into the Description field; "Again" writes another one.
+            setField('description', result.text)
+            $('[data-ai-status]').textContent = t.descriptionSet
         }
         action(t.again, generate)
     }

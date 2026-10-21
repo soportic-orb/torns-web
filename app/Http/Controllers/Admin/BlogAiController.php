@@ -27,7 +27,7 @@ class BlogAiController extends BaseController
         $this->authorizeEditor($request);
         $data = $request->validate([
             'provider' => ['required', 'string'],
-            'prompt' => ['required', 'string', 'max:4000'],
+            'prompt' => ['nullable', 'string', 'max:4000'],
             'format' => ['nullable', 'string'],
             'tone' => ['nullable', 'string'],
             'length' => ['nullable', 'string'],
@@ -36,7 +36,7 @@ class BlogAiController extends BaseController
             'current' => ['nullable', 'string', 'max:60000'],
         ]);
 
-        return $this->respond(fn () => $this->ai->text($data['provider'], $data['prompt'], Arr::except($data, ['provider', 'prompt']), $request->user()->getKey()));
+        return $this->respond(fn () => $this->ai->text($data['provider'], (string) ($data['prompt'] ?? ''), Arr::except($data, ['provider', 'prompt']), $request->user()->getKey()));
     }
 
     public function image(Request $request): BaseHttpResponse

@@ -208,10 +208,11 @@ class BlogAi
             throw new RuntimeException(trans('torns.ai_err_not_configured'));
         }
         $prompt = $this->plain($prompt, 4000);
-        if ($prompt === '') {
+        $format = in_array($opts['format'] ?? '', self::FORMATS, true) ? $opts['format'] : 'article';
+        // With the post's own text, the request is optional: summarise it, title it or improve it.
+        if ($prompt === '' && $this->blockText($opts['current'] ?? '', 20000) === '') {
             throw new RuntimeException(trans('torns.ai_err_prompt'));
         }
-        $format = in_array($opts['format'] ?? '', self::FORMATS, true) ? $opts['format'] : 'article';
         $system = $this->system($format, $opts);
         $message = $this->userMessage($prompt, $opts);
         $max = $format === 'article' ? 6000 : 400;
@@ -233,14 +234,12 @@ class BlogAi
     /** Summary for the post's Description field, written from the generated article. Empty if it fails. */
     protected function articleSummary(string $provider, string $html, array $opts, ?int $userId): string
     {
-        // One line per block, so headings do not run into the next paragraph.
-        $article = strip_tags((string) preg_replace('#</(h\d|p|li|blockquote)>#i', "$0\n", $html));
         $message = '';
         $title = $this->plain($opts['title'] ?? '', 255);
         if ($title !== '') {
             $message .= "Título de la publicación: {$title}\n\n";
         }
-        $message .= "<articulo>\n" . $this->plain($article, 20000) . "\n</articulo>\n\nEscribe el resumen de este artículo.";
+        $message .= "<articulo>\n" . $this->blockText($html, 20000) . "\n</articulo>\n\nEscribe el resumen de este artículo.";
         $system = $this->system('summary', $opts);
 
         try {
@@ -284,9 +283,14 @@ class BlogAi
         if ($title !== '') {
             $out .= "Título actual de la publicación: {$title}\n\n";
         }
-        $current = $this->plain($opts['current'] ?? '', 20000);
+        $current = $this->blockText($opts['current'] ?? '', 20000);
         if ($current !== '') {
-            $out .= "<texto_actual>\n{$current}\n</texto_actual>\n\nReescribe el texto actual siguiendo esta petición: {$prompt}";
+            $task = match ($opts['format'] ?? '') {
+                'summary' => 'Escribe el resumen del texto actual',
+                'title' => 'Propón un título para el texto actual',
+                default => 'Reescribe el texto actual',
+            };
+            $out .= "<texto_actual>\n{$current}\n</texto_actual>\n\n" . ($prompt !== '' ? "{$task} siguiendo esta petición: {$prompt}" : "{$task}.");
         } else {
             $out .= "Petición: {$prompt}";
         }
@@ -631,6 +635,16 @@ class BlogAi
     }
 
     // ------------------------------------------------------------------ helpers
+
+    /** Plain text of an HTML body, one line per block so headings do not run into the next paragraph. */
+    protected function blockText(?string $html, int $max): string
+    {
+        $text = (string) preg_replace('#</(h\d|p|li|blockquote|div)>|<br\s*/?>#i', "$0\n", (string) $html);
+
+        $text = str_replace("\u{00A0}", ' ', $this->plain($text, $max));
+
+        return trim((string) preg_replace('/\n\s*\n\s*\n/', "\n\n", $text));
+    }
 
     protected function plain(?string $value, int $max): string
     {
