@@ -1,8 +1,11 @@
 <?php
 
 use App\Support\SiteContent;
+use App\Support\SiteIndex;
 use Botble\Base\Facades\BaseHelper;
+use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Page\Models\Page;
@@ -10,6 +13,7 @@ use Botble\SeoHelper\Facades\SeoHelper;
 use Botble\Slug\Models\Slug;
 use Botble\Theme\Events\RenderingSingleEvent;
 use Botble\Theme\Facades\Theme;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Routing\Events\RouteMatched;
 
 /*
@@ -53,7 +57,8 @@ if (! function_exists('torns_strip_default_schemas')) {
     /**
      * Remove the JSON-LD blocks Botble adds by itself (WebSite, the page
      * Organization with an empty logo, the blog NewsArticle): the theme's
-     * JSON-LD graph describes the same things once, with ids. Breadcrumbs stay.
+     * JSON-LD graph describes the same things once, with ids. Breadcrumbs stay,
+     * except on the blog, where the theme writes its own.
      */
     function torns_strip_default_schemas(string $html): string
     {
@@ -63,7 +68,11 @@ if (! function_exists('torns_strip_default_schemas')) {
                 $data = json_decode(html_entity_decode($match[1]), true);
                 $type = is_array($data) ? ($data['@type'] ?? null) : null;
 
-                return in_array($type, ['WebSite', 'Organization', 'NewsArticle', 'Article', 'BlogPosting'], true) && empty($data['@id'])
+                // On posts, categories and tags the theme's graph carries the
+                // breadcrumb (Inicio › Blog › …, translated): Botble's goes.
+                $ours = $type === 'BreadcrumbList' && (Theme::get('post') || Theme::get('blogTaxonomy'));
+
+                return (in_array($type, ['WebSite', 'Organization', 'NewsArticle', 'Article', 'BlogPosting'], true) || $ours) && empty($data['@id'])
                     ? ''
                     : $match[0];
             },
@@ -105,6 +114,61 @@ add_filter(BASE_FILTER_PUBLIC_SINGLE_DATA, function ($slug) {
 
     return $slug;
 }, 0);
+
+/*
+ * Posts, categories and tags have their URL translated (slugs_translations):
+ * /ca/blog/sanitat. Botble also serves the Spanish key in another language
+ * (/ca/blog/sanidad, the address before the translation) and the key of
+ * another language, then redirects with a 302. Make it a 301, so search
+ * engines move to the translated address for good. The query (?page=2)
+ * is kept.
+ */
+add_filter(BASE_FILTER_PUBLIC_SINGLE_DATA, function ($slug) {
+    if (! $slug instanceof Slug || ! in_array($slug->reference_type, [Post::class, Category::class, Tag::class], true)
+        || ! request()->isMethod('GET') || is_in_admin()) {
+        return $slug;
+    }
+    $model = $slug->reference_type::query()->find($slug->reference_id);
+    $target = $model?->url;
+    if (! $target) {
+        return $slug;
+    }
+    $want = rawurldecode(rtrim((string) parse_url($target, PHP_URL_PATH), '/'));
+    $have = rawurldecode(rtrim(request()->getPathInfo(), '/'));
+    if ($want !== '' && $want !== $have) {
+        $query = request()->getQueryString();
+        throw new HttpResponseException(redirect()->to($target . ($query ? '?' . $query : ''), 301));
+    }
+
+    return $slug;
+}, 1);
+
+if (! function_exists('torns_blog_taxonomy_seo')) {
+    /**
+     * Title and description of a category or tag page in the current
+     * language: its own SEO texts when it has them (<lang>_seo_meta, read by
+     * Botble first), else «Sanitat · Blog de Torns» and its translated
+     * description or a sentence about it. A tag with fewer than 2 posts is
+     * noindex, follow: too thin a page to compete with the posts.
+     */
+    function torns_blog_taxonomy_seo(Category|Tag $model, int $posts): void
+    {
+        $meta = (array) $model->getMetaData('seo_meta', true);
+        if (empty($meta['seo_title'])) {
+            SeoHelper::setTitle(__(':name · Blog de Torns', ['name' => $model->name]));
+        }
+        if (empty($meta['seo_description'])) {
+            $description = trim(preg_replace('/\s+/', ' ', strip_tags((string) $model->description)));
+            SeoHelper::setDescription($description !== '' ? $description : __(
+                'Publicaciones del blog de Torns sobre :name, para profesionales sanitarios que trabajan a turnos y guardias.',
+                ['name' => $model->name]
+            ));
+        }
+        if ($model instanceof Tag && $posts < SiteIndex::TAG_MIN_POSTS) {
+            SeoHelper::meta()->addMeta('robots', 'noindex, follow');
+        }
+    }
+}
 
 // The home page renders the default-language page: use the SEO texts of the
 // home page in the current language.
@@ -283,13 +347,57 @@ if (! function_exists('torns_schema_graph')) {
                 'publisher' => ['@id' => "{$site}/#organization"],
                 'isPartOf' => ['@id' => "{$site}/#website"],
                 'about' => ['@id' => "{$site}/#app"],
-                'articleSection' => $post->categories->pluck('name')->values()->all() ?: null,
-                'keywords' => $post->tags->pluck('name')->implode(', ') ?: null,
+                // ->name, not pluck('name'): pluck skips the translated value.
+                'articleSection' => $post->categories->map(fn ($category) => $category->name)->values()->all() ?: null,
+                'keywords' => $post->tags->map(fn ($tag) => $tag->name)->implode(', ') ?: null,
                 'wordCount' => str_word_count(strip_tags((string) $post->content)) ?: null,
             ]);
         }
 
+        // Category and tag pages: a collection of posts, with its breadcrumb.
+        $taxonomy = Theme::get('blogTaxonomy');
+        $blog = function_exists('torns_blog_url') ? torns_blog_url() : url('blog');
+        $home = rtrim(url($locale === 'es' ? '/' : $locale), '/');
+        if ($taxonomy instanceof Category || $taxonomy instanceof Tag) {
+            $graph[] = [
+                '@type' => 'CollectionPage',
+                '@id' => $current,
+                'url' => $current,
+                'name' => $taxonomy->name,
+                'description' => SeoHelper::getDescription() ?: null,
+                'inLanguage' => $language,
+                'isPartOf' => ['@id' => "{$site}/#website"],
+                'breadcrumb' => ['@id' => "{$current}#breadcrumb"],
+            ];
+            $graph[] = torns_breadcrumb("{$current}#breadcrumb", [
+                [__('Inicio'), $home], [__('Blog'), $blog], [$taxonomy->name, $current],
+            ]);
+        }
+        if ($post instanceof Post) {
+            $category = $post->categories->first();
+            $graph[] = torns_breadcrumb("{$post->url}#breadcrumb", array_values(array_filter([
+                [__('Inicio'), $home],
+                [__('Blog'), $blog],
+                $category ? [$category->name, $category->url] : null,
+                [$post->name, $post->url],
+            ])));
+        }
+
         return $graph;
+    }
+}
+
+if (! function_exists('torns_breadcrumb')) {
+    /** @param  list<array{0: string, 1: string}>  $items  name, URL */
+    function torns_breadcrumb(string $id, array $items): array
+    {
+        return [
+            '@type' => 'BreadcrumbList',
+            '@id' => $id,
+            'itemListElement' => array_map(fn (array $item, int $i) => [
+                '@type' => 'ListItem', 'position' => $i + 1, 'name' => $item[0], 'item' => $item[1],
+            ], $items, array_keys($items)),
+        ];
     }
 }
 

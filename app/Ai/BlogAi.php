@@ -481,13 +481,21 @@ class BlogAi
     /** Fields of a post that are translated, in the order the model returns them. */
     public const TRANSLATED_FIELDS = ['name', 'description', 'seo_title', 'seo_description', 'content'];
 
+    /** What translate() is translating: a post, or a category or tag of the blog. */
+    public const TRANSLATED_KINDS = [
+        'post' => 'las publicaciones del blog',
+        'category' => 'el nombre y la descripción de una categoría del blog',
+        'tag' => 'el nombre y la descripción de una etiqueta del blog',
+    ];
+
     /**
-     * Translate a post from Spanish. Empty source fields come back empty.
+     * Translate a post (or a category or tag, $kind) from Spanish. Empty
+     * source fields come back empty.
      *
      * @param  array<string, string>  $source  keys of TRANSLATED_FIELDS
      * @return array<string, string>
      */
-    public function translate(string $provider, array $source, string $language, ?int $userId = null): array
+    public function translate(string $provider, array $source, string $language, ?int $userId = null, string $kind = 'post'): array
     {
         if (! isset($this->textProviders()[$provider])) {
             throw new RuntimeException(trans('torns.ai_err_not_configured'));
@@ -502,7 +510,9 @@ class BlogAi
         }
 
         $target = self::LANGUAGES[$language];
-        $system = "Traduces del castellano al {$target} las publicaciones del blog de Torns (www.torns.app), leído por profesionales sanitarios en España que trabajan a turnos y guardias. "
+        $what = self::TRANSLATED_KINDS[$kind] ?? self::TRANSLATED_KINDS['post'];
+        $system = "Traduces del castellano al {$target} {$what} de Torns (www.torns.app), leído por profesionales sanitarios en España que trabajan a turnos y guardias. "
+            . ($kind === 'post' ? '' : 'El nombre es un término corto que se muestra en un filtro y en la dirección web: tradúcelo igual de corto, sin artículo ni punto final, como lo diría un hablante nativo. ')
             . "Escribe un {$target} correcto y natural, con el vocabulario sanitario y laboral que se usa en ese idioma; no traduzcas palabra por palabra. "
             . 'Traduce todo el texto y nada más: no añadas, quites ni resumas información, ni comentes la traducción. '
             . 'No traduzcas los nombres Torns, Torns Pro ni Copilot, ni las direcciones web, correos electrónicos o nombres de marcas. '
@@ -523,7 +533,7 @@ class BlogAi
             ? $this->claude($system, trim($message), $max, 600)
             : $this->openaiText($system, trim($message), $max, 600);
 
-        Log::info('Torns blog AI: translation', ['user' => $userId, 'provider' => $provider, 'language' => $language] + $usage);
+        Log::info('Torns blog AI: translation', ['user' => $userId, 'provider' => $provider, 'language' => $language, 'kind' => $kind] + $usage);
 
         $out = [];
         foreach (self::TRANSLATED_FIELDS as $field) {

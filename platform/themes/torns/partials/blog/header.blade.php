@@ -1,10 +1,6 @@
 @php
     // Blog header with the category filter, shared by the blog page and the category pages.
-    $locale = torns_current_locale();
-    $prefix = $locale === 'es' ? '' : $locale . '/';
-    $blogPageId = theme_option('blog_page_id', setting('blog_page_id'));
-    $blogSlug = $blogPageId ? \Botble\Slug\Models\Slug::query()->where(['reference_type' => \Botble\Page\Models\Page::class, 'reference_id' => $blogPageId])->value('key') : null;
-    $blogUrl = url($prefix . ($blogSlug ?: 'blog'));
+    $blogUrl = torns_blog_url();
     $categories = torns_blog_categories();
     $activeId = isset($category) ? (int) $category->getKey() : null;
     $activeName = $activeId ? (collect($categories)->firstWhere('id', $activeId)['name'] ?? $category->name) : null;

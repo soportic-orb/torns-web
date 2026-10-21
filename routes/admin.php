@@ -23,6 +23,7 @@ AdminHelper::registerRoutes(function (): void {
         Route::post('image', [BlogAiController::class, 'image'])->name('image')->middleware('throttle:10,1');
         Route::post('seo', [BlogAiController::class, 'seo'])->name('seo')->middleware('throttle:20,1');
         Route::post('translate', [BlogAiController::class, 'translate'])->name('translate')->middleware('throttle:20,1');
+        Route::post('translate-taxonomy', [BlogAiController::class, 'translateTaxonomy'])->name('translate-taxonomy')->middleware('throttle:20,1');
         Route::get('settings', [BlogAiController::class, 'settings'])->name('settings');
         Route::post('settings', [BlogAiController::class, 'saveSettings'])->name('settings.save');
         Route::post('settings/test', [BlogAiController::class, 'test'])->name('settings.test');

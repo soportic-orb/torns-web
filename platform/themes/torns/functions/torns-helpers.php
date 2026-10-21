@@ -5,6 +5,8 @@ use Botble\Blog\Models\Post;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
+use Botble\Page\Models\Page;
+use Botble\Slug\Models\Slug;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
@@ -344,21 +346,20 @@ if (! function_exists('torns_blog_listing')) {
 
 if (! function_exists('torns_blog_categories')) {
     /**
-     * Categories for the blog filter: the default-language ones that have
-     * published posts, each with its name in the current language when a
-     * translated category exists (same language_meta origin).
+     * Categories for the blog filter: those that have published posts, with
+     * their name and URL in the current language (language-advanced
+     * translations). Until `php artisan torns:blog:taxonomy-merge --apply`
+     * runs, the old one-row-per-language categories still lend their name.
      *
      * @return list<array{id: int, name: string, url: string}>
      */
     function torns_blog_categories(): array
     {
-        $categoryClass = Category::class;
-        $meta = LanguageMeta::query()->where('reference_type', $categoryClass)->get(['reference_id', 'lang_meta_code', 'lang_meta_origin']);
+        $meta = LanguageMeta::query()->where('reference_type', Category::class)->get(['reference_id', 'lang_meta_code', 'lang_meta_origin']);
         $default = is_plugin_active('language') ? Language::getDefaultLocaleCode() : 'es';
         $locale = torns_current_locale();
-        $byId = $meta->keyBy('reference_id');
 
-        $categories = $categoryClass::query()
+        $categories = Category::query()
             ->wherePublished()
             ->with('slugable')
             ->whereNotIn('id', $meta->where('lang_meta_code', '!=', $default)->pluck('reference_id'))
@@ -367,19 +368,32 @@ if (! function_exists('torns_blog_categories')) {
             ->orderBy('name')
             ->get();
 
-        $names = $categoryClass::query()
-            ->whereIn('id', $meta->where('lang_meta_code', $locale)->pluck('reference_id'))
-            ->pluck('name', 'id');
+        return $categories->map(function (Category $category) use ($meta, $locale) {
+            $name = (string) $category->name; // translated by language-advanced
+            if ($name === (string) $category->getRawOriginal('name') && ($origin = $meta->firstWhere('reference_id', $category->getKey())?->lang_meta_origin)) {
+                $siblingId = $meta->where('lang_meta_origin', $origin)->firstWhere('lang_meta_code', $locale)?->reference_id;
+                $name = $siblingId && (int) $siblingId !== (int) $category->getKey()
+                    ? (string) (Category::query()->whereKey($siblingId)->value('name') ?: $name)
+                    : $name;
+            }
 
-        return $categories->map(function ($category) use ($byId, $meta, $locale, $names) {
-            $origin = $byId->get($category->getKey())?->lang_meta_origin;
-            $translatedId = $origin ? $meta->where('lang_meta_origin', $origin)->firstWhere('lang_meta_code', $locale)?->reference_id : null;
-
-            return [
-                'id' => (int) $category->getKey(),
-                'name' => (string) ($translatedId ? ($names[$translatedId] ?? $category->name) : $category->name),
-                'url' => (string) $category->url,
-            ];
+            return ['id' => (int) $category->getKey(), 'name' => $name, 'url' => (string) $category->url];
         })->values()->all();
+    }
+}
+
+if (! function_exists('torns_blog_url')) {
+    /** The blog page in the current language: /blog, /ca/blog… */
+    function torns_blog_url(): string
+    {
+        static $url = [];
+        $locale = torns_current_locale();
+        if (! isset($url[$locale])) {
+            $pageId = theme_option('blog_page_id', setting('blog_page_id'));
+            $key = $pageId ? Slug::query()->where(['reference_type' => Page::class, 'reference_id' => $pageId])->value('key') : null;
+            $url[$locale] = url(($locale === 'es' ? '' : $locale . '/') . ($key ?: 'blog'));
+        }
+
+        return $url[$locale];
     }
 }

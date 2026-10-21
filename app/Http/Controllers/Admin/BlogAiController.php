@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
+use App\Ai\TaxonomyTranslator;
 use Botble\Base\Http\Controllers\BaseController;
 use Botble\Base\Http\Responses\BaseHttpResponse;
+use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
+use Botble\Blog\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\View\View;
@@ -88,6 +91,29 @@ class BlogAiController extends BaseController
         @set_time_limit(600);
 
         return $this->respond(fn () => $translator->translate($post, $data['language'], $data['provider'], (bool) ($data['overwrite'] ?? false), $request->user()->getKey()));
+    }
+
+    /** A category's or tag's translations with AI: the missing ones, or all with overwrite. */
+    public function translateTaxonomy(Request $request, TaxonomyTranslator $translator): BaseHttpResponse
+    {
+        $data = $request->validate([
+            'type' => ['required', 'in:category,tag'],
+            'id' => ['required', 'integer'],
+            'overwrite' => ['nullable', 'boolean'],
+        ]);
+        abort_unless($request->user()?->hasPermission($data['type'] === 'category' ? 'categories.edit' : 'tags.edit'), 403);
+        $model = ($data['type'] === 'category' ? Category::query() : Tag::query())->findOrFail($data['id']);
+        @set_time_limit(300);
+
+        return $this->respond(function () use ($translator, $model, $data, $request) {
+            $provider = $this->ai->defaultTextProvider() ?? throw new RuntimeException(trans('torns.ai_err_not_configured'));
+            $results = [];
+            foreach ($translator->languages() as $language) {
+                $results[] = $translator->translate($model, $language, $provider, (bool) ($data['overwrite'] ?? false), $request->user()->getKey());
+            }
+
+            return ['results' => $results, 'missing' => $translator->missing($model)];
+        });
     }
 
     public function settings(Request $request): View
