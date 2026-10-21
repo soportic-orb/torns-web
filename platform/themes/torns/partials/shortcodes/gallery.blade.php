@@ -2,7 +2,7 @@
     $title = $shortcode->title ?: __('No querrás salir de la app');
     $subtitle = $shortcode->subtitle ?: __('Diseño sencillo, claro y minimalista, con la lógica de los profesionales de la salud.');
     // Screens extracted from the store mockups, without the phone frame.
-    $screenUrl = fn (string $name, int $width) => Theme::asset()->url("images/home/screens/{$name}-flat-{$width}.webp");
+    $screenUrl = fn (string $name, int $width) => torns_asset("images/home/screens/{$name}-flat-{$width}.webp");
 
     // Store mockups of the current website, in its order.
     $screens = [
