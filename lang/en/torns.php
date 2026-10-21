@@ -5,6 +5,7 @@ return [
     'ai_append' => 'Add at the end',
     'ai_close' => 'Close',
     'ai_creating' => 'Creating the image… (up to a minute)',
+    'ai_description_label' => 'Description',
     'ai_done_appended' => 'Text added at the end.',
     'ai_done_description' => 'Description updated.',
     'ai_done_image' => 'Featured image updated. Save the post to keep it.',

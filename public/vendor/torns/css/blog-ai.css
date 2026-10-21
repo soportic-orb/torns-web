@@ -24,6 +24,12 @@
     overflow: auto;
 }
 
+.torns-ai__summary {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--bb-border-color, #dce5e8);
+}
+
 .torns-ai__preview img {
     display: block;
     max-width: 100%;

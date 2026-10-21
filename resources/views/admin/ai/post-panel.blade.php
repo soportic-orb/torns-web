@@ -25,6 +25,7 @@
         'appended' => trans('torns.ai_done_appended'),
         'titleSet' => trans('torns.ai_done_title'),
         'descriptionSet' => trans('torns.ai_done_description'),
+        'descriptionLabel' => trans('torns.ai_description_label'),
         'imageSet' => trans('torns.ai_done_image'),
         'imagePrompt' => trans('torns.ai_image_prompt_for', ['title' => ':title']),
         'translate' => trans('torns.ai_translate'),
