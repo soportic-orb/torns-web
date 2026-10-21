@@ -23,7 +23,7 @@ return [
     'ai_err_not_configured' => 'Este servicio de IA no está configurado. Pídelo a una persona administradora.',
     'ai_err_openai' => 'ChatGPT no ha respondido: :error.',
     'ai_err_openai_refusal' => 'ChatGPT no ha querido generar este texto. Prueba a pedirlo de otra manera.',
-    'ai_err_prompt' => 'Escribe sobre qué quieres que escriba la IA.',
+    'ai_err_prompt' => 'Escribe sobre qué quieres que escriba la IA, o marca «Usar el texto que ya hay en la publicación».',
     'ai_err_seo_empty' => 'Escribe primero el título o el contenido de la publicación.',
     'ai_err_translate_empty' => 'La publicación no tiene título en castellano: guárdala antes de traducirla.',
     'ai_err_translate_incomplete' => 'La traducción ha llegado incompleta (puede que el texto sea demasiado largo). Vuelve a intentarlo.',

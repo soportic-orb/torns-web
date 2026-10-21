@@ -23,7 +23,7 @@ return [
     'ai_err_not_configured' => 'This AI service is not configured. Ask an administrator.',
     'ai_err_openai' => 'ChatGPT did not answer: :error.',
     'ai_err_openai_refusal' => 'ChatGPT declined to write this. Try asking another way.',
-    'ai_err_prompt' => 'Write what you want the AI to write about.',
+    'ai_err_prompt' => 'Write what you want the AI to write about, or tick “Use the text already in the post”.',
     'ai_err_seo_empty' => 'Write the title or the content of the post first.',
     'ai_err_translate_empty' => 'The post has no Spanish title: save it before translating it.',
     'ai_err_translate_incomplete' => 'The translation came back incomplete (the text may be too long). Try again.',
