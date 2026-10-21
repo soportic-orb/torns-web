@@ -100,6 +100,8 @@ class BlogAiController extends BaseController
             'type' => ['required', 'in:category,tag'],
             'id' => ['required', 'integer'],
             'overwrite' => ['nullable', 'boolean'],
+            'languages' => ['nullable', 'array'],
+            'languages.*' => ['string'],
         ]);
         abort_unless($request->user()?->hasPermission($data['type'] === 'category' ? 'categories.edit' : 'tags.edit'), 403);
         $model = ($data['type'] === 'category' ? Category::query() : Tag::query())->findOrFail($data['id']);
@@ -108,7 +110,11 @@ class BlogAiController extends BaseController
         return $this->respond(function () use ($translator, $model, $data, $request) {
             $provider = $this->ai->defaultTextProvider() ?? throw new RuntimeException(trans('torns.ai_err_not_configured'));
             $results = [];
-            foreach ($translator->languages() as $language) {
+            $languages = $translator->languages();
+            if (! empty($data['languages'])) {
+                $languages = array_values(array_intersect($languages, $data['languages']));
+            }
+            foreach ($languages as $language) {
                 $results[] = $translator->translate($model, $language, $provider, (bool) ($data['overwrite'] ?? false), $request->user()->getKey());
             }
 

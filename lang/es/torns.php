@@ -177,4 +177,11 @@ return [
     'ai_taxonomy_run' => 'Traducir con IA',
     'ai_taxonomy_overwrite' => 'Volver a traducir todas (sustituye también las escritas a mano)',
     'ai_taxonomy_saved' => 'Traducciones guardadas.',
+    'ai_bulk_translate_use_dialog' => 'Usa el diálogo «Traducir con IA».',
+    'ai_bulk_translate_count' => 'Se traducirán :count elementos seleccionados.',
+    'ai_bulk_translate_select' => 'Selecciona al menos un elemento de la lista.',
+    'ai_bulk_translate_hint' => 'Solo se traducen los idiomas pendientes (sin traducción o con la copia del castellano); las traducciones escritas a mano se mantienen, salvo que marques la opción de arriba.',
+    'ai_bulk_translate_current' => 'Traduciendo «:name» (:done de :total)…',
+    'ai_bulk_translate_done' => 'Traducciones guardadas: :count.',
+    'ai_bulk_translate_failed' => 'No se han podido traducir: :count.',
 ];

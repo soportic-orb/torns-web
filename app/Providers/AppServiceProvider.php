@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Ai\BlogAi;
 use App\Ai\PostTranslator;
 use App\Ai\TaxonomyTranslator;
+use App\Ai\TranslateTaxonomyBulkAction;
 use App\Http\Middleware\NoIndexOutsideProduction;
 use App\Listeners\RepairEnvAfterInstaller;
 use App\Support\IndexNow;
@@ -24,6 +25,8 @@ use Botble\Blog\Forms\TagForm;
 use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
 use Botble\Blog\Models\Tag;
+use Botble\Blog\Tables\CategoryTable;
+use Botble\Blog\Tables\TagTable;
 use Botble\Installer\Events\EnvironmentSaved;
 use Botble\Language\Facades\Language;
 use Botble\Language\Models\LanguageMeta;
@@ -129,6 +132,19 @@ class AppServiceProvider extends ServiceProvider
                     ->withRoute('torns-ai.settings')
             );
         });
+
+        // Tag and category lists: «Traducir con IA» for the selected rows.
+        foreach ([TagTable::class => ['tag', 'tags.edit'], CategoryTable::class => ['category', 'categories.edit']] as $tableClass => [$type, $permission]) {
+            $tableClass::extend(function ($table) use ($type, $permission): void {
+                if (! $this->app->make(TaxonomyTranslator::class)->languages() || ! $this->app->make(BlogAi::class)->textProviders()) {
+                    return;
+                }
+                Assets::addScriptsDirectly(VersionedAsset::path('vendor/torns/js/taxonomy-bulk-translate.js'));
+                $table->addBulkAction(
+                    TranslateTaxonomyBulkAction::make()->type($type)->label(trans('torns.ai_taxonomy_run'))->permission($permission)->confirmation(false)
+                );
+            });
+        }
 
         // Category and tag forms: their translations and «Traducir con IA».
         add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function (FormAbstract $form, $model) {

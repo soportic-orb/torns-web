@@ -177,4 +177,11 @@ return [
     'ai_taxonomy_run' => 'Translate with AI',
     'ai_taxonomy_overwrite' => 'Translate all again (also replaces the ones written by hand)',
     'ai_taxonomy_saved' => 'Translations saved.',
+    'ai_bulk_translate_use_dialog' => 'Use the «Translate with AI» dialog.',
+    'ai_bulk_translate_count' => ':count selected items will be translated.',
+    'ai_bulk_translate_select' => 'Select at least one item in the list.',
+    'ai_bulk_translate_hint' => 'Only pending languages are translated (no translation, or the Spanish copy); translations written by hand are kept unless you tick the option above.',
+    'ai_bulk_translate_current' => 'Translating «:name» (:done of :total)…',
+    'ai_bulk_translate_done' => 'Translations saved: :count.',
+    'ai_bulk_translate_failed' => 'Could not translate: :count.',
 ];
