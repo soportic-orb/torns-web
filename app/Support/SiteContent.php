@@ -236,7 +236,14 @@ class SiteContent
 
                 $items = [];
                 foreach ($definition['items'] as $item) {
-                    $url = $item['url'] === '/' ? ($prefix ?: '/') : $prefix . $item['url'];
+                    // A URL per language ({"es": …, "ca": …}) or one for all; an
+                    // absolute one (another site, e.g. guia.torns.app) is kept as is.
+                    $raw = is_array($item['url']) ? ($item['url'][$locale] ?? $item['url'][$default]) : $item['url'];
+                    $url = match (true) {
+                        (bool) preg_match('#^https?://#', $raw) => $raw,
+                        $raw === '/' => $prefix ?: '/',
+                        default => $prefix . $raw,
+                    };
                     $items[] = ['title' => $item['label'][$locale] ?? $item['label'][$default], 'url' => $url];
                 }
 
