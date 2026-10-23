@@ -12,7 +12,7 @@ Torns aplikazio bat da, Espainiako erizainek, medikuek, TCAEek, TESek eta beste 
 - **Deskargak:** [App Store](https://apps.apple.com/es/app/torns/id6760354618) · [Google Play](https://play.google.com/store/apps/details?id=com.tornsapp.android).
 - **Enpresa arduraduna:** Soportic (Octavi Rodríguez).
 - **Harremana:** soporte@torns.app (erabiltzaileak) · hola@torns.app (erakundeak).
-- **Azken eguneratzea:** 2026ko urriaren 12a.
+- **Azken eguneratzea:** 2026ko urriaren 23a.
 
 ## Lan-egutegia
 
@@ -94,6 +94,15 @@ Torns-ek txandak erabiltzaileak aukeratutako iPhone edo Android egutegira esport
 Norabide biko sinkronizazioarekin, Torns-ek txanden itxura duten gertaerak bilatzen ditu Google Calendarren edo mugikorreko egutegian, eta Torns-en egutegira inportatzea proposatzen du. Erabiltzailearen aukeretatik ikasten du.
 
 - **Plana:** Pro.
+
+### Zure agendako gertaerak egutegian
+
+Torns-ek bere egutegian erakuts ditzake, irakurtzeko soilik, mugikorreko agendako txandak ez diren gertaerak (hitzorduak, oroigarriak, urtebetetzeak), txandaren batekin bat datozen begirada batean ikusteko. Erabiltzaileak aukeratzen du mugikorreko zein egutegi irakurtzen diren. Gertaera bat txanda batekin bat badator, Torns-ek adierazi egiten du, eta abisua ematen du gainean erortzen den aldaketa bat onartu aurretik. Torns-ek mugikorrera esportatzen dituen txandak ez dira bi aldiz erakusten.
+
+- **Nola erabili:** Egutegia › Iragazkiak › «Erakutsi nire agendako gertaerak». «Gaur» ondoko ikonoak erakutsi edo ezkutatu egiten ditu.
+- **Pribatutasuna:** mugikorrean irakurtzen dira; Torns-ek ez ditu gordetzen eta ez ditu bere zerbitzarietara bidaltzen. Agendatik ezabatzen badira, Torns-etik ere desagertzen dira.
+- **Plataformak:** iOS eta Android (ez web bertsioan).
+- **Plana:** Free eta Pro.
 
 ### Egutegia partekatu
 
@@ -315,6 +324,7 @@ Torns-en izena ematean, kontu bakoitzak 30 eguneko proba du Pro funtzioekin. Ama
 | Oporrak, erabilgarritasuna, jaiegunak eta eguraldia | Bai | Bai |
 | Konexiorik gabeko egutegia | Bai | Bai |
 | Mugikorreko egutegiarekin eta Google Calendarrekin sinkronizatzea | Bai | Bai |
+| Zure agendako gertaerak egutegian | Bai | Bai |
 | Txanda-koadroa inportatu | 2 guztira | 30 hilean |
 | Txanda-errotazioak | Ez | Bai |
 | Norabide biko sinkronizazioa | Ez | Bai |

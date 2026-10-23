@@ -12,7 +12,7 @@ Torns es una app para que enfermeras, médicos, TCAE, TES y otros profesionales 
 - **Descargas:** [App Store](https://apps.apple.com/es/app/torns/id6760354618) · [Google Play](https://play.google.com/store/apps/details?id=com.tornsapp.android).
 - **Empresa responsable:** Soportic (Octavi Rodríguez).
 - **Contacto:** soporte@torns.app (usuarios) · hola@torns.app (organizaciones).
-- **Última actualización:** 12 de octubre de 2026.
+- **Última actualización:** 23 de octubre de 2026.
 
 ## Calendario de trabajo
 
@@ -94,6 +94,15 @@ Torns exporta los turnos al calendario del iPhone o Android que el usuario elija
 Con la sincronización bidireccional, Torns busca en Google Calendar o en el calendario del móvil eventos que parecen turnos y propone importarlos al calendario de Torns. Aprende de las elecciones del usuario.
 
 - **Plan:** Pro.
+
+### Eventos de tu agenda en el calendario
+
+Torns puede mostrar en su calendario, solo de lectura, los eventos de la agenda del móvil que no son turnos (citas, recordatorios, cumpleaños), para ver de un vistazo si coinciden con un turno. El usuario elige de qué calendarios del móvil se leen. Si un evento coincide con un turno, Torns lo señala, y avisa antes de aceptar un cambio que cae encima. Los turnos que Torns ya exporta al móvil no se muestran dos veces.
+
+- **Cómo se usa:** Calendario › Filtros › «Mostrar eventos de mi agenda». El icono junto a «Hoy» los muestra u oculta.
+- **Privacidad:** se leen en el móvil; Torns no los guarda ni los envía a sus servidores. Si se borran de la agenda, desaparecen de Torns.
+- **Plataformas:** iOS y Android (no en la versión web).
+- **Plan:** Free y Pro.
 
 ### Compartir calendario
 
@@ -315,6 +324,7 @@ Al registrarse en Torns, cada cuenta tiene 30 días de prueba con las funciones 
 | Vacaciones, disponibilidad, festivos y tiempo | Sí | Sí |
 | Calendario sin conexión | Sí | Sí |
 | Sincronización con el calendario del móvil y Google Calendar | Sí | Sí |
+| Eventos de tu agenda en el calendario | Sí | Sí |
 | Importar cuadrante | 2 en total | 30 al mes |
 | Rotaciones de turnos | No | Sí |
 | Sincronización bidireccional | No | Sí |
