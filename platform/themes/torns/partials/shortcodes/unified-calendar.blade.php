@@ -17,7 +17,7 @@
         ['title' => __('Lugares habituales'), 'text' => __('Guarda centro, unidad y horario para crear turnos con un toque.'), 'plan' => 'free'],
         ['title' => __('Vistas a tu manera'), 'text' => __('Mes, día, lista y año, con el tiempo de cada día.'), 'plan' => 'free'],
         ['title' => __('Sincronizado'), 'text' => __('Con el calendario del móvil, Apple Calendar y Google Calendar.'), 'plan' => 'free'],
-        ['title' => __('Sin conexión'), 'text' => __('Consulta tus turnos aunque no tengas cobertura.'), 'plan' => 'free'],
+        ['title' => __('Controla tu agenda personal'), 'text' => __('Las citas de tu móvil junto a tus turnos, para ver si chocan. No salen de tu móvil.'), 'plan' => 'free'],
         ['title' => __('Rotaciones'), 'text' => __('Crea tu patrón de turnos y aplícalo a semanas o meses.'), 'plan' => 'pro'],
         ['title' => __('Recordatorios'), 'text' => __('Un aviso unas horas antes de cada turno, también de los recién cambiados.'), 'plan' => 'pro'],
         ['title' => __('Estadísticas de trabajo'), 'text' => __('Horas trabajadas por centro, por área y por tipo de día.'), 'plan' => 'pro'],

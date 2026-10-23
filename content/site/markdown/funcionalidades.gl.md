@@ -12,7 +12,7 @@ Torns é unha app para que enfermeiras, médicos, TCAE, TES e outros profesionai
 - **Descargas:** [App Store](https://apps.apple.com/es/app/torns/id6760354618) · [Google Play](https://play.google.com/store/apps/details?id=com.tornsapp.android).
 - **Empresa responsable:** Soportic (Octavi Rodríguez).
 - **Contacto:** soporte@torns.app (usuarios) · hola@torns.app (organizacións).
-- **Última actualización:** 12 de outubro de 2026.
+- **Última actualización:** 23 de outubro de 2026.
 
 ## Calendario de traballo
 
@@ -94,6 +94,15 @@ Torns exporta as quendas ao calendario do iPhone ou Android que o usuario escoll
 Coa sincronización bidireccional, Torns busca en Google Calendar ou no calendario do móbil eventos que parecen quendas e propón importalos ao calendario de Torns. Aprende das eleccións do usuario.
 
 - **Plan:** Pro.
+
+### Eventos da túa axenda no calendario
+
+Torns pode amosar no seu calendario, só de lectura, os eventos da axenda do móbil que non son quendas (citas, recordatorios, aniversarios), para ver dunha ollada se coinciden cunha quenda. O usuario escolle de que calendarios do móbil se len. Se un evento coincide cunha quenda, Torns sinálao, e avisa antes de aceptar un cambio que cae enriba. As quendas que Torns xa exporta ao móbil non se amosan dúas veces.
+
+- **Como se usa:** Calendario › Filtros › «Amosar eventos da miña axenda». A icona xunto a «Hoxe» amósaos ou ocúltaos.
+- **Privacidade:** lense no móbil; Torns non os garda nin os envía aos seus servidores. Se se borran da axenda, desaparecen de Torns.
+- **Plataformas:** iOS e Android (non na versión web).
+- **Plan:** Free e Pro.
 
 ### Compartir calendario
 
@@ -315,6 +324,7 @@ Ao rexistrarse en Torns, cada conta ten 30 días de proba coas funcións Pro. Ao
 | Vacacións, dispoñibilidade, festivos e tempo | Si | Si |
 | Calendario sen conexión | Si | Si |
 | Sincronización co calendario do móbil e Google Calendar | Si | Si |
+| Eventos da túa axenda no calendario | Si | Si |
 | Importar cadrante | 2 en total | 30 ao mes |
 | Rotacións de quendas | Non | Si |
 | Sincronización bidireccional | Non | Si |

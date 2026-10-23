@@ -12,7 +12,7 @@ Torns és una app perquè infermeres, metges, TCAE, TES i altres professionals s
 - **Descàrregues:** [App Store](https://apps.apple.com/es/app/torns/id6760354618) · [Google Play](https://play.google.com/store/apps/details?id=com.tornsapp.android).
 - **Empresa responsable:** Soportic (Octavi Rodríguez).
 - **Contacte:** soporte@torns.app (usuaris) · hola@torns.app (organitzacions).
-- **Última actualització:** 12 d'octubre de 2026.
+- **Última actualització:** 23 d'octubre de 2026.
 
 ## Calendari de treball
 
@@ -94,6 +94,15 @@ Torns exporta els torns al calendari de l'iPhone o Android que l'usuari triï, a
 Amb la sincronització bidireccional, Torns busca a Google Calendar o al calendari del mòbil esdeveniments que semblen torns i proposa importar-los al calendari de Torns. Aprèn de les eleccions de l'usuari.
 
 - **Pla:** Pro.
+
+### Esdeveniments de la teva agenda al calendari
+
+Torns pot mostrar al seu calendari, només de lectura, els esdeveniments de l'agenda del mòbil que no són torns (cites, recordatoris, aniversaris), per veure d'un cop d'ull si coincideixen amb un torn. L'usuari tria de quins calendaris del mòbil es llegeixen. Si un esdeveniment coincideix amb un torn, Torns ho assenyala, i avisa abans d'acceptar un canvi que hi cau a sobre. Els torns que Torns ja exporta al mòbil no es mostren dues vegades.
+
+- **Com s'usa:** Calendari › Filtres › «Mostrar esdeveniments de la meva agenda». La icona del costat d'«Avui» els mostra o els amaga.
+- **Privacitat:** es llegeixen al mòbil; Torns no els guarda ni els envia als seus servidors. Si s'esborren de l'agenda, desapareixen de Torns.
+- **Plataformes:** iOS i Android (no a la versió web).
+- **Pla:** Free i Pro.
 
 ### Compartir calendari
 
@@ -315,6 +324,7 @@ En registrar-se a Torns, cada compte té 30 dies de prova amb les funcions Pro. 
 | Vacances, disponibilitat, festius i temps | Sí | Sí |
 | Calendari sense connexió | Sí | Sí |
 | Sincronització amb el calendari del mòbil i Google Calendar | Sí | Sí |
+| Esdeveniments de la teva agenda al calendari | Sí | Sí |
 | Importar quadrant | 2 en total | 30 al mes |
 | Rotacions de torns | No | Sí |
 | Sincronització bidireccional | No | Sí |

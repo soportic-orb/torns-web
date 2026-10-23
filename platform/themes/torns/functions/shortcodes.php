@@ -159,6 +159,12 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('content_1', TextareaField::class, $textareaField(__('First paragraph')))
             ->add('content_2', TextareaField::class, $textareaField(__('Second paragraph')))
             ->add('image', MediaImageField::class, ['label' => __('Image')])
+            ->add('screens', TextField::class, $textField(__('Two app screens instead of the image (file names, comma-separated)')))
+            ->add('screen_1_title', TextField::class, $textField(__('First screen: title')))
+            ->add('screen_1_text', TextField::class, $textField(__('First screen: text')))
+            ->add('screen_2_title', TextField::class, $textField(__('Second screen: title')))
+            ->add('screen_2_text', TextField::class, $textField(__('Second screen: text')))
+            ->add('tags', TextField::class, $textField(__('Tags under the text, separated by |')))
             ->add(
                 'side',
                 SelectField::class,
