@@ -84,6 +84,20 @@
                 },
                 {
                     "label": {
+                        "es": "Guía de uso",
+                        "ca": "Guia d'ús",
+                        "gl": "Guía de uso",
+                        "eu": "Erabilera-gida"
+                    },
+                    "url": {
+                        "es": "https://guia.torns.app/",
+                        "ca": "https://guia.torns.app/ca/",
+                        "gl": "https://guia.torns.app/gl/",
+                        "eu": "https://guia.torns.app/eu/"
+                    }
+                },
+                {
+                    "label": {
                         "es": "Torns para centros",
                         "ca": "Torns per a centres",
                         "gl": "Torns para centros",
