@@ -77,12 +77,17 @@
     })
 
     // ------------------------------------------------------------------
-    // Sticky header — subtle shadow once the page scrolls.
+    // Sticky header — subtle shadow once the page scrolls. On a page that
+    // opens with the hero (the home page), the bar is the hero's white
+    // until then, so the top of the page is one colour.
     // ------------------------------------------------------------------
     const header = document.querySelector('[data-header]')
     if (header) {
+        const hero = document.querySelector('[data-hero]')
         const onScroll = () => {
-            header.classList.toggle('shadow-sm', window.scrollY > 8)
+            const scrolled = window.scrollY > 8
+            header.classList.toggle('shadow-sm', scrolled)
+            header.classList.toggle('header-on-hero', Boolean(hero) && !scrolled)
         }
         onScroll()
         window.addEventListener('scroll', onScroll, { passive: true })

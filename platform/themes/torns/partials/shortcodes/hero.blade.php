@@ -10,7 +10,7 @@
     ];
 @endphp
 
-<section class="overflow-hidden bg-gradient-to-b from-white to-torns-bg">
+<section class="overflow-hidden bg-gradient-to-b from-white to-torns-bg" data-hero>
     <div class="mx-auto grid max-w-6xl items-center gap-14 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[7fr_5fr] lg:gap-10 lg:px-8 lg:pb-24 lg:pt-16">
         <div class="text-center lg:text-left">
             <p class="mb-5 inline-flex rounded-full bg-torns-mist px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-torns-primary-dark">{{ __('Para enfermeras, médicos, TCAE, TES y más') }}</p>
