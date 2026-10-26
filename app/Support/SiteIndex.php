@@ -4,7 +4,6 @@ namespace App\Support;
 
 use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
-use Botble\Blog\Models\Tag;
 use Botble\Language\Models\LanguageMeta;
 use Botble\Page\Models\Page;
 use DOMDocument;
@@ -179,16 +178,18 @@ class SiteIndex
     // ------------------------------------------------------------------ categories and tags
 
     /**
-     * Blog category pages (with published posts) and tag pages (with at
-     * least TAG_MIN_POSTS: thinner ones are noindex), in every language,
-     * with their translated URL when they have one.
+     * Blog category pages with published posts, in every language, with
+     * their translated URL when they have one. Tag pages are left out: they
+     * list the same posts as the categories with a word for a title, and
+     * Bing reported them as short titles and thin content. They stay
+     * reachable (noindex, follow) for readers.
      *
      * @return list<array{locales: array<string, string>, updated: ?Carbon}>
      */
     public function taxonomies(): array
     {
         $out = [];
-        foreach ([Category::class => 1, Tag::class => self::TAG_MIN_POSTS] as $type => $minPosts) {
+        foreach ([Category::class => 1] as $type => $minPosts) {
             $otherLanguage = LanguageMeta::query()->where('reference_type', $type)
                 ->where('lang_meta_code', '!=', $this->defaultLocale())->pluck('reference_id');
             $models = $type::query()
@@ -216,8 +217,6 @@ class SiteIndex
 
         return $out;
     }
-
-    public const TAG_MIN_POSTS = 2;
 
     /** The post published under {prefix}/{key} in a language, if any. */
     public function findPost(string $locale, string $path): ?Post

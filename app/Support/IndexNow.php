@@ -56,14 +56,44 @@ class IndexNow
     /** Every public URL of the site, as in the sitemap. */
     public function allUrls(): array
     {
-        $urls = [];
-        foreach ([...$this->index->pages(), ...$this->index->posts()->all()] as $group) {
+        $urls = $this->pageUrls();
+        foreach ($this->index->posts()->all() as $group) {
             foreach ($group['locales'] as $item) {
+                $urls[] = $item['url'];
+            }
+        }
+        foreach ($this->index->taxonomies() as $item) {
+            array_push($urls, ...array_values($item['locales']));
+        }
+
+        return $urls;
+    }
+
+    /** The pages (content/site) in every language they are published in. */
+    public function pageUrls(): array
+    {
+        $urls = [];
+        foreach ($this->index->pages() as $page) {
+            foreach ($page['locales'] as $item) {
                 $urls[] = $item['url'];
             }
         }
 
         return $urls;
+    }
+
+    /**
+     * After an OTA update, every page: the release may have changed their
+     * texts (content/site) or how the theme draws them, and until now Bing
+     * only heard about blog posts.
+     */
+    public function submitPagesLater(): void
+    {
+        if (! $this->enabled()) {
+            return;
+        }
+
+        app()->terminating(fn () => $this->submit($this->pageUrls()));
     }
 
     /** After the response, so saving a post never waits for the search engines. */

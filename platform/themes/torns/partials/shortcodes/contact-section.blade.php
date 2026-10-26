@@ -5,7 +5,30 @@
     $supportUrl = theme_option('support_url', 'https://soporte.torns.app');
     // Without JavaScript the form posts and comes back with the success message.
     $sent = session()->has('success_msg');
-    $home = torns_current_locale() === 'es' ? url('/') : url(torns_current_locale());
+    $locale = torns_current_locale();
+    $home = $locale === 'es' ? url('/') : url($locale);
+    // What people write about, each with where to go first: it also gives
+    // the page something to say besides the form (Bing: thin content).
+    $topics = [
+        [
+            'title' => __('Dudas sobre la app'),
+            'text' => __('Cómo publicar un cambio de turno, importar tu cuadrante o sincronizar el calendario. La guía de uso responde a las preguntas más habituales.'),
+            'link' => __('Abrir la guía de uso'),
+            'url' => 'https://guia.torns.app/' . ($locale === 'es' ? '' : $locale . '/'),
+        ],
+        [
+            'title' => __('Licencias para centros sanitarios'),
+            'text' => __('Si quieres Torns para tu hospital, centro de salud o servicio, cuéntanos cómo os organizáis y te explicamos las opciones.'),
+            'link' => __('Torns para centros'),
+            'url' => url($locale === 'es' ? 'centros' : $locale . '/centros'),
+        ],
+        [
+            'title' => __('Soporte si ya usas Torns'),
+            'text' => __('Desde la app, en Perfil › Contacta con el Soporte, puedes abrir una consulta y seguir la respuesta sin salir de Torns.'),
+            'link' => null,
+            'url' => null,
+        ],
+    ];
 @endphp
 
 <section class="py-14 lg:py-20">
@@ -34,6 +57,19 @@
                     </div>
                 </div>
             </dl>
+
+            <h2 class="mt-10 font-display text-lg font-semibold">{{ __('Te podemos ayudar con') }}</h2>
+            <ul class="mt-4 flex list-none flex-col gap-5 p-0">
+                @foreach ($topics as $topic)
+                    <li>
+                        <h3 class="text-sm font-semibold">{{ $topic['title'] }}</h3>
+                        <p class="mt-1 text-sm leading-relaxed text-torns-ink/70">{{ $topic['text'] }}</p>
+                        @if ($topic['url'])
+                            <a class="footer-link mt-1 inline-block text-sm" href="{{ $topic['url'] }}" @if (str_starts_with($topic['url'], 'https://guia.')) rel="noopener" @endif>{{ $topic['link'] }}</a>
+                        @endif
+                    </li>
+                @endforeach
+            </ul>
         </div>
 
         <div class="torns-contact-form rounded-2xl border border-torns-ink/10 bg-white p-6 sm:p-8">

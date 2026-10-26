@@ -2,6 +2,7 @@
 
 namespace App\Ota;
 
+use App\Support\IndexNow;
 use App\Support\SiteContent;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Artisan;
@@ -201,6 +202,7 @@ class OtaUpdater
             ]);
             $this->pruneBackups();
             Log::info('Torns OTA applied', ['version' => $release['version'], 'from' => $from, 'by' => $userName, 'conflicts' => $report['conflicts']]);
+            app(IndexNow::class)->submitPagesLater();
 
             return ['version' => $release['version'], 'report' => $report];
         });

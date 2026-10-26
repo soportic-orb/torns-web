@@ -11,8 +11,10 @@
     <div>
         <p class="text-sm font-semibold uppercase tracking-widest text-torns-primary">{{ __('Blog') }}</p>
         <h1 class="mt-2 font-display text-3xl font-bold leading-tight tracking-tight [text-wrap:balance] sm:text-4xl lg:text-5xl">{{ $activeName ?: __('Noticias y consejos para quien trabaja a turnos') }}</h1>
-        @if ($activeId && $category->description)
-            <p class="mt-4 max-w-2xl leading-relaxed text-torns-ink/70">{{ $category->description }}</p>
+        {{-- A category without a description still says what it holds: the
+             same sentence as its SEO description. --}}
+        @if ($activeId)
+            <p class="mt-4 max-w-2xl leading-relaxed text-torns-ink/70">{{ $category->description ?: __('Publicaciones del blog de Torns sobre :name, para profesionales sanitarios que trabajan a turnos y guardias.', ['name' => $activeName]) }}</p>
         @endif
     </div>
 

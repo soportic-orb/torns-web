@@ -1,7 +1,6 @@
 <?php
 
 use App\Support\SiteContent;
-use App\Support\SiteIndex;
 use Botble\Base\Facades\BaseHelper;
 use Botble\Blog\Models\Category;
 use Botble\Blog\Models\Post;
@@ -148,14 +147,15 @@ if (! function_exists('torns_blog_taxonomy_seo')) {
      * Title and description of a category or tag page in the current
      * language: its own SEO texts when it has them (<lang>_seo_meta, read by
      * Botble first), else «Sanitat · Blog de Torns» and its translated
-     * description or a sentence about it. A tag with fewer than 2 posts is
-     * noindex, follow: too thin a page to compete with the posts.
+     * description or a sentence about it. Tag pages are noindex, follow:
+     * they repeat the categories' posts under a one-word title, so the
+     * posts and the categories are what search engines should list.
      */
     function torns_blog_taxonomy_seo(Category|Tag $model, int $posts): void
     {
         $meta = (array) $model->getMetaData('seo_meta', true);
         if (empty($meta['seo_title'])) {
-            SeoHelper::setTitle(__(':name · Blog de Torns', ['name' => $model->name]));
+            SeoHelper::setTitle(__(':name: artículos para sanitarios a turnos · Blog de Torns', ['name' => $model->name]));
         }
         if (empty($meta['seo_description'])) {
             $description = trim(preg_replace('/\s+/', ' ', strip_tags((string) $model->description)));
@@ -164,7 +164,7 @@ if (! function_exists('torns_blog_taxonomy_seo')) {
                 ['name' => $model->name]
             ));
         }
-        if ($model instanceof Tag && $posts < SiteIndex::TAG_MIN_POSTS) {
+        if ($model instanceof Tag) {
             SeoHelper::meta()->addMeta('robots', 'noindex, follow');
         }
     }
