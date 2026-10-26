@@ -427,6 +427,11 @@ body.drawer-locked {
     @apply mt-0.5 h-4 w-4 rounded border-torns-ink/20 text-torns-primary;
 }
 
+/* Home announcement (main.js): the same, or it never goes away. */
+.promo-pro[hidden] {
+    display: none;
+}
+
 /* Contact form confirmation screen (main.js). [hidden] must beat .flex. */
 .contact-sent[hidden] {
     display: none;
