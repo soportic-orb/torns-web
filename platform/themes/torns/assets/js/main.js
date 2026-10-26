@@ -163,6 +163,67 @@
     }
 
     // ------------------------------------------------------------------
+    // Home: «30 días de Pro» announcement, at most once every 10 days per
+    // browser. Counted from when it is shown, closed or not.
+    // ------------------------------------------------------------------
+    const promo = document.querySelector('[data-promo-pro]')
+    if (promo) {
+        const KEY = 'torns_promo_pro_shown_at'
+        const EVERY = 10 * 24 * 60 * 60 * 1000
+        let last = 0
+        try {
+            last = Number(window.localStorage.getItem(KEY)) || 0
+        } catch {
+            last = Date.now() // storage blocked: do not show it on every visit
+        }
+        let opener = null
+
+        const hide = () => {
+            promo.hidden = true
+            document.documentElement.style.overflow = ''
+            opener?.focus?.({ preventScroll: true })
+        }
+
+        const show = () => {
+            opener = document.activeElement
+            promo.hidden = false
+            document.documentElement.style.overflow = 'hidden'
+            promo.querySelector('#promo-pro-title')?.focus({ preventScroll: true })
+            try {
+                window.localStorage.setItem(KEY, String(Date.now()))
+            } catch {
+                // nothing to remember it in; it simply shows again next time
+            }
+        }
+
+        promo.querySelector('[data-promo-pro-close]')?.addEventListener('click', hide)
+        promo.addEventListener('click', (event) => {
+            if (!event.target.closest('[data-promo-pro-card]')) hide()
+        })
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !promo.hidden) hide()
+        })
+        // On a first visit the cookie notice comes up too: wait until it has
+        // been answered (its consent cookie exists) so the two never stack.
+        // Looked up on each check: the notice's markup comes after this script.
+        const consentGiven = () => {
+            const name = document.querySelector('[data-site-cookie-name]')?.getAttribute('data-site-cookie-name')
+            return !name || document.cookie.split(';').some((item) => item.trim().startsWith(name + '='))
+        }
+        if (Date.now() - last >= EVERY) {
+            const started = Date.now()
+            const wait = window.setInterval(() => {
+                if (document.readyState !== 'loading' && consentGiven()) {
+                    window.clearInterval(wait)
+                    window.setTimeout(show, 800)
+                } else if (Date.now() - started > 5 * 60 * 1000) {
+                    window.clearInterval(wait)
+                }
+            }, 500)
+        }
+    }
+
+    // ------------------------------------------------------------------
     // Contact form: confirmation screen with confetti
     // ------------------------------------------------------------------
     const sent = document.querySelector('[data-contact-sent]')
