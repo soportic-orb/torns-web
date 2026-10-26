@@ -46,3 +46,5 @@
         </div>
     </div>
 </section>
+
+{!! Theme::partial('components.promo-pro') !!}
