@@ -61,17 +61,23 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
   traducción (`/ca/blog/sanidad`) redirige con **301** a la buena, también
   en las publicaciones (Botble hacía 302); se conserva `?page=`.
 - `hreflang` y `canonical` con las URL traducidas (plugin language).
-- Título «Sanitat · Blog de Torns» y descripción en el idioma de la página,
+- Título «Sanitat: articles per a sanitaris a torns · Blog de Torns» y
+  descripción en el idioma de la página,
   salvo que la categoría tenga sus propios textos SEO
   (`torns_blog_taxonomy_seo()` en `functions/seo.php`).
 - JSON-LD: `CollectionPage` y `BreadcrumbList` (Inicio › Blog › Categoría) en
   categorías y etiquetas, `BreadcrumbList` (Inicio › Blog › Categoría ›
   Publicación) en cada publicación, con los nombres traducidos; el
   `articleSection` y las `keywords` del `BlogPosting` también.
-- Las etiquetas con menos de 2 publicaciones (`SiteIndex::TAG_MIN_POSTS`)
-  son `noindex, follow` y no van al sitemap: páginas casi vacías.
-- Sitemap: categorías con publicaciones y etiquetas con 2 o más, en los 4
-  idiomas, con sus alternativas.
+- Las etiquetas son `noindex, follow` y no van al sitemap: repiten las
+  publicaciones de las categorías con una palabra por título, y Bing las
+  señalaba como títulos cortos y contenido escaso. Siguen enlazadas para
+  quien lee.
+- Sitemap: categorías con publicaciones, en los 4 idiomas, con sus
+  alternativas.
+- Una categoría sin descripción muestra bajo el título la misma frase que su
+  descripción SEO. Mejor escribirle una propia en Admin › Blog › Categorías
+  (dos o tres frases sobre qué se publica ahí), en cada idioma.
 
 ## Al publicar una noticia
 
@@ -100,6 +106,8 @@ Search Console.
   `INDEXNOW_ENABLED=false` en `.env`.
 - La clave se genera sola la primera vez (ajuste `torns_indexnow_key`) y se
   publica en `https://www.torns.app/<clave>.txt`, como pide el protocolo.
+- Al aplicar una actualización OTA se avisan todas las páginas (los textos de
+  `content/site` o el tema pueden haber cambiado).
 - El aviso se envía después de responder, así que guardar no espera.
 - Para enviar todas las direcciones del sitemap (por ejemplo, después del
   cambio de dominio): `php artisan torns:indexnow`. Una o varias:
