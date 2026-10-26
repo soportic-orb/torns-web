@@ -23,7 +23,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <p class="text-6xl" aria-hidden="true">🤙</p>
-        <h2 class="mt-5 font-display text-2xl font-bold leading-tight tracking-tight [text-wrap:balance] sm:text-3xl" id="promo-pro-title" tabindex="-1" style="outline: none">{{ __('Regístrate ahora y disfruta del plan Pro durante 30 días gratis') }}</h2>
+        <h2 class="mt-5 font-display text-2xl font-bold leading-tight tracking-tight [text-wrap:balance] sm:text-3xl" id="promo-pro-title" tabindex="-1" style="outline: none">{{ __('Regístrate ahora y disfruta del plan Pro gratis durante 30 días') }}</h2>
         <p class="mt-4 leading-relaxed text-torns-ink/70 [text-wrap:pretty]" id="promo-pro-text">{{ __('Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.') }}</p>
         <div class="mt-7">
             {!! Theme::partial('components.store-badges', ['center' => true, 'size' => 'md']) !!}
