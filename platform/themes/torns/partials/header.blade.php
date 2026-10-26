@@ -60,8 +60,10 @@
                         aria-expanded="false"
                     >
                         <span class="sr-only">{{ __('Open menu') }}</span>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                            <path d="M4 7h16M4 12h16M4 17h16" />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6h16" />
+                            <path d="M7 12h13" />
+                            <path d="M10 18h10" />
                         </svg>
                     </button>
                 </div>
@@ -76,16 +78,17 @@
             aria-label="{{ __('Main navigation') }}"
             hidden
         >
-            <div class="flex h-16 items-center justify-between border-b border-torns-ink/5 px-4">
-                <img src="{{ Theme::asset()->url('images/logo.webp') }}" alt="Torns" class="h-7 w-auto" width="133" height="28">
+            {{-- No logo here: the bar behind the drawer already shows it. --}}
+            <div class="flex h-16 items-center justify-end border-b border-torns-ink/5 px-4">
                 <button
                     type="button"
-                    class="inline-flex h-11 w-11 items-center justify-center rounded-lg text-torns-ink transition hover:bg-torns-ink/5"
+                    class="inline-flex h-11 w-11 items-center justify-center text-torns-ink transition hover:text-torns-primary"
                     data-drawer-close
                 >
                     <span class="sr-only">{{ __('Close menu') }}</span>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                        <path d="m6 6 12 12M18 6 6 18" />
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 6l-12 12" />
+                        <path d="M6 6l12 12" />
                     </svg>
                 </button>
             </div>
