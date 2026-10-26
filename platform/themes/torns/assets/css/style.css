@@ -42,6 +42,13 @@
 }
 
 @layer components {
+    /* Home, before scrolling: the bar takes the hero's top colour (white)
+       and drops its line, so the two read as one surface. Two classes, so
+       it wins over the bar's bg utility. */
+    .site-header.header-on-hero {
+        @apply border-transparent bg-white;
+    }
+
     .skip-link {
         @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-torns-primary px-4 py-2.5 text-sm font-semibold text-white transition-transform focus-visible:translate-y-0;
     }

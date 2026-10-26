@@ -18,7 +18,7 @@
             $centersUrl = url(torns_current_locale() === 'es' ? 'centros' : torns_current_locale() . '/centros');
         @endphp
 
-        <header class="site-header sticky top-0 z-40 border-b border-torns-ink/5 bg-torns-bg/90 backdrop-blur" data-header>
+        <header class="site-header sticky top-0 z-40 border-b border-torns-ink/5 bg-torns-bg/90 backdrop-blur transition-colors duration-200" data-header>
             <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20 lg:px-8">
                 <a href="{{ BaseHelper::getHomepageUrl() }}" class="flex shrink-0 items-center" aria-label="Torns">
                     <img src="{{ Theme::asset()->url('images/logo.webp') }}" alt="Torns" class="h-8 w-auto lg:h-9" width="152" height="32">
