@@ -94,6 +94,26 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
    título y la descripción SEO solo se traducen si existen en castellano. Así
    las versiones quedan enlazadas con `hreflang`.
 
+## Al compartir en redes (WhatsApp, Facebook, LinkedIn, X, Telegram)
+
+`torns_social_meta()` (`functions/seo.php`) completa la tarjeta de cada página
+sobre lo que imprime Botble:
+
+- `og:image` en todas las páginas: la imagen destacada en las noticias, el
+  banner del tema (`images/og-banner.jpg`, 1200×675) en el resto, también en
+  las categorías, que no tenían ninguna.
+- `og:image:width`, `:height` y `:type`: sin ellos Facebook y WhatsApp no
+  enseñan la imagen la primera vez que alguien comparte un enlace.
+- `og:image:secure_url`, `og:image:alt`, `twitter:image` y `twitter:image:alt`.
+- `og:description` y `twitter:description` cortadas a 200 caracteres por una
+  palabra.
+
+Las redes guardan la tarjeta de cada enlace: para ver un cambio, «Scrape
+again» en el [Sharing Debugger](https://developers.facebook.com/tools/debug/)
+de Facebook (también lo usa WhatsApp) y en el
+[Post Inspector](https://www.linkedin.com/post-inspector/) de LinkedIn. X lo
+renueva solo en unos días.
+
 ## IndexNow
 
 Al guardar o traducir una noticia **publicada**, la web avisa a los buscadores
