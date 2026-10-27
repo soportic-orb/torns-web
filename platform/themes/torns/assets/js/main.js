@@ -224,6 +224,45 @@
     }
 
     // ------------------------------------------------------------------
+    // Post share buttons on a phone: X, Facebook and LinkedIn open their
+    // app instead of their website. WhatsApp's wa.me already does.
+    // - Android: an intent for the app's own share screen, with the text
+    //   ready; Chrome falls back to the website when the app is missing.
+    // - iPhone/iPad: iOS lets a web page open neither Facebook's nor
+    //   LinkedIn's share screen, so the system share sheet comes up, with
+    //   the installed apps in it.
+    // On a computer the links open the website, as they always did.
+    // ------------------------------------------------------------------
+    const shareBox = document.querySelector('[data-share-url]')
+    if (shareBox) {
+        const ua = navigator.userAgent
+        const android = /Android/i.test(ua)
+        const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        const packages = { x: 'com.twitter.android', facebook: 'com.facebook.katana', linkedin: 'com.linkedin.android' }
+        const url = shareBox.dataset.shareUrl
+        const title = shareBox.dataset.shareTitle || document.title
+
+        shareBox.querySelectorAll('[data-share]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                const network = link.dataset.share
+                if (android && packages[network]) {
+                    event.preventDefault()
+                    const text = network === 'x' ? `${title} ${url}` : url
+                    window.location.href = 'intent:#Intent;action=android.intent.action.SEND;type=text/plain;'
+                        + `S.android.intent.extra.TEXT=${encodeURIComponent(text)};`
+                        + `package=${packages[network]};`
+                        + `S.browser_fallback_url=${encodeURIComponent(link.href)};end`
+                } else if (ios && navigator.share) {
+                    event.preventDefault()
+                    navigator.share({ title, url }).catch(() => {
+                        // Closed without choosing, or refused: nothing to do.
+                    })
+                }
+            })
+        })
+    }
+
+    // ------------------------------------------------------------------
     // Contact form: confirmation screen with confetti
     // ------------------------------------------------------------------
     const sent = document.querySelector('[data-contact-sent]')

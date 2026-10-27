@@ -67,21 +67,22 @@
             </ul>
         @endif
 
-        {{-- Native share links, no third-party SDKs --}}
-        <div class="mt-10 border-t border-torns-ink/5 pt-6">
+        {{-- Native share links, no third-party SDKs. On a phone main.js hands
+             X, Facebook and LinkedIn to the installed app (data-share). --}}
+        <div class="mt-10 border-t border-torns-ink/5 pt-6" data-share-url="{{ $shareUrl }}" data-share-title="{{ $shareTitle }}">
             <p class="mb-3 text-sm font-semibold">{{ __('Share') }}</p>
             <ul class="flex flex-wrap gap-2">
                 <li>
                     <a class="share-link" rel="noopener nofollow" target="_blank" href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}">WhatsApp</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://x.com/intent/post?url={{ urlencode($shareUrl) }}&text={{ urlencode($shareTitle) }}">X</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="x" href="https://x.com/intent/post?url={{ urlencode($shareUrl) }}&text={{ urlencode($shareTitle) }}">X</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($shareUrl) }}">Facebook</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($shareUrl) }}">Facebook</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}">LinkedIn</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}">LinkedIn</a>
                 </li>
                 <li>
                     <a class="share-link" href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}">Email</a>
