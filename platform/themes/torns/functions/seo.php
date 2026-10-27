@@ -14,6 +14,7 @@ use Botble\Theme\Events\RenderingSingleEvent;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Routing\Events\RouteMatched;
+use Illuminate\Support\Facades\Cache;
 
 /*
  * SEO and AI readiness of the theme (docs/seo-geo.md):
@@ -77,6 +78,76 @@ if (! function_exists('torns_strip_default_schemas')) {
             },
             $html
         );
+    }
+}
+
+if (! function_exists('torns_social_meta')) {
+    /**
+     * Completes the share card that WhatsApp, Facebook, LinkedIn, X and
+     * Telegram build from the page, on top of what Botble's SeoHelper prints:
+     * - every page has an og:image (category pages had none: the blog
+     *   service resets it), falling back to the theme's banner;
+     * - og:image:width/height/type: without them Facebook and WhatsApp skip
+     *   the picture the first time a link is shared, until they have
+     *   fetched it in the background;
+     * - og:image:secure_url and :alt, twitter:image and :alt;
+     * - og:description and twitter:description cut to 200 characters at a
+     *   word: longer ones are truncated mid-word by every network.
+     */
+    function torns_social_meta(string $html): string
+    {
+        $attr = fn (string $value) => htmlspecialchars($value, ENT_QUOTES | ENT_HTML5, 'UTF-8', false);
+        $find = function (string $pattern) use ($html): ?string {
+            return preg_match($pattern, $html, $m) ? html_entity_decode($m[1], ENT_QUOTES | ENT_HTML5, 'UTF-8') : null;
+        };
+
+        $html = preg_replace_callback(
+            '/(<meta (?:property="og:description"|name="twitter:description") content=")([^"]*)(")/u',
+            function (array $m) use ($attr): string {
+                $text = html_entity_decode($m[2], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                if (mb_strlen($text) > 200) {
+                    $text = mb_substr($text, 0, 199);
+                    $text = rtrim(preg_replace('/\s+\S*$/u', '', $text) ?: $text, ' ,;:.-') . '…';
+                }
+
+                return $m[1] . $attr($text) . $m[3];
+            },
+            $html
+        ) ?? $html;
+
+        $image = $find('/<meta property="og:image" content="([^"]+)"/');
+        $extra = [];
+        if (! $image) {
+            $image = Theme::asset()->url('images/og-banner.jpg');
+            $extra[] = '<meta property="og:image" content="' . $attr($image) . '">';
+        }
+
+        $local = str_starts_with($image, rtrim(url('/'), '/') . '/') ? public_path(ltrim((string) parse_url($image, PHP_URL_PATH), '/')) : null;
+        $size = $local ? Cache::remember('torns-og-size:' . md5($local . '@' . @filemtime($local)), now()->addDay(), function () use ($local) {
+            $info = is_file($local) ? @getimagesize($local) : false;
+
+            return $info ? [$info[0], $info[1], $info['mime']] : null;
+        }) : null;
+
+        $title = $find('/<meta property="og:title" content="([^"]*)"/') ?? (string) config('app.name');
+        $extra[] = '<meta property="og:image:secure_url" content="' . $attr($image) . '">';
+        if ($size) {
+            $extra[] = '<meta property="og:image:type" content="' . $attr($size[2]) . '">';
+            $extra[] = '<meta property="og:image:width" content="' . (int) $size[0] . '">';
+            $extra[] = '<meta property="og:image:height" content="' . (int) $size[1] . '">';
+        }
+        $extra[] = '<meta property="og:image:alt" content="' . $attr($title) . '">';
+        if (! str_contains($html, 'name="twitter:image"')) {
+            $extra[] = '<meta name="twitter:image" content="' . $attr($image) . '">';
+            $extra[] = '<meta name="twitter:image:alt" content="' . $attr($title) . '">';
+        }
+
+        $tags = implode(PHP_EOL, $extra) . PHP_EOL;
+        $at = preg_match('/<meta property="og:image" content="[^"]*">\s*/', $html, $m, PREG_OFFSET_CAPTURE)
+            ? $m[0][1] + strlen($m[0][0])
+            : (preg_match('/<meta property="og:[^>]*>\s*/', $html, $m, PREG_OFFSET_CAPTURE) ? $m[0][1] : 0);
+
+        return substr($html, 0, $at) . $tags . substr($html, $at);
     }
 }
 
