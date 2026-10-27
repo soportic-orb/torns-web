@@ -38,7 +38,7 @@ Aplikazio bakoitzaren iturri publikoetako datuak, 20/10/2026(e)an berrikusiak.
 
 | Funtzioa | Torns | Supershift |
 |---|---|---|
-| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak). | Ez. Aplikazioak ez ditu aldaketa-eskaerak kudeatzen; egutegia partekatuz txanda-aldaketak koordinatzea aipatzen du, eta konturik eta internetik gabe dabil, datuak gailuan gordeta. |
+| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak). | Ez. Aplikazioak ez ditu aldaketa-eskaerak kudeatzen; egutegia partekatuz txanda-aldaketak koordinatzea aipatzen du, eta konturik eta internetik gabe dabil, datuak gailuan gordeta. |
 | Eskainitako txanden taula edo horma | Bai. Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu, iragazkiekin eta «Txanda bateragarriak» iragazkiarekin. | Ez da ageri. Ez da ageri kontsultatutako dokumentazio publikoan. |
 | 3 edo 4 pertsonaren arteko aldaketa-kateak | Pro: 3 edo 4 lankideren arteko aldaketa zirkularrak detektatzen ditu eta guztiei proposatzen dizkie, talde-txatarekin (Pro). | Ez da ageri. Ez da ageri kontsultatutako dokumentazio publikoan. |
 | Aldaketa urgentearen abisua (SOS) | Pro: Txanda Muralaren hasierara igotzen da 24 orduz, eta lankideek abisu urgentea jasotzen dute (Pro). | Ez da ageri. Ez da ageri kontsultatutako dokumentazio publikoan. |
@@ -72,7 +72,7 @@ Supershift iOS, Android, Mac eta Apple Watcherako txanden egutegi-aplikazio bat 
 
 ### Supershift-k txandak lankideekin aldatzeko aukera ematen du?
 
-Aplikazioak ez ditu aldaketa-eskaerak kudeatzen; egutegia partekatuz txanda-aldaketak koordinatzea aipatzen du, eta konturik eta internetik gabe dabil, datuak gailuan gordeta. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak).
+Aplikazioak ez ditu aldaketa-eskaerak kudeatzen; egutegia partekatuz txanda-aldaketak koordinatzea aipatzen du, eta konturik eta internetik gabe dabil, datuak gailuan gordeta. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak).
 
 ### Supershift katalanez, galizieraz eta euskaraz dago?
 

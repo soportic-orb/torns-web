@@ -38,7 +38,7 @@ Datos das fontes públicas de cada app, revisados o 20/10/2026.
 
 | Funcionalidade | Torns | Shiftool |
 |---|---|---|
-| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados). | Si. Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos. |
+| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados). | Si. Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos. |
 | Taboleiro ou muro de quendas ofrecidas | Si. O Muro reúne as quendas publicadas nos centros do usuario, con filtros e o filtro «Turnos compatibles». | Si. Os termos describen un taboleiro xeral con ofertas e solicitudes visible para os membros dun grupo. |
 | Cadeas de cambios entre 3 ou 4 persoas | Pro: Detecta cambios circulares entre 3 ou 4 compañeiros e propónllelos a todos, con chat de grupo (Pro). | Suxestións automáticas de cambio: A app propón ofertas e solicitudes que encaixan coas doutros usuarios; non se documentan cadeas de 3 ou máis persoas nin o uso de IA. |
 | Aviso de cambio urxente (SOS) | Pro: A quenda sobe ao principio do Muro durante 24 horas e os compañeiros reciben un aviso urxente (Pro). | Non consta. Non consta na documentación pública consultada. |
@@ -72,7 +72,7 @@ Shiftool é unha app móbil (iOS e Android, con acceso web) de Shiftool S.L. par
 
 ### Shiftool permite cambiar quendas con compañeiros?
 
-Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).
+Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados).
 
 ### Shiftool está en catalán, galego e éuscaro?
 

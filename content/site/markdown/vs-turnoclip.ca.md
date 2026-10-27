@@ -38,7 +38,7 @@ Dades de les fonts públiques de cada app, revisades el 20/10/2026.
 
 | Funcionalitat | Torns | TurnoClip |
 |---|---|---|
-| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats). | Sí. Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app. |
+| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats). | Sí. Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app. |
 | Tauler o mur de torns oferts | Sí. El Mur reuneix els torns publicats als centres de l'usuari, amb filtres i el filtre «Torns compatibles». | Tauler d'ofertes: Disposa d'un tauler comú on es publiquen ofertes de torn que els companys poden acceptar o contraofertar. |
 | Cadenes de canvis entre 3 o 4 persones | Pro: Detecta canvis circulars entre 3 o 4 companys i els proposa a tots, amb xat de grup (Pro). | Match automàtic d'ofertes (beta): El Match automàtic cerca ofertes compatibles segons els dies de devolució indicats i avisa tots dos usuaris; no es descriuen cadenes de 3 o més persones ni l'ús d'IA. |
 | Avís de canvi urgent (SOS) | Pro: El torn puja al principi del Mur durant 24 hores i els companys reben un avís urgent (Pro). | No consta. No es documenta un mode urgent específic; la descripció suggereix fer servir el tauler general per a canvis urgents. |
@@ -72,7 +72,7 @@ TurnoClip és una app mòbil gratuïta per a Android i iOS, desenvolupada per Je
 
 ### TurnoClip permet canviar torns amb companys?
 
-Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).
+Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats).
 
 ### TurnoClip està en català, gallec i basc?
 

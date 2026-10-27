@@ -86,7 +86,7 @@ class BlogAi
         - Cambios de turno entre compañeros del mismo centro y categoría: se publica el turno en el Muro, los compañeros proponen uno suyo y, al aceptar, se actualizan los calendarios. Chat individual y de grupo.
         - Importar el cuadrante: a partir de una foto o un documento, la IA encuentra la fila de la persona y propone sus turnos para revisarlos; el archivo no se guarda.
         - Torns Pro: Copilot (asistente con IA que busca cambios compatibles y cadenas de 3 o 4 compañeros), consultor legal (responde sobre permisos, jornada y descansos citando el convenio o la norma), modo SOS para cambios urgentes, aviso por e-mail al gestor del cuadrante, recordatorios, rotaciones, estadísticas de horas, compartir e imprimir el calendario.
-        - Planes: Free (1 centro, 3 cambios aceptados al mes); Pro 2,99 €/mes o 29,90 €/año; 30 días de prueba de Pro al registrarse, sin tarjeta.
+        - Planes: Free (1 centro, 2 cambios aceptados al mes); Pro 2,99 €/mes o 29,90 €/año; 30 días de prueba de Pro al registrarse, sin tarjeta.
         - Para centros: panel de organización con licencias desde 0,39 € por usuario activo y mes (sin IVA). Asociaciones y colegios pueden patrocinar Torns Pro a sus socios.
         - Idiomas: castellano, català, galego y euskara.
         TXT;

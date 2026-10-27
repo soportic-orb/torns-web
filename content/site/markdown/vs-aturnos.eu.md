@@ -38,7 +38,7 @@ Aplikazio bakoitzaren iturri publikoetako datuak, 20/10/2026(e)an berrikusiak.
 
 | Funtzioa | Torns | aTurnos |
 |---|---|---|
-| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak). | Enpresak gaitzen badu: Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu. |
+| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak). | Enpresak gaitzen badu: Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu. |
 | Eskainitako txanden taula edo horma | Bai. Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu, iragazkiekin eta «Txanda bateragarriak» iragazkiarekin. | Administratzailearen eskaintzak soilik: Ez da deskribatzen langileek eskainitako txanden oholik; administratzaileek txanda edo ordu eskaintzak argitara ditzakete, koadranteko «Ofertas disponibles» errenkadan agertzen direnak. |
 | 3 edo 4 pertsonaren arteko aldaketa-kateak | Pro: 3 edo 4 lankideren arteko aldaketa zirkularrak detektatzen ditu eta guztiei proposatzen dizkie, talde-txatarekin (Pro). | Ez da ageri. Gidak eskatzailearen eta lankide baten arteko aldaketak deskribatzen ditu; ez da ageri kontsultatutako dokumentazio publikoan hainbat pertsonaren arteko kate-sistemarik ezta parekatze automatikorik ere. |
 | Aldaketa urgentearen abisua (SOS) | Pro: Txanda Muralaren hasierara igotzen da 24 orduz, eta lankideek abisu urgentea jasotzen dute (Pro). | Ez da ageri. Ez da ageri kontsultatutako dokumentazio publikoan urgentzia-funtziorik; estaldura nahikoa ez denean administratzaileak abiarazten dituen txanda-eskaintzak daude. |
@@ -72,7 +72,7 @@ aTurnos aTurnos Solutions enpresa espainiarraren giza baliabideetarako softwarea
 
 ### aTurnos-k txandak lankideekin aldatzeko aukera ematen du?
 
-Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak).
+Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak).
 
 ### aTurnos katalanez, galizieraz eta euskaraz dago?
 

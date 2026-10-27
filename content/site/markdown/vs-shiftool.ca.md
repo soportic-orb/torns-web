@@ -38,7 +38,7 @@ Dades de les fonts públiques de cada app, revisades el 20/10/2026.
 
 | Funcionalitat | Torns | Shiftool |
 |---|---|---|
-| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats). | Sí. Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los. |
+| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats). | Sí. Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los. |
 | Tauler o mur de torns oferts | Sí. El Mur reuneix els torns publicats als centres de l'usuari, amb filtres i el filtre «Torns compatibles». | Sí. Les condicions descriuen un tauler general amb ofertes i sol·licituds visible per als membres d'un grup. |
 | Cadenes de canvis entre 3 o 4 persones | Pro: Detecta canvis circulars entre 3 o 4 companys i els proposa a tots, amb xat de grup (Pro). | Suggeriments automàtics de canvi: L'app proposa ofertes i sol·licituds que encaixen amb les d'altres usuaris; no es documenten cadenes de 3 o més persones ni l'ús d'IA. |
 | Avís de canvi urgent (SOS) | Pro: El torn puja al principi del Mur durant 24 hores i els companys reben un avís urgent (Pro). | No consta. No consta a la documentació pública consultada. |
@@ -72,7 +72,7 @@ Shiftool és una app mòbil (iOS i Android, amb accés web) de Shiftool S.L. per
 
 ### Shiftool permet canviar torns amb companys?
 
-Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).
+Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats).
 
 ### Shiftool està en català, gallec i basc?
 

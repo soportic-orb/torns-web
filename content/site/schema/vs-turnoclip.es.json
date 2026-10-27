@@ -14,7 +14,7 @@
       "name": "¿TurnoClip permite cambiar turnos con compañeros?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados)."
+        "text": "Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados)."
       }
     },
     {

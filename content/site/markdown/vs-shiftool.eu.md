@@ -38,7 +38,7 @@ Aplikazio bakoitzaren iturri publikoetako datuak, 20/10/2026(e)an berrikusiak.
 
 | Funtzioa | Torns | Shiftool |
 |---|---|---|
-| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak). | Bai. Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du. |
+| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak). | Bai. Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du. |
 | Eskainitako txanden taula edo horma | Bai. Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu, iragazkiekin eta «Txanda bateragarriak» iragazkiarekin. | Bai. Baldintzek talde bateko kideentzat ikusgai dagoen ohol orokor bat deskribatzen dute, eskaintzekin eta eskaerekin. |
 | 3 edo 4 pertsonaren arteko aldaketa-kateak | Pro: 3 edo 4 lankideren arteko aldaketa zirkularrak detektatzen ditu eta guztiei proposatzen dizkie, talde-txatarekin (Pro). | Aldaketa-iradokizun automatikoak: Aplikazioak beste erabiltzaileen eskaintza eta eskaerekin bat datozen eskaintzak eta eskaerak proposatzen ditu; ez dago dokumentatuta 3 pertsona edo gehiagoko katerik ezta IAren erabilerarik ere. |
 | Aldaketa urgentearen abisua (SOS) | Pro: Txanda Muralaren hasierara igotzen da 24 orduz, eta lankideek abisu urgentea jasotzen dute (Pro). | Ez da ageri. Ez da ageri kontsultatutako dokumentazio publikoan. |
@@ -72,7 +72,7 @@ Shiftool Shiftool S.L.-ren aplikazio mugikor bat da (iOS eta Android, web bidezk
 
 ### Shiftool-k txandak lankideekin aldatzeko aukera ematen du?
 
-Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak).
+Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak).
 
 ### Shiftool katalanez, galizieraz eta euskaraz dago?
 

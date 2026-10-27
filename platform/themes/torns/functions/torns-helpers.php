@@ -23,7 +23,7 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '0 €',
                 'period' => '',
                 'description' => __('Utiliza gratis las funcionalidades básicas de la app'),
-                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nSincronización con Apple y Google\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 3 cambios al mes\nChat individual y grupal"),
+                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nSincronización con Apple y Google\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 2 cambios al mes\nChat individual y grupal"),
                 'badge' => '',
                 'cta_label' => __('Empieza gratis'),
                 'highlighted' => false,

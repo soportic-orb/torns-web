@@ -38,7 +38,7 @@ Datos de las fuentes públicas de cada app, revisados el 20/10/2026.
 
 | Funcionalidad | Torns | TurnoClip |
 |---|---|---|
-| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados). | Sí. Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. |
+| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados). | Sí. Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. |
 | Tablón o muro de turnos ofrecidos | Sí. El Muro reúne los turnos publicados en los centros del usuario, con filtros y el filtro «Turnos compatibles». | Tablón de ofertas: Dispone de un tablón común donde se publican ofertas de turno que los compañeros pueden aceptar o contraofertar. |
 | Cadenas de cambios entre 3 o 4 personas | Pro: Detecta cambios circulares entre 3 o 4 compañeros y los propone a todos, con chat de grupo (Pro). | Match automático de ofertas (beta): El Match automático busca ofertas compatibles según los días de devolución indicados y avisa a ambos usuarios; no se describen cadenas de 3 o más personas ni el uso de IA. |
 | Aviso de cambio urgente (SOS) | Pro: El turno sube al principio del Muro 24 horas y los compañeros reciben un aviso urgente (Pro). | No consta. No se documenta un modo urgente específico; la descripción sugiere usar el tablón general para cambios urgentes. |
@@ -72,7 +72,7 @@ TurnoClip es una app móvil gratuita para Android e iOS, desarrollada por Jesús
 
 ### ¿TurnoClip permite cambiar turnos con compañeros?
 
-Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).
+Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados).
 
 ### ¿TurnoClip está en catalán, gallego y euskera?
 

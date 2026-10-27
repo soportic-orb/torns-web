@@ -136,7 +136,7 @@ Torns-en Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu
 
 Muralako txanda batetik, profesionalak «Proposamena egin» sakatzen du eta bere txandetako bat eskaintzen du truke. Txanda argitaratu zuenak proposamena onartu edo ukatzen du. Onartzean, Torns-ek txanda bakoitza bere titular berriaren egutegira pasatzen du. Egindako aldaketa bat bi pertsonak ados badaude bakarrik desegin daiteke.
 
-- **Plana:** Free, 3 aldaketa hilean (kontagailua hileko 1ean berrabiarazten da); Pro, aldaketa mugagabeak.
+- **Plana:** Free, 2 aldaketa hilean (kontagailua hileko 1ean berrabiarazten da); Pro, aldaketa mugagabeak.
 
 ### Aldaketa kateak
 
@@ -306,7 +306,7 @@ Torns-en Apple Watch aplikazioak erabiltzailearen hurrengo txandak eta aldaketak
 
 ### Free
 
-Torns-en Free plana doakoa da, eta txanden egutegia, txandak argitaratzea, Murala, 3 aldaketa hilean, lantoki 1, txata, horma soziala, txanda-oroitzapenak, widgetak, Apple Watch, txanda-koadroaren 2 irakurketa eta Lege-aholkulariari 2 kontsulta ditu.
+Torns-en Free plana doakoa da, eta txanden egutegia, txandak argitaratzea, Murala, 2 aldaketa hilean, lantoki 1, txata, horma soziala, txanda-oroitzapenak, widgetak, Apple Watch, txanda-koadroaren 2 irakurketa eta Lege-aholkulariari 2 kontsulta ditu.
 
 ### Torns Pro
 
@@ -331,7 +331,7 @@ Torns-en izena ematean, kontu bakoitzak 30 eguneko proba du Pro funtzioekin. Ama
 | Egutegia partekatu | Ez | Bai |
 | Inprimatu eta PDFra esportatu | Ez | Bai |
 | Txandak argitaratu eta Murala | Bai | Bai |
-| Onartutako txanda-aldaketak | 3 hilean | Mugagabeak |
+| Onartutako txanda-aldaketak | 2 hilean | Mugagabeak |
 | Lantokiak | 1 | Hainbat |
 | Aldaketa kateak | Ez | Bai |
 | SOS modua | Ez | Bai |
@@ -411,7 +411,7 @@ Bai. Torns aplikazio bat da, Espainiako erizainek eta beste osasun-profesional b
 
 ### Doakoa al da Torns?
 
-Torns-ek doako Free plana du, txanden egutegia, txandak argitaratzea eta 3 aldaketa hilean barne. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean, eta kontu berri guztiek 30 eguneko proba dute Pro funtzioekin.
+Torns-ek doako Free plana du, txanden egutegia, txandak argitaratzea eta 2 aldaketa hilean barne. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean, eta kontu berri guztiek 30 eguneko proba dute Pro funtzioekin.
 
 ### Zer dakar Torns Prok?
 

@@ -38,7 +38,7 @@ Datos de las fuentes públicas de cada app, revisados el 20/10/2026.
 
 | Funcionalidad | Torns | aTurnos |
 |---|---|---|
-| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados). | Si la empresa lo habilita: El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita. |
+| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados). | Si la empresa lo habilita: El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita. |
 | Tablón o muro de turnos ofrecidos | Sí. El Muro reúne los turnos publicados en los centros del usuario, con filtros y el filtro «Turnos compatibles». | Solo ofertas del administrador: No se describe un tablón de turnos ofrecidos por trabajadores; los administradores pueden publicar ofertas de turnos u horas que aparecen en una fila «Ofertas disponibles» del cuadrante. |
 | Cadenas de cambios entre 3 o 4 personas | Pro: Detecta cambios circulares entre 3 o 4 compañeros y los propone a todos, con chat de grupo (Pro). | No consta. La guía describe cambios entre el solicitante y un compañero; no consta en la documentación pública consultada un sistema de cadenas de varias personas ni de emparejamiento automático. |
 | Aviso de cambio urgente (SOS) | Pro: El turno sube al principio del Muro 24 horas y los compañeros reciben un aviso urgente (Pro). | No consta. No consta en la documentación pública consultada una función de urgencia; existen ofertas de turnos que lanza el administrador ante cobertura insuficiente. |
@@ -72,7 +72,7 @@ aTurnos es un software de recursos humanos de la empresa española aTurnos Solut
 
 ### ¿aTurnos permite cambiar turnos con compañeros?
 
-El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).
+El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados).
 
 ### ¿aTurnos está en catalán, gallego y euskera?
 

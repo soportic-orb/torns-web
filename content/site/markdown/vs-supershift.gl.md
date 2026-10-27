@@ -38,7 +38,7 @@ Datos das fontes públicas de cada app, revisados o 20/10/2026.
 
 | Funcionalidade | Torns | Supershift |
 |---|---|---|
-| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados). | Non. A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo. |
+| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados). | Non. A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo. |
 | Taboleiro ou muro de quendas ofrecidas | Si. O Muro reúne as quendas publicadas nos centros do usuario, con filtros e o filtro «Turnos compatibles». | Non consta. Non consta na documentación pública consultada. |
 | Cadeas de cambios entre 3 ou 4 persoas | Pro: Detecta cambios circulares entre 3 ou 4 compañeiros e propónllelos a todos, con chat de grupo (Pro). | Non consta. Non consta na documentación pública consultada. |
 | Aviso de cambio urxente (SOS) | Pro: A quenda sobe ao principio do Muro durante 24 horas e os compañeiros reciben un aviso urxente (Pro). | Non consta. Non consta na documentación pública consultada. |
@@ -72,7 +72,7 @@ Supershift é unha app de calendario de quendas para iOS, Android, Mac e Apple W
 
 ### Supershift permite cambiar quendas con compañeiros?
 
-A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).
+A app non xestiona solicitudes de cambio; menciona coordinar cambios de quenda compartindo o calendario, e funciona sen conta nin internet, con datos gardados no dispositivo. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados).
 
 ### Supershift está en catalán, galego e éuscaro?
 
