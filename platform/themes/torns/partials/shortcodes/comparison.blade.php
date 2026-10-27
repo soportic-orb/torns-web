@@ -25,6 +25,9 @@
                         <th scope="col" class="sticky left-0 z-10 bg-white p-4 text-left font-semibold text-torns-ink/70">{{ __('Feature') }}</th>
                         @foreach ($competitors as $key => $name)
                             <th scope="col" @class(['p-4 text-center font-display', 'bg-torns-primary/5 text-torns-primary text-base font-bold' => $key === 'torns', 'font-semibold' => $key !== 'torns'])>
+                                @if ($icon = torns_app_icon($key))
+                                    <img src="{{ $icon }}" alt="" class="mx-auto mb-2 h-10 w-10 rounded-xl shadow-sm ring-1 ring-torns-ink/10" width="40" height="40" loading="lazy" decoding="async">
+                                @endif
                                 @if (isset($comparisonPages[$key]))
                                     <a href="{{ $comparisonPages[$key] }}" class="underline decoration-torns-ink/20 underline-offset-4 transition hover:text-torns-primary hover:decoration-torns-primary" title="{{ __('Comparativa completa con :name', ['name' => $name]) }}">{{ $name }}</a>
                                 @else
@@ -54,7 +57,12 @@
             @foreach ($others as $key => $name)
                 <details class="group rounded-2xl border border-torns-ink/10 bg-white">
                     <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4 font-display font-semibold [&::-webkit-details-marker]:hidden">
-                        <span>Torns <span class="text-torns-ink/70">vs</span> {{ $name }}</span>
+                        <span class="flex items-center gap-2">
+                            @if ($icon = torns_app_icon($key))
+                                <img src="{{ $icon }}" alt="" class="h-7 w-7 rounded-lg ring-1 ring-torns-ink/10" width="28" height="28" loading="lazy" decoding="async">
+                            @endif
+                            <span>Torns <span class="text-torns-ink/70">vs</span> {{ $name }}</span>
+                        </span>
                         <svg class="h-5 w-5 shrink-0 text-torns-ink/40 transition-transform duration-200 group-open:rotate-180 motion-reduce:transition-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
                     </summary>
                     <div class="border-t border-torns-ink/5 px-5 py-2">

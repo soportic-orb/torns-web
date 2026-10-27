@@ -245,6 +245,23 @@ if (! function_exists('torns_comparison_competitors')) {
     }
 }
 
+if (! function_exists('torns_app_icon')) {
+    /**
+     * The store icon of an app in the comparisons (assets/images/apps/<slug>.webp,
+     * taken from its App Store listing), or of Torns itself. Null when there
+     * is none, so a new competitor without an icon still renders.
+     */
+    function torns_app_icon(string $slug): ?string
+    {
+        $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($slug));
+        if ($slug === '' || ! is_file(public_path('themes/torns/images/apps/' . $slug . '.webp'))) {
+            return null;
+        }
+
+        return Theme::asset()->url('images/apps/' . $slug . '.webp');
+    }
+}
+
 if (! function_exists('torns_comparison')) {
     /**
      * Torns side by side with one app, grouped by feature area, in the
