@@ -199,10 +199,10 @@
     "swaps_between_colleagues": {
       "value": "yes",
       "detail": {
-        "es": "Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).",
-        "ca": "Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).",
-        "gl": "Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).",
-        "eu": "Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak)."
+        "es": "Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados).",
+        "ca": "Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats).",
+        "gl": "Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados).",
+        "eu": "Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak)."
       }
     },
     "swap_board": {

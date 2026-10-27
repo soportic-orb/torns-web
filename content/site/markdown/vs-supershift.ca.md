@@ -38,7 +38,7 @@ Dades de les fonts públiques de cada app, revisades el 20/10/2026.
 
 | Funcionalitat | Torns | Supershift |
 |---|---|---|
-| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats). | No. L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu. |
+| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats). | No. L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu. |
 | Tauler o mur de torns oferts | Sí. El Mur reuneix els torns publicats als centres de l'usuari, amb filtres i el filtre «Torns compatibles». | No consta. No consta a la documentació pública consultada. |
 | Cadenes de canvis entre 3 o 4 persones | Pro: Detecta canvis circulars entre 3 o 4 companys i els proposa a tots, amb xat de grup (Pro). | No consta. No consta a la documentació pública consultada. |
 | Avís de canvi urgent (SOS) | Pro: El torn puja al principi del Mur durant 24 hores i els companys reben un avís urgent (Pro). | No consta. No consta a la documentació pública consultada. |
@@ -72,7 +72,7 @@ Supershift és una app de calendari de torns per a iOS, Android, Mac i Apple Wat
 
 ### Supershift permet canviar torns amb companys?
 
-L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).
+L'app no gestiona sol·licituds de canvi; esmenta coordinar canvis de torn compartint el calendari, i funciona sense compte ni internet, amb dades desades al dispositiu. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats).
 
 ### Supershift està en català, gallec i basc?
 

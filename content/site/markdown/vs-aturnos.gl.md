@@ -38,7 +38,7 @@ Datos das fontes públicas de cada app, revisados o 20/10/2026.
 
 | Funcionalidade | Torns | aTurnos |
 |---|---|---|
-| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados). | Se a empresa o habilita: O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita. |
+| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados). | Se a empresa o habilita: O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita. |
 | Taboleiro ou muro de quendas ofrecidas | Si. O Muro reúne as quendas publicadas nos centros do usuario, con filtros e o filtro «Turnos compatibles». | Só ofertas do administrador: Non se describe un taboleiro de quendas ofrecidas por traballadores; os administradores poden publicar ofertas de quendas ou horas que aparecen nunha fila «Ofertas disponibles» do cadro de quendas. |
 | Cadeas de cambios entre 3 ou 4 persoas | Pro: Detecta cambios circulares entre 3 ou 4 compañeiros e propónllelos a todos, con chat de grupo (Pro). | Non consta. A guía describe cambios entre o solicitante e un compañeiro; non consta na documentación pública consultada un sistema de cadeas de varias persoas nin de emparellamento automático. |
 | Aviso de cambio urxente (SOS) | Pro: A quenda sobe ao principio do Muro durante 24 horas e os compañeiros reciben un aviso urxente (Pro). | Non consta. Non consta na documentación pública consultada unha función de urxencia; existen ofertas de quendas que lanza o administrador ante unha cobertura insuficiente. |
@@ -72,7 +72,7 @@ aTurnos é un software de recursos humanos da empresa española aTurnos Solution
 
 ### aTurnos permite cambiar quendas con compañeiros?
 
-O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).
+O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados).
 
 ### aTurnos está en catalán, galego e éuscaro?
 

@@ -38,7 +38,7 @@ Datos de las fuentes públicas de cada app, revisados el 20/10/2026.
 
 | Funcionalidad | Torns | Shiftool |
 |---|---|---|
-| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados). | Sí. Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos. |
+| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados). | Sí. Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos. |
 | Tablón o muro de turnos ofrecidos | Sí. El Muro reúne los turnos publicados en los centros del usuario, con filtros y el filtro «Turnos compatibles». | Sí. Los términos describen un tablón general con ofertas y solicitudes visible para los miembros de un grupo. |
 | Cadenas de cambios entre 3 o 4 personas | Pro: Detecta cambios circulares entre 3 o 4 compañeros y los propone a todos, con chat de grupo (Pro). | Sugerencias automáticas de cambio: La app propone ofertas y solicitudes que encajan con las de otros usuarios; no se documentan cadenas de 3 o más personas ni el uso de IA. |
 | Aviso de cambio urgente (SOS) | Pro: El turno sube al principio del Muro 24 horas y los compañeros reciben un aviso urgente (Pro). | No consta. No consta en la documentación pública consultada. |
@@ -72,7 +72,7 @@ Shiftool es una app móvil (iOS y Android, con acceso web) de Shiftool S.L. para
 
 ### ¿Shiftool permite cambiar turnos con compañeros?
 
-Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).
+Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados).
 
 ### ¿Shiftool está en catalán, gallego y euskera?
 

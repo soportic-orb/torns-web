@@ -136,7 +136,7 @@ O Muro de Torns reúne as quendas publicadas nos centros do usuario, filtrables 
 
 Desde unha quenda do Muro, o profesional preme «Facer proposta» e ofrece unha das súas quendas a cambio. Quen publicou a quenda acepta ou rexeita a proposta. Ao aceptala, Torns pasa cada quenda ao calendario do seu novo titular. Un cambio xa feito só se pode desfacer se as dúas persoas están de acordo.
 
-- **Plan:** Free, 3 cambios ao mes (o contador reiníciase o día 1); Pro, cambios ilimitados.
+- **Plan:** Free, 2 cambios ao mes (o contador reiníciase o día 1); Pro, cambios ilimitados.
 
 ### Cadeas de cambios
 
@@ -306,7 +306,7 @@ A app de Torns para Apple Watch mostra as próximas quendas e os cambios do usua
 
 ### Free
 
-O plan Free de Torns é gratuíto e inclúe o calendario de quendas, publicar quendas, o Muro, 3 cambios ao mes, 1 centro de traballo, o chat, o muro social, as lembranzas de turnos, os widgets, o Apple Watch, 2 lecturas de cadrante e 2 consultas ao Consultor legal.
+O plan Free de Torns é gratuíto e inclúe o calendario de quendas, publicar quendas, o Muro, 2 cambios ao mes, 1 centro de traballo, o chat, o muro social, as lembranzas de turnos, os widgets, o Apple Watch, 2 lecturas de cadrante e 2 consultas ao Consultor legal.
 
 ### Torns Pro
 
@@ -331,7 +331,7 @@ Ao rexistrarse en Torns, cada conta ten 30 días de proba coas funcións Pro. Ao
 | Compartir calendario | Non | Si |
 | Imprimir e exportar a PDF | Non | Si |
 | Publicar quendas e Muro | Si | Si |
-| Cambios de quenda aceptados | 3 ao mes | Ilimitados |
+| Cambios de quenda aceptados | 2 ao mes | Ilimitados |
 | Centros de traballo | 1 | Varios |
 | Cadeas de cambios | Non | Si |
 | Modo SOS | Non | Si |
@@ -411,7 +411,7 @@ Si. Torns é unha app para que enfermeiras e outros profesionais sanitarios de E
 
 ### Torns é gratuíto?
 
-Torns ten un plan Free gratuíto que inclúe o calendario de quendas, publicar quendas e 3 cambios ao mes. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano, e todas as contas novas teñen 30 días de proba coas funcións Pro.
+Torns ten un plan Free gratuíto que inclúe o calendario de quendas, publicar quendas e 2 cambios ao mes. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano, e todas as contas novas teñen 30 días de proba coas funcións Pro.
 
 ### Que inclúe Torns Pro?
 

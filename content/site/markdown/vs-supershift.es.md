@@ -38,7 +38,7 @@ Datos de las fuentes públicas de cada app, revisados el 20/10/2026.
 
 | Funcionalidad | Torns | Supershift |
 |---|---|---|
-| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados). | No. La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. |
+| Cambios de turno entre compañeros dentro de la app | Sí. Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados). | No. La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. |
 | Tablón o muro de turnos ofrecidos | Sí. El Muro reúne los turnos publicados en los centros del usuario, con filtros y el filtro «Turnos compatibles». | No consta. No consta en la documentación pública consultada. |
 | Cadenas de cambios entre 3 o 4 personas | Pro: Detecta cambios circulares entre 3 o 4 compañeros y los propone a todos, con chat de grupo (Pro). | No consta. No consta en la documentación pública consultada. |
 | Aviso de cambio urgente (SOS) | Pro: El turno sube al principio del Muro 24 horas y los compañeros reciben un aviso urgente (Pro). | No consta. No consta en la documentación pública consultada. |
@@ -72,7 +72,7 @@ Supershift es una app de calendario de turnos para iOS, Android, Mac y Apple Wat
 
 ### ¿Supershift permite cambiar turnos con compañeros?
 
-La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados).
+La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados).
 
 ### ¿Supershift está en catalán, gallego y euskera?
 

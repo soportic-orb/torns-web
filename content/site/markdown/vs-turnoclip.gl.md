@@ -38,7 +38,7 @@ Datos das fontes públicas de cada app, revisados o 20/10/2026.
 
 | Funcionalidade | Torns | TurnoClip |
 |---|---|---|
-| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados). | Si. Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app. |
+| Cambios de quenda entre compañeiros dentro da app | Si. Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados). | Si. Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app. |
 | Taboleiro ou muro de quendas ofrecidas | Si. O Muro reúne as quendas publicadas nos centros do usuario, con filtros e o filtro «Turnos compatibles». | Taboleiro de ofertas: Dispón dun taboleiro común onde se publican ofertas de quenda que os compañeiros poden aceptar ou contraofertar. |
 | Cadeas de cambios entre 3 ou 4 persoas | Pro: Detecta cambios circulares entre 3 ou 4 compañeiros e propónllelos a todos, con chat de grupo (Pro). | Match automático de ofertas (beta): O Match automático busca ofertas compatibles segundo os días de devolución indicados e avisa a ambos os usuarios; non se describen cadeas de 3 ou máis persoas nin o uso de IA. |
 | Aviso de cambio urxente (SOS) | Pro: A quenda sobe ao principio do Muro durante 24 horas e os compañeiros reciben un aviso urxente (Pro). | Non consta. Non se documenta un modo urxente específico; a descrición suxire usar o taboleiro xeral para cambios urxentes. |
@@ -72,7 +72,7 @@ TurnoClip é unha app móbil gratuíta para Android e iOS, desenvolvida por Jes�
 
 ### TurnoClip permite cambiar quendas con compañeiros?
 
-Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 3 cambios ao mes; Pro: ilimitados).
+Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app. En Torns: Publícase a quenda, os compañeiros do centro e categoría propoñen unha súa e, ao aceptar, actualízanse os dous calendarios (Free: 2 cambios ao mes; Pro: ilimitados).
 
 ### TurnoClip está en catalán, galego e éuscaro?
 

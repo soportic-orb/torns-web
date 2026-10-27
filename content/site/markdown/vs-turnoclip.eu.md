@@ -38,7 +38,7 @@ Aplikazio bakoitzaren iturri publikoetako datuak, 20/10/2026(e)an berrikusiak.
 
 | Funtzioa | Torns | TurnoClip |
 |---|---|---|
-| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak). | Bai. Zerbitzu edo zentro bereko lankideei txanda-aldaketak eskatzeko eta akordioa aplikazioan ixteko aukera ematen du. |
+| Txanda-aldaketak lankideen artean aplikazioan bertan | Bai. Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak). | Bai. Zerbitzu edo zentro bereko lankideei txanda-aldaketak eskatzeko eta akordioa aplikazioan ixteko aukera ematen du. |
 | Eskainitako txanden taula edo horma | Bai. Muralak erabiltzailearen zentroetan argitaratutako txandak biltzen ditu, iragazkiekin eta «Txanda bateragarriak» iragazkiarekin. | Eskaintzen ohola: Ohol komun bat du, eta bertan lankideek onartu edo kontraeskaintza egin diezaieketen txanda-eskaintzak argitaratzen dira. |
 | 3 edo 4 pertsonaren arteko aldaketa-kateak | Pro: 3 edo 4 lankideren arteko aldaketa zirkularrak detektatzen ditu eta guztiei proposatzen dizkie, talde-txatarekin (Pro). | Eskaintzen Match automatikoa (beta): Match automatikoak eskaintza bateragarriak bilatzen ditu adierazitako itzulera-egunen arabera eta bi erabiltzaileei abisatzen die; ez dira deskribatzen 3 pertsona edo gehiagoko kateak ezta IAren erabilera ere. |
 | Aldaketa urgentearen abisua (SOS) | Pro: Txanda Muralaren hasierara igotzen da 24 orduz, eta lankideek abisu urgentea jasotzen dute (Pro). | Ez da ageri. Ez dago dokumentatuta urgentziazko modu berezirik; deskribapenak ohol orokorra erabiltzea iradokitzen du aldaketa urgenteetarako. |
@@ -72,7 +72,7 @@ TurnoClip Android eta iOSerako doako aplikazio mugikor bat da, Jesús Clemente D
 
 ### TurnoClip-k txandak lankideekin aldatzeko aukera ematen du?
 
-Zerbitzu edo zentro bereko lankideei txanda-aldaketak eskatzeko eta akordioa aplikazioan ixteko aukera ematen du. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 3 aldaketa hilean; Pro: mugagabeak).
+Zerbitzu edo zentro bereko lankideei txanda-aldaketak eskatzeko eta akordioa aplikazioan ixteko aukera ematen du. Torns-en: Txanda argitaratzen da, zentro eta kategoria bereko lankideek beren txanda bat proposatzen dute eta, onartzean, bi egutegiak eguneratzen dira (Free: 2 aldaketa hilean; Pro: mugagabeak).
 
 ### TurnoClip katalanez, galizieraz eta euskaraz dago?
 

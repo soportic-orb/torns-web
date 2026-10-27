@@ -136,7 +136,7 @@ El Muro de Torns reúne los turnos publicados en los centros del usuario, filtra
 
 Desde un turno del Muro, el profesional pulsa «Proponer cambio» y ofrece uno de sus turnos a cambio. Quien publicó el turno acepta o rechaza la propuesta. Al aceptarla, Torns pasa cada turno al calendario de su nuevo titular. Un cambio ya hecho solo se puede deshacer si las dos personas están de acuerdo.
 
-- **Plan:** Free, 3 cambios al mes (el contador se reinicia el día 1); Pro, cambios ilimitados.
+- **Plan:** Free, 2 cambios al mes (el contador se reinicia el día 1); Pro, cambios ilimitados.
 
 ### Cadenas de cambios
 
@@ -306,7 +306,7 @@ La app de Torns para Apple Watch muestra los próximos turnos y los cambios del 
 
 ### Free
 
-El plan Free de Torns es gratuito e incluye el calendario de turnos, publicar turnos, el Muro, 3 cambios al mes, 1 centro de trabajo, el chat, el muro social, recordatorios de turnos, widgets, Apple Watch, 2 lecturas de cuadrante y 2 consultas al Consultor legal.
+El plan Free de Torns es gratuito e incluye el calendario de turnos, publicar turnos, el Muro, 2 cambios al mes, 1 centro de trabajo, el chat, el muro social, recordatorios de turnos, widgets, Apple Watch, 2 lecturas de cuadrante y 2 consultas al Consultor legal.
 
 ### Torns Pro
 
@@ -331,7 +331,7 @@ Al registrarse en Torns, cada cuenta tiene 30 días de prueba con las funciones 
 | Compartir calendario | No | Sí |
 | Imprimir y exportar a PDF | No | Sí |
 | Publicar turnos y Muro | Sí | Sí |
-| Cambios de turno aceptados | 3 al mes | Ilimitados |
+| Cambios de turno aceptados | 2 al mes | Ilimitados |
 | Centros de trabajo | 1 | Varios |
 | Cadenas de cambios | No | Sí |
 | Modo SOS | No | Sí |
@@ -411,7 +411,7 @@ Sí. Torns es una app para que enfermeras y otros profesionales sanitarios de Es
 
 ### ¿Torns es gratis?
 
-Torns tiene un plan Free gratuito que incluye el calendario de turnos, publicar turnos y 3 cambios al mes. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro.
+Torns tiene un plan Free gratuito que incluye el calendario de turnos, publicar turnos y 2 cambios al mes. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro.
 
 ### ¿Qué incluye Torns Pro?
 

@@ -14,7 +14,7 @@
       "name": "¿Supershift permite cambiar turnos con compañeros?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 3 cambios al mes; Pro: ilimitados)."
+        "text": "La app no gestiona solicitudes de cambio; menciona coordinar cambios de turno compartiendo el calendario, y funciona sin cuenta ni internet, con datos guardados en el dispositivo. En Torns: Se publica el turno, los compañeros del centro y categoría proponen uno suyo y, al aceptar, se actualizan los dos calendarios (Free: 2 cambios al mes; Pro: ilimitados)."
       }
     },
     {

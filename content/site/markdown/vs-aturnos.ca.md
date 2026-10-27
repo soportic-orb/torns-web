@@ -38,7 +38,7 @@ Dades de les fonts públiques de cada app, revisades el 20/10/2026.
 
 | Funcionalitat | Torns | aTurnos |
 |---|---|---|
-| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats). | Si l'empresa ho habilita: El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti. |
+| Canvis de torn entre companys dins de l'app | Sí. Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats). | Si l'empresa ho habilita: El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti. |
 | Tauler o mur de torns oferts | Sí. El Mur reuneix els torns publicats als centres de l'usuari, amb filtres i el filtre «Torns compatibles». | Només ofertes de l'administrador: No es descriu un tauler de torns oferts per treballadors; els administradors poden publicar ofertes de torns o hores que apareixen en una fila «Ofertas disponibles» del quadrant. |
 | Cadenes de canvis entre 3 o 4 persones | Pro: Detecta canvis circulars entre 3 o 4 companys i els proposa a tots, amb xat de grup (Pro). | No consta. La guia descriu canvis entre el sol·licitant i un company; no consta a la documentació pública consultada un sistema de cadenes de diverses persones ni d'aparellament automàtic. |
 | Avís de canvi urgent (SOS) | Pro: El torn puja al principi del Mur durant 24 hores i els companys reben un avís urgent (Pro). | No consta. No consta a la documentació pública consultada una funció d'urgència; hi ha ofertes de torns que llança l'administrador davant d'una cobertura insuficient. |
@@ -72,7 +72,7 @@ aTurnos és un programari de recursos humans de l'empresa espanyola aTurnos Solu
 
 ### aTurnos permet canviar torns amb companys?
 
-El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 3 canvis al mes; Pro: il·limitats).
+El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti. A Torns: Es publica el torn, els companys del centre i de la categoria en proposen un de seu i, en acceptar, s'actualitzen els dos calendaris (Free: 2 canvis al mes; Pro: il·limitats).
 
 ### aTurnos està en català, gallec i basc?
 
