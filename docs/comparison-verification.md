@@ -140,3 +140,14 @@ Cell legend: `yes` = confirmed in the competitor's public documentation ·
 3. **Shiftool — modo supervisor**: confirmado ("la supervisión le llega todos los
    cambios cerrados"), por lo que su celda en la fila "Notificación al gestor" es `✓`
    y la diferenciación de Torns en esa fila se matiza (automática vs. supervisor).
+
+## Iconos de las apps (27/10/2026)
+
+La tabla de la portada y las tarjetas de `/comparativas` muestran el icono de
+cada app. Son los iconos de sus fichas del App Store, descargados con la API
+pública de búsqueda (`itunes.apple.com/lookup?id=…&country=es`) a partir de
+los identificadores que ya citan las fuentes: aTurnos `id538488492`, Shiftool
+`id6745471193`, Supershift `id1104165041` y TurnoClip `id6759789472`. Están en
+`platform/themes/torns/assets/images/apps/<slug>.webp`, a 128 px; `torns.webp`
+es el icono de la app Torns. Una app sin fichero se muestra sin icono
+(`torns_app_icon()`). Si una app cambia de icono, se vuelve a descargar.
