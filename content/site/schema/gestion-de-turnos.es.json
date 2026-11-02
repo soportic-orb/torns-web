@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Torns sirve para gestionar turnos y guardias?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns es una app para que los profesionales sanitarios gestionen su calendario de turnos y guardias y cambien turnos con compañeros de su centro, con un panel web para que hospitales y centros publiquen turnos a cubrir y reciban los cambios de su personal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Torns hace el cuadrante del servicio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El cuadrante lo hace la persona que planifica con su herramienta. Torns lleva el calendario de cada profesional, los cambios de turno, la comunicación al gestor de planillas y la cobertura de turnos vacantes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo llega un cambio de turno al supervisor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con Torns Pro, el cambio acordado se envía por email al gestor de planillas, de forma automática o desde el correo del usuario. Si el centro usa el panel de Torns, el gestor lo recibe en el panel y la app muestra cuándo lo ha visto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo publica un centro un turno a cubrir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde el panel de Torns. Los profesionales lo ven en el Muro, en el calendario y en Actividad, pulsan «Apuntarme al turno» y el centro asigna la cobertura. El centro necesita una licencia de organización."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta el panel de Torns para centros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las organizaciones pagan por usuario activo y mes, de 0,99 € (hasta 50 usuarios) a 0,39 € (más de 3.000), sin IVA. El plan anual equivale a 10 meses y hay 30 días de prueba con hasta 50 licencias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo gestionar mis turnos gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El plan Free de Torns incluye el calendario de turnos, publicar turnos, el Muro, 2 cambios al mes, el chat, los recordatorios, los widgets y el Apple Watch. Torns Pro cuesta 2,99 € al mes o 29,90 € al año."
+      }
+    }
+  ]
+}

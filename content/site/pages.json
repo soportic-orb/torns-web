@@ -54,6 +54,75 @@
             },
             "markdown": true
         },
+        "app-calendario-turnos": {
+            "slug": "app-calendario-turnos",
+            "template": "full-width",
+            "name": {
+                "es": "App de calendario de turnos",
+                "ca": "App de calendari de torns",
+                "gl": "App de calendario de quendas",
+                "eu": "Txanden egutegirako appa"
+            },
+            "seo_title": {
+                "es": "App de calendario de turnos y guardias gratis | Torns",
+                "ca": "App de calendari de torns i guàrdies gratis | Torns",
+                "gl": "App de calendario de quendas e gardas gratis | Torns",
+                "eu": "Txanden egutegirako appa: txandak eta guardiak doan | Torns"
+            },
+            "seo_description": {
+                "es": "Todos tus turnos y guardias en un calendario en el móvil: el cuadrante con una foto, rotaciones, widgets y Apple Watch. Para sanitarios. Gratis.",
+                "ca": "Tots els teus torns i guàrdies en un calendari al mòbil: el quadrant amb una foto, rotacions, widgets i Apple Watch. Per a sanitaris. Gratis.",
+                "gl": "Todas as túas quendas e gardas nun calendario no móbil: o cadro de quendas cunha foto, rotacións, widgets e Apple Watch. Para sanitarios. Gratis.",
+                "eu": "Zure txanda eta guardia guztiak mugikorreko egutegi batean: txanda-koadroa argazki batekin, errotazioak, widgetak eta Apple Watch. Osasunerako. Doan."
+            },
+            "markdown": true
+        },
+        "calendario-guardias-enfermeria": {
+            "slug": "calendario-guardias-enfermeria",
+            "template": "full-width",
+            "name": {
+                "es": "Calendario de guardias de enfermería",
+                "ca": "Calendari de guàrdies d'infermeria",
+                "gl": "Calendario de gardas de enfermaría",
+                "eu": "Erizaintzako guardien egutegia"
+            },
+            "seo_title": {
+                "es": "Calendario de turnos y guardias de enfermería | Torns",
+                "ca": "Calendari de guàrdies d'infermeria i torns | Torns",
+                "gl": "Calendario de quendas e gardas de enfermaría | Torns",
+                "eu": "Erizaintzako guardien eta txanden egutegia | Torns"
+            },
+            "seo_description": {
+                "es": "La app de calendario para enfermeras, TCAE y matronas: turnos, noches y guardias en el móvil, el cuadrante con una foto y cambios con tus compañeras.",
+                "ca": "L'app de calendari per a infermeres, TCAE i llevadores: torns, nits i guàrdies al mòbil, el quadrant amb una foto i canvis amb les teves companyes.",
+                "gl": "A app de calendario para enfermeiras, TCAE e matronas: quendas, noites e gardas no móbil, o cadro de quendas cunha foto e cambios coas túas compañeiras.",
+                "eu": "Erizain, TCAE eta emaginentzako egutegi appa: txandak, gauak eta guardiak mugikorrean, txanda-koadroa argazki batekin eta aldaketak lankideekin."
+            },
+            "markdown": true
+        },
+        "gestion-de-turnos": {
+            "slug": "gestion-de-turnos",
+            "template": "full-width",
+            "name": {
+                "es": "Gestión de turnos",
+                "ca": "Gestió de torns",
+                "gl": "Xestión de quendas",
+                "eu": "Txanden kudeaketa"
+            },
+            "seo_title": {
+                "es": "Gestión de turnos y guardias para sanitarios | Torns",
+                "ca": "Gestió de torns i guàrdies per a sanitaris | Torns",
+                "gl": "Xestión de quendas e gardas para sanitarios | Torns",
+                "eu": "Txanden kudeaketa osasun-profesionalentzat | Torns"
+            },
+            "seo_description": {
+                "es": "Gestión de turnos y guardias para sanitarios y centros: calendario en el móvil, cambios comunicados al gestor, turnos a cubrir y panel web para centros.",
+                "ca": "Gestió de torns i guàrdies per a sanitaris i centres: calendari al mòbil, canvis comunicats al gestor, torns per cobrir i panell web per a centres.",
+                "gl": "Xestión de quendas e gardas para sanitarios e centros: calendario no móbil, cambios comunicados ao xestor, quendas para cubrir e panel web para centros.",
+                "eu": "Txanden eta guardien kudeaketa osasunerako: egutegia mugikorrean, kudeatzaileari jakinarazitako aldaketak, estaltzeko txandak eta zentroentzako panela."
+            },
+            "markdown": true
+        },
         "centros": {
             "slug": "centros",
             "template": "full-width",
@@ -92,10 +161,10 @@
                 "eu": "Jarri harremanetan Torns taldearekin: zalantzak eta laguntza"
             },
             "seo_description": {
-                "es": "Escríbenos y te ayudamos: dudas sobre la app de cambios de turno, licencias para centros sanitarios o soporte. Respondemos en hola@torns.app.",
-                "ca": "Escriu-nos i t'ajudem: dubtes sobre l'app de canvis de torn, llicències per a centres sanitaris o suport. Responem a hola@torns.app.",
-                "gl": "Escríbenos e axudámosche: dúbidas sobre a app de cambios de quenda, licenzas para centros sanitarios ou soporte. Respondemos en hola@torns.app.",
-                "eu": "Idatzi eta lagunduko dizugu: txanda-aldaketen appari, osasun-zentroetarako lizentziei edo laguntzari buruzko zalantzak. hola@torns.app helbidean erantzuten dugu."
+                "es": "Escríbenos y te ayudamos: dudas sobre la app de calendario de turnos y cambios, licencias para centros sanitarios o soporte. Respondemos en hola@torns.app.",
+                "ca": "Escriu-nos i t'ajudem: dubtes sobre l'app de calendari de torns i canvis, llicències per a centres sanitaris o suport. Responem a hola@torns.app.",
+                "gl": "Escríbenos e axudámosche: dúbidas sobre a app de calendario de quendas e cambios, licenzas para centros sanitarios ou soporte. Respondemos en hola@torns.app.",
+                "eu": "Idatzi eta lagunduko dizugu: txanden egutegiaren eta aldaketen appari, osasun-zentroetarako lizentziei edo laguntzari buruzko zalantzak. hola@torns.app helbidean erantzuten dugu."
             }
         },
         "terminos": {

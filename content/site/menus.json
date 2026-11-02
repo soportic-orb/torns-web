@@ -84,6 +84,33 @@
                 },
                 {
                     "label": {
+                        "es": "App de calendario de turnos",
+                        "ca": "App de calendari de torns",
+                        "gl": "App de calendario de quendas",
+                        "eu": "Txanden egutegirako appa"
+                    },
+                    "url": "/app-calendario-turnos"
+                },
+                {
+                    "label": {
+                        "es": "Calendario de guardias de enfermería",
+                        "ca": "Calendari de guàrdies d'infermeria",
+                        "gl": "Calendario de gardas de enfermaría",
+                        "eu": "Erizaintzako guardien egutegia"
+                    },
+                    "url": "/calendario-guardias-enfermeria"
+                },
+                {
+                    "label": {
+                        "es": "Gestión de turnos",
+                        "ca": "Gestió de torns",
+                        "gl": "Xestión de quendas",
+                        "eu": "Txanden kudeaketa"
+                    },
+                    "url": "/gestion-de-turnos"
+                },
+                {
+                    "label": {
                         "es": "Guía de uso",
                         "ca": "Guia d'ús",
                         "gl": "Guía de uso",

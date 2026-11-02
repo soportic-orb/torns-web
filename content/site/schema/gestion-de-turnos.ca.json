@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Torns serveix per gestionar torns i guàrdies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns és una app perquè els professionals sanitaris gestionin el seu calendari de torns i guàrdies i canviïn torns amb companys del seu centre, amb un panell web perquè hospitals i centres publiquin torns per cobrir i rebin els canvis del seu personal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns fa el quadrant del servei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El quadrant el fa la persona que planifica amb la seva eina. Torns porta el calendari de cada professional, els canvis de torn, la comunicació al gestor de plantilles i la cobertura de torns vacants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com arriba un canvi de torn al supervisor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amb Torns Pro, el canvi acordat s'envia per correu electrònic al gestor de plantilles, de manera automàtica o des del correu de l'usuari. Si el centre fa servir el panell de Torns, el gestor el rep al panell i l'app mostra quan l'ha vist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com publica un centre un torn per cobrir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Des del panell de Torns. Els professionals el veuen al Mur, al calendari i a Activitat, premen «Apuntar-me al torn» i el centre n'assigna la cobertura. El centre necessita una llicència d'organització."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quant costa el panell de Torns per a centres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les organitzacions paguen per usuari actiu i mes, de 0,99 € (fins a 50 usuaris) a 0,39 € (més de 3.000), sense IVA. El pla anual equival a 10 mesos i hi ha 30 dies de prova amb fins a 50 llicències."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc gestionar els meus torns gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El pla Free de Torns inclou el calendari de torns, publicar torns, el Mur, 2 canvis al mes, el xat, els recordatoris, els widgets i l'Apple Watch. Torns Pro costa 2,99 € al mes o 29,90 € a l'any."
+      }
+    }
+  ]
+}

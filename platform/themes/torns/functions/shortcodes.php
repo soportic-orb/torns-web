@@ -240,6 +240,16 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('competitor', TextField::class, $textField(__('App (aturnos, shiftool, supershift, turnoclip)')));
     });
 
+    add_shortcode('torns-related-pages', __('Torns: Related pages'), __('Cards linking to other pages of the site, with their name and SEO description'), function ($shortcode) {
+        return Theme::partial('shortcodes.related-pages', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-related-pages', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('pages', TextField::class, $textField(__('Page keys, comma-separated (e.g. app-calendario-turnos,funcionalidades)')));
+    });
+
     add_shortcode('torns-comparison-hub', __('Torns: Comparisons index'), __('List of the comparison pages'), function ($shortcode) {
         return Theme::partial('shortcodes.comparison-hub', ['shortcode' => $shortcode]);
     });
