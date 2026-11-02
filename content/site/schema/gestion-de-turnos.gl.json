@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Torns serve para xestionar quendas e gardas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns é unha app para que os profesionais sanitarios xestionen o seu calendario de quendas e gardas e cambien quendas con compañeiros do seu centro, cun panel web para que hospitais e centros publiquen quendas para cubrir e reciban os cambios do seu persoal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns fai o cadro de quendas do servizo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. O cadro de quendas faino a persoa que planifica coa súa ferramenta. Torns leva o calendario de cada profesional, os cambios de quenda, a comunicación ao xestor de cadros e a cobertura de quendas vacantes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como chega un cambio de quenda ao supervisor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con Torns Pro, o cambio acordado envíase por correo electrónico ao xestor de cadros, de forma automática ou desde o correo do usuario. Se o centro usa o panel de Torns, o xestor recíbeo no panel e a app mostra cando o viu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como publica un centro unha quenda para cubrir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Desde o panel de Torns. Os profesionais vena no Muro, no calendario e en Actividade, premen «Apuntarme ao turno» e o centro asigna a cobertura. O centro necesita unha licenza de organización."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Canto custa o panel de Torns para centros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As organizacións pagan por usuario activo e mes, de 0,99 € (ata 50 usuarios) a 0,39 € (máis de 3.000), sen IVE. O plan anual equivale a 10 meses e hai 30 días de proba con ata 50 licenzas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo xestionar as miñas quendas gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. O plan Free de Torns inclúe o calendario de quendas, publicar quendas, o Muro, 2 cambios ao mes, o chat, as lembranzas, os widgets e o Apple Watch. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano."
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ba al dago txanden egutegia app bat erizainentzat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns txanden eta guardien egutegirako aplikazio bat da, Espainiako erizain, TCAE, emagin eta beste osasun-profesional batzuentzat, zentro eta kategoria bereko lankideen arteko txanda-aldaketekin. Doako plana du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "24 orduko guardiak eta txanda lokalizagarriak idatz ditzaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns-ek Goiza, Arratsaldea, Gaua, Eguna, 24h eta Lokalizagarria txanda motak ditu, bakoitza bere kolorearekin eta ordutegiarekin, eta txanda bat aparteko ordu edo JAC gisa marka dezakezu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nola aldatzen dut txanda bat beste erizain batekin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Argitaratu txanda Aldaketak fitxan. Zure zentroko eta kategoriako lankideek Muralan ikusten dute eta beren txandetako bat proposatzen dizute; onartzean, Torns-ek bi egutegiak eguneratzen ditu. Torns Prorekin, aldaketa posta elektronikoz jakinaraz dakioke plantilla kudeatzaileari."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Solairuko txanda-koadroa aplikaziora pasa dezaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns-ek txanda-koadroaren argazki, PDF edo kalkulu-orri bat irakurtzen du, zure errenkada bilatzen du zure izenaren bidez eta zure txandak ateratzen ditu, berrikus ditzazun. Fitxategia ez da gordetzen. Free planak 2 irakurketa ditu, eta Torns Prok, 30 hilean."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns-ek nire orduak, gauak eta jaiegunak kontatzen ditu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai, Torns Prorekin. Lan estatistikek hilabeteka edo urteka laburtzen dituzte egindako txandak eta orduak, aparteko orduak, larunbatak, igandeak eta jaiegunak, eta txanda motaren, arloaren eta asteko egunaren araberako banaketa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns katalanez, galegoz eta euskaraz dago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns gaztelaniaz, katalanez, galegoz eta euskaraz dago, eta pertsona bakoitzak bere profilean aukeratzen du aplikazioaren hizkuntza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns-ek pazienteen daturik gordetzen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez. Torns-ek profesionalen datu pertsonal eta laboralak bakarrik tratatzen ditu, eta horma sozialeko moderazioak pazienteen datuak edo informazio klinikoa dituzten argitalpenak blokeatzen ditu."
+      }
+    }
+  ]
+}

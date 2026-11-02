@@ -131,7 +131,7 @@
     "Idiomas ES / CA / GL / EU": "Idiomas ES / CA / GL / EU",
     "¿Te han dado un código de centro?": "Déronche un código de centro?",
     "Si tu centro de trabajo, tu colegio profesional o tus compañeros te han dado un código de centro, introdúcelo en la pantalla de inicio de la app: te registrarás gratis en segundos y te unirás directamente a tus compañeros.": "Se o teu centro de traballo, o teu colexio profesional ou os teus compañeiros che deron un código de centro, introdúceo na pantalla de inicio da app: rexistraraste gratis en segundos e unirás directamente aos teus compañeiros.",
-    "Planes y precios de la app de cambios de turno": "Plans e prezos da app de cambios de quenda",
+    "Planes y precios de la app de calendario de turnos y guardias": "Plans e prezos da app de calendario de quendas e gardas",
     "Los planes de suscripción son tan sencillos como la propia aplicación. Tú decides: paga mes a mes sin ataduras o elige el pago anual y ahorra.": "Os plans de subscrición son tan sinxelos como a propia aplicación. Ti decides: paga mes a mes sen ataduras ou escolle o pagamento anual e aforra.",
     "Utiliza gratis las funcionalidades básicas de la app": "Utiliza gratis as funcionalidades básicas da app",
     "Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 2 cambios al mes\nChat individual y grupal\nSincronización con Apple y Google": "Xestión de 1 centro de traballo\nCalendario de quendas integrado\nMuro de quendas publicadas\nPublicar cambios ilimitados\nAceptar 2 cambios ao mes\nChat individual e grupal\nSincronización con Apple e Google",
@@ -340,7 +340,7 @@
     "Contacta": "Contacta",
     "Blog": "Blog",
     "IA que trabaja para ti": "IA que traballa para ti",
-    "Torns es la app de calendario laboral y cambios de turno para profesionales sanitarios en España: los turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros.": "Torns é a app de calendario laboral e cambios de quenda para profesionais sanitarios en España: as quendas e gardas de todos os teus centros nun só calendario, e cambios de quenda cos teus compañeiros.",
+    "Torns es la app de calendario de turnos y guardias para profesionales sanitarios en España: los turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros.": "Torns é a app de calendario de quendas e gardas para profesionais sanitarios en España: as quendas e gardas de todos os teus centros nun só calendario, e cambios de quenda cos teus compañeiros.",
     "Calendario de turnos y cambios de turno": "Calendario de quendas e cambios de quenda",
     "Calendario unificado de turnos y guardias de varios centros": "Calendario unificado de quendas e gardas de varios centros",
     "Importar el cuadrante desde una foto o un documento": "Importar o cadro de quendas desde unha foto ou un documento",
@@ -416,5 +416,7 @@
     "Desde la app, en Perfil › Contacta con el Soporte, puedes abrir una consulta y seguir la respuesta sin salir de Torns.": "Desde a app, en Perfil › Contacta co Soporte, podes abrir unha consulta e seguir a resposta sen saír de Torns.",
     "Desarrollado en Barcelona 🎉 por :company": "Desenvolvido en Barcelona 🎉 por :company",
     "Regístrate ahora y disfruta del plan Pro gratis durante 30 días": "Rexístrate agora e goza do plan Pro gratis durante 30 días",
-    "Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.": "Proba todas as funcionalidades de Torns, como centros de traballo ilimitados, o Copilot, as alertas personalizadas, os cambios a 3 ou os cambios urxentes SOS."
+    "Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.": "Proba todas as funcionalidades de Torns, como centros de traballo ilimitados, o Copilot, as alertas personalizadas, os cambios a 3 ou os cambios urxentes SOS.",
+    "Sigue leyendo": "Continúa lendo",
+    "Leer más": "Ler máis"
 }

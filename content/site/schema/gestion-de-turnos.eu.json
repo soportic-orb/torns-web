@@ -1,0 +1,53 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Torns-ek balio du txandak eta guardiak kudeatzeko?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns aplikazio bat da, osasun-profesionalek beren txanden eta guardien egutegia kudea dezaten eta zentroko lankideekin txandak alda ditzaten, eta web panel bat du ospitaleek eta zentroek estali beharreko txandak argitara ditzaten eta beren langileen aldaketak jaso ditzaten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns-ek egiten du zerbitzuko txanda-koadroa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez. Txanda-koadroa plangintza egiten duen pertsonak egiten du bere tresnarekin. Torns-ek profesional bakoitzaren egutegia, txanda-aldaketak, plantilla kudeatzaileari jakinaraztea eta txanda hutsen estaldura eramaten ditu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nola iristen zaio txanda-aldaketa bat gainbegiraleari?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns Prorekin, adostutako aldaketa posta elektronikoz bidaltzen zaio plantilla kudeatzaileari, automatikoki edo erabiltzailearen postatik. Zentroak Torns-en panela erabiltzen badu, kudeatzaileak panelean jasotzen du, eta aplikazioak noiz ikusi duen erakusten du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nola argitaratzen du zentro batek estali beharreko txanda bat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Torns-en paneletik. Profesionalek Muralan, egutegian eta Jardueran ikusten dute, «Txandara izena eman» sakatzen dute eta zentroak estaldura esleitzen du. Zentroak erakunde-lizentzia behar du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zenbat balio du Torns-en panelak zentroentzat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Erakundeek erabiltzaile aktibo eta hileko ordaintzen dute, 0,99 €-tik (gehienez 50 erabiltzaile) 0,39 €-ra (3.000 baino gehiago), BEZik gabe. Urteko planak 10 hilabete balio du, eta 30 eguneko proba dago gehienez 50 lizentziarekin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nire txandak doan kudea ditzaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns-en Free planak txanden egutegia, txandak argitaratzea, Murala, 2 aldaketa hilean, txata, oroitzapenak, widgetak eta Apple Watch ditu. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean."
+      }
+    }
+  ]
+}

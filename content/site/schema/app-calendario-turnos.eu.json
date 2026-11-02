@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ba al dago txanden egutegia app bat osasun-profesionalentzat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns txanden eta guardien egutegirako aplikazio bat da, Espainiako erizain, mediku, TCAE, TES eta beste osasun-profesional batzuentzat. iPhonen, Androiden, Apple Watchen eta nabigatzailean (app.torns.app) dabil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Doakoa al da Torns-en txanden egutegia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Free planak txanden egutegia, widgetak, Apple Watch, oroitzapenak eta mugikorreko egutegiarekin sinkronizatzea ditu. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean, eta kontu berri guztiek 30 eguneko proba dute Pro funtzioekin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Paperezko edo PDFko txanda-koadroa aplikaziora pasa dezaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. «Txanda-koadroa inportatu» aukerarekin, Torns-ek argazki, PDF, pantaila-argazki edo kalkulu-orri bat irakurtzen du, zure txandak ateratzen ditu eta erakutsi egiten dizkizu, gorde aurretik berrikus ditzazun. Fitxategia ez da gordetzen. Free planak 2 irakurketa ditu, eta Torns Prok, 30 hilean."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Txanda-errotazio bat automatikoki jar dezaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai, Torns Prorekin. Zikloa marrazten duzu (adibidez, bi gau eta hiru egun libre, edo hainbat asteko eredu bat), aurrebista ikusten duzu eta Torns-ek aukeratzen dituzun datak betetzen ditu, nahi baduzu jaiegunak eta erabilgarri ez dauden egunak saltatuta. Gehienez 10 errotazio gorde ditzakezu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Google Calendarrekin edo iPhoneko egutegiarekin sinkronizatzen da?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Torns-ek zure txandak aukeratzen duzun iPhone edo Android egutegira esportatzen ditu, alarmekin, eta Google Calendarrera konekta daiteke. Torns Prorekin, norabide biko sinkronizazioak txanden itxura duten gertaerak Torns-era inportatzea ere proposatzen du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hainbat zentrotako txandak eraman ditzaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Txanda bakoitzak bere zentroa, unitatea eta arloa ditu, eta denak egutegi berean ikusten dira. Free planean lantoki 1era batzen zara, eta Torns Prorekin hainbatetara, horietako bakoitzean txandak ikusteko eta argitaratzeko."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Egutegiak konexiorik gabe funtzionatzen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. iOSen eta Androiden txandak kontsultatu, sortu, editatu eta ezabatu ditzakezu konexiorik gabe, eta aldaketak konexioa berreskuratzean sinkronizatzen dira. Txandak aldatzeko eta txaterako konexioa behar da."
+      }
+    }
+  ]
+}

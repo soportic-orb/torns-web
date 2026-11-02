@@ -131,7 +131,7 @@
     "Idiomas ES / CA / GL / EU": "Idiomes ES / CA / GL / EU",
     "¿Te han dado un código de centro?": "T'han donat un codi de centre?",
     "Si tu centro de trabajo, tu colegio profesional o tus compañeros te han dado un código de centro, introdúcelo en la pantalla de inicio de la app: te registrarás gratis en segundos y te unirás directamente a tus compañeros.": "Si el teu centre de treball, el teu col·legi professional o els teus companys t'han donat un codi de centre, introdueix-lo a la pantalla d'inici de l'app: et registraràs gratis en segons i t'uniràs directament als teus companys.",
-    "Planes y precios de la app de cambios de turno": "Plans i preus de l'app de canvis de torn",
+    "Planes y precios de la app de calendario de turnos y guardias": "Plans i preus de l'app de calendari de torns i guàrdies",
     "Los planes de suscripción son tan sencillos como la propia aplicación. Tú decides: paga mes a mes sin ataduras o elige el pago anual y ahorra.": "Els plans de subscripció són tan senzills com la mateixa aplicació. Tu decideixes: paga mes a mes sense lligams o tria el pagament anual i estalvia.",
     "Utiliza gratis las funcionalidades básicas de la app": "Utilitza gratis les funcionalitats bàsiques de l'app",
     "Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 2 cambios al mes\nChat individual y grupal\nSincronización con Apple y Google": "Gestió d'1 centre de treball\nCalendari de torns integrat\nMur de torns publicats\nPublicar canvis il·limitats\nAcceptar 2 canvis al mes\nXat individual i grupal\nSincronització amb Apple i Google",
@@ -340,7 +340,7 @@
     "Contacta": "Contacta",
     "Blog": "Blog",
     "IA que trabaja para ti": "IA que treballa per a tu",
-    "Torns es la app de calendario laboral y cambios de turno para profesionales sanitarios en España: los turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros.": "Torns és l'app de calendari laboral i canvis de torn per a professionals sanitaris a Espanya: els torns i guàrdies de tots els teus centres en un sol calendari, i canvis de torn amb els teus companys.",
+    "Torns es la app de calendario de turnos y guardias para profesionales sanitarios en España: los turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros.": "Torns és l'app de calendari de torns i guàrdies per a professionals sanitaris a Espanya: els torns i guàrdies de tots els teus centres en un sol calendari, i canvis de torn amb els teus companys.",
     "Calendario de turnos y cambios de turno": "Calendari de torns i canvis de torn",
     "Calendario unificado de turnos y guardias de varios centros": "Calendari unificat de torns i guàrdies de diversos centres",
     "Importar el cuadrante desde una foto o un documento": "Importar el quadrant des d'una foto o un document",
@@ -416,5 +416,7 @@
     "Desde la app, en Perfil › Contacta con el Soporte, puedes abrir una consulta y seguir la respuesta sin salir de Torns.": "Des de l'app, a Perfil › Contacta amb el Suport, pots obrir una consulta i seguir la resposta sense sortir de Torns.",
     "Desarrollado en Barcelona 🎉 por :company": "Desenvolupat a Barcelona 🎉 per :company",
     "Regístrate ahora y disfruta del plan Pro gratis durante 30 días": "Registra't ara i gaudeix del pla Pro gratis durant 30 dies",
-    "Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.": "Prova totes les funcionalitats de Torns, com ara centres de treball il·limitats, el Copilot, les alertes personalitzades, els canvis a 3 o els canvis urgents SOS."
+    "Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.": "Prova totes les funcionalitats de Torns, com ara centres de treball il·limitats, el Copilot, les alertes personalitzades, els canvis a 3 o els canvis urgents SOS.",
+    "Sigue leyendo": "Continua llegint",
+    "Leer más": "Llegeix-ne més"
 }
