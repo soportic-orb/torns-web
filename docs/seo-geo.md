@@ -54,6 +54,29 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
   sin datos inventados (marcadores `[dato]`) y sin comparar con otras apps
   (`docs/blog-ai.md`).
 
+## Páginas por búsqueda
+
+Tres páginas responden a las búsquedas de calendario y gestión de turnos,
+para que Torns no se asocie solo a «cambios de turno»:
+
+| Página | Búsquedas |
+|---|---|
+| `/app-calendario-turnos` | app calendario turnos, calendario turnos |
+| `/calendario-guardias-enfermeria` | calendario guardias enfermería, turnos enfermería |
+| `/gestion-de-turnos` | gestión de turnos y guardias |
+
+- Cada una en los 4 idiomas: `content/site/pages/<key>.<idioma>.html`
+  (bloques del tema: `torns-page-hero`, `torns-feature-row`,
+  `torns-import-roster`, `torns-faq`…), versión Markdown en
+  `content/site/markdown/` y preguntas frecuentes como `FAQPage` en
+  `content/site/schema/`. Las preguntas del bloque `torns-faq` y las del
+  JSON deben coincidir.
+- Se enlazan entre ellas y desde la portada con `torns-related-pages`
+  (tarjetas con el nombre y la descripción SEO de cada página de
+  `pages.json`), desde el pie y desde `llms.txt`.
+- Los datos salen solo de Funcionalidades: si cambia un precio, un límite
+  o una función, hay que revisarlas también.
+
 ## Categorías y etiquetas por idioma
 
 - URL traducida en cada idioma (`/ca/blog/sanitat`, `/eu/blog/osasuna`,
