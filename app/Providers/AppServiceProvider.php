@@ -7,8 +7,10 @@ use App\Ai\PostTranslator;
 use App\Ai\TaxonomyTranslator;
 use App\Ai\TranslateTaxonomyBulkAction;
 use App\Http\Middleware\NoIndexOutsideProduction;
+use App\Http\Middleware\RedirectShortLinks;
 use App\Listeners\RepairEnvAfterInstaller;
 use App\Support\IndexNow;
+use App\Support\ShortLinks;
 use App\Support\VersionedAsset;
 use Botble\Base\Events\CreatedContentEvent;
 use Botble\Base\Events\UpdatedContentEvent;
@@ -59,6 +61,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->app['router']->pushMiddlewareToGroup('web', NoIndexOutsideProduction::class);
+        $this->app['router']->pushMiddlewareToGroup('web', RedirectShortLinks::class);
 
         // IndexNow: tell search engines when a published post is saved or translated.
         Event::listen([CreatedContentEvent::class, UpdatedContentEvent::class], function (CreatedContentEvent|UpdatedContentEvent $event): void {
@@ -209,5 +212,35 @@ class AppServiceProvider extends ServiceProvider
                 'translate' => $translate,
             ])->render())->toArray());
         }, 120, 2);
+
+        // «Generar enllaç curt»: the post's short link in the language being edited (docs/short-links.md).
+        add_filter(BASE_FILTER_BEFORE_RENDER_FORM, function (FormAbstract $form, $model) {
+            if (! $form instanceof PostForm || ! auth()->user()?->hasAnyPermission(['posts.create', 'posts.edit'])) {
+                return $form;
+            }
+            $links = $this->app->make(ShortLinks::class);
+            if (! $links->ready()) {
+                return $form;
+            }
+
+            $saved = $model instanceof Post && $model->getKey();
+            $locale = request('ref_lang')
+                ?: ($saved && class_exists(LanguageMeta::class)
+                    ? LanguageMeta::query()->where('reference_id', $model->getKey())->where('reference_type', Post::class)->value('lang_meta_code')
+                    : null)
+                ?: (class_exists(Language::class) ? Language::getDefaultLocaleCode() : null)
+                ?: 'es';
+            $link = $saved ? $links->find($model->getKey(), $locale) : null;
+
+            Assets::addScriptsDirectly(VersionedAsset::path('vendor/torns/js/short-link.js'));
+
+            return $form->addBefore('content', 'torns_short_link', HtmlField::class, HtmlFieldOption::make()->content(view('admin.short-link.panel', [
+                'postId' => $saved ? $model->getKey() : null,
+                'locale' => $locale,
+                'url' => $link ? $links->url($link) : null,
+                'label' => $link ? $links->label($link) : null,
+                'clicks' => $link?->clicks,
+            ])->render())->toArray());
+        }, 122, 2);
     }
 }

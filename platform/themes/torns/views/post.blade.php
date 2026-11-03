@@ -5,6 +5,13 @@
     $relatedPosts = get_related_posts($post->id, 3);
     $shareUrl = $post->url;
     $shareTitle = $post->name;
+    // Short link (torns.app/wy89) when the post has one in this language;
+    // otherwise main.js asks for it when a share button is pressed.
+    $shortLinks = class_exists(\App\Support\ShortLinks::class) ? app(\App\Support\ShortLinks::class) : null;
+    $shortLink = $shortLinks?->find($post->id, torns_current_locale());
+    if ($shortLink) {
+        $shareUrl = $shortLinks->url($shortLink);
+    }
 @endphp
 
 <article class="py-12 lg:py-16">
@@ -69,7 +76,7 @@
 
         {{-- Native share links, no third-party SDKs. On a phone main.js hands
              X, Facebook and LinkedIn to the installed app (data-share). --}}
-        <div class="mt-10 border-t border-torns-ink/5 pt-6" data-share-url="{{ $shareUrl }}" data-share-title="{{ $shareTitle }}">
+        <div class="mt-10 border-t border-torns-ink/5 pt-6" data-share-url="{{ $shareUrl }}" data-share-title="{{ $shareTitle }}" @if ($shortLinks?->ready() && ! $shortLink) data-short-link-endpoint="{{ url('short-link') }}" data-post-id="{{ $post->id }}" data-locale="{{ torns_current_locale() }}" @endif>
             <p class="mb-3 text-sm font-semibold">{{ __('Share') }}</p>
             <ul class="flex flex-wrap gap-2">
                 <li>

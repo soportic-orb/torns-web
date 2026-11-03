@@ -232,6 +232,11 @@
     //   LinkedIn's share screen, so the system share sheet comes up, with
     //   the installed apps in it.
     // On a computer the links open the website, as they always did.
+    //
+    // Short link (torns.app/wy89, docs/short-links.md): when the post has
+    // none yet in this language, pressing a share button asks for it. The
+    // click waits for it 1.5 s at most and then shares whichever link it
+    // has, so sharing never fails.
     // ------------------------------------------------------------------
     const shareBox = document.querySelector('[data-share-url]')
     if (shareBox) {
@@ -239,25 +244,98 @@
         const android = /Android/i.test(ua)
         const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
         const packages = { x: 'com.twitter.android', facebook: 'com.facebook.katana', linkedin: 'com.linkedin.android' }
-        const url = shareBox.dataset.shareUrl
+        let url = shareBox.dataset.shareUrl
         const title = shareBox.dataset.shareTitle || document.title
+        const links = shareBox.querySelectorAll('.share-link')
 
-        shareBox.querySelectorAll('[data-share]').forEach((link) => {
+        const endpoint = shareBox.dataset.shortLinkEndpoint
+        let shortLink = null
+        let ready = !endpoint
+
+        const useShortUrl = (short) => {
+            const swaps = [[encodeURIComponent(url), encodeURIComponent(short)], [url, short]]
+            links.forEach((link) => {
+                let href = link.getAttribute('href')
+                swaps.forEach(([from, to]) => {
+                    href = href.split(from).join(to)
+                })
+                link.setAttribute('href', href)
+            })
+            url = short
+        }
+
+        const requestShortLink = () => {
+            shortLink ??= fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({ post: Number(shareBox.dataset.postId), locale: shareBox.dataset.locale }),
+            })
+                .then((res) => (res.ok ? res.json() : null))
+                .then((json) => {
+                    if (json?.url) useShortUrl(json.url)
+                })
+                .catch(() => {})
+                .finally(() => {
+                    ready = true
+                })
+            return shortLink
+        }
+
+        if (endpoint) {
+            // Pressing starts the request, so it is usually back by the click.
+            shareBox.addEventListener('pointerdown', (event) => {
+                if (event.target.closest('.share-link')) requestShortLink()
+            })
+            shareBox.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && event.target.closest('.share-link')) requestShortLink()
+            })
+        }
+
+        // Opens the link once the click had to wait, when the browser may no
+        // longer allow a new window: then in this tab.
+        const follow = (link, popup) => {
+            if (popup) {
+                popup.location.href = link.href
+            } else if (link.target !== '_blank' || !window.open(link.href, '_blank', 'noopener')) {
+                window.location.href = link.href
+            }
+        }
+
+        const share = (link, event, popup = null) => {
+            const network = link.dataset.share
+            if (android && packages[network]) {
+                event?.preventDefault()
+                popup?.close()
+                const text = network === 'x' ? `${title} ${url}` : url
+                window.location.href = 'intent:#Intent;action=android.intent.action.SEND;type=text/plain;'
+                    + `S.android.intent.extra.TEXT=${encodeURIComponent(text)};`
+                    + `package=${packages[network]};`
+                    + `S.browser_fallback_url=${encodeURIComponent(link.href)};end`
+            } else if (ios && navigator.share && network) {
+                event?.preventDefault()
+                navigator.share({ title, url }).catch((error) => {
+                    // Closed without choosing: nothing to do. Refused after the
+                    // wait (no user gesture left): the network's page instead.
+                    if (!event && error?.name === 'NotAllowedError') follow(link, null)
+                })
+            } else if (!event) {
+                follow(link, popup)
+            }
+        }
+
+        links.forEach((link) => {
             link.addEventListener('click', (event) => {
-                const network = link.dataset.share
-                if (android && packages[network]) {
-                    event.preventDefault()
-                    const text = network === 'x' ? `${title} ${url}` : url
-                    window.location.href = 'intent:#Intent;action=android.intent.action.SEND;type=text/plain;'
-                        + `S.android.intent.extra.TEXT=${encodeURIComponent(text)};`
-                        + `package=${packages[network]};`
-                        + `S.browser_fallback_url=${encodeURIComponent(link.href)};end`
-                } else if (ios && navigator.share) {
-                    event.preventDefault()
-                    navigator.share({ title, url }).catch(() => {
-                        // Closed without choosing, or refused: nothing to do.
-                    })
+                if (ready) {
+                    share(link, event)
+                    return
                 }
+                event.preventDefault()
+                // A window opened now, while the click still counts, is not
+                // blocked; it gets its address when the short link is back.
+                const popup = link.target === '_blank' && !android && !ios ? window.open('', '_blank') : null
+                if (popup) popup.opener = null
+                Promise.race([requestShortLink(), new Promise((resolve) => setTimeout(resolve, 1500))])
+                    .then(() => share(link, null, popup))
             })
         })
     }

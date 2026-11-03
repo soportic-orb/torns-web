@@ -54,6 +54,7 @@ Admin assets in `public/vendor/torns` go through `App\Support\VersionedAsset::pa
   `app/Support/IndexNow.php` (pings Bing & co. when a post is saved) — `docs/seo-geo.md`.
 - OTA: `app/Ota`, `app/Support/SiteContent.php` — `docs/OTA.md`.
 - AI in the blog editor: `app/Ai/BlogAi.php` (its `FACTS` must match the app), translation of posts in `app/Ai/PostTranslator.php` — `docs/blog-ai.md`.
+- Short links of posts (torns.app/wy89, one per post and language): `app/Support/ShortLinks.php`, redirect in `app/Http/Middleware/RedirectShortLinks.php` — `docs/short-links.md`.
 - Install: `docs/CLOUDPANEL.md` (SSH) or `docs/INSTALL.md` (shared hosting).
 - Going live on www.torns.app (the nueva.torns.app install takes over the domain,
   WordPress is removed): `docs/PRODUCTION.md`; old WordPress URLs are
