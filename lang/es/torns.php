@@ -184,4 +184,13 @@ return [
     'ai_bulk_translate_current' => 'Traduciendo «:name» (:done de :total)…',
     'ai_bulk_translate_done' => 'Traducciones guardadas: :count.',
     'ai_bulk_translate_failed' => 'No se han podido traducir: :count.',
+    'short_link_title' => 'Enlace corto',
+    'short_link_intro' => 'Un enlace corto de esta publicación en :language para compartirla (torns.app/xxxx). También se crea solo cuando alguien pulsa un botón de compartir en la web.',
+    'short_link_generate' => 'Generar enlace corto',
+    'short_link_copy' => 'Copiar',
+    'short_link_copied' => 'Enlace copiado.',
+    'short_link_clicks' => ':count visitas',
+    'short_link_save_first' => 'Guarda la publicación para generar su enlace corto.',
+    'short_link_unpublished' => 'La publicación tiene que estar publicada en este idioma para tener enlace corto.',
+    'short_link_failed' => 'No se ha podido generar el enlace corto.',
 ];

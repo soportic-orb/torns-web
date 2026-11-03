@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BlogAiController;
 use App\Http\Controllers\Admin\OtaController;
+use App\Http\Controllers\Admin\ShortLinkController;
 use Botble\Base\Facades\AdminHelper;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,6 @@ AdminHelper::registerRoutes(function (): void {
         Route::post('settings', [BlogAiController::class, 'saveSettings'])->name('settings.save');
         Route::post('settings/test', [BlogAiController::class, 'test'])->name('settings.test');
     });
+
+    Route::post('blog/short-links', [ShortLinkController::class, 'generate'])->name('torns-short-links.generate')->middleware('throttle:30,1');
 });

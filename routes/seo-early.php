@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SeoController;
+use App\Http\Controllers\ShortLinkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,10 @@ Route::middleware('web')->group(function (): void {
     Route::get('{first}.md', [SeoController::class, 'markdown'])
         ->where('first', '[a-z0-9-]+');
 });
+
+// Short link of a post, made when a reader shares it (docs/short-links.md).
+// Outside «web»: no session or CSRF token, so it works on cached pages.
+Route::post('short-link', [ShortLinkController::class, 'store'])->middleware('throttle:30,1');
 
 // URLs of the previous WordPress website (config/legacy-redirects.php).
 foreach (config('legacy-redirects', []) as $from => $to) {

@@ -184,4 +184,13 @@ return [
     'ai_bulk_translate_current' => 'Translating «:name» (:done of :total)…',
     'ai_bulk_translate_done' => 'Translations saved: :count.',
     'ai_bulk_translate_failed' => 'Could not translate: :count.',
+    'short_link_title' => 'Short link',
+    'short_link_intro' => 'A short link to this post in :language, to share it (torns.app/xxxx). It is also made when someone presses a share button on the website.',
+    'short_link_generate' => 'Generate short link',
+    'short_link_copy' => 'Copy',
+    'short_link_copied' => 'Link copied.',
+    'short_link_clicks' => ':count visits',
+    'short_link_save_first' => 'Save the post to generate its short link.',
+    'short_link_unpublished' => 'The post has to be published in this language to have a short link.',
+    'short_link_failed' => 'The short link could not be generated.',
 ];

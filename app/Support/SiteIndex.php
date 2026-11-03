@@ -175,6 +175,37 @@ class SiteIndex
         return collect(array_values($groups));
     }
 
+    /**
+     * URL of a published post in one language: its own when the post is
+     * written in that language, its translation's (language-advanced) when
+     * it has one, null otherwise.
+     */
+    public function postUrl(Post $post, string $locale): ?string
+    {
+        if ((string) $post->status !== 'published' || ! $post->slugable || ! in_array($locale, $this->locales(), true)) {
+            return null;
+        }
+
+        $own = LanguageMeta::query()->where('reference_type', Post::class)->where('reference_id', $post->getKey())->value('lang_meta_code')
+            ?: $this->defaultLocale();
+        $prefix = $post->slugable->prefix ? $post->slugable->prefix . '/' : '';
+
+        if ($locale === $own) {
+            return $this->url($locale, trim($prefix . $post->slugable->key, '/'));
+        }
+
+        $translated = Schema::hasTable('posts_translations')
+            && DB::table('posts_translations')->where(['posts_id' => $post->getKey(), 'lang_code' => $locale])->exists();
+        if (! $translated) {
+            return null;
+        }
+        $key = Schema::hasTable('slugs_translations')
+            ? DB::table('slugs_translations')->where(['slugs_id' => $post->slugable->getKey(), 'lang_code' => $locale])->value('key')
+            : null;
+
+        return $this->url($locale, trim($prefix . ($key ?: $post->slugable->key), '/'));
+    }
+
     // ------------------------------------------------------------------ categories and tags
 
     /**
