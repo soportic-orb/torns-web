@@ -25,7 +25,7 @@ CA/GL/EU a la URL en castellano y su `llms-full.txt` salía vacío.
 
 - `<title>`, `meta description`, canonical y `hreflang` (Botble + SEO de cada
   página en `content/site/pages.json`, o de cada noticia).
-- Open Graph con imagen (la destacada de la noticia o `og-banner.jpg`),
+- Open Graph con imagen (la destacada de la noticia o `og-banner-<idioma>.jpg`),
   `og:locale` y tarjeta grande de X/Twitter.
 - Un solo bloque JSON-LD `@graph` con `@id` estables:
   - `Organization` (`/#organization`): Torns, Soportic, logo, contacto, tiendas.
@@ -123,7 +123,7 @@ para que Torns no se asocie solo a «cambios de turno»:
 sobre lo que imprime Botble:
 
 - `og:image` en todas las páginas: la imagen destacada en las noticias, el
-  banner del tema (`images/og-banner.jpg`, 1200×675) en el resto, también en
+  banner del tema en el idioma de la página (`images/og-banner-<idioma>.jpg`, 1200×675; `og-banner.jpg` es la copia en castellano para lo que no tenga idioma) en el resto, también en
   las categorías, que no tenían ninguna.
 - `og:image:width`, `:height` y `:type`: sin ellos Facebook y WhatsApp no
   enseñan la imagen la primera vez que alguien comparte un enlace.

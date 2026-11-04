@@ -27,13 +27,23 @@ use Illuminate\Support\Facades\Cache;
 
 defined('TORNS_SCHEMA_LOCALES') || define('TORNS_SCHEMA_LOCALES', ['es' => 'es-ES', 'ca' => 'ca-ES', 'gl' => 'gl-ES', 'eu' => 'eu-ES']);
 
+if (! function_exists('torns_default_og_image')) {
+    /** The share banner in the page's language (images/og-banner-<lang>.jpg, 1200×675). */
+    function torns_default_og_image(): string
+    {
+        $file = 'images/og-banner-' . torns_current_locale() . '.jpg';
+
+        return Theme::asset()->url(is_file(public_path('themes/torns/' . $file)) ? $file : 'images/og-banner.jpg');
+    }
+}
+
 app('events')->listen(RouteMatched::class, function (): void {
     if (is_in_admin()) {
         return;
     }
 
     $ogImage = theme_option('seo_og_image');
-    $ogImage = $ogImage ? RvMedia::getImageUrl($ogImage) : Theme::asset()->url('images/og-banner.jpg');
+    $ogImage = $ogImage ? RvMedia::getImageUrl($ogImage) : torns_default_og_image();
 
     SeoHelper::setImage($ogImage);
     SeoHelper::twitter()->setType('summary_large_image');
@@ -118,7 +128,7 @@ if (! function_exists('torns_social_meta')) {
         $image = $find('/<meta property="og:image" content="([^"]+)"/');
         $extra = [];
         if (! $image) {
-            $image = Theme::asset()->url('images/og-banner.jpg');
+            $image = torns_default_og_image();
             $extra[] = '<meta property="og:image" content="' . $attr($image) . '">';
         }
 
@@ -394,7 +404,7 @@ if (! function_exists('torns_schema_graph')) {
 
         if ($post instanceof Post) {
             $url = $post->url;
-            $image = $post->image ? RvMedia::getImageUrl($post->image) : Theme::asset()->url('images/og-banner.jpg');
+            $image = $post->image ? RvMedia::getImageUrl($post->image) : torns_default_og_image();
             $graph[] = [
                 '@type' => 'WebPage',
                 '@id' => $url,
