@@ -16,7 +16,7 @@ Markatu zure oporrak eta erabilgarri ez zauden egunak, egun horietan inork aldak
 
 ## Txanda bat aldatu WhatsApp talderik gabe
 
-Argitaratu egin ezin duzun txanda, eta zure zentroko eta kategoria bereko lankideek ikusiko dute. Beren txandetako bat proposatzen dizute eta, onartzean, Torns-ek txanda bakoitza bere titular berriaren egutegira pasatzen du. Free planak 2 aldaketa ditu hilean; Torns Prok, mugagabeak.
+Argitaratu egin ezin duzun txanda, eta zure zentroko eta kategoria bereko lankideek ikusiko dute. Beren txandetako bat proposatzen dizute eta, onartzean, Torns-ek txanda bakoitza bere titular berriaren egutegira pasatzen du. Free planak hilean 2 aldaketa-proposamen eta argitaratutako 3 txanda ditu; Torns Prok, mugagabeak.
 
 Inork ezin badizu zuzenean aldatu, Torns-ek 3 edo 4 lankideren arteko aldaketa kateak bilatzen ditu. Eta biharko bada, SOS moduak txanda Muralaren hasierara igotzen du 24 orduz eta guztiei abisatzen die (Torns Pro).
 

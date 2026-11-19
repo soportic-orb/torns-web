@@ -58,7 +58,7 @@ As organizacións pagan por usuario activo e mes, de 0,99 € (ata 50 usuarios) 
 
 ### Podo xestionar as miñas quendas gratis?
 
-Si. O plan Free de Torns inclúe o calendario de quendas, publicar quendas, o Muro, 2 cambios ao mes, o chat, as lembranzas, os widgets e o Apple Watch. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano.
+Si. O plan Free de Torns inclúe o calendario de quendas, o Muro, 3 quendas publicadas e 2 propostas de cambio ao mes, o chat, as lembranzas, os widgets e o Apple Watch. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano.
 
 ## Continúa lendo
 
