@@ -152,6 +152,15 @@
                 },
                 {
                     "label": {
+                        "es": "Torns para asociaciones",
+                        "ca": "Torns per a associacions",
+                        "gl": "Torns para asociacións",
+                        "eu": "Torns elkarteentzat"
+                    },
+                    "url": "/asociaciones-profesionales"
+                },
+                {
+                    "label": {
                         "es": "Comparativas",
                         "ca": "Comparatives",
                         "gl": "Comparativas",

@@ -1,0 +1,45 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Canto custa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende do número de prazas e do patrocinio que escollades. Preparámosvos un orzamento á medida: escríbenos desde o formulario de contacto ou a hola@torns.app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Temos que pagar toda a subscrición de cada asociado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. O patrocinio pode ser total, e entón o asociado usa Torns Pro sen custo, ou parcial, e entón teno con desconto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como sabe Torns quen é asociado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ao rexistrarse, o asociado introduce o código da asociación, ou Torns recoñéceo polo seu correo se está no rexistro de correos que subides desde o panel. Quen xa ten conta recibe un aviso coa oferta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que datos dos nosos asociados vemos no panel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De cada alta vedes o nome, o correo, se se deu de alta co código ou polo rexistro de correos, o patrocinio, o estado e a data de activación. Non vedes as súas quendas, os seus cambios nin as súas mensaxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podemos deixar de patrocinalo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. O contrato é anual e renóvase só; desde o panel podedes decidir non renovalo ata 30 días antes da data de renovación."
+      }
+    }
+  ]
+}

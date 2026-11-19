@@ -340,7 +340,7 @@ class SiteIndex
         $lines[] = '';
 
         $lines[] = '## Producto';
-        foreach (['funcionalidades', 'home', 'app-calendario-turnos', 'calendario-guardias-enfermeria', 'gestion-de-turnos', 'calendario-turnos-rotativos', 'cuadrante-turnos-movil', 'centros'] as $key) {
+        foreach (['funcionalidades', 'home', 'app-calendario-turnos', 'calendario-guardias-enfermeria', 'gestion-de-turnos', 'calendario-turnos-rotativos', 'cuadrante-turnos-movil', 'centros', 'asociaciones-profesionales'] as $key) {
             if ($item = $pages[$key]['locales'][$default] ?? null) {
                 $lines[] = "- [{$item['name']}]({$item['url']}): {$item['description']}";
                 if ($item['md']) {

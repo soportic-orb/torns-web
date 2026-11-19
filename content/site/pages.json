@@ -191,6 +191,29 @@
                 "eu": "Torns ospitale, osasun-zentro eta larrialdi-zerbitzuentzat: zure langileen txanden egutegia eta aldaketak panel batean, kudeatzaileari abisuarekin. 0,39 €-tik aurrera erabiltzaile eta hilabeteko; 30 eguneko proba."
             }
         },
+        "asociaciones-profesionales": {
+            "slug": "asociaciones-profesionales",
+            "template": "full-width",
+            "name": {
+                "es": "Torns para asociaciones profesionales",
+                "ca": "Torns per a associacions professionals",
+                "gl": "Torns para asociacións profesionais",
+                "eu": "Torns elkarte profesionalentzat"
+            },
+            "seo_title": {
+                "es": "Torns para asociaciones, colegios profesionales y sindicatos",
+                "ca": "Torns per a associacions, col·legis professionals i sindicats",
+                "gl": "Torns para asociacións, colexios profesionais e sindicatos",
+                "eu": "Torns elkarte, elkargo profesional eta sindikatuentzat"
+            },
+            "seo_description": {
+                "es": "Ofrece Torns Pro a tus colegiados, afiliados o socios: calendario de turnos, cambios y consultor legal. Patrocinio total o parcial y un panel de gestión propio.",
+                "ca": "Ofereix Torns Pro als teus col·legiats, afiliats o socis: calendari de torns, canvis i consultor legal. Patrocini total o parcial i un panell de gestió propi.",
+                "gl": "Ofrece Torns Pro aos teus colexiados, afiliados ou socios: calendario de quendas, cambios e consultor legal. Patrocinio total ou parcial e un panel de xestión propio.",
+                "eu": "Eskaini Torns Pro zure elkargokide, afiliatu edo bazkideei: txanden egutegia, aldaketak eta lege-aholkularia. Babes osoa edo partziala eta kudeaketa-panel propioa."
+            },
+            "markdown": true
+        },
         "contacta": {
             "slug": "contacta",
             "template": "full-width",

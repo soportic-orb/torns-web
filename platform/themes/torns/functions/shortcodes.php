@@ -367,6 +367,10 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('panel_title', TextField::class, $textField(__('Panel section title')));
     });
 
+    add_shortcode('torns-associations-landing', __('Torns: Associations landing'), __('Full landing content for the professional associations page'), function ($shortcode) {
+        return Theme::partial('shortcodes.associations-landing', ['shortcode' => $shortcode]);
+    });
+
     // ------------------------------------------------------------------
     // Contact section (info + form with honeypot)
     // ------------------------------------------------------------------
