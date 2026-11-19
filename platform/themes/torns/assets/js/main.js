@@ -145,9 +145,9 @@
     })
 
     // ------------------------------------------------------------------
-    // <details> menus (language switcher) — close on outside click/Escape.
+    // <details> menus (language switcher, «Para organizaciones») — close on outside click/Escape.
     // ------------------------------------------------------------------
-    const detailsMenus = document.querySelectorAll('[data-lang-menu]')
+    const detailsMenus = document.querySelectorAll('[data-lang-menu], [data-org-menu]')
     if (detailsMenus.length) {
         document.addEventListener('click', (event) => {
             detailsMenus.forEach((menu) => {

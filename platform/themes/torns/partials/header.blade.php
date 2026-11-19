@@ -15,7 +15,9 @@
         <a href="#main-content" class="skip-link">{{ __('Skip to content') }}</a>
 
         @php
-            $centersUrl = url(torns_current_locale() === 'es' ? 'centros' : torns_current_locale() . '/centros');
+            $localePrefix = torns_current_locale() === 'es' ? '' : torns_current_locale() . '/';
+            $centersUrl = url($localePrefix . 'centros');
+            $associationsUrl = url($localePrefix . 'asociaciones-profesionales');
         @endphp
 
         <header class="site-header sticky top-0 z-40 border-b border-torns-ink/5 bg-torns-bg/90 backdrop-blur transition-colors duration-200" data-header>
@@ -40,9 +42,23 @@
                         </div>
                     @endif
 
-                    <a href="{{ $centersUrl }}" class="btn-dark hidden whitespace-nowrap sm:inline-flex xl:px-4">
-                        {{ __('For centers') }}
-                    </a>
+                    {{-- «Para organizaciones»: centres and professional associations. --}}
+                    <details class="org-menu relative hidden sm:block" data-org-menu>
+                        <summary class="btn-dark cursor-pointer list-none whitespace-nowrap xl:px-4 [&::-webkit-details-marker]:hidden">
+                            {{ __('For organizations') }}
+                            <svg class="ml-1 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                        </summary>
+                        <div class="absolute right-0 z-50 mt-2 w-64 rounded-2xl bg-white p-2 shadow-xl ring-1 ring-torns-ink/5">
+                            <a href="{{ $centersUrl }}" class="block rounded-xl px-4 py-3 transition hover:bg-torns-bg">
+                                <span class="block text-sm font-semibold text-torns-ink">{{ __('Healthcare centres') }}</span>
+                                <span class="mt-0.5 block text-xs text-torns-ink/60">{{ __('Hospitals, health centres and emergency services') }}</span>
+                            </a>
+                            <a href="{{ $associationsUrl }}" class="block rounded-xl px-4 py-3 transition hover:bg-torns-bg">
+                                <span class="block text-sm font-semibold text-torns-ink">{{ __('Professional associations') }}</span>
+                                <span class="mt-0.5 block text-xs text-torns-ink/60">{{ __('Unions, professional colleges and scientific societies') }}</span>
+                            </a>
+                        </div>
+                    </details>
 
                     <a
                         href="{{ theme_option('app_store_url', 'https://apps.apple.com/es/app/torns/id6760354618') }}"
@@ -110,6 +126,9 @@
             <div class="flex flex-col gap-2 border-t border-torns-ink/5 p-4">
                 <a href="{{ $centersUrl }}" class="btn-dark w-full justify-center">
                     {{ __('For centers') }}
+                </a>
+                <a href="{{ $associationsUrl }}" class="btn-dark w-full justify-center">
+                    {{ __('For professional associations') }}
                 </a>
                 <a href="{{ theme_option('app_store_url', 'https://apps.apple.com/es/app/torns/id6760354618') }}" class="btn-primary w-full justify-center">
                     {{ __('Download the app') }}

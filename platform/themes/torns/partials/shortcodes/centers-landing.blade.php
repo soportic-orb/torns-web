@@ -14,14 +14,26 @@
         ['title' => __('Multi-centro con un único perfil'), 'description' => __('Muchos profesionales trabajan en más de un centro. Torns permite gestionarlos todos desde una sola app.'), 'icon' => $icon('<path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h1m4 0h1M9 13h1m4 0h1M9 17h1m4 0h1"/>')],
     ];
 
-    // Panel features; the ones with an image come from the current site's centres page.
+    // Panel features, with screenshots of the current panel (images/home/centers-panel-*).
     $panelFeatures = [
         ['title' => __('Todos tus centros desde un mismo panel'), 'description' => __('Gestiona tantos centros como necesites, cada uno con su propio equipo de gestión y sus usuarios.'), 'image' => 'centers-panel-centres'],
         ['title' => __('Recibe los cambios de tus profesionales'), 'description' => __('El panel recibe todas las notificaciones de cambios hechos desde la app. Márcalos como visualizados y los profesionales verán que el gestor los ha aceptado.'), 'image' => 'centers-panel-changes'],
         ['title' => __('Publica turnos que necesites cubrir'), 'description' => __('Envía coberturas de turno a los usuarios de la app, gestiona las peticiones y asigna los turnos desde el panel.'), 'image' => 'centers-panel-cover'],
-        ['title' => __('Soporte personalizado, del bueno'), 'description' => __('Soporte técnico y comercial integrado mediante tickets, para clientes, gestores y usuarios.'), 'image' => 'centers-panel-support'],
-        ['title' => __('Campañas de mailing'), 'description' => __('Diseña comunicados visualmente, selecciona destinatarios y consulta estadísticas de aperturas y clics.')],
+        ['title' => __('Campañas de mailing'), 'description' => __('Diseña comunicados visualmente, selecciona destinatarios y consulta estadísticas de aperturas y clics.'), 'image' => 'centers-panel-mailing'],
+        ['title' => __('Soporte personalizado, del bueno'), 'description' => __('Soporte técnico y comercial integrado mediante tickets, para clientes, gestores y usuarios.')],
         ['title' => __('Panel de gestor'), 'description' => __('Los gestores controlan los profesionales de sus servicios, reciben sus cambios y publican turnos a cubrir.')],
+        ['title' => __('Tu equipo, con su rol'), 'description' => __('Invita a dirección, supervisión y gestores al panel; cada gestor trabaja con los centros que le asignas.')],
+    ];
+    $panelMobile = [
+        'eyebrow' => __('Nuevo'),
+        'title' => __('El panel, también en tu móvil'),
+        'text' => __('Instala el panel en la pantalla de inicio de tu móvil o tableta y úsalo como una app, con su menú inferior.'),
+        'points' => [
+            __('Avisos push cuando alguien se apunta a un turno a cubrir, te escribe o te comunica un cambio.'),
+            __('En iPhone, Android y tableta, y en el navegador del ordenador.'),
+            __('Modo oscuro para las guardias de noche.'),
+        ],
+        'image' => 'centers-panel-mobile',
     ];
     $accents = ['morning', 'evening', 'night'];
 @endphp
@@ -60,7 +72,7 @@
     </div>
 </section>
 
-{!! Theme::partial('shortcodes.centers.panel', ['panelTitle' => $panelTitle, 'panelFeatures' => $panelFeatures]) !!}
+{!! Theme::partial('shortcodes.centers.panel', ['panelTitle' => $panelTitle, 'panelFeatures' => $panelFeatures, 'mobile' => $panelMobile]) !!}
 
 <section class="py-14 lg:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
