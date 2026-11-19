@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo paso mi cuadrante de turnos al móvil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con «Importar cuadrante»: pulsa +, sube una foto, un PDF, una captura o una hoja de cálculo del cuadrante, revisa los turnos que Torns ha encontrado en tu fila y confírmalos. Quedan guardados en tu calendario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Torns guarda la foto de mi cuadrante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El archivo se procesa y se descarta; solo se guardan los turnos que tú confirmas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos cuadrantes puedo importar gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El plan Free incluye 2 lecturas de cuadrante en total y Torns Pro, 30 al mes. Cada archivo puede tener hasta 10 MB y 4 páginas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si Torns no puede leer una casilla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La deja vacía. Torns no inventa turnos: te enseña lo que ha leído línea a línea para que lo revises y lo completes antes de guardarlo."
+      }
+    }
+  ]
+}

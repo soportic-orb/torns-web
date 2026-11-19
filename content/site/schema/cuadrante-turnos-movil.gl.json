@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Como paso o meu cadro de quendas ao móbil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con «Importar cadrante»: preme +, sobe unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas, revisa as quendas que Torns atopou na túa fila e confírmaas. Quedan gardadas no teu calendario."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns garda a foto do meu cadro de quendas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. O ficheiro procésase e descártase; só se gardan as quendas que ti confirmas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cantos cadros de quendas podo importar gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O plan Free inclúe 2 lecturas de cadro de quendas en total e Torns Pro, 30 ao mes. Cada ficheiro pode ter ata 10 MB e 4 páxinas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que pasa se Torns non pode ler unha cela?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Déixaa baleira. Torns non inventa quendas: amósache o que leu liña a liña para que o revises e o completes antes de gardalo."
+      }
+    }
+  ]
+}

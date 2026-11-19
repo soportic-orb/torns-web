@@ -64,6 +64,8 @@ para que Torns no se asocie solo a «cambios de turno»:
 | `/app-calendario-turnos` | app calendario turnos, calendario turnos |
 | `/calendario-guardias-enfermeria` | calendario guardias enfermería, turnos enfermería |
 | `/gestion-de-turnos` | gestión de turnos y guardias |
+| `/calendario-turnos-rotativos` | calendario turnos rotativos, app turnos rotativos |
+| `/cuadrante-turnos-movil` | cuadrante de turnos, pasar el cuadrante al móvil |
 
 - Cada una en los 4 idiomas: `content/site/pages/<key>.<idioma>.html`
   (bloques del tema: `torns-page-hero`, `torns-feature-row`,
