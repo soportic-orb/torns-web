@@ -1,5 +1,5 @@
 @php
-    $title = $shortcode->title ?: __('Los profesionales de estos centros ya utilizan Torns');
+    $title = $shortcode->title ?: __('Profesionales de estos centros ya utilizan Torns');
 
     $logos = [];
     for ($i = 1; $i <= 6; $i++) {
@@ -14,6 +14,10 @@
             Theme::asset()->url('images/home/logos/logo-center-2.webp'),
             Theme::asset()->url('images/home/logos/logo-vall-hebron.webp'),
             Theme::asset()->url('images/home/logos/logo-center-4.webp'),
+            Theme::asset()->url('images/home/logos/logo-scias-hospital-barcelona.webp'),
+            Theme::asset()->url('images/home/logos/logo-hospital-universitario-canarias.webp'),
+            Theme::asset()->url('images/home/logos/logo-vithas.webp'),
+            Theme::asset()->url('images/home/logos/logo-quironsalud.webp'),
         ];
     }
 @endphp
