@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Puc posar la meva rotació de torns de manera automàtica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, amb Torns Pro. Dibuixes el cicle (per exemple, dues nits i tres de lliures, o un patró de diverses setmanes), en veus una vista prèvia i Torns omple les dates que triïs. Pots desar fins a 10 rotacions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La rotació respecta els festius i les meves vacances?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si vols, sí: en aplicar-la, Torns pot saltar-se els festius i els dies que vas marcar com a no disponibles. Tampoc modifica els torns que ja has publicat per canviar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Les rotacions de torns són gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Les rotacions són de Torns Pro, que costa 2,99 € al mes o 29,90 € l'any. Tots els comptes nous tenen 30 dies de prova amb les funcions Pro, i el pla Free inclou el calendari de torns, afegir diversos torns i els llocs habituals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I si el meu quadrant no segueix un patró fix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El pots importar: Torns llegeix una foto, un PDF, una captura o un full de càlcul del quadrant i t'ensenya els teus torns perquè els revisis abans de desar-los. El pla Free inclou 2 lectures i Torns Pro, 30 al mes."
+      }
+    }
+  ]
+}

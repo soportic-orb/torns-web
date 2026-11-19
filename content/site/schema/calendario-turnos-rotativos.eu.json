@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Nire txanda-errotazioa automatikoki jar dezaket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai, Torns Prorekin. Zikloa marrazten duzu (adibidez, bi gau eta hiru egun libre, edo hainbat asteko eredu bat), aurrebista ikusten duzu eta Torns-ek aukeratzen dituzun datak betetzen ditu. 10 errotazio arte gorde ditzakezu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Errotazioak jaiegunak eta nire oporrak errespetatzen ditu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nahi baduzu, bai: aplikatzean, Torns-ek jaiegunak eta erabilgarri ez bezala markatu dituzun egunak salta ditzake. Ez ditu aldatzeko argitaratu dituzun txandak aldatzen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Txanda-errotazioak doakoak dira?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Errotazioak Torns Prokoak dira, eta 2,99 € balio du hilean edo 29,90 € urtean. Kontu berri guztiek 30 eguneko proba dute Pro funtzioekin, eta Free planak txanden egutegia, hainbat txanda gehitzea eta ohiko lekuak barne hartzen ditu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Eta nire txanda-koadroak eredu finkorik ez badu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inportatu dezakezu: Torns-ek txanda-koadroaren argazki, PDF, pantaila-argazki edo kalkulu-orri bat irakurtzen du eta zure txandak erakusten dizkizu gorde aurretik berrikus ditzazun. Free planak 2 irakurketa ditu eta Torns Prok, 30 hilean."
+      }
+    }
+  ]
+}

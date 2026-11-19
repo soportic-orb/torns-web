@@ -111,6 +111,24 @@
                 },
                 {
                     "label": {
+                        "es": "Calendario de turnos rotativos",
+                        "ca": "Calendari de torns rotatius",
+                        "gl": "Calendario de quendas rotativas",
+                        "eu": "Txanda errotatiboen egutegia"
+                    },
+                    "url": "/calendario-turnos-rotativos"
+                },
+                {
+                    "label": {
+                        "es": "Cuadrante de turnos en el móvil",
+                        "ca": "Quadrant de torns al mòbil",
+                        "gl": "Cadro de quendas no móbil",
+                        "eu": "Txanda-koadroa mugikorrean"
+                    },
+                    "url": "/cuadrante-turnos-movil"
+                },
+                {
+                    "label": {
                         "es": "Guía de uso",
                         "ca": "Guia d'ús",
                         "gl": "Guía de uso",

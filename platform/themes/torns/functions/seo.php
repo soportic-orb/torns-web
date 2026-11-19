@@ -378,7 +378,7 @@ if (! function_exists('torns_schema_graph')) {
                 'description' => SeoHelper::getDescription(),
                 'inLanguage' => $language,
                 'isPartOf' => ['@id' => "{$site}/#website"],
-                'about' => in_array($key, ['home', 'funcionalidades', 'app-calendario-turnos', 'calendario-guardias-enfermeria', 'gestion-de-turnos'], true) || $isHome ? ['@id' => "{$site}/#app"] : null,
+                'about' => in_array($key, ['home', 'funcionalidades', 'app-calendario-turnos', 'calendario-guardias-enfermeria', 'gestion-de-turnos', 'calendario-turnos-rotativos', 'cuadrante-turnos-movil'], true) || $isHome ? ['@id' => "{$site}/#app"] : null,
                 'primaryImageOfPage' => SeoHelper::openGraph()->getProperty('image') ?: null,
                 'dateModified' => $page?->updated_at?->toIso8601String(),
                 'mainEntity' => $isHome || $hasSchema ? ['@id' => "{$current}#faq"] : null,
