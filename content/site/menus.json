@@ -1,0 +1,216 @@
+{
+    "menus": {
+        "main-menu": {
+            "location": "main-menu",
+            "name": "Main menu",
+            "items": [
+                {
+                    "label": {
+                        "es": "Calendario",
+                        "ca": "Calendari",
+                        "gl": "Calendario",
+                        "eu": "Egutegia"
+                    },
+                    "url": "/#calendario"
+                },
+                {
+                    "label": {
+                        "es": "Funcionalidades",
+                        "ca": "Funcionalitats",
+                        "gl": "Funcionalidades",
+                        "eu": "Funtzioak"
+                    },
+                    "url": "/funcionalidades"
+                },
+                {
+                    "label": {
+                        "es": "IA",
+                        "ca": "IA",
+                        "gl": "IA",
+                        "eu": "AA"
+                    },
+                    "url": "/#ia"
+                },
+                {
+                    "label": {
+                        "es": "Precios",
+                        "ca": "Preus",
+                        "gl": "Prezos",
+                        "eu": "Prezioak"
+                    },
+                    "url": "/#precios"
+                },
+                {
+                    "label": {
+                        "es": "Noticias",
+                        "ca": "Notícies",
+                        "gl": "Novas",
+                        "eu": "Albisteak"
+                    },
+                    "url": "/blog"
+                },
+                {
+                    "label": {
+                        "es": "Contacta",
+                        "ca": "Contacta",
+                        "gl": "Contacta",
+                        "eu": "Jarri harremanetan"
+                    },
+                    "url": "/contacta"
+                }
+            ]
+        },
+        "footer-menu": {
+            "location": "footer-menu",
+            "name": "Footer menu",
+            "items": [
+                {
+                    "label": {
+                        "es": "Inicio",
+                        "ca": "Inici",
+                        "gl": "Inicio",
+                        "eu": "Hasiera"
+                    },
+                    "url": "/"
+                },
+                {
+                    "label": {
+                        "es": "Funcionalidades",
+                        "ca": "Funcionalitats",
+                        "gl": "Funcionalidades",
+                        "eu": "Funtzioak"
+                    },
+                    "url": "/funcionalidades"
+                },
+                {
+                    "label": {
+                        "es": "App de calendario de turnos",
+                        "ca": "App de calendari de torns",
+                        "gl": "App de calendario de quendas",
+                        "eu": "Txanden egutegirako appa"
+                    },
+                    "url": "/app-calendario-turnos"
+                },
+                {
+                    "label": {
+                        "es": "Calendario de guardias de enfermería",
+                        "ca": "Calendari de guàrdies d'infermeria",
+                        "gl": "Calendario de gardas de enfermaría",
+                        "eu": "Erizaintzako guardien egutegia"
+                    },
+                    "url": "/calendario-guardias-enfermeria"
+                },
+                {
+                    "label": {
+                        "es": "Gestión de turnos",
+                        "ca": "Gestió de torns",
+                        "gl": "Xestión de quendas",
+                        "eu": "Txanden kudeaketa"
+                    },
+                    "url": "/gestion-de-turnos"
+                },
+                {
+                    "label": {
+                        "es": "Calendario de turnos rotativos",
+                        "ca": "Calendari de torns rotatius",
+                        "gl": "Calendario de quendas rotativas",
+                        "eu": "Txanda errotatiboen egutegia"
+                    },
+                    "url": "/calendario-turnos-rotativos"
+                },
+                {
+                    "label": {
+                        "es": "Cuadrante de turnos en el móvil",
+                        "ca": "Quadrant de torns al mòbil",
+                        "gl": "Cadro de quendas no móbil",
+                        "eu": "Txanda-koadroa mugikorrean"
+                    },
+                    "url": "/cuadrante-turnos-movil"
+                },
+                {
+                    "label": {
+                        "es": "Guía de uso",
+                        "ca": "Guia d'ús",
+                        "gl": "Guía de uso",
+                        "eu": "Erabilera-gida"
+                    },
+                    "url": {
+                        "es": "https://guia.torns.app/",
+                        "ca": "https://guia.torns.app/ca/",
+                        "gl": "https://guia.torns.app/gl/",
+                        "eu": "https://guia.torns.app/eu/"
+                    }
+                },
+                {
+                    "label": {
+                        "es": "Torns para centros",
+                        "ca": "Torns per a centres",
+                        "gl": "Torns para centros",
+                        "eu": "Torns zentroentzat"
+                    },
+                    "url": "/centros"
+                },
+                {
+                    "label": {
+                        "es": "Torns para asociaciones",
+                        "ca": "Torns per a associacions",
+                        "gl": "Torns para asociacións",
+                        "eu": "Torns elkarteentzat"
+                    },
+                    "url": "/asociaciones-profesionales"
+                },
+                {
+                    "label": {
+                        "es": "Comparativas",
+                        "ca": "Comparatives",
+                        "gl": "Comparativas",
+                        "eu": "Konparaketak"
+                    },
+                    "url": "/comparativas"
+                },
+                {
+                    "label": {
+                        "es": "Noticias",
+                        "ca": "Notícies",
+                        "gl": "Novas",
+                        "eu": "Albisteak"
+                    },
+                    "url": "/blog"
+                },
+                {
+                    "label": {
+                        "es": "Contacta",
+                        "ca": "Contacta",
+                        "gl": "Contacta",
+                        "eu": "Jarri harremanetan"
+                    },
+                    "url": "/contacta"
+                }
+            ]
+        },
+        "footer-legal": {
+            "location": "footer-legal-menu",
+            "name": "Footer legal",
+            "items": [
+                {
+                    "label": {
+                        "es": "Términos y condiciones",
+                        "ca": "Termes i condicions",
+                        "gl": "Termos e condicións",
+                        "eu": "Baldintzak eta erabilera-baldintzak"
+                    },
+                    "url": "/terminos"
+                },
+                {
+                    "label": {
+                        "es": "Política de privacidad",
+                        "ca": "Política de privacitat",
+                        "gl": "Política de privacidade",
+                        "eu": "Pribatutasun-politika"
+                    },
+                    "url": "/privacidad"
+                }
+            ]
+        }
+    }
+}

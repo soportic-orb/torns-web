@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Nola pasatzen dut nire txanda-koadroa mugikorrera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "«Txanda-koadroa inportatu» aukerarekin: sakatu +, igo txanda-koadroaren argazki, PDF, pantaila-argazki edo kalkulu-orri bat, berrikusi Torns-ek zure errenkadan aurkitu dituen txandak eta berretsi. Zure egutegian gordeta geratzen dira."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns-ek nire txanda-koadroaren argazkia gordetzen du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez. Fitxategia prozesatu eta baztertu egiten da; zuk berresten dituzun txandak bakarrik gordetzen dira."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zenbat txanda-koadro inporta ditzaket doan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free planak txanda-koadroaren 2 irakurketa ditu guztira eta Torns Prok, 30 hilean. Fitxategi bakoitzak 10 MB eta 4 orrialde izan ditzake gehienez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zer gertatzen da Torns-ek gelaxka bat irakurri ezin badu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hutsik uzten du. Torns-ek ez du txandarik asmatzen: irakurri duena lerroz lerro erakusten dizu, gorde aurretik berrikusi eta osa dezazun."
+      }
+    }
+  ]
+}

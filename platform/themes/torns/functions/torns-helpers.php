@@ -1,5 +1,13 @@
 <?php
 
+use Botble\Blog\Models\Category;
+use Botble\Blog\Models\Post;
+use Botble\Blog\Repositories\Interfaces\PostInterface;
+use Botble\Language\Facades\Language;
+use Botble\Language\Models\LanguageMeta;
+use Botble\Page\Models\Page;
+use Botble\Slug\Models\Slug;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Str;
 
 if (! function_exists('torns_pricing_plans')) {
@@ -15,7 +23,7 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '0 €',
                 'period' => '',
                 'description' => __('Utiliza gratis las funcionalidades básicas de la app'),
-                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nMuro de turnos publicados\nPublicar cambios ilimitados\nAceptar 2 cambios al mes\nChat individual y grupal\nSincronización con Apple y Google"),
+                'features' => __("Gestión de 1 centro de trabajo\nCalendario de turnos integrado\nSincronización con Apple y Google\nMuro de turnos publicados\nPublicar 3 turnos al mes\nHacer 2 propuestas de cambio al mes\nChat individual y grupal"),
                 'badge' => '',
                 'cta_label' => __('Empieza gratis'),
                 'highlighted' => false,
@@ -26,24 +34,22 @@ if (! function_exists('torns_pricing_plans')) {
                 'price' => '2,99 €',
                 'period' => __('/mes'),
                 'description' => __('Acceso mensual a todas las funcionalidades Pro. Cancela cuando quieras.'),
-                'features' => __("Todas las funcionalidades del plan Free\nCopilot: cadenas de cambios a 3 y 4 con IA\nCentros de trabajo ilimitados\nAceptar turnos ilimitados\nPropuestas de cambios a 3\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nEstadísticas de trabajo\nCompartir calendario de turnos"),
+                'features' => __("Todas las funcionalidades del plan Free\nCopilot: asistente con IA\nConsultor legal\nCentros de trabajo ilimitados\nPublicar y proponer cambios sin límite\nCadenas de cambios a 3 y 4\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nRotaciones y estadísticas de trabajo\nCompartir e imprimir el calendario en PDF"),
                 'badge' => '',
                 'cta_label' => __('Hazte Pro'),
                 'highlighted' => false,
                 'disabled' => false,
-                'copilot' => true,
             ],
             'annual' => [
                 'name' => __('Pro Anual'),
                 'price' => '29,90 €',
                 'period' => __('/año'),
                 'description' => __('Acceso anual a todas las funcionalidades Pro.'),
-                'features' => __("Todas las funcionalidades del plan Free\nCopilot: cadenas de cambios a 3 y 4 con IA\nCentros de trabajo ilimitados\nAceptar turnos ilimitados\nPropuestas de cambios a 3\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nEstadísticas de trabajo\nCompartir calendario de turnos"),
+                'features' => __("Todas las funcionalidades del plan Free\nCopilot: asistente con IA\nConsultor legal\nCentros de trabajo ilimitados\nPublicar y proponer cambios sin límite\nCadenas de cambios a 3 y 4\nRecordatorios de turnos\nNotificar cambios al gestor\nPublicar SOS cambio urgente\nRotaciones y estadísticas de trabajo\nCompartir e imprimir el calendario en PDF"),
                 'badge' => __('Ahorras 2 meses'),
                 'cta_label' => __('Hazte Pro'),
                 'highlighted' => true,
                 'disabled' => false,
-                'copilot' => true,
             ],
         ];
 
@@ -126,7 +132,7 @@ if (! function_exists('torns_comparison_data')) {
         return [
             'competitors' => $competitors,
             'rows' => $rows,
-            'reviewed_at' => theme_option('comparison_reviewed_at', '29/07/2026'),
+            'reviewed_at' => theme_option('comparison_reviewed_at', '26/08/2026'),
         ];
     }
 }
@@ -142,8 +148,11 @@ if (! function_exists('torns_default_faq_items')) {
             ['question' => __('¿Qué es Torns?'), 'answer' => __('Torns es una aplicación móvil para iOS y Android que permite a los profesionales sanitarios gestionar cambios de turno con sus compañeros del mismo centro de trabajo y controlar su calendario de guardias y turnos de todos sus centros.')],
             ['question' => __('¿Cómo funciona la app para cambios de turno?'), 'answer' => __('Publicas el turno que necesitas cambiar, tus compañeros reciben una notificación, te proponen un intercambio compatible con su disponibilidad y, al aceptar, se notifica automáticamente al gestor de planillas.')],
             ['question' => __('¿Puedo gestionar mi calendario de turnos en Torns?'), 'answer' => __('Sí. Torns no solo te permite gestionar cambios de guardia con tus compañeros: es una completa herramienta de gestión de tu calendario laboral. Puedes introducir tus turnos, sincronizarlos con Apple Calendar o Google Calendar y mantener tu agenda totalmente al día.')],
+            ['question' => __('¿Puedo llevar en Torns los turnos de varios centros?'), 'answer' => __('Sí. Todos tus turnos y guardias aparecen en el mismo calendario, cada centro con su color. El plan Free incluye 1 centro de trabajo y Torns Pro, centros ilimitados.')],
+            ['question' => __('¿Sirve para guardias de 24 horas?'), 'answer' => __('Sí. Puedes crear turnos y guardias de cualquier duración, incluidas las de 12 y 24 horas, con su horario real.')],
+            ['question' => __('¿Puedo pasar a Torns mi cuadrante en papel?'), 'answer' => __('Sí. Haz una foto del cuadrante o súbelo en un documento: Copilot encuentra tu fila y te propone los turnos para que los revises antes de guardarlos. El archivo no se guarda.')],
             ['question' => __('¿Cómo me puedo registrar en Torns?'), 'answer' => __('Puedes registrarte con tu e-mail personal, con tus cuentas de Google o Apple, o con la cuenta corporativa de Microsoft de tu centro.')],
-            ['question' => __('¿Cuánto cuesta Torns?'), 'answer' => __('Puedes crear una cuenta gratis sin tarjeta de crédito y usar el plan Free. El plan Pro cuesta 2,99 €/mes o 29,90 €/año (con el pago anual ahorras 2 meses) e incluye Copilot, el asistente de IA para cambios de turno.')],
+            ['question' => __('¿Cuánto cuesta Torns?'), 'answer' => __('Puedes crear una cuenta gratis sin tarjeta de crédito y usar el plan Free. El plan Pro cuesta 2,99 €/mes o 29,90 €/año (con el pago anual ahorras 2 meses).')],
             ['question' => __('¿Para qué profesionales sanitarios sirve Torns?'), 'answer' => __('Torns está pensada para enfermeras, médicos, TCAE, auxiliares, celadores, matronas, fisioterapeutas, administrativos sanitarios, técnicos en emergencias sanitarias (TES) y cualquier profesional sanitario que trabaje por turnos o guardias.')],
             ['question' => __('¿En qué idiomas está disponible Torns?'), 'answer' => __('Torns está disponible en castellano, català, galego y euskara.')],
             ['question' => __('¿En qué se diferencia Torns de otras apps de turnos como aTurnos, Shiftool, Supershift o TurnoClip?'), 'answer' => __('Torns combina en una sola app los cambios de turno gestionados entre compañeros del mismo centro y un calendario unificado multi-centro con sincronización Apple/Google Calendar, sin que la empresa tenga que contratar nada. aTurnos es un software de planificación que contrata la empresa; Supershift es un calendario personal sin intercambio de turnos entre compañeros; y a ello Torns añade el SOS de cambios urgentes, la notificación automática al gestor de planillas, chat integrado y los 4 idiomas ES/CA/GL/EU. Puedes ver la comparativa objetiva completa más arriba.')],
@@ -168,6 +177,16 @@ if (! function_exists('torns_comparison_cell')) {
                 . '</span>';
         }
 
+        // Paid plan: the feature is there, with the plan next to the check.
+        if ($normalized === 'pro') {
+            $color = $isTorns ? 'text-torns-primary' : 'text-torns-ink/70';
+
+            return '<span class="inline-flex items-center justify-center gap-1.5 ' . $color . '">'
+                . '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 13 4 4L19 7"/></svg>'
+                . '<span class="rounded-full bg-torns-primary/10 px-2 py-0.5 text-xs font-semibold text-torns-primary-dark">' . e(__('Pro')) . '</span>'
+                . '</span>';
+        }
+
         if (in_array($normalized, ['no', '0', 'false'], true)) {
             return '<span class="inline-flex items-center justify-center text-torns-ink/30" role="img" aria-label="' . e(__('No')) . '">'
                 . '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>'
@@ -179,5 +198,219 @@ if (! function_exists('torns_comparison_cell')) {
         }
 
         return '<span class="text-xs font-medium leading-snug text-torns-ink/70">' . e($value) . '</span>';
+    }
+}
+
+if (! function_exists('torns_comparison_text')) {
+    /** A text from content/site/comparisons: a plain string (Spanish) or {es, ca, gl, eu}. */
+    function torns_comparison_text(mixed $value, ?string $locale = null): string
+    {
+        if (is_array($value)) {
+            $locale ??= function_exists('torns_current_locale') ? torns_current_locale() : 'es';
+
+            return (string) ($value[$locale] ?? $value['es'] ?? reset($value) ?: '');
+        }
+
+        return (string) $value;
+    }
+}
+
+if (! function_exists('torns_comparison_competitors')) {
+    /**
+     * Apps with a comparison page: content/site/comparisons/<slug>.json
+     * (features.json and torns.json are the shared parts).
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    function torns_comparison_competitors(): array
+    {
+        static $cache = null;
+        if ($cache !== null) {
+            return $cache;
+        }
+        $cache = [];
+        foreach (glob(base_path('content/site/comparisons/*.json')) ?: [] as $file) {
+            $slug = basename($file, '.json');
+            if (in_array($slug, ['features', 'torns'], true)) {
+                continue;
+            }
+            $data = json_decode((string) file_get_contents($file), true);
+            if (is_array($data) && ! empty($data['rows'])) {
+                $cache[$slug] = $data;
+            }
+        }
+        ksort($cache);
+
+        return $cache;
+    }
+}
+
+if (! function_exists('torns_app_icon')) {
+    /**
+     * The store icon of an app in the comparisons (assets/images/apps/<slug>.webp,
+     * taken from its App Store listing), or of Torns itself. Null when there
+     * is none, so a new competitor without an icon still renders.
+     */
+    function torns_app_icon(string $slug): ?string
+    {
+        $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($slug));
+        if ($slug === '' || ! is_file(public_path('themes/torns/images/apps/' . $slug . '.webp'))) {
+            return null;
+        }
+
+        return Theme::asset()->url('images/apps/' . $slug . '.webp');
+    }
+}
+
+if (! function_exists('torns_comparison')) {
+    /**
+     * Torns side by side with one app, grouped by feature area, in the
+     * current language. Null when there is no data for that app.
+     */
+    function torns_comparison(string $slug): ?array
+    {
+        $other = torns_comparison_competitors()[$slug] ?? null;
+        $base = base_path('content/site/comparisons');
+        $features = json_decode((string) @file_get_contents("{$base}/features.json"), true);
+        $torns = json_decode((string) @file_get_contents("{$base}/torns.json"), true);
+        if (! $other || ! is_array($features) || ! is_array($torns)) {
+            return null;
+        }
+
+        $cell = fn (?array $row) => [
+            'value' => torns_comparison_text($row['value'] ?? '-'),
+            // Whether the app offers what the row describes; for free-text values it is stated in the data.
+            'has' => isset($row['has']) ? (bool) $row['has'] : ! in_array(torns_comparison_text($row['value'] ?? '-', 'es'), ['no', '-', '—', ''], true),
+            'detail' => torns_comparison_text($row['detail'] ?? ''),
+            'url' => (string) ($row['url'] ?? ''),
+        ];
+
+        $groups = [];
+        foreach ($features['features'] as $feature) {
+            $group = $feature['group'];
+            $groups[$group] ??= ['label' => torns_comparison_text($features['groups'][$group] ?? $group), 'rows' => []];
+            $groups[$group]['rows'][] = [
+                'key' => $feature['key'],
+                'label' => torns_comparison_text($feature['label']),
+                'torns' => $cell($torns['rows'][$feature['key']] ?? null),
+                'other' => $cell($other['rows'][$feature['key']] ?? null),
+            ];
+        }
+
+        return [
+            'slug' => $slug,
+            'name' => (string) $other['name'],
+            'website' => (string) ($other['website'] ?? ''),
+            'checked_on' => (string) ($other['checked_on'] ?? ''),
+            'summary' => torns_comparison_text($other['summary'] ?? ''),
+            'sources' => $other['sources'] ?? [],
+            'torns_source' => (string) ($torns['source'] ?? ''),
+            'groups' => $groups,
+        ];
+    }
+}
+
+if (! function_exists('torns_asset')) {
+    /**
+     * URL of a theme file with a content hash: public files are served with a
+     * ten-year cache, so a changed image under the same name needs a new URL.
+     */
+    function torns_asset(string $path): string
+    {
+        static $versions = [];
+        $file = public_path('themes/torns/' . ltrim($path, '/'));
+        $versions[$path] ??= is_file($file) ? substr(md5_file($file), 0, 10) : null;
+
+        return Theme::asset()->url($path) . ($versions[$path] ? '?v=' . $versions[$path] : '');
+    }
+}
+
+if (! function_exists('torns_blog_listing')) {
+    /**
+     * Posts for the blog page and the category pages: the latest featured post
+     * (shown full width on the first page) and the rest, paginated, without it.
+     * Posts are translated with language-advanced; a post written as a separate
+     * post in another language (language_meta other than the default) is left out.
+     *
+     * @return array{featured: ?Post, posts: LengthAwarePaginator}
+     */
+    function torns_blog_listing(?Category $category = null): array
+    {
+        $postClass = Post::class;
+        $default = is_plugin_active('language') ? Language::getDefaultLocaleCode() : 'es';
+        $otherLanguage = LanguageMeta::query()
+            ->where('reference_type', $postClass)
+            ->where('lang_meta_code', '!=', $default)
+            ->pluck('reference_id');
+
+        $query = fn () => app(PostInterface::class)->applyBeforeExecuteQuery(
+            $postClass::query()
+                ->wherePublished()
+                ->with(['slugable', 'categories'])
+                ->whereNotIn('id', $otherLanguage)
+                ->when($category, fn ($q) => $q->whereHas('categories', fn ($c) => $c->where('categories.id', $category->getKey())))
+                ->orderByDesc('created_at')
+        );
+
+        $featured = $query()->where('is_featured', true)->first();
+        $posts = $query()
+            ->when($featured, fn ($q) => $q->whereKeyNot($featured->getKey()))
+            ->paginate((int) theme_option('number_of_posts_in_a_category', 12));
+
+        return ['featured' => $featured, 'posts' => $posts];
+    }
+}
+
+if (! function_exists('torns_blog_categories')) {
+    /**
+     * Categories for the blog filter: those that have published posts, with
+     * their name and URL in the current language (language-advanced
+     * translations). Until `php artisan torns:blog:taxonomy-merge --apply`
+     * runs, the old one-row-per-language categories still lend their name.
+     *
+     * @return list<array{id: int, name: string, url: string}>
+     */
+    function torns_blog_categories(): array
+    {
+        $meta = LanguageMeta::query()->where('reference_type', Category::class)->get(['reference_id', 'lang_meta_code', 'lang_meta_origin']);
+        $default = is_plugin_active('language') ? Language::getDefaultLocaleCode() : 'es';
+        $locale = torns_current_locale();
+
+        $categories = Category::query()
+            ->wherePublished()
+            ->with('slugable')
+            ->whereNotIn('id', $meta->where('lang_meta_code', '!=', $default)->pluck('reference_id'))
+            ->whereHas('posts', fn ($q) => $q->wherePublished())
+            ->orderBy('order')
+            ->orderBy('name')
+            ->get();
+
+        return $categories->map(function (Category $category) use ($meta, $locale) {
+            $name = (string) $category->name; // translated by language-advanced
+            if ($name === (string) $category->getRawOriginal('name') && ($origin = $meta->firstWhere('reference_id', $category->getKey())?->lang_meta_origin)) {
+                $siblingId = $meta->where('lang_meta_origin', $origin)->firstWhere('lang_meta_code', $locale)?->reference_id;
+                $name = $siblingId && (int) $siblingId !== (int) $category->getKey()
+                    ? (string) (Category::query()->whereKey($siblingId)->value('name') ?: $name)
+                    : $name;
+            }
+
+            return ['id' => (int) $category->getKey(), 'name' => $name, 'url' => (string) $category->url];
+        })->values()->all();
+    }
+}
+
+if (! function_exists('torns_blog_url')) {
+    /** The blog page in the current language: /blog, /ca/blog… */
+    function torns_blog_url(): string
+    {
+        static $url = [];
+        $locale = torns_current_locale();
+        if (! isset($url[$locale])) {
+            $pageId = theme_option('blog_page_id', setting('blog_page_id'));
+            $key = $pageId ? Slug::query()->where(['reference_type' => Page::class, 'reference_id' => $pageId])->value('key') : null;
+            $url[$locale] = url(($locale === 'es' ? '' : $locale . '/') . ($key ?: 'blog'));
+        }
+
+        return $url[$locale];
     }
 }

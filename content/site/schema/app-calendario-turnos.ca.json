@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hi ha alguna app de calendari de torns per a sanitaris?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns és una app de calendari de torns i guàrdies per a infermeres, metges, TCAE, TES i altres professionals sanitaris d'Espanya. Funciona a iPhone, Android, Apple Watch i al navegador (app.torns.app)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "El calendari de torns de Torns és gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El pla Free inclou el calendari de torns, els widgets, l'Apple Watch, els recordatoris i la sincronització amb el calendari del mòbil. Torns Pro costa 2,99 € al mes o 29,90 € a l'any, i tots els comptes nous tenen 30 dies de prova amb les funcions Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc passar el meu quadrant en paper o en PDF a l'app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Amb «Importar quadrant», Torns llegeix una foto, un PDF, una captura o un full de càlcul, n'extreu els teus torns i te'ls mostra perquè els revisis abans de desar-los. L'arxiu no es desa. El pla Free inclou 2 lectures i Torns Pro, 30 al mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc posar una rotació de torns de manera automàtica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, amb Torns Pro. Dibuixes el cicle (per exemple, dues nits i tres de lliures, o un patró de diverses setmanes), en veus una previsualització i Torns omple les dates que triïs, saltant-se els festius i els dies no disponibles si vols. Pots desar fins a 10 rotacions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se sincronitza amb Google Calendar o amb el calendari de l'iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns exporta els teus torns al calendari de l'iPhone o Android que triïs, amb alarmes, i es pot connectar a Google Calendar. Amb Torns Pro, la sincronització bidireccional també proposa importar a Torns els esdeveniments que semblen torns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc portar els torns de diversos centres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cada torn té el seu centre, unitat i àrea, i tots es veuen al mateix calendari. Amb el pla Free t'uneixes a 1 centre de treball i amb Torns Pro, a diversos, per veure i publicar torns a cadascun."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "El calendari funciona sense connexió?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. A iOS i Android pots consultar, crear, editar i esborrar torns sense connexió, i els canvis se sincronitzen en recuperar-la. Canviar torns i el xat necessiten connexió."
+      }
+    }
+  ]
+}

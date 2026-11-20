@@ -11,10 +11,10 @@
         <h2 class="mb-6 font-display text-2xl font-semibold">Colores</h2>
         <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
             @foreach ([
-                'torns-primary' => '#0E7E8A',
-                'torns-primary-dark' => '#0A5A63',
-                'torns-bg' => '#FAFBFB',
-                'torns-ink' => '#16232A',
+                'torns-primary' => '#227A96',
+                'torns-primary-dark' => '#176079',
+                'torns-bg' => '#F4F7F8',
+                'torns-ink' => '#0F2430',
                 'shift-morning' => '#F5A623',
                 'shift-evening' => '#F0685B',
                 'shift-night' => '#4A5BC7',
@@ -34,7 +34,7 @@
         <h2 class="mb-6 font-display text-2xl font-semibold">Tipografías</h2>
         <div class="grid gap-6 rounded-2xl border border-torns-ink/10 bg-white p-8 lg:grid-cols-2">
             <div>
-                <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-torns-ink/50">Bricolage Grotesque — display</p>
+                <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-torns-ink/50">Poppins — display</p>
                 <p class="font-display text-4xl font-bold">Cambia turnos con tus compañeros</p>
                 <p class="mt-2 font-display text-2xl font-semibold">Y gestiona el calendario de todos tus centros</p>
             </div>

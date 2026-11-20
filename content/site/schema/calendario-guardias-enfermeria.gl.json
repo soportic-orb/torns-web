@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hai algunha app de calendario de quendas para enfermeiras?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns é unha app de calendario de quendas e gardas para enfermeiras, TCAE, matronas e outros profesionais sanitarios de España, con cambios de quenda entre compañeiras do mesmo centro e categoría. Ten plan gratuíto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo apuntar gardas de 24 horas e quendas localizables?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns ten os tipos de quenda Mañá, Tarde, Noite, Día, 24h e Localizable, cada un coa súa cor e o seu horario, e podes marcar unha quenda como hora extraordinaria ou JAC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como cambio unha quenda con outra enfermeira?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publica a quenda na lapela Cambios. As túas compañeiras de centro e categoría vena no Muro e propóñenche unha das súas quendas; ao aceptar, Torns actualiza os dous calendarios. Con Torns Pro, o cambio pódese comunicar por correo electrónico ao xestor de cadros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo pasar o cadro de quendas da planta á app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns le unha foto, un PDF ou unha folla de cálculo do cadro de quendas, busca a túa fila polo teu nome e extrae as túas quendas para que as revises. O arquivo non se garda. Free inclúe 2 lecturas e Torns Pro, 30 ao mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns conta as miñas horas, noites e festivos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, con Torns Pro. As estatísticas de traballo resumen por mes ou por ano as quendas e horas traballadas, as horas extra, os sábados, domingos e festivos, e o reparto por tipo de quenda, área e día da semana."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns está en catalán, galego e éuscaro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns está en castelán, catalán, galego e éuscaro, e cada persoa escolle o idioma da app no seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns garda datos de pacientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Torns trata só datos persoais e laborais dos profesionais, e a moderación do muro social bloquea as publicacións con datos de pacientes ou información clínica."
+      }
+    }
+  ]
+}

@@ -1,5 +1,25 @@
 {
     "shift_letter_morning": "M",
     "shift_letter_evening": "E",
-    "shift_letter_night": "N"
+    "shift_letter_night": "N",
+    "Blog": "Blog",
+    "Noticias y consejos para quien trabaja a turnos": "News and tips for people who work shifts",
+    "Categorías": "Categories",
+    "Todas las publicaciones": "All posts",
+    "Destacada": "Featured",
+    "Volver al blog": "Back to the blog",
+    "Ver todas las publicaciones": "See all posts",
+    ":name · Blog de Torns": ":name · Torns blog",
+    "Publicaciones del blog de Torns sobre :name, para profesionales sanitarios que trabajan a turnos y guardias.": "Torns blog posts about :name, for healthcare professionals who work shifts and on-call duty.",
+    "Inicio": "Home",
+    ":name: artículos para sanitarios a turnos · Blog de Torns": ":name: articles for healthcare shift workers · Torns blog",
+    "Desarrollado en Barcelona 🎉 por :company": "Made in Barcelona 🎉 by :company",
+    "Regístrate ahora y disfruta del plan Pro gratis durante 30 días": "Sign up now and enjoy the Pro plan free for 30 days",
+    "Prueba todas las funcionalidades de Torns como centros de trabajo ilimitados, el Copilot, las alertas personalizadas, los cambios a 3 o los cambios urgentes SOS.": "Try every Torns feature, such as unlimited workplaces, Copilot, custom alerts, three-way swaps or urgent SOS swaps.",
+    "For organizations": "For organizations",
+    "Healthcare centres": "Healthcare centres",
+    "Hospitals, health centres and emergency services": "Hospitals, health centres and emergency services",
+    "Professional associations": "Professional associations",
+    "Unions, professional colleges and scientific societies": "Unions, professional colleges and scientific societies",
+    "For professional associations": "For professional associations"
 }

@@ -1,0 +1,422 @@
+{
+    "locales": [
+        "es",
+        "ca",
+        "gl",
+        "eu"
+    ],
+    "pages": {
+        "home": {
+            "slug": "",
+            "template": "full-width",
+            "role": "homepage",
+            "name": {
+                "es": "Inicio",
+                "ca": "Inici",
+                "gl": "Inicio",
+                "eu": "Hasiera"
+            },
+            "seo_title": {
+                "es": "App de calendario de turnos y guardias para sanitarios | Torns",
+                "ca": "Calendari de torns i guàrdies multicentre i canvis de torn | Torns",
+                "gl": "Calendario de quendas e gardas multicentro e cambios de quenda | Torns",
+                "eu": "Zentro anitzeko txanda eta guardien egutegia eta txanda-aldaketak | Torns"
+            },
+            "seo_description": {
+                "es": "La app para profesionales sanitarios: todos tus turnos y guardias de todos tus centros en un solo calendario, y cambios de turno con tus compañeros. Gratis, sin tarjeta.",
+                "ca": "L'app per a professionals sanitaris: tots els teus torns i guàrdies de tots els teus centres en un sol calendari, i canvis de torn amb els teus companys. Gratis, sense targeta.",
+                "gl": "A app para profesionais sanitarios: todas as túas quendas e gardas de todos os teus centros nun só calendario, e cambios de quenda cos teus compañeiros. Gratis, sen tarxeta.",
+                "eu": "Osasun-profesionalentzako appa: zure zentro guztietako txanda eta guardia guztiak egutegi bakarrean, eta txanda-aldaketak lankideekin. Doan, txartelik gabe."
+            },
+            "schema": false
+        },
+        "funcionalidades": {
+            "slug": "funcionalidades",
+            "template": "full-width",
+            "schema": true,
+            "name": {
+                "es": "Funcionalidades",
+                "ca": "Funcionalitats",
+                "gl": "Funcionalidades",
+                "eu": "Funtzioak"
+            },
+            "seo_title": {
+                "es": "Funcionalidades de Torns: calendario de turnos, cambios y Copilot",
+                "ca": "Funcionalitats de Torns: calendari de torns, canvis i Copilot",
+                "gl": "Funcionalidades de Torns: calendario de quendas, cambios e Copilot",
+                "eu": "Torns-en funtzioak: txanden egutegia, aldaketak eta Copilot"
+            },
+            "seo_description": {
+                "es": "Todo lo que hace Torns, con planes y límites: calendario multicentro, importar el cuadrante, cambios y cadenas, SOS, Copilot, consultor legal, Apple Watch y panel para centros.",
+                "ca": "Tot el que fa Torns, amb plans i límits: calendari multicentre, importar el quadrant, canvis i cadenes, SOS, Copilot, consultor legal, Apple Watch i panell per a centres.",
+                "gl": "Todo o que fai Torns, con plans e límites: calendario multicentro, importar o cadro de quendas, cambios e cadeas, SOS, Copilot, consultor legal, Apple Watch e panel para centros.",
+                "eu": "Torns-ek egiten duen guztia, planekin eta mugekin: zentro anitzeko egutegia, koadrantea inportatzea, aldaketak eta kateak, SOS, Copilot, lege-aholkularia, Apple Watch eta zentroentzako panela."
+            },
+            "markdown": true
+        },
+        "app-calendario-turnos": {
+            "slug": "app-calendario-turnos",
+            "template": "full-width",
+            "name": {
+                "es": "App de calendario de turnos",
+                "ca": "App de calendari de torns",
+                "gl": "App de calendario de quendas",
+                "eu": "Txanden egutegirako appa"
+            },
+            "seo_title": {
+                "es": "App de calendario de turnos y guardias gratis | Torns",
+                "ca": "App de calendari de torns i guàrdies gratis | Torns",
+                "gl": "App de calendario de quendas e gardas gratis | Torns",
+                "eu": "Txanden egutegirako appa: txandak eta guardiak doan | Torns"
+            },
+            "seo_description": {
+                "es": "Todos tus turnos y guardias en un calendario en el móvil: el cuadrante con una foto, rotaciones, widgets y Apple Watch. Para sanitarios. Gratis.",
+                "ca": "Tots els teus torns i guàrdies en un calendari al mòbil: el quadrant amb una foto, rotacions, widgets i Apple Watch. Per a sanitaris. Gratis.",
+                "gl": "Todas as túas quendas e gardas nun calendario no móbil: o cadro de quendas cunha foto, rotacións, widgets e Apple Watch. Para sanitarios. Gratis.",
+                "eu": "Zure txanda eta guardia guztiak mugikorreko egutegi batean: txanda-koadroa argazki batekin, errotazioak, widgetak eta Apple Watch. Osasunerako. Doan."
+            },
+            "markdown": true
+        },
+        "calendario-guardias-enfermeria": {
+            "slug": "calendario-guardias-enfermeria",
+            "template": "full-width",
+            "name": {
+                "es": "Calendario de guardias de enfermería",
+                "ca": "Calendari de guàrdies d'infermeria",
+                "gl": "Calendario de gardas de enfermaría",
+                "eu": "Erizaintzako guardien egutegia"
+            },
+            "seo_title": {
+                "es": "Calendario de turnos y guardias de enfermería | Torns",
+                "ca": "Calendari de guàrdies d'infermeria i torns | Torns",
+                "gl": "Calendario de quendas e gardas de enfermaría | Torns",
+                "eu": "Erizaintzako guardien eta txanden egutegia | Torns"
+            },
+            "seo_description": {
+                "es": "La app de calendario para enfermeras, TCAE y matronas: turnos, noches y guardias en el móvil, el cuadrante con una foto y cambios con tus compañeras.",
+                "ca": "L'app de calendari per a infermeres, TCAE i llevadores: torns, nits i guàrdies al mòbil, el quadrant amb una foto i canvis amb les teves companyes.",
+                "gl": "A app de calendario para enfermeiras, TCAE e matronas: quendas, noites e gardas no móbil, o cadro de quendas cunha foto e cambios coas túas compañeiras.",
+                "eu": "Erizain, TCAE eta emaginentzako egutegi appa: txandak, gauak eta guardiak mugikorrean, txanda-koadroa argazki batekin eta aldaketak lankideekin."
+            },
+            "markdown": true
+        },
+        "gestion-de-turnos": {
+            "slug": "gestion-de-turnos",
+            "template": "full-width",
+            "name": {
+                "es": "Gestión de turnos",
+                "ca": "Gestió de torns",
+                "gl": "Xestión de quendas",
+                "eu": "Txanden kudeaketa"
+            },
+            "seo_title": {
+                "es": "Gestión de turnos y guardias para sanitarios | Torns",
+                "ca": "Gestió de torns i guàrdies per a sanitaris | Torns",
+                "gl": "Xestión de quendas e gardas para sanitarios | Torns",
+                "eu": "Txanden kudeaketa osasun-profesionalentzat | Torns"
+            },
+            "seo_description": {
+                "es": "Gestión de turnos y guardias para sanitarios y centros: calendario en el móvil, cambios comunicados al gestor, turnos a cubrir y panel web para centros.",
+                "ca": "Gestió de torns i guàrdies per a sanitaris i centres: calendari al mòbil, canvis comunicats al gestor, torns per cobrir i panell web per a centres.",
+                "gl": "Xestión de quendas e gardas para sanitarios e centros: calendario no móbil, cambios comunicados ao xestor, quendas para cubrir e panel web para centros.",
+                "eu": "Txanden eta guardien kudeaketa osasunerako: egutegia mugikorrean, kudeatzaileari jakinarazitako aldaketak, estaltzeko txandak eta zentroentzako panela."
+            },
+            "markdown": true
+        },
+        "calendario-turnos-rotativos": {
+            "slug": "calendario-turnos-rotativos",
+            "template": "full-width",
+            "name": {
+                "es": "Calendario de turnos rotativos",
+                "ca": "Calendari de torns rotatius",
+                "gl": "Calendario de quendas rotativas",
+                "eu": "Txanda errotatiboen egutegia"
+            },
+            "seo_title": {
+                "es": "App de calendario de turnos rotativos | Torns",
+                "ca": "App de calendari de torns rotatius | Torns",
+                "gl": "App de calendario de quendas rotativas | Torns",
+                "eu": "Txanda errotatiboen egutegirako appa | Torns"
+            },
+            "seo_description": {
+                "es": "Pon tu rotación de turnos en el calendario de una vez: dibuja el ciclo y Torns rellena los meses. Noches, guardias de 24 h y localizables. Para sanitarios.",
+                "ca": "Posa la teva rotació de torns al calendari d'una vegada: dibuixa el cicle i Torns omple els mesos. Nits, guàrdies de 24 h i localitzables. Per a sanitaris.",
+                "gl": "Pon a túa rotación de quendas no calendario dunha vez: debuxa o ciclo e Torns enche os meses. Noites, gardas de 24 h e localizables. Para sanitarios.",
+                "eu": "Jarri zure txanda-errotazioa egutegian behin betiko: marraztu zikloa eta Torns-ek hilabeteak betetzen ditu. Gauak, 24 orduko guardiak eta lokalizagarriak. Osasunerako."
+            },
+            "markdown": true
+        },
+        "cuadrante-turnos-movil": {
+            "slug": "cuadrante-turnos-movil",
+            "template": "full-width",
+            "name": {
+                "es": "Cuadrante de turnos en el móvil",
+                "ca": "Quadrant de torns al mòbil",
+                "gl": "Cadro de quendas no móbil",
+                "eu": "Txanda-koadroa mugikorrean"
+            },
+            "seo_title": {
+                "es": "Pasa tu cuadrante de turnos al móvil con una foto | Torns",
+                "ca": "Passa el teu quadrant de torns al mòbil amb una foto | Torns",
+                "gl": "Pasa o teu cadro de quendas ao móbil cunha foto | Torns",
+                "eu": "Pasa zure txanda-koadroa mugikorrera argazki batekin | Torns"
+            },
+            "seo_description": {
+                "es": "Haz una foto al cuadrante de turnos y Torns lo pasa a tu calendario: busca tu fila, te enseña tus turnos y no guarda el archivo. Para sanitarios. Gratis.",
+                "ca": "Fes una foto al quadrant de torns i Torns el passa al teu calendari: busca la teva fila, t'ensenya els teus torns i no desa el fitxer. Per a sanitaris. Gratis.",
+                "gl": "Fai unha foto ao cadro de quendas e Torns pásao ao teu calendario: busca a túa fila, amósache as túas quendas e non garda o ficheiro. Para sanitarios. Gratis.",
+                "eu": "Atera argazki bat txanda-koadroari eta Torns-ek zure egutegira pasatzen du: zure errenkada bilatzen du, zure txandak erakusten dizkizu eta ez du fitxategia gordetzen. Doan."
+            },
+            "markdown": true
+        },
+        "centros": {
+            "slug": "centros",
+            "template": "full-width",
+            "name": {
+                "es": "Torns para centros",
+                "ca": "Torns per a centres",
+                "gl": "Torns para centros",
+                "eu": "Torns zentroentzat"
+            },
+            "seo_title": {
+                "es": "Torns para centros sanitarios y hospitales",
+                "ca": "Torns per a centres sanitaris i hospitals",
+                "gl": "Torns para centros sanitarios e hospitais",
+                "eu": "Torns osasun-zentro eta ospitaleentzat"
+            },
+            "seo_description": {
+                "es": "Torns para hospitales, centros de salud y servicios de emergencias: el calendario de turnos y los cambios de tu personal en un panel, con aviso al gestor. Desde 0,39 € por usuario y mes; 30 días de prueba.",
+                "ca": "Torns per a hospitals, CAP i serveis d'emergències: el calendari de torns i els canvis del teu personal en un panell, amb avís al gestor. Des de 0,39 € per usuari i mes; 30 dies de prova.",
+                "gl": "Torns para hospitais, centros de saúde e servizos de emerxencias: o calendario de quendas e os cambios do teu persoal nun panel, con aviso ao xestor. Desde 0,39 € por usuario e mes; 30 días de proba.",
+                "eu": "Torns ospitale, osasun-zentro eta larrialdi-zerbitzuentzat: zure langileen txanden egutegia eta aldaketak panel batean, kudeatzaileari abisuarekin. 0,39 €-tik aurrera erabiltzaile eta hilabeteko; 30 eguneko proba."
+            }
+        },
+        "asociaciones-profesionales": {
+            "slug": "asociaciones-profesionales",
+            "template": "full-width",
+            "name": {
+                "es": "Torns para asociaciones profesionales",
+                "ca": "Torns per a associacions professionals",
+                "gl": "Torns para asociacións profesionais",
+                "eu": "Torns elkarte profesionalentzat"
+            },
+            "seo_title": {
+                "es": "Torns para asociaciones, colegios profesionales y sindicatos",
+                "ca": "Torns per a associacions, col·legis professionals i sindicats",
+                "gl": "Torns para asociacións, colexios profesionais e sindicatos",
+                "eu": "Torns elkarte, elkargo profesional eta sindikatuentzat"
+            },
+            "seo_description": {
+                "es": "Ofrece Torns Pro a tus colegiados, afiliados o socios: calendario de turnos, cambios y consultor legal. Patrocinio total o parcial y un panel de gestión propio.",
+                "ca": "Ofereix Torns Pro als teus col·legiats, afiliats o socis: calendari de torns, canvis i consultor legal. Patrocini total o parcial i un panell de gestió propi.",
+                "gl": "Ofrece Torns Pro aos teus colexiados, afiliados ou socios: calendario de quendas, cambios e consultor legal. Patrocinio total ou parcial e un panel de xestión propio.",
+                "eu": "Eskaini Torns Pro zure elkargokide, afiliatu edo bazkideei: txanden egutegia, aldaketak eta lege-aholkularia. Babes osoa edo partziala eta kudeaketa-panel propioa."
+            },
+            "markdown": true
+        },
+        "contacta": {
+            "slug": "contacta",
+            "template": "full-width",
+            "name": {
+                "es": "Contacta",
+                "ca": "Contacta",
+                "gl": "Contacta",
+                "eu": "Kontaktua"
+            },
+            "seo_title": {
+                "es": "Contacta con Torns: dudas, soporte y licencias para centros",
+                "ca": "Contacta amb Torns: dubtes, suport i llicències per a centres",
+                "gl": "Contacta con Torns: dúbidas, soporte e licenzas para centros",
+                "eu": "Jarri harremanetan Torns taldearekin: zalantzak eta laguntza"
+            },
+            "seo_description": {
+                "es": "Escríbenos y te ayudamos: dudas sobre la app de calendario de turnos y cambios, licencias para centros sanitarios o soporte. Respondemos en hola@torns.app.",
+                "ca": "Escriu-nos i t'ajudem: dubtes sobre l'app de calendari de torns i canvis, llicències per a centres sanitaris o suport. Responem a hola@torns.app.",
+                "gl": "Escríbenos e axudámosche: dúbidas sobre a app de calendario de quendas e cambios, licenzas para centros sanitarios ou soporte. Respondemos en hola@torns.app.",
+                "eu": "Idatzi eta lagunduko dizugu: txanden egutegiaren eta aldaketen appari, osasun-zentroetarako lizentziei edo laguntzari buruzko zalantzak. hola@torns.app helbidean erantzuten dugu."
+            }
+        },
+        "terminos": {
+            "slug": "terminos",
+            "template": "default",
+            "name": {
+                "es": "Términos y condiciones de uso",
+                "ca": "Termes i condicions d'ús",
+                "gl": "Termos e condicións de uso",
+                "eu": "Erabilera-baldintzak"
+            },
+            "seo_title": {
+                "es": "Términos y condiciones de uso | Torns",
+                "ca": "Termes i condicions d'ús | Torns",
+                "gl": "Termos e condicións de uso | Torns",
+                "eu": "Erabilera-baldintzak | Torns"
+            },
+            "seo_description": {
+                "es": "Términos y condiciones de uso de la aplicación y los servicios de Torns.",
+                "ca": "Termes i condicions d'ús de l'aplicació i els serveis de Torns.",
+                "gl": "Termos e condicións de uso da aplicación e os servizos de Torns.",
+                "eu": "Torns aplikazioaren eta zerbitzuen erabilera-baldintzak."
+            }
+        },
+        "privacidad": {
+            "slug": "privacidad",
+            "template": "default",
+            "name": {
+                "es": "Política de Privacidad",
+                "ca": "Política de Privacitat",
+                "gl": "Política de Privacidade",
+                "eu": "Pribatutasun Politika"
+            },
+            "seo_title": {
+                "es": "Política de privacidad | Torns",
+                "ca": "Política de privacitat | Torns",
+                "gl": "Política de privacidade | Torns",
+                "eu": "Pribatutasun-politika | Torns"
+            },
+            "seo_description": {
+                "es": "Política de privacidad de Torns: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos.",
+                "ca": "Política de privacitat de Torns: quines dades tractem, amb quina finalitat i com exercir els teus drets.",
+                "gl": "Política de privacidade de Torns: que datos tratamos, con que finalidade e como exercer os teus dereitos.",
+                "eu": "Torns-en pribatutasun-politika: zein datu tratatzen ditugun, zein helbururekin eta nola erabili zure eskubideak."
+            }
+        },
+        "blog": {
+            "slug": "blog",
+            "template": "full-width",
+            "role": "blog",
+            "name": {
+                "es": "Blog",
+                "ca": "Blog",
+                "gl": "Blog",
+                "eu": "Bloga"
+            },
+            "seo_title": {
+                "es": "Blog de Torns — turnos y sanidad",
+                "ca": "Blog de Torns — torns i sanitat",
+                "gl": "Blog de Torns — quendas e sanidade",
+                "eu": "Torns bloga — txandak eta osasuna"
+            },
+            "seo_description": {
+                "es": "Novedades de Torns y consejos para profesionales sanitarios que trabajan a turnos: cambios de turno, calendario laboral y conciliación.",
+                "ca": "Novetats de Torns i consells per a professionals sanitaris que treballen a torns: canvis de torn, calendari laboral i conciliació.",
+                "gl": "Novidades de Torns e consellos para profesionais sanitarios que traballan a quendas: cambios de quenda, calendario laboral e conciliación.",
+                "eu": "Torns-en berriak eta txandaka lan egiten duten osasun-profesionalentzako aholkuak: txanda-aldaketak, lan-egutegia eta kontziliazioa."
+            }
+        },
+        "comparativas": {
+            "slug": "comparativas",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Comparativas",
+                "ca": "Comparatives",
+                "gl": "Comparativas",
+                "eu": "Konparaketak"
+            },
+            "seo_title": {
+                "es": "Torns frente a otras apps de turnos: comparativas",
+                "ca": "Torns davant d'altres apps de torns: comparatives",
+                "gl": "Torns fronte a outras apps de quendas: comparativas",
+                "eu": "Torns eta txanden beste aplikazioak: konparaketak"
+            },
+            "seo_description": {
+                "es": "Comparativas de funcionalidades entre Torns y aTurnos, Shiftool, Supershift y TurnoClip: calendario de turnos, cambios entre compañeros, idiomas, precios y fuentes de cada dato.",
+                "ca": "Comparatives de funcionalitats entre Torns i aTurnos, Shiftool, Supershift i TurnoClip: calendari de torns, canvis entre companys, idiomes, preus i fonts de cada dada.",
+                "gl": "Comparativas de funcionalidades entre Torns e aTurnos, Shiftool, Supershift e TurnoClip: calendario de quendas, cambios entre compañeiros, idiomas, prezos e fontes de cada dato.",
+                "eu": "Torns eta aTurnos, Shiftool, Supershift eta TurnoClip arteko funtzio-konparaketak: txanden egutegia, lankideen arteko aldaketak, hizkuntzak, prezioak eta datu bakoitzaren iturriak."
+            }
+        },
+        "vs-aturnos": {
+            "slug": "torns-vs-aturnos",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs aTurnos",
+                "ca": "Torns vs aTurnos",
+                "gl": "Torns vs aTurnos",
+                "eu": "Torns vs aTurnos"
+            },
+            "seo_title": {
+                "es": "Torns vs aTurnos: comparativa de funcionalidades",
+                "ca": "Torns vs aTurnos: comparativa de funcionalitats",
+                "gl": "Torns vs aTurnos: comparativa de funcionalidades",
+                "eu": "Torns vs aTurnos: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y aTurnos, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i aTurnos, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e aTurnos, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta aTurnos, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-shiftool": {
+            "slug": "torns-vs-shiftool",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs Shiftool",
+                "ca": "Torns vs Shiftool",
+                "gl": "Torns vs Shiftool",
+                "eu": "Torns vs Shiftool"
+            },
+            "seo_title": {
+                "es": "Torns vs Shiftool: comparativa de funcionalidades",
+                "ca": "Torns vs Shiftool: comparativa de funcionalitats",
+                "gl": "Torns vs Shiftool: comparativa de funcionalidades",
+                "eu": "Torns vs Shiftool: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y Shiftool, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i Shiftool, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e Shiftool, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta Shiftool, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-supershift": {
+            "slug": "torns-vs-supershift",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs Supershift",
+                "ca": "Torns vs Supershift",
+                "gl": "Torns vs Supershift",
+                "eu": "Torns vs Supershift"
+            },
+            "seo_title": {
+                "es": "Torns vs Supershift: comparativa de funcionalidades",
+                "ca": "Torns vs Supershift: comparativa de funcionalitats",
+                "gl": "Torns vs Supershift: comparativa de funcionalidades",
+                "eu": "Torns vs Supershift: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y Supershift, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i Supershift, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e Supershift, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta Supershift, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        },
+        "vs-turnoclip": {
+            "slug": "torns-vs-turnoclip",
+            "template": "full-width",
+            "markdown": true,
+            "name": {
+                "es": "Torns vs TurnoClip",
+                "ca": "Torns vs TurnoClip",
+                "gl": "Torns vs TurnoClip",
+                "eu": "Torns vs TurnoClip"
+            },
+            "seo_title": {
+                "es": "Torns vs TurnoClip: comparativa de funcionalidades",
+                "ca": "Torns vs TurnoClip: comparativa de funcionalitats",
+                "gl": "Torns vs TurnoClip: comparativa de funcionalidades",
+                "eu": "Torns vs TurnoClip: funtzioen konparaketa"
+            },
+            "seo_description": {
+                "es": "Torns y TurnoClip, punto por punto: calendario de turnos, cambios entre compañeros, rotaciones, sincronización, idiomas, precio y más, con la fuente pública de cada dato.",
+                "ca": "Torns i TurnoClip, punt per punt: calendari de torns, canvis entre companys, rotacions, sincronització, idiomes, preu i més, amb la font pública de cada dada.",
+                "gl": "Torns e TurnoClip, punto por punto: calendario de quendas, cambios entre compañeiros, rotacións, sincronización, idiomas, prezo e máis, coa fonte pública de cada dato.",
+                "eu": "Torns eta TurnoClip, puntuz puntu: txanden egutegia, lankideen arteko aldaketak, errotazioak, sinkronizazioa, hizkuntzak, prezioa eta gehiago, datu bakoitzaren iturri publikoarekin."
+            }
+        }
+    }
+}

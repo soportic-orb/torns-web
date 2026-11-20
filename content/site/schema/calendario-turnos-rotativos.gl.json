@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Podo poñer a miña rotación de quendas de forma automática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, con Torns Pro. Debuxas o ciclo (por exemplo, dúas noites e tres libres, ou un patrón de varias semanas), ves unha vista previa e Torns enche as datas que escollas. Podes gardar ata 10 rotacións."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A rotación respecta os festivos e as miñas vacacións?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se queres, si: ao aplicala, Torns pode saltar os festivos e os días que marcaches como non dispoñibles. Tampouco modifica as quendas que xa publicaches para cambiar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "As rotacións de quendas son gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As rotacións son de Torns Pro, que custa 2,99 € ao mes ou 29,90 € ao ano. Todas as contas novas teñen 30 días de proba coas funcións Pro, e o plan Free inclúe o calendario de quendas, engadir varias quendas e os lugares habituais."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "E se o meu cadro de quendas non segue un patrón fixo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Podes importalo: Torns le unha foto, un PDF, unha captura ou unha folla de cálculo do cadro de quendas e amósache as túas quendas para que as revises antes de gardalas. O plan Free inclúe 2 lecturas e Torns Pro, 30 ao mes."
+      }
+    }
+  ]
+}

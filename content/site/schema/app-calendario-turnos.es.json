@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Hay una app de calendario de turnos para sanitarios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns es una app de calendario de turnos y guardias para enfermeras, médicos, TCAE, TES y otros profesionales sanitarios de España. Funciona en iPhone, Android, Apple Watch y en el navegador (app.torns.app)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El calendario de turnos de Torns es gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El plan Free incluye el calendario de turnos, los widgets, el Apple Watch, los recordatorios y la sincronización con el calendario del móvil. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo pasar mi cuadrante en papel o en PDF a la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Con «Importar cuadrante», Torns lee una foto, un PDF, una captura o una hoja de cálculo, extrae tus turnos y te los enseña para que los revises antes de guardarlos. El archivo no se guarda. El plan Free incluye 2 lecturas y Torns Pro, 30 al mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo poner una rotación de turnos de forma automática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, con Torns Pro. Dibujas el ciclo (por ejemplo, dos noches y tres libres, o un patrón de varias semanas), ves una vista previa y Torns rellena las fechas que elijas, saltándose los festivos y los días no disponibles si quieres. Puedes guardar hasta 10 rotaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se sincroniza con Google Calendar o con el calendario del iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns exporta tus turnos al calendario del iPhone o Android que elijas, con alarmas, y puede conectarse a Google Calendar. Con Torns Pro, la sincronización bidireccional también propone importar a Torns los eventos que parecen turnos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo llevar los turnos de varios centros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cada turno lleva su centro, unidad y área, y todos se ven en el mismo calendario. En el plan Free te unes a 1 centro de trabajo y con Torns Pro, a varios, para ver y publicar turnos en cada uno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El calendario funciona sin conexión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. En iOS y Android puedes consultar, crear, editar y borrar turnos sin conexión, y los cambios se sincronizan al recuperarla. Cambiar turnos y el chat necesitan conexión."
+      }
+    }
+  ]
+}

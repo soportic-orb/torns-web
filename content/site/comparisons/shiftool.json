@@ -1,0 +1,486 @@
+{
+  "name": "Shiftool",
+  "slug": "shiftool",
+  "website": "https://shiftool.com/",
+  "checked_on": "2026-10-20",
+  "summary": {
+    "es": "Shiftool es una app móvil (iOS y Android, con acceso web) de Shiftool S.L. para gestionar turnos de trabajo, proponer cambios a compañeros que también la usen y compartir el calendario en modo de solo lectura. Se dirige a trabajadores por turnos en general y ofrece un plan gratuito con publicidad y un plan Premium sin publicidad.",
+    "ca": "Shiftool és una app mòbil (iOS i Android, amb accés web) de Shiftool S.L. per gestionar torns de feina, proposar canvis a companys que també la facin servir i compartir el calendari en mode de només lectura. S'adreça a treballadors per torns en general i ofereix un pla gratuït amb publicitat i un pla Premium sense publicitat.",
+    "gl": "Shiftool é unha app móbil (iOS e Android, con acceso web) de Shiftool S.L. para xestionar quendas de traballo, propoñer cambios a compañeiros que tamén a usen e compartir o calendario en modo de só lectura. Diríxese a traballadores por quendas en xeral e ofrece un plan gratuíto con publicidade e un plan Premium sen publicidade.",
+    "eu": "Shiftool Shiftool S.L.-ren aplikazio mugikor bat da (iOS eta Android, web bidezko sarbidearekin), lan-txandak kudeatzeko, hura erabiltzen duten lankideei aldaketak proposatzeko eta egutegia irakurtzeko soilik moduan partekatzeko. Oro har txandaka lan egiten dutenei zuzenduta dago, eta publizitatedun doako plan bat eta publizitaterik gabeko Premium plan bat eskaintzen ditu."
+  },
+  "sources": [
+    {
+      "url": "https://shiftool.com/",
+      "title": "Shiftool · Gestiona y cambia tus turnos de trabajo"
+    },
+    {
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193",
+      "title": "Shiftool en App Store (España)"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.shiftool.app&hl=es",
+      "title": "Shiftool en Google Play"
+    },
+    {
+      "url": "https://play.google.com/store/apps/datasafety?id=com.shiftool.app&hl=es",
+      "title": "Shiftool – Seguridad de los datos (Google Play)"
+    },
+    {
+      "url": "https://shiftool.com/terminos.html",
+      "title": "Términos y Condiciones de Uso – Shiftool"
+    },
+    {
+      "url": "https://shiftool.com/privacidad.html",
+      "title": "Política de privacidad – Shiftool"
+    }
+  ],
+  "rows": {
+    "focus": {
+      "value": {
+        "es": "Turnos propios y cambios entre compañeros",
+        "ca": "Torns propis i canvis entre companys",
+        "gl": "Quendas propias e cambios entre compañeiros",
+        "eu": "Norberaren txandak eta lankideen arteko aldaketak"
+      },
+      "detail": {
+        "es": "App para que cada trabajador gestione sus turnos, los intercambie con compañeros que también usen la app y los comparta con familiares.",
+        "ca": "App perquè cada treballador gestioni els seus torns, els intercanviï amb companys que també facin servir l'app i els comparteixi amb familiars.",
+        "gl": "App para que cada traballador xestione as súas quendas, as intercambie con compañeiros que tamén usen a app e as comparta con familiares.",
+        "eu": "Langile bakoitzak bere txandak kudeatzeko, aplikazioa erabiltzen duten lankideekin trukatzeko eta senideekin partekatzeko aplikazioa."
+      },
+      "quote": "Gestiona y cambia tus turnos de trabajo con tus compañeros. Shiftool organiza tu calendario laboral, encuentra cambios de turno automáticamente",
+      "url": "https://shiftool.com/",
+      "has": true
+    },
+    "platforms": {
+      "value": {
+        "es": "iOS, Android y web",
+        "ca": "iOS, Android i web",
+        "gl": "iOS, Android e web",
+        "eu": "iOS, Android eta weba"
+      },
+      "detail": {
+        "es": "La web enlaza a App Store, Google Play y a un acceso web (app.shiftool.com); la ficha de App Store indica compatibilidad con iPhone, iPad, iPod touch, Mac con chip M1 y Apple Vision, sin mencionar Apple Watch.",
+        "ca": "El web enllaça a l'App Store, a Google Play i a un accés web (app.shiftool.com); la fitxa de l'App Store indica compatibilitat amb iPhone, iPad, iPod touch, Mac amb xip M1 i Apple Vision, sense esmentar Apple Watch.",
+        "gl": "A web enlaza a App Store, Google Play e a un acceso web (app.shiftool.com); a ficha de App Store indica compatibilidade con iPhone, iPad, iPod touch, Mac con chip M1 e Apple Vision, sen mencionar Apple Watch.",
+        "eu": "Webguneak App Storera, Google Playra eta web bidezko sarbide batera (app.shiftool.com) estekatzen du; App Storeko fitxak iPhone, iPad, iPod touch, M1 txipdun Mac eta Apple Visionekin bateragarritasuna adierazten du, Apple Watch aipatu gabe."
+      },
+      "quote": "Gratis · Sin tarjeta · Disponible en iOS y Android",
+      "url": "https://shiftool.com/",
+      "has": true
+    },
+    "languages": {
+      "value": {
+        "es": "App Store: solo inglés",
+        "ca": "App Store: només anglès",
+        "gl": "App Store: só inglés",
+        "eu": "App Store: ingelesa soilik"
+      },
+      "detail": {
+        "es": "La ficha española de App Store declara como único idioma el inglés, mientras que la web y las descripciones de las tiendas están en español; no se mencionan catalán, gallego ni euskera.",
+        "ca": "La fitxa espanyola de l'App Store declara com a únic idioma l'anglès, mentre que el web i les descripcions de les botigues són en espanyol; no s'esmenten el català, el gallec ni el basc.",
+        "gl": "A ficha española de App Store declara como único idioma o inglés, mentres que a web e as descricións das tendas están en español; non se mencionan catalán, galego nin éuscaro.",
+        "eu": "App Storeko fitxa espainiarrak ingelesa adierazten du hizkuntza bakar gisa; webgunea eta denden deskribapenak, berriz, gaztelaniaz daude; ez dira aipatzen katalana, galiziera ezta euskara ere."
+      },
+      "quote": "Idiomas Inglés",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193",
+      "has": false
+    },
+    "price": {
+      "value": {
+        "es": "Gratis; Premium 1,99 €/mes",
+        "ca": "Gratis; Premium 1,99 €/mes",
+        "gl": "Gratis; Premium 1,99 €/mes",
+        "eu": "Doan; Premium 1,99 €/hilean"
+      },
+      "detail": {
+        "es": "Plan gratuito con publicidad y plan Premium sin publicidad a 1,99 € al mes (App Store lista también Premium anual a 19,99 €), con promoción de 3 meses gratis.",
+        "ca": "Pla gratuït amb publicitat i pla Premium sense publicitat a 1,99 € al mes (l'App Store també llista Premium anual a 19,99 €), amb una promoció de 3 mesos gratis.",
+        "gl": "Plan gratuíto con publicidade e plan Premium sen publicidade a 1,99 € ao mes (App Store lista tamén Premium anual a 19,99 €), con promoción de 3 meses gratis.",
+        "eu": "Publizitatedun doako plana eta publizitaterik gabeko Premium plana hilean 1,99 €-tan (App Storek urteko Premium ere zerrendatzen du, 19,99 €-tan), 3 hilabete doan izateko promozioarekin."
+      },
+      "quote": "Gratuito 0 € Para siempre Gestión completa de turnos Cambios y sugerencias Con publicidad ... Premium 1,99 € Al mes Todo lo del plan Gratuito Sin publicidad",
+      "url": "https://shiftool.com/",
+      "has": true
+    },
+    "account": {
+      "value": {
+        "es": "Cuenta propia con email",
+        "ca": "Compte propi amb correu electrònic",
+        "gl": "Conta propia con correo electrónico",
+        "eu": "Kontu propioa posta elektronikoarekin"
+      },
+      "detail": {
+        "es": "El registro requiere email y contraseña (también consta inicio de sesión con Google en las notas de versión); no se indica que la empresa deba contratarlo.",
+        "ca": "El registre requereix correu electrònic i contrasenya (a les notes de versió també consta l'inici de sessió amb Google); no s'indica que l'empresa l'hagi de contractar.",
+        "gl": "O rexistro require correo electrónico e contrasinal (tamén consta inicio de sesión con Google nas notas de versión); non se indica que a empresa deba contratalo.",
+        "eu": "Erregistratzeko posta elektronikoa eta pasahitza behar dira (bertsio-oharretan Google bidezko saio-hasiera ere ageri da); ez da adierazten enpresak kontratatu behar duenik."
+      },
+      "quote": "Descarga y regístrate Un proceso sencillo: solo necesitas un email y una contraseña para empezar.",
+      "url": "https://shiftool.com/",
+      "has": true
+    },
+    "healthcare": {
+      "value": {
+        "es": "Generalista, trabajo por turnos",
+        "ca": "Generalista, treball per torns",
+        "gl": "Xeneralista, traballo por quendas",
+        "eu": "Orokorra, txandakako lana"
+      },
+      "detail": {
+        "es": "La web se dirige a trabajadores por turnos en general y no menciona específicamente al sector sanitario.",
+        "ca": "El web s'adreça a treballadors per torns en general i no esmenta específicament el sector sanitari.",
+        "gl": "A web diríxese a traballadores por quendas en xeral e non menciona especificamente o sector sanitario.",
+        "eu": "Webgunea oro har txandaka lan egiten dutenei zuzentzen zaie, eta ez du osasun-sektorea berariaz aipatzen."
+      },
+      "quote": "Hecho con ☕ para quienes trabajan por turnos.",
+      "url": "https://shiftool.com/",
+      "has": false
+    },
+    "calendar_views": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "shift_types": {
+      "value": {
+        "es": "Colores por calendario",
+        "ca": "Colors per calendari",
+        "gl": "Cores por calendario",
+        "eu": "Koloreak egutegika"
+      },
+      "detail": {
+        "es": "La web indica que se pueden asociar colores a cada calendario; no detalla tipos de turno personalizados con horario.",
+        "ca": "El web indica que es poden associar colors a cada calendari; no detalla tipus de torn personalitzats amb horari.",
+        "gl": "A web indica que se poden asociar cores a cada calendario; non detalla tipos de quenda personalizados con horario.",
+        "eu": "Webguneak dio egutegi bakoitzari koloreak eslei dakizkiokeela; ez ditu zehazten ordutegidun txanda mota pertsonalizatuak."
+      },
+      "quote": "asocia colores a cada calendario para verlos de un vistazo.",
+      "url": "https://shiftool.com/",
+      "has": true
+    },
+    "multi_job": {
+      "value": "yes",
+      "detail": {
+        "es": "La descripción de las tiendas indica que permite trabajar con varios calendarios para quien trabaja en más de una empresa.",
+        "ca": "La descripció de les botigues indica que permet treballar amb diversos calendaris per a qui treballa en més d'una empresa.",
+        "gl": "A descrición das tendas indica que permite traballar con varios calendarios para quen traballa en máis dunha empresa.",
+        "eu": "Denden deskribapenak dio enpresa batean baino gehiagotan lan egiten dutenentzat hainbat egutegirekin lan egiteko aukera ematen duela."
+      },
+      "quote": "Además, permite trabajar con varios calendarios para los casos de trabajes para mas de una empresa.",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193"
+    },
+    "rotations": {
+      "value": "yes",
+      "detail": {
+        "es": "La web indica que los turnos pueden añadirse de forma puntual, masiva o mediante patrones.",
+        "ca": "El web indica que els torns es poden afegir de manera puntual, massiva o mitjançant patrons.",
+        "gl": "A web indica que as quendas poden engadirse de forma puntual, masiva ou mediante patróns.",
+        "eu": "Webguneak dio txandak banaka, masiboki edo ereduen bidez gehi daitezkeela."
+      },
+      "quote": "Añade turnos pulsando sobre el día, de forma masiva mientras te los cantan, o mediante patrones.",
+      "url": "https://shiftool.com/"
+    },
+    "import_roster": {
+      "value": "-",
+      "detail": {
+        "es": "No consta importación de cuadrantes desde foto, PDF u hoja de cálculo; la web solo describe introducción manual, masiva o por patrones.",
+        "ca": "No consta la importació de quadrants des de foto, PDF o full de càlcul; el web només descriu la introducció manual, massiva o per patrons.",
+        "gl": "Non consta importación de cadros de quendas desde foto, PDF ou folla de cálculo; a web só describe introdución manual, masiva ou por patróns.",
+        "eu": "Ez da ageri koadranteak argazki, PDF edo kalkulu-orri batetik inportatzeko aukerarik; webguneak eskuzko sarrera, sarrera masiboa edo ereduen bidezkoa baino ez du deskribatzen."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "offline": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "calendar_sync": {
+      "value": "yes",
+      "detail": {
+        "es": "Los términos de uso mencionan la posibilidad de sincronización con el calendario personal del dispositivo, previa autorización del usuario.",
+        "ca": "Les condicions d'ús esmenten la possibilitat de sincronització amb el calendari personal del dispositiu, amb l'autorització prèvia de l'usuari.",
+        "gl": "Os termos de uso mencionan a posibilidade de sincronización co calendario persoal do dispositivo, coa autorización previa do usuario.",
+        "eu": "Erabilera-baldintzek gailuko egutegi pertsonalarekin sinkronizatzeko aukera aipatzen dute, erabiltzaileak aldez aurretik baimena emanez gero."
+      },
+      "quote": "Gestión y visualización de calendarios , con posibilidad de sincronización con el calendario personal del dispositivo.",
+      "url": "https://shiftool.com/terminos.html"
+    },
+    "two_way_sync": {
+      "value": "-",
+      "detail": {
+        "es": "No se documenta si la app lee eventos de calendarios externos; la ficha de seguridad de datos de Google Play declara la recogida de eventos de calendario para la funcionalidad de la app sin más detalle.",
+        "ca": "No es documenta si l'app llegeix esdeveniments de calendaris externs; la fitxa de seguretat de dades de Google Play declara la recollida d'esdeveniments de calendari per a la funcionalitat de l'app sense més detall.",
+        "gl": "Non se documenta se a app le eventos de calendarios externos; a ficha de seguridade de datos de Google Play declara a recollida de eventos de calendario para a funcionalidade da app sen máis detalle.",
+        "eu": "Ez dago dokumentatuta aplikazioak kanpoko egutegietako gertaerak irakurtzen dituen; Google Playko datu-segurtasunaren fitxak aplikazioaren funtzionalitaterako egutegiko gertaerak biltzen direla adierazten du, xehetasun gehiagorik gabe."
+      },
+      "quote": "Calendario Eventos de calendario ... Funcionalidad de la aplicación",
+      "url": "https://play.google.com/store/apps/datasafety?id=com.shiftool.app&hl=es"
+    },
+    "share_calendar": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite invitaciones de solo lectura para que familiares y amigos vean los turnos.",
+        "ca": "Permet invitacions de només lectura perquè familiars i amics vegin els torns.",
+        "gl": "Permite invitacións de só lectura para que familiares e amigos vexan as quendas.",
+        "eu": "Irakurtzeko soilik diren gonbidapenak egiteko aukera ematen du, senideek eta lagunek txandak ikus ditzaten."
+      },
+      "quote": "Comparte tus turnos con familia y amigos con invitaciones de solo lectura para planificar vuestro ocio sin sorpresas.",
+      "url": "https://shiftool.com/"
+    },
+    "print_pdf": {
+      "value": {
+        "es": "Informes PDF",
+        "ca": "Informes PDF",
+        "gl": "Informes PDF",
+        "eu": "PDF txostenak"
+      },
+      "detail": {
+        "es": "Las notas de la versión 0.6.4 en App Store (3 nov 2025) anuncian informes en PDF.",
+        "ca": "Les notes de la versió 0.6.4 a l'App Store (3 nov. 2025) anuncien informes en PDF.",
+        "gl": "As notas da versión 0.6.4 en App Store (3 nov. 2025) anuncian informes en PDF.",
+        "eu": "App Storeko 0.6.4 bertsioaren oharrek (2025eko azaroaren 3a) PDF txostenak iragartzen dituzte."
+      },
+      "quote": "PDF reports",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193",
+      "has": true
+    },
+    "statistics": {
+      "value": "yes",
+      "detail": {
+        "es": "La web indica que se pueden consultar turnos realizados y horas trabajadas por mes o año.",
+        "ca": "El web indica que es poden consultar els torns fets i les hores treballades per mes o any.",
+        "gl": "A web indica que se poden consultar as quendas realizadas e as horas traballadas por mes ou ano.",
+        "eu": "Webguneak dio egindako txandak eta lan egindako orduak hilabeteka edo urteka kontsulta daitezkeela."
+      },
+      "quote": "Consulta turnos realizados u horas trabajadas por mes o año, en tiempo real y de forma totalmente interactiva.",
+      "url": "https://shiftool.com/"
+    },
+    "holidays": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "widgets_watch": {
+      "value": {
+        "es": "Widget; Apple Watch no listado",
+        "ca": "Widget; Apple Watch no llistat",
+        "gl": "Widget; Apple Watch non listado",
+        "eu": "Widgeta; Apple Watch ez dago zerrendatuta"
+      },
+      "detail": {
+        "es": "Las notas de la versión 0.7.0 (14 ene 2026) añaden un widget de escritorio; la ficha de App Store no incluye Apple Watch entre los dispositivos compatibles.",
+        "ca": "Les notes de la versió 0.7.0 (14 gen. 2026) afegeixen un widget d'escriptori; la fitxa de l'App Store no inclou Apple Watch entre els dispositius compatibles.",
+        "gl": "As notas da versión 0.7.0 (14 xan. 2026) engaden un widget de escritorio; a ficha de App Store non inclúe Apple Watch entre os dispositivos compatibles.",
+        "eu": "0.7.0 bertsioaren oharrek (2026ko urtarrilaren 14a) mahaigaineko widget bat gehitzen dute; App Storeko fitxak ez du Apple Watch sartzen gailu bateragarrien artean."
+      },
+      "quote": "Se añade widget de escritorio",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193",
+      "has": true
+    },
+    "swaps_between_colleagues": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite solicitar cambios de turno a compañeros que también usen Shiftool y aceptarlos o rechazarlos.",
+        "ca": "Permet sol·licitar canvis de torn a companys que també facin servir Shiftool i acceptar-los o rebutjar-los.",
+        "gl": "Permite solicitar cambios de quenda a compañeiros que tamén usen Shiftool e aceptalos ou rexeitalos.",
+        "eu": "Shiftool erabiltzen duten lankideei txanda-aldaketak eskatzeko eta horiek onartzeko edo baztertzeko aukera ematen du."
+      },
+      "quote": "Podrás solicitar cambio de turno si tus compañeros utilizan también Shiftool",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193"
+    },
+    "swap_board": {
+      "value": "yes",
+      "detail": {
+        "es": "Los términos describen un tablón general con ofertas y solicitudes visible para los miembros de un grupo.",
+        "ca": "Les condicions descriuen un tauler general amb ofertes i sol·licituds visible per als membres d'un grup.",
+        "gl": "Os termos describen un taboleiro xeral con ofertas e solicitudes visible para os membros dun grupo.",
+        "eu": "Baldintzek talde bateko kideentzat ikusgai dagoen ohol orokor bat deskribatzen dute, eskaintzekin eta eskaerekin."
+      },
+      "quote": "Visualización de ofertas y solicitudes en un Tablón general cuando exista pertenencia a un grupo",
+      "url": "https://shiftool.com/terminos.html"
+    },
+    "swap_chains": {
+      "value": {
+        "es": "Sugerencias automáticas de cambio",
+        "ca": "Suggeriments automàtics de canvi",
+        "gl": "Suxestións automáticas de cambio",
+        "eu": "Aldaketa-iradokizun automatikoak"
+      },
+      "detail": {
+        "es": "La app propone ofertas y solicitudes que encajan con las de otros usuarios; no se documentan cadenas de 3 o más personas ni el uso de IA.",
+        "ca": "L'app proposa ofertes i sol·licituds que encaixen amb les d'altres usuaris; no es documenten cadenes de 3 o més persones ni l'ús d'IA.",
+        "gl": "A app propón ofertas e solicitudes que encaixan coas doutros usuarios; non se documentan cadeas de 3 ou máis persoas nin o uso de IA.",
+        "eu": "Aplikazioak beste erabiltzaileen eskaintza eta eskaerekin bat datozen eskaintzak eta eskaerak proposatzen ditu; ez dago dokumentatuta 3 pertsona edo gehiagoko katerik ezta IAren erabilerarik ere."
+      },
+      "quote": "La app te propone ofertas y solicitudes de cambio que encajan con las de otros usuarios para que todo cuadre.",
+      "url": "https://shiftool.com/",
+      "has": false
+    },
+    "urgent_mode": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "anonymous_post": {
+      "value": "no",
+      "detail": {
+        "es": "Los términos de uso establecen que, al participar en intercambios, la identidad del usuario es visible para los demás miembros del grupo.",
+        "ca": "Les condicions d'ús estableixen que, en participar en intercanvis, la identitat de l'usuari és visible per als altres membres del grup.",
+        "gl": "Os termos de uso establecen que, ao participar en intercambios, a identidade do usuario é visible para os demais membros do grupo.",
+        "eu": "Erabilera-baldintzek ezartzen dute trukeetan parte hartzean erabiltzailearen nortasuna taldeko gainerako kideentzat ikusgai dagoela."
+      },
+      "quote": "La participación en intercambios implica que la identidad del usuario será visible para los demás miembros del grupo.",
+      "url": "https://shiftool.com/terminos.html"
+    },
+    "manager_notification": {
+      "value": {
+        "es": "Supervisores con visibilidad del tablón",
+        "ca": "Supervisors amb visibilitat del tauler",
+        "gl": "Supervisores con visibilidade do taboleiro",
+        "eu": "Oholerako ikusgaitasuna duten gainbegiraleak"
+      },
+      "detail": {
+        "es": "La versión 0.7.2 añade un permiso de visibilidad del tablón para supervisores; los términos indican que la validación oficial del cambio se hace según las normas de cada centro y que Shiftool no interviene en ella.",
+        "ca": "La versió 0.7.2 afegeix un permís de visibilitat del tauler per a supervisors; les condicions indiquen que la validació oficial del canvi es fa segons les normes de cada centre i que Shiftool no hi intervé.",
+        "gl": "A versión 0.7.2 engade un permiso de visibilidade do taboleiro para supervisores; os termos indican que a validación oficial do cambio se fai segundo as normas de cada centro e que Shiftool non intervén nela.",
+        "eu": "0.7.2 bertsioak oholaren ikusgaitasun-baimena gehitzen du gainbegiraleentzat; baldintzek diote aldaketaren baliozkotze ofiziala zentro bakoitzaren arauen arabera egiten dela eta Shiftoolek ez duela horretan parte hartzen."
+      },
+      "quote": "Se añade el permiso de visibilidad sobre el tablón a los supervisores",
+      "url": "https://apps.apple.com/es/app/shiftool/id6745471193",
+      "has": true
+    },
+    "manual_swap_record": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "availability": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite ofertar disponibilidad para realizar turnos de otros compañeros.",
+        "ca": "Permet oferir disponibilitat per fer torns d'altres companys.",
+        "gl": "Permite ofrecer dispoñibilidade para realizar quendas doutros compañeiros.",
+        "eu": "Beste lankide batzuen txandak egiteko erabilgarritasuna eskaintzeko aukera ematen du."
+      },
+      "quote": "Pide cambios de tus turnos u oferta tu disponibilidad.",
+      "url": "https://shiftool.com/"
+    },
+    "chat": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "push_notifications": {
+      "value": "yes",
+      "detail": {
+        "es": "Los términos mencionan notificaciones automáticas sobre cambios o propuestas, si el usuario las autoriza en el dispositivo.",
+        "ca": "Les condicions esmenten notificacions automàtiques sobre canvis o propostes, si l'usuari les autoritza al dispositiu.",
+        "gl": "Os termos mencionan notificacións automáticas sobre cambios ou propostas, se o usuario as autoriza no dispositivo.",
+        "eu": "Baldintzek aldaketei edo proposamenei buruzko jakinarazpen automatikoak aipatzen dituzte, erabiltzaileak gailuan baimentzen baditu."
+      },
+      "quote": "Notificaciones automáticas sobre cambios o propuestas, siempre que el usuario haya autorizado las notificaciones en su dispositivo.",
+      "url": "https://shiftool.com/terminos.html"
+    },
+    "reminders": {
+      "value": "yes",
+      "detail": {
+        "es": "La política de privacidad menciona el envío de notificaciones de actividad que incluyen recordatorios, y los términos citan notas e iconos como recordatorios.",
+        "ca": "La política de privadesa esmenta l'enviament de notificacions d'activitat que inclouen recordatoris, i les condicions citen notes i icones com a recordatoris.",
+        "gl": "A política de privacidade menciona o envío de notificacións de actividade que inclúen recordatorios, e os termos citan notas e iconas como recordatorios.",
+        "eu": "Pribatutasun-politikak oroigarriak barne hartzen dituzten jarduera-jakinarazpenen bidalketa aipatzen du, eta baldintzek oharrak eta ikonoak aipatzen dituzte oroigarri gisa."
+      },
+      "quote": "Enviar notificaciones sobre actividad dentro de la Aplicación (intercambios, recordatorios, etc.).",
+      "url": "https://shiftool.com/privacidad.html"
+    },
+    "ai_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta ningún asistente de IA; la web solo describe sugerencias automáticas de cambio.",
+        "ca": "No consta cap assistent d'IA; el web només descriu suggeriments automàtics de canvi.",
+        "gl": "Non consta ningún asistente de IA; a web só describe suxestións automáticas de cambio.",
+        "eu": "Ez da ageri IA laguntzailerik; webguneak aldaketa-iradokizun automatikoak baino ez ditu deskribatzen."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "legal_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "organisations": {
+      "value": "-",
+      "detail": {
+        "es": "No consta un producto o panel para empresas ni precio para organizaciones; sí se mencionan los roles de administrador de calendario y de supervisor.",
+        "ca": "No consta un producte o panell per a empreses ni preu per a organitzacions; sí que s'esmenten els rols d'administrador de calendari i de supervisor.",
+        "gl": "Non consta un produto ou panel para empresas nin prezo para organizacións; si se mencionan os roles de administrador de calendario e de supervisor.",
+        "eu": "Ez da ageri enpresentzako produktu edo panelik, ezta erakundeentzako preziorik ere; egutegi-administratzailearen eta gainbegiralearen rolak, ordea, aipatzen dira."
+      },
+      "quote": "Crea uno como administrador o únete a uno existente con el código de calendario (QR opcional).",
+      "url": "https://shiftool.com/"
+    },
+    "data_privacy": {
+      "value": {
+        "es": "RGPD; cifrado en tránsito",
+        "ca": "RGPD; xifratge en trànsit",
+        "gl": "RXPD; cifrado en tránsito",
+        "eu": "DBEO; garraioko zifratzea"
+      },
+      "detail": {
+        "es": "La política de privacidad se acoge al RGPD y la LOPDGDD y prevé transferencias fuera del EEE con cláusulas contractuales tipo, sin indicar la ubicación de los servidores; Google Play declara cifrado en tránsito, solicitud de borrado y uso de IDs para publicidad.",
+        "ca": "La política de privadesa s'acull al RGPD i a la LOPDGDD i preveu transferències fora de l'EEE amb clàusules contractuals tipus, sense indicar la ubicació dels servidors; Google Play declara xifratge en trànsit, sol·licitud d'esborrament i ús d'identificadors per a publicitat.",
+        "gl": "A política de privacidade acóllese ao RXPD e á LOPDGDD e prevé transferencias fóra do EEE con cláusulas contractuais tipo, sen indicar a localización dos servidores; Google Play declara cifrado en tránsito, solicitude de borrado e uso de IDs para publicidade.",
+        "eu": "Pribatutasun-politikak DBEOri eta LOPDGDDri jarraitzen die, eta EEEtik kanpoko transferentziak aurreikusten ditu kontratu-klausula estandarrekin, zerbitzarien kokapena adierazi gabe; Google Playk garraioko zifratzea, ezabatzeko eskaera eta publizitaterako IDen erabilera adierazten ditu."
+      },
+      "quote": "En caso de que se requiera la transferencia de datos fuera del Espacio Económico Europeo (EEE), Shiftool garantizará un nivel adecuado de protección mediante cláusulas contractuales tipo",
+      "url": "https://shiftool.com/privacidad.html",
+      "has": true
+    }
+  }
+}

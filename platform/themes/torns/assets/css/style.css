@@ -6,10 +6,10 @@
 
 @layer base {
     :root {
-        --torns-primary: #0e7e8a;
-        --torns-primary-dark: #0a5a63;
-        --torns-bg: #fafbfb;
-        --torns-ink: #16232a;
+        --torns-primary: #227a96;
+        --torns-primary-dark: #176079;
+        --torns-bg: #f4f7f8;
+        --torns-ink: #0f2430;
         --shift-morning: #f5a623;
         --shift-evening: #f0685b;
         --shift-night: #4a5bc7;
@@ -42,24 +42,35 @@
 }
 
 @layer components {
+    /* Home, before scrolling: the bar takes the hero's top colour (white)
+       and drops its line, so the two read as one surface. Two classes, so
+       it wins over the bar's bg utility. */
+    .site-header.header-on-hero {
+        @apply border-transparent bg-white;
+    }
+
     .skip-link {
         @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-torns-primary px-4 py-2.5 text-sm font-semibold text-white transition-transform focus-visible:translate-y-0;
     }
 
     .btn-primary {
-        @apply inline-flex items-center gap-2 rounded-full bg-torns-primary px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-torns-primary/25 transition hover:-translate-y-0.5 hover:bg-torns-primary-dark hover:shadow-lg hover:shadow-torns-primary/30 motion-reduce:hover:translate-y-0;
+        @apply inline-flex items-center gap-2 rounded-xl bg-torns-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-torns-primary-dark;
+    }
+
+    .btn-dark {
+        @apply inline-flex items-center gap-2 rounded-xl bg-[#3A3F45] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#25292D];
     }
 
     .btn-secondary {
-        @apply inline-flex items-center gap-2 rounded-full border border-torns-primary px-6 py-2.5 text-sm font-semibold text-torns-primary transition hover:bg-torns-primary/5;
+        @apply inline-flex items-center gap-2 rounded-xl border border-torns-primary px-5 py-2.5 text-sm font-semibold text-torns-primary transition hover:bg-torns-primary/5;
     }
 
     .btn-ghost {
-        @apply inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-torns-ink/70 transition hover:bg-torns-ink/5 hover:text-torns-ink;
+        @apply inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-torns-ink/70 transition hover:bg-torns-ink/5 hover:text-torns-ink;
     }
 
     .nav-link {
-        @apply inline-flex rounded-lg px-3 py-2 text-sm font-medium text-torns-ink/80 transition hover:bg-torns-ink/5 hover:text-torns-ink;
+        @apply inline-flex whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-torns-ink/80 transition hover:bg-torns-ink/5 hover:text-torns-ink;
     }
 
     .nav-link-active {
@@ -196,55 +207,47 @@
 }
 
 /* ---------------------------------------------------------------------- */
-/* Phone mockup — CSS device frame used by the in-browser app mockups      */
-/* (hero, feature rows, unified calendar). Screens live in                 */
-/* partials/mockups/*.blade.php.                                           */
+/* Phone frame for raw app screenshots (the store mockups already carry    */
+/* their own frame and are shown as they are).                             */
 /* ---------------------------------------------------------------------- */
-.phone-frame {
-    @apply relative mx-auto w-full rounded-[2.75rem] bg-torns-ink p-2.5 shadow-2xl shadow-torns-ink/30 ring-1 ring-torns-ink/10;
+/* App screenshot without a phone frame (components/phone.blade.php):
+   the phone screen's rounded corners and a soft shadow; optionally a slight
+   turn, so a pair of screens does not stand stiffly side by side. */
+.app-screen {
+    border-radius: 12% / 5.5%;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgb(15 36 48 / 0.06), 0 22px 45px -18px rgb(15 36 48 / 0.45);
+    transition: transform 0.4s ease;
 }
 
-.phone-screen {
-    @apply relative flex aspect-[9/17] flex-col overflow-hidden rounded-[2.1rem] bg-torns-bg text-torns-ink;
+.app-screen--tilt-left {
+    transform: rotate(-3deg);
 }
 
-.phone-fab {
-    @apply absolute bottom-16 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-torns-primary text-white shadow-lg shadow-torns-primary/30;
+.app-screen--tilt-right {
+    transform: rotate(3deg);
 }
 
-.phone-island {
-    @apply absolute left-1/2 top-2 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-torns-ink;
+/* Shift labels floating around the hero phone (one per work centre) */
+.center-tag {
+    @apply absolute flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-sm leading-tight text-torns-ink shadow-xl shadow-torns-ink/10;
 }
 
-.phone-statusbar {
-    @apply flex items-center justify-between px-6 pb-1 pt-2.5 text-[10px] font-semibold text-torns-ink;
-}
-
-/* App-style mini components used inside the screens */
-.app-card {
-    @apply rounded-2xl border border-torns-ink/5 bg-white p-3 shadow-sm;
-}
-
-.app-btn {
-    @apply inline-flex items-center justify-center gap-1 rounded-full bg-torns-primary px-3 py-1.5 text-[10px] font-bold text-white;
-}
-
-.app-avatar {
-    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-torns-primary/15 font-display text-[11px] font-bold text-torns-primary;
-}
-
-/* Floating UI cards around the hero phone */
-.float-card {
-    @apply absolute z-10 flex items-center gap-2.5 rounded-2xl border border-torns-ink/5 bg-white/95 p-3 shadow-xl shadow-torns-ink/10 backdrop-blur;
+.center-tag__dot {
+    @apply h-3 w-3 shrink-0 rounded;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .float-card--a {
-        animation: torns-float 6s ease-in-out infinite;
+    .center-tag {
+        animation: torns-float 5s ease-in-out infinite;
     }
 
-    .float-card--b {
-        animation: torns-float 7s ease-in-out 1.2s infinite;
+    .center-tag--2 {
+        animation-delay: 1.6s;
+    }
+
+    .center-tag--3 {
+        animation-delay: 3.2s;
     }
 }
 
@@ -259,43 +262,24 @@
     }
 }
 
-/* ---------------------------------------------------------------------- */
-/* Pricing billing toggle — pure CSS (radio inputs + sibling selectors),   */
-/* no JS required. The radios live before the toggle and the grid.         */
-/* ---------------------------------------------------------------------- */
-.billing-radio {
-    @apply sr-only;
+/* Page content is wrapped in .ck-content, whose list styles would put
+   bullets on the shortcode sections' card lists. */
+.ck-content section ul,
+.ck-content section ol {
+    list-style: none;
 }
 
-.billing-toggle {
-    @apply mx-auto mt-10 flex w-fit items-center gap-1 rounded-full border border-torns-ink/10 bg-white p-1.5 shadow-sm;
+/* Free / Pro tag on calendar feature tiles */
+.plan-tag {
+    @apply inline-flex self-start rounded-md px-2 py-0.5 text-[0.7rem] font-bold uppercase tracking-wider;
 }
 
-.billing-toggle label {
-    @apply flex cursor-pointer items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-torns-ink/60 transition;
+.plan-tag--free {
+    @apply bg-white/10 text-torns-sky;
 }
 
-.billing-toggle .billing-toggle__chip {
-    @apply rounded-full bg-shift-morning/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#a36a05];
-}
-
-#billing-monthly:checked ~ .billing-toggle label[for='billing-monthly'],
-#billing-annual:checked ~ .billing-toggle label[for='billing-annual'] {
-    @apply bg-torns-primary text-white shadow-md shadow-torns-primary/25;
-}
-
-#billing-annual:checked ~ .billing-toggle label[for='billing-annual'] .billing-toggle__chip {
-    @apply bg-white/20 text-white;
-}
-
-#billing-monthly:focus-visible ~ .billing-toggle label[for='billing-monthly'],
-#billing-annual:focus-visible ~ .billing-toggle label[for='billing-annual'] {
-    @apply outline outline-2 outline-offset-2 outline-torns-primary;
-}
-
-#billing-monthly:checked ~ .pricing-grid .billing-annual-card,
-#billing-annual:checked ~ .pricing-grid .billing-monthly-card {
-    display: none;
+.plan-tag--pro {
+    @apply bg-shift-morning/20 text-shift-morning;
 }
 
 /* Drawer open state (toggled from main.js) */
@@ -320,13 +304,46 @@ body.drawer-locked {
     display: none;
 }
 
-/* Lightbox open state (toggled from main.js) */
-.lightbox.is-open {
-    display: flex;
+/* Screens carousel (main.js): slides stacked in the middle, moved by --offset */
+.screens-carousel__stage {
+    /* Frameless screens (2.19 tall per wide), with room for the side ones' turn. */
+    --slide: 13rem;
+    --step: calc(var(--slide) * 0.7);
+    position: relative;
+    height: calc(var(--slide) * 2.28);
 }
 
-body.lightbox-locked {
-    overflow: hidden;
+@media (min-width: 640px) {
+    .screens-carousel__stage {
+        --slide: 15rem;
+        --step: calc(var(--slide) * 0.86);
+    }
+}
+
+.screens-carousel__slide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: var(--slide);
+    cursor: pointer;
+    /* Side screens lean towards the centre one: -3deg on the left, 3deg on the right. */
+    transform: translateX(calc(-50% + var(--offset, 0) * var(--step))) scale(var(--scale, 1)) rotate(calc(var(--offset, 0) * 3deg));
+    transform-origin: center 40%;
+    transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+}
+
+.screens-carousel__slide[data-position='current'] {
+    cursor: default;
+}
+
+.screens-carousel__slide[data-position='side'] {
+    opacity: 0.55;
+    filter: saturate(0.8);
+}
+
+.screens-carousel__slide[data-position='hidden'] {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Share links on blog posts */
@@ -355,9 +372,30 @@ body.lightbox-locked {
     @apply cursor-default opacity-40 hover:border-torns-ink/10 hover:text-torns-ink/70;
 }
 
-/* Contact form (plugin markup restyled, no plugin CSS/JS loaded) */
+/* Contact form (plugin markup restyled over contact-public.css) */
 .torns-contact-form .contact-form-group {
     @apply mb-4;
+}
+
+/* The plugin floats the half-width columns from 992px and does not clear
+   them: the full-width field after them lay underneath and its label took
+   the clicks meant for Name and Email. A grid has no floats to clear
+   (.contact-form in the selectors: contact-public.css loads after ours). */
+.torns-contact-form .contact-form .contact-form-row {
+    @apply mx-0 grid grid-cols-1 gap-x-4 md:grid-cols-2;
+}
+
+.torns-contact-form .contact-form .contact-form-row::before,
+.torns-contact-form .contact-form .contact-form-row::after {
+    content: none;
+}
+
+.torns-contact-form .contact-form [class*='contact-column-'] {
+    @apply float-none w-auto px-0;
+}
+
+.torns-contact-form .contact-form .contact-column-12 {
+    @apply md:col-span-2;
 }
 
 .torns-contact-form label {
@@ -389,6 +427,37 @@ body.lightbox-locked {
     @apply mt-0.5 h-4 w-4 rounded border-torns-ink/20 text-torns-primary;
 }
 
+/* Home announcement (main.js): the same, or it never goes away. */
+.promo-pro[hidden] {
+    display: none;
+}
+
+/* Contact form confirmation screen (main.js). [hidden] must beat .flex. */
+.contact-sent[hidden] {
+    display: none;
+}
+
+.contact-sent__emoji {
+    animation: contact-sent-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes contact-sent-pop {
+    from {
+        opacity: 0;
+        transform: scale(0.4) rotate(-12deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-sent__emoji {
+        animation: none;
+    }
+}
+
 /* Honeypot: visually removed, still submittable by naive bots */
 .torns-hp {
     position: absolute !important;
@@ -409,6 +478,49 @@ body.lightbox-locked {
 
 .flash-message--error {
     @apply border-shift-evening/40 bg-shift-evening/5 text-shift-evening;
+}
+
+/* Long-form static pages written as HTML in content/site (e.g. Funcionalidades) */
+.torns-prose-page {
+    @apply mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16;
+}
+
+.torns-prose-page h1 {
+    @apply mb-6 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl;
+}
+
+.torns-prose-page h2 {
+    @apply mb-4 mt-12 scroll-mt-24 font-display text-2xl font-bold;
+}
+
+.torns-prose-page h3 {
+    @apply mb-2 mt-8 scroll-mt-24 font-display text-lg font-semibold;
+}
+
+.torns-prose-page p,
+.torns-prose-page li {
+    @apply leading-relaxed text-torns-ink/80;
+}
+
+.torns-prose-page p {
+    @apply mb-4;
+}
+
+.torns-prose-page ul {
+    @apply mb-4 list-disc space-y-1.5 pl-6;
+}
+
+.torns-prose-page table {
+    @apply mb-6 block w-full overflow-x-auto border-collapse text-sm;
+}
+
+.torns-prose-page th,
+.torns-prose-page td {
+    @apply border-b border-torns-ink/10 px-2 py-2 text-left align-top;
+}
+
+.torns-prose-page a {
+    @apply font-medium text-torns-primary-dark underline underline-offset-2;
 }
 
 /* Comfortable reading width for CMS page content */

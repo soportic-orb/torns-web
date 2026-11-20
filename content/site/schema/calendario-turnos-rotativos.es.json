@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo poner mi rotación de turnos de forma automática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, con Torns Pro. Dibujas el ciclo (por ejemplo, dos noches y tres libres, o un patrón de varias semanas), ves una vista previa y Torns rellena las fechas que elijas. Puedes guardar hasta 10 rotaciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La rotación respeta los festivos y mis vacaciones?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si quieres, sí: al aplicarla, Torns puede saltarse los festivos y los días que marcaste como no disponibles. Tampoco modifica los turnos que ya has publicado para cambiar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Las rotaciones de turnos son gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las rotaciones son de Torns Pro, que cuesta 2,99 € al mes o 29,90 € al año. Todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro, y el plan Free incluye el calendario de turnos, añadir varios turnos y los lugares habituales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Y si mi cuadrante no sigue un patrón fijo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes importarlo: Torns lee una foto, un PDF, una captura o una hoja de cálculo del cuadrante y te enseña tus turnos para que los revises antes de guardarlos. El plan Free incluye 2 lecturas y Torns Pro, 30 al mes."
+      }
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "name": "aTurnos",
+  "slug": "aturnos",
+  "website": "https://www.aturnos.com/",
+  "checked_on": "2026-10-20",
+  "summary": {
+    "es": "aTurnos es un software de recursos humanos de la empresa española aTurnos Solutions para planificar cuadrantes de turnos, registrar la jornada y gestionar vacaciones, permisos y cambios de turno. Se contrata por empresas de distintos sectores, entre ellos el sanitario y sociosanitario, y los trabajadores acceden con un usuario facilitado por su empresa mediante web o app móvil.",
+    "ca": "aTurnos és un programari de recursos humans de l'empresa espanyola aTurnos Solutions per planificar quadrants de torns, registrar la jornada i gestionar vacances, permisos i canvis de torn. El contracten empreses de diversos sectors, entre els quals el sanitari i el sociosanitari, i els treballadors hi accedeixen amb un usuari facilitat per la seva empresa mitjançant web o app mòbil.",
+    "gl": "aTurnos é un software de recursos humanos da empresa española aTurnos Solutions para planificar cadros de quendas, rexistrar a xornada e xestionar vacacións, permisos e cambios de quenda. Contrátano empresas de distintos sectores, entre eles o sanitario e o sociosanitario, e os traballadores acceden cun usuario facilitado pola súa empresa mediante web ou app móbil.",
+    "eu": "aTurnos aTurnos Solutions enpresa espainiarraren giza baliabideetarako softwarea da, txanden koadranteak planifikatzeko, lanaldia erregistratzeko eta oporrak, baimenak eta txanda-aldaketak kudeatzeko. Hainbat sektoretako enpresek kontratatzen dute, besteak beste osasun-sektorekoek eta gizarte- eta osasun-arlokoek, eta langileak beren enpresak emandako erabiltzaile batekin sartzen dira, web bidez edo aplikazio mugikorraren bidez."
+  },
+  "sources": [
+    {
+      "url": "https://www.aturnos.com/",
+      "title": "aTurnos - Inicio"
+    },
+    {
+      "url": "https://www.aturnos.com/precios",
+      "title": "Los precios de aTurnos"
+    },
+    {
+      "url": "https://www.aturnos.com/app-gestion-de-equipos",
+      "title": "APP móvil de aTurnos"
+    },
+    {
+      "url": "https://www.aturnos.com/detalle-aturnos",
+      "title": "Funcionalidades de aTurnos"
+    },
+    {
+      "url": "https://www.aturnos.com/gestion-diaria",
+      "title": "Gestión diaria"
+    },
+    {
+      "url": "https://www.aturnos.com/gestion-personal-sanidad",
+      "title": "Gestión de Personal para Sector Sanitario y Sociosanitario"
+    },
+    {
+      "url": "https://www.aturnos.com/gestion-personal-sectores",
+      "title": "Sectores"
+    },
+    {
+      "url": "https://www.aturnos.com/asistente-ia-rrhh",
+      "title": "Asistente IA de RR.HH."
+    },
+    {
+      "url": "https://www.aturnos.com/privacidad",
+      "title": "Privacidad y Seguridad"
+    },
+    {
+      "url": "https://www.aturnos.com/registro-para-empezar-a-planificar-tu-cuadrante",
+      "title": "Registro y prueba gratuita"
+    },
+    {
+      "url": "https://guias.aturnos.com/faqs/",
+      "title": "FAQs - Guías de aTurnos"
+    },
+    {
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/solicitar-cambios-de-turno/",
+      "title": "Solicitar cambios de turno - Guías de aTurnos"
+    },
+    {
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/apuntarse-a-una-oferta/",
+      "title": "Apuntarse a una oferta - Guías de aTurnos"
+    },
+    {
+      "url": "https://apps.apple.com/es/app/aturnos/id538488492",
+      "title": "aTurnos - App Store"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=aturnos.paquete.aturnospaquete&hl=es",
+      "title": "aTurnos - Google Play"
+    }
+  ],
+  "rows": {
+    "focus": {
+      "value": {
+        "es": "Planificación de turnos para empresas",
+        "ca": "Planificació de torns per a empreses",
+        "gl": "Planificación de quendas para empresas",
+        "eu": "Enpresentzako txanden plangintza"
+      },
+      "detail": {
+        "es": "aTurnos se presenta como software de RR.HH. para que las empresas planifiquen personal y turnos, controlen la jornada y gestionen peticiones de sus equipos.",
+        "ca": "aTurnos es presenta com a programari de RH perquè les empreses planifiquin personal i torns, controlin la jornada i gestionin peticions dels seus equips.",
+        "gl": "aTurnos preséntase como software de RR. HH. para que as empresas planifiquen persoal e quendas, controlen a xornada e xestionen peticións dos seus equipos.",
+        "eu": "aTurnos giza baliabideetarako software gisa aurkezten da, enpresek langileak eta txandak planifikatzeko, lanaldia kontrolatzeko eta beren taldeen eskaerak kudeatzeko."
+      },
+      "quote": "Software de RR.HH. planificación de personal y turnos de trabajo",
+      "url": "https://www.aturnos.com/",
+      "has": true
+    },
+    "platforms": {
+      "value": {
+        "es": "Web, iOS, Android, PWA",
+        "ca": "Web, iOS, Android, PWA",
+        "gl": "Web, iOS, Android, PWA",
+        "eu": "Weba, iOS, Android, PWA"
+      },
+      "detail": {
+        "es": "Según su web, la app está en Google Play, App Store y como Progressive Web App, además del entorno web; la ficha de App Store indica iPhone, iPad, Mac (M1) y Vision, sin app para Apple Watch listada.",
+        "ca": "Segons el seu web, l'app és a Google Play, a l'App Store i com a Progressive Web App, a més de l'entorn web; la fitxa de l'App Store indica iPhone, iPad, Mac (M1) i Vision, sense cap app per a Apple Watch llistada.",
+        "gl": "Segundo a súa web, a app está en Google Play, App Store e como Progressive Web App, ademais do contorno web; a ficha de App Store indica iPhone, iPad, Mac (M1) e Vision, sen app para Apple Watch listada.",
+        "eu": "Bere webgunearen arabera, aplikazioa Google Playn, App Storen eta Progressive Web App gisa dago, web-ingurunea ere badu; App Storeko fitxak iPhone, iPad, Mac (M1) eta Vision adierazten ditu, eta ez du Apple Watcherako aplikaziorik zerrendatzen."
+      },
+      "quote": "La aplicación de móvil de aTurnos está disponible en Google Play, App Store y también como Progressive Web App",
+      "url": "https://www.aturnos.com/app-gestion-de-equipos",
+      "has": true
+    },
+    "languages": {
+      "value": {
+        "es": "Varios; no consta cat/gal/eus",
+        "ca": "Diversos; no consta cat/gal/eus",
+        "gl": "Varios; non consta cat/gal/eus",
+        "eu": "Hainbat; ez da ageri kat/gal/eus"
+      },
+      "detail": {
+        "es": "La guía indica que permite usar varios idiomas sin enumerarlos; la web está en español, portugués, inglés y francés, la ficha de App Store lista solo inglés y no se mencionan catalán, gallego ni euskera.",
+        "ca": "La guia indica que permet fer servir diversos idiomes sense enumerar-los; el web és en espanyol, portuguès, anglès i francès, la fitxa de l'App Store només llista l'anglès i no s'hi esmenten el català, el gallec ni el basc.",
+        "gl": "A guía indica que permite usar varios idiomas sen enumeralos; a web está en español, portugués, inglés e francés, a ficha de App Store lista só inglés e non se mencionan catalán, galego nin éuscaro.",
+        "eu": "Gidak dio hainbat hizkuntza erabil daitezkeela, baina ez ditu zerrendatzen; webgunea gaztelaniaz, portugesez, ingelesez eta frantsesez dago, App Storeko fitxak ingelesa baino ez du zerrendatzen, eta ez dira aipatzen katalana, galiziera ezta euskara ere."
+      },
+      "quote": "aTurnos permite usar varios idiomas. Debes diferenciar entre el idioma del equipo y el idioma individual de cada trabajador.",
+      "url": "https://guias.aturnos.com/faqs/",
+      "has": false
+    },
+    "price": {
+      "value": {
+        "es": "Desde 2 €/empleado/mes",
+        "ca": "Des de 2 €/empleat/mes",
+        "gl": "Desde 2 €/empregado/mes",
+        "eu": "2 €-tik aurrera langile eta hileko"
+      },
+      "detail": {
+        "es": "El plan Standard se publica desde 2 € al mes por empleado (para 100 empleados y pago anual) y los planes Enterprise y Smart son con presupuesto personalizado; la página de registro indica una prueba y una versión gratuita de 5 trabajadores con funciones reducidas.",
+        "ca": "El pla Standard es publica des de 2 € al mes per empleat (per a 100 empleats i pagament anual) i els plans Enterprise i Smart són amb pressupost personalitzat; la pàgina de registre indica una prova i una versió gratuïta de 5 treballadors amb funcions reduïdes.",
+        "gl": "O plan Standard publícase desde 2 € ao mes por empregado (para 100 empregados e pagamento anual) e os plans Enterprise e Smart son con orzamento personalizado; a páxina de rexistro indica unha proba e unha versión gratuíta de 5 traballadores con funcións reducidas.",
+        "eu": "Standard plana hilean 2 €-tik aurrera argitaratzen da langileko (100 langilerentzat eta urteko ordainketarekin), eta Enterprise eta Smart planak aurrekontu pertsonalizatuarekin dira; erregistro-orriak proba bat eta 5 langilerentzako doako bertsio bat adierazten ditu, funtzio murriztuekin."
+      },
+      "quote": "*Precio al mes por empleado para un volumen de 100 empleados y pago anual",
+      "url": "https://www.aturnos.com/precios",
+      "has": true
+    },
+    "account": {
+      "value": {
+        "es": "Cuenta creada por la empresa",
+        "ca": "Compte creat per l'empresa",
+        "gl": "Conta creada pola empresa",
+        "eu": "Enpresak sortutako kontua"
+      },
+      "detail": {
+        "es": "La ficha de App Store indica que el acceso es con usuario registrado previamente y remite al departamento de RR.HH. si la empresa ya usa aTurnos; una empresa puede registrarse en la web.",
+        "ca": "La fitxa de l'App Store indica que l'accés és amb un usuari registrat prèviament i remet al departament de RH si l'empresa ja fa servir aTurnos; una empresa es pot registrar al web.",
+        "gl": "A ficha de App Store indica que o acceso é cun usuario rexistrado previamente e remite ao departamento de RR. HH. se a empresa xa usa aTurnos; unha empresa pode rexistrarse na web.",
+        "eu": "App Storeko fitxak dio aurrez erregistratutako erabiltzaile batekin sartzen dela eta giza baliabideen sailera bidaltzen du enpresak dagoeneko aTurnos erabiltzen badu; enpresa batek webgunean erregistra dezake bere burua."
+      },
+      "quote": "¿Aún no tienes usuario en aTurnos? Si tu empresa ya usa aTurnos, contacta con el departamento de Recursos Humanos.",
+      "url": "https://apps.apple.com/es/app/aturnos/id538488492",
+      "has": false
+    },
+    "healthcare": {
+      "value": {
+        "es": "Uno de seis sectores",
+        "ca": "Un de sis sectors",
+        "gl": "Un de seis sectores",
+        "eu": "Sei sektoreetako bat"
+      },
+      "detail": {
+        "es": "El sector «Sanitario y Sociosanitario» figura entre los seis sectores a los que se dirige, con una página específica que menciona a enfermeros y médicos.",
+        "ca": "El sector «Sanitario y Sociosanitario» figura entre els sis sectors als quals s'adreça, amb una pàgina específica que esmenta infermers i metges.",
+        "gl": "O sector «Sanitario y Sociosanitario» figura entre os seis sectores aos que se dirixe, cunha páxina específica que menciona enfermeiros e médicos.",
+        "eu": "«Sanitario y Sociosanitario» sektorea zuzentzen zaien sei sektoreen artean dago, erizainak eta medikuak aipatzen dituen orri berezi batekin."
+      },
+      "quote": "Gestión de Personal para Sector Sanitario y Sociosanitario",
+      "url": "https://www.aturnos.com/gestion-personal-sanidad",
+      "has": false
+    },
+    "calendar_views": {
+      "value": {
+        "es": "Cuadrante, anual y por localización",
+        "ca": "Quadrant, anual i per localització",
+        "gl": "Cadro de quendas, anual e por localización",
+        "eu": "Koadrantea, urtekoa eta kokapenaren araberakoa"
+      },
+      "detail": {
+        "es": "La web describe varios cuadrantes: normal, anual por trabajador, por localizaciones y borrador.",
+        "ca": "El web descriu diversos quadrants: normal, anual per treballador, per localitzacions i esborrany.",
+        "gl": "A web describe varios cadros de quendas: normal, anual por traballador, por localizacións e borrador.",
+        "eu": "Webguneak hainbat koadrante deskribatzen ditu: arrunta, langileko urtekoa, kokapenen araberakoa eta zirriborroa."
+      },
+      "quote": "Dispones de varios cuadrantes para distintos usos: cuadrante normal, cuadrante anual por trabajador, cuadrante por localizaciones y cuadrante borrador.",
+      "url": "https://www.aturnos.com/detalle-aturnos",
+      "has": true
+    },
+    "shift_types": {
+      "value": "yes",
+      "detail": {
+        "es": "El administrador crea los tipos de turno que necesite y los inserta en el cuadrante de los trabajadores.",
+        "ca": "L'administrador crea els tipus de torn que necessiti i els insereix al quadrant dels treballadors.",
+        "gl": "O administrador crea os tipos de quenda que necesite e insíreos no cadro de quendas dos traballadores.",
+        "eu": "Administratzaileak behar dituen txanda motak sortzen ditu eta langileen koadrantean txertatzen ditu."
+      },
+      "quote": "aTurnos te da la opción de crear todos los turnos de trabajo u horarios que necesites.",
+      "url": "https://guias.aturnos.com/faqs/"
+    },
+    "multi_job": {
+      "value": {
+        "es": "Varios equipos de una empresa",
+        "ca": "Diversos equips d'una empresa",
+        "gl": "Varios equipos dunha empresa",
+        "eu": "Enpresa bateko hainbat talde"
+      },
+      "detail": {
+        "es": "La estructura se organiza en compañía, equipos y localizaciones, y existe una opción para ver turnos de trabajadores que están en varios equipos de aTurnos; no consta gestión de empleos de distintas empresas.",
+        "ca": "L'estructura s'organitza en companyia, equips i localitzacions, i hi ha una opció per veure torns de treballadors que són en diversos equips d'aTurnos; no consta la gestió de feines de diferents empreses.",
+        "gl": "A estrutura organízase en compañía, equipos e localizacións, e existe unha opción para ver quendas de traballadores que están en varios equipos de aTurnos; non consta xestión de empregos de distintas empresas.",
+        "eu": "Egitura konpainia, talde eta kokapenetan antolatzen da, eta aTurnos-eko hainbat taldetan dauden langileen txandak ikusteko aukera dago; ez da ageri enpresa desberdinetako lanpostuen kudeaketarik."
+      },
+      "quote": "Ver cuadrantes de otro equipo: con esta opción puedes ver los turnos de trabajadores que se encuentran en varios equipos de aTurnos.",
+      "url": "https://www.aturnos.com/detalle-aturnos",
+      "has": false
+    },
+    "rotations": {
+      "value": "yes",
+      "detail": {
+        "es": "Los patrones (fijos, rotativos simples y complejos) son secuencias de turnos y descansos reutilizables, y la calculadora genera rotaciones según la necesidad de personal.",
+        "ca": "Els patrons (fixos, rotatius simples i complexos) són seqüències de torns i descansos reutilitzables, i la calculadora genera rotacions segons la necessitat de personal.",
+        "gl": "Os patróns (fixos, rotativos simples e complexos) son secuencias de quendas e descansos reutilizables, e a calculadora xera rotacións segundo a necesidade de persoal.",
+        "eu": "Ereduak (finkoak, errotazio sinplekoak eta konplexuak) berrerabil daitezkeen txanda- eta atseden-sekuentziak dira, eta kalkulagailuak errotazioak sortzen ditu langile-beharraren arabera."
+      },
+      "quote": "Los patrones son secuencias de turnos y descansos que se guardan para reutilizarse con un grupo de trabajadores",
+      "url": "https://guias.aturnos.com/faqs/"
+    },
+    "import_roster": {
+      "value": {
+        "es": "Pegado desde Excel (admin)",
+        "ca": "Enganxat des d'Excel (admin)",
+        "gl": "Pegado desde Excel (admin)",
+        "eu": "Exceletik itsatsita (admin)"
+      },
+      "detail": {
+        "es": "La guía describe pegar en el cuadrante una planificación creada en Excel usando las abreviaturas de turno; no se menciona importación desde foto o PDF ni OCR o IA para ello.",
+        "ca": "La guia descriu com enganxar al quadrant una planificació creada en Excel fent servir les abreviatures de torn; no s'esmenta la importació des de foto o PDF ni OCR o IA per fer-ho.",
+        "gl": "A guía describe pegar no cadro de quendas unha planificación creada en Excel usando as abreviaturas de quenda; non se menciona importación desde foto ou PDF nin OCR ou IA para iso.",
+        "eu": "Gidak deskribatzen du nola itsatsi koadrantean Excelen sortutako plangintza bat, txanden laburdurak erabiliz; ez da aipatzen argazki edo PDFtik inportatzerik, ezta horretarako OCRrik edo IArik ere."
+      },
+      "quote": "Puedes pegar una planificación mensual (o menor) creada en Excel directamente en el cuadrante de aTurnos.",
+      "url": "https://guias.aturnos.com/faqs/",
+      "has": true
+    },
+    "offline": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "calendar_sync": {
+      "value": {
+        "es": "Google Calendar",
+        "ca": "Google Calendar",
+        "gl": "Google Calendar",
+        "eu": "Google Calendar"
+      },
+      "detail": {
+        "es": "La página de funcionalidades lista una integración nativa con Google Calendar, sin detallar su funcionamiento; no se mencionan Apple Calendar ni Outlook.",
+        "ca": "La pàgina de funcionalitats llista una integració nativa amb Google Calendar, sense detallar-ne el funcionament; no s'esmenten Apple Calendar ni Outlook.",
+        "gl": "A páxina de funcionalidades lista unha integración nativa con Google Calendar, sen detallar o seu funcionamento; non se mencionan Apple Calendar nin Outlook.",
+        "eu": "Funtzionalitateen orriak Google Calendar-ekin integrazio natibo bat zerrendatzen du, nola dabilen zehaztu gabe; ez dira aipatzen Apple Calendar ezta Outlook ere."
+      },
+      "quote": "Integración nativa con Google Calendar",
+      "url": "https://www.aturnos.com/detalle-aturnos",
+      "has": true
+    },
+    "two_way_sync": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada si la integración con Google Calendar importa eventos externos a la app.",
+        "ca": "No consta a la documentació pública consultada si la integració amb Google Calendar importa esdeveniments externs a l'app.",
+        "gl": "Non consta na documentación pública consultada se a integración con Google Calendar importa eventos externos á app.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan Google Calendar-ekin integrazioak kanpoko gertaerak aplikaziora inportatzen dituen ala ez."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "share_calendar": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "print_pdf": {
+      "value": "yes",
+      "detail": {
+        "es": "El cuadrante anual puede exportarse en Excel, PDF A3 horizontal o PDF A4 vertical para guardarlo o imprimirlo.",
+        "ca": "El quadrant anual es pot exportar en Excel, PDF A3 horitzontal o PDF A4 vertical per desar-lo o imprimir-lo.",
+        "gl": "O cadro de quendas anual pode exportarse en Excel, PDF A3 horizontal ou PDF A4 vertical para gardalo ou imprimilo.",
+        "eu": "Urteko koadrantea Excelera, A3 horizontaleko PDFra edo A4 bertikaleko PDFra esporta daiteke, gordetzeko edo inprimatzeko."
+      },
+      "quote": "El navegador descargará automáticamente los cuadrantes de cada trabajador para que puedas guardarlos o imprimirlos.",
+      "url": "https://guias.aturnos.com/faqs/"
+    },
+    "statistics": {
+      "value": "yes",
+      "detail": {
+        "es": "Ofrece estadísticas predefinidas (horas y turnos planificados, festivos, nocturnidad, vacaciones) y reportes configurables; el trabajador puede consultar estadísticas en la app.",
+        "ca": "Ofereix estadístiques predefinides (hores i torns planificats, festius, nocturnitat, vacances) i informes configurables; el treballador pot consultar estadístiques a l'app.",
+        "gl": "Ofrece estatísticas predefinidas (horas e quendas planificadas, festivos, nocturnidade, vacacións) e informes configurables; o traballador pode consultar estatísticas na app.",
+        "eu": "Aurrez definitutako estatistikak (planifikatutako orduak eta txandak, jaiegunak, gaueko lana, oporrak) eta txosten konfiguragarriak eskaintzen ditu; langileak estatistikak kontsulta ditzake aplikazioan."
+      },
+      "quote": "disponemos de estadísticas predefinidas basadas en las necesidades más comunes de nuestros clientes, entre éstas se encuentran: horas y turnos planificados, festivos, nocturnidad",
+      "url": "https://www.aturnos.com/detalle-aturnos"
+    },
+    "holidays": {
+      "value": "yes",
+      "detail": {
+        "es": "Los festivos se añaden por código postal, importación Excel/CSV o de forma manual, para todo el equipo o por localización.",
+        "ca": "Els festius s'afegeixen per codi postal, importació Excel/CSV o de manera manual, per a tot l'equip o per localització.",
+        "gl": "Os festivos engádense por código postal, importación Excel/CSV ou de forma manual, para todo o equipo ou por localización.",
+        "eu": "Jaiegunak posta-kodearen bidez, Excel/CSV inportazioaren bidez edo eskuz gehitzen dira, talde osoarentzat edo kokapenaren arabera."
+      },
+      "quote": "Los días festivos se pueden añadir en aTurnos indicando un código postal, mediante importación de Excel/CSV o añadiendo de forma manual.",
+      "url": "https://www.aturnos.com/detalle-aturnos"
+    },
+    "widgets_watch": {
+      "value": "-",
+      "detail": {
+        "es": "La ficha de App Store menciona widgets dentro de la app (siguiente turno, buscar trabajadores disponibles) configurables desde el backoffice, sin precisar si son widgets de pantalla de inicio; no se lista app para Apple Watch.",
+        "ca": "La fitxa de l'App Store esmenta widgets dins de l'app (següent torn, cercar treballadors disponibles) configurables des del backoffice, sense precisar si són widgets de pantalla d'inici; no es llista cap app per a Apple Watch.",
+        "gl": "A ficha de App Store menciona widgets dentro da app (seguinte quenda, buscar traballadores dispoñibles) configurables desde o backoffice, sen precisar se son widgets de pantalla de inicio; non se lista app para Apple Watch.",
+        "eu": "App Storeko fitxak aplikazio barruko widgetak aipatzen ditu (hurrengo txanda, langile erabilgarriak bilatu), backoffice-tik konfiguragarriak, hasierako pantailako widgetak diren zehaztu gabe; ez da Apple Watcherako aplikaziorik zerrendatzen."
+      },
+      "quote": "Nuevo widget: siguiente turno. Posibilidad de decidir desde el backoffice que widgets se ven el app.",
+      "url": "https://apps.apple.com/es/app/aturnos/id538488492"
+    },
+    "swaps_between_colleagues": {
+      "value": {
+        "es": "Si la empresa lo habilita",
+        "ca": "Si l'empresa ho habilita",
+        "gl": "Se a empresa o habilita",
+        "eu": "Enpresak gaitzen badu"
+      },
+      "detail": {
+        "es": "El trabajador puede solicitar cambios de turno de tipo libre, intercambio o doblaje con un compañero, siempre que la configuración del equipo lo permita.",
+        "ca": "El treballador pot sol·licitar canvis de torn de tipus lliure, intercanvi o doblament amb un company, sempre que la configuració de l'equip ho permeti.",
+        "gl": "O traballador pode solicitar cambios de quenda de tipo libre, intercambio ou dobramento cun compañeiro, sempre que a configuración do equipo o permita.",
+        "eu": "Langileak lankide batekin txanda-aldaketak eska ditzake, libre, truke edo bikoizketa motakoak, betiere taldearen konfigurazioak horretarako aukera ematen badu."
+      },
+      "quote": "permite realizar cambios de turno de manera ágil y eficiente, siempre que la configuración del equipo lo permita.",
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/solicitar-cambios-de-turno/",
+      "has": true
+    },
+    "swap_board": {
+      "value": {
+        "es": "Solo ofertas del administrador",
+        "ca": "Només ofertes de l'administrador",
+        "gl": "Só ofertas do administrador",
+        "eu": "Administratzailearen eskaintzak soilik"
+      },
+      "detail": {
+        "es": "No se describe un tablón de turnos ofrecidos por trabajadores; los administradores pueden publicar ofertas de turnos u horas que aparecen en una fila «Ofertas disponibles» del cuadrante.",
+        "ca": "No es descriu un tauler de torns oferts per treballadors; els administradors poden publicar ofertes de torns o hores que apareixen en una fila «Ofertas disponibles» del quadrant.",
+        "gl": "Non se describe un taboleiro de quendas ofrecidas por traballadores; os administradores poden publicar ofertas de quendas ou horas que aparecen nunha fila «Ofertas disponibles» do cadro de quendas.",
+        "eu": "Ez da deskribatzen langileek eskainitako txanden oholik; administratzaileek txanda edo ordu eskaintzak argitara ditzakete, koadranteko «Ofertas disponibles» errenkadan agertzen direnak."
+      },
+      "quote": "los administradores pueden lanzar en el cuadrante ofertas de horas y turnos",
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/apuntarse-a-una-oferta/",
+      "has": false
+    },
+    "swap_chains": {
+      "value": "-",
+      "detail": {
+        "es": "La guía describe cambios entre el solicitante y un compañero; no consta en la documentación pública consultada un sistema de cadenas de varias personas ni de emparejamiento automático.",
+        "ca": "La guia descriu canvis entre el sol·licitant i un company; no consta a la documentació pública consultada un sistema de cadenes de diverses persones ni d'aparellament automàtic.",
+        "gl": "A guía describe cambios entre o solicitante e un compañeiro; non consta na documentación pública consultada un sistema de cadeas de varias persoas nin de emparellamento automático.",
+        "eu": "Gidak eskatzailearen eta lankide baten arteko aldaketak deskribatzen ditu; ez da ageri kontsultatutako dokumentazio publikoan hainbat pertsonaren arteko kate-sistemarik ezta parekatze automatikorik ere."
+      },
+      "quote": "Selecciona al compañero con quien desea realizar el cambio de turno.",
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/solicitar-cambios-de-turno/"
+    },
+    "urgent_mode": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada una función de urgencia; existen ofertas de turnos que lanza el administrador ante cobertura insuficiente.",
+        "ca": "No consta a la documentació pública consultada una funció d'urgència; hi ha ofertes de torns que llança l'administrador davant d'una cobertura insuficient.",
+        "gl": "Non consta na documentación pública consultada unha función de urxencia; existen ofertas de quendas que lanza o administrador ante unha cobertura insuficiente.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan urgentzia-funtziorik; estaldura nahikoa ez denean administratzaileak abiarazten dituen txanda-eskaintzak daude."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "anonymous_post": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "manager_notification": {
+      "value": {
+        "es": "Aprobación del administrador configurable",
+        "ca": "Aprovació de l'administrador configurable",
+        "gl": "Aprobación do administrador configurable",
+        "eu": "Administratzailearen onarpen konfiguragarria"
+      },
+      "detail": {
+        "es": "La solicitud debe ser aprobada por el compañero y/o el administrador del equipo, y la empresa puede definir flujos de aprobación y notificaciones por roles en cada fase.",
+        "ca": "La sol·licitud l'ha d'aprovar el company i/o l'administrador de l'equip, i l'empresa pot definir fluxos d'aprovació i notificacions per rols en cada fase.",
+        "gl": "A solicitude debe ser aprobada polo compañeiro e/ou o administrador do equipo, e a empresa pode definir fluxos de aprobación e notificacións por roles en cada fase.",
+        "eu": "Eskaera lankideak eta/edo taldeko administratzaileak onartu behar du, eta enpresak onarpen-fluxuak eta rolen araberako jakinarazpenak defini ditzake fase bakoitzean."
+      },
+      "quote": "esta deberá ser aprobada por el compañero implicado y/o por el administrador del equipo para que el cambio se aplique en el cuadrante.",
+      "url": "https://guias.aturnos.com/guias/guias-trabajador/empoderamiento-del-empleado/solicitar-cambios-de-turno/",
+      "has": true
+    },
+    "manual_swap_record": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "availability": {
+      "value": "-",
+      "detail": {
+        "es": "La web indica que la planificación tiene en cuenta disponibilidades de los trabajadores, pero no consta en la documentación pública consultada que el trabajador declare disponibilidad para recibir sugerencias de turnos compatibles.",
+        "ca": "El web indica que la planificació té en compte les disponibilitats dels treballadors, però no consta a la documentació pública consultada que el treballador declari disponibilitat per rebre suggeriments de torns compatibles.",
+        "gl": "A web indica que a planificación ten en conta as dispoñibilidades dos traballadores, pero non consta na documentación pública consultada que o traballador declare dispoñibilidade para recibir suxestións de quendas compatibles.",
+        "eu": "Webguneak dio plangintzak langileen erabilgarritasuna kontuan hartzen duela, baina ez da ageri kontsultatutako dokumentazio publikoan langileak bere erabilgarritasuna adierazten duenik txanda bateragarrien iradokizunak jasotzeko."
+      },
+      "quote": "Planifica los RR.HH. y sus turnos de trabajo en el momento adecuado según disponibilidades, competencias, restricciones legales y costes.",
+      "url": "https://www.aturnos.com/precios"
+    },
+    "chat": {
+      "value": "yes",
+      "detail": {
+        "es": "Trabajadores y administradores pueden ver y enviar mensajes en el chat/tablón del equipo; la ficha de App Store incluye «Mensajería y chat».",
+        "ca": "Treballadors i administradors poden veure i enviar missatges al xat/tauler de l'equip; la fitxa de l'App Store inclou «Mensajería y chat».",
+        "gl": "Traballadores e administradores poden ver e enviar mensaxes no chat/taboleiro do equipo; a ficha de App Store inclúe «Mensajería y chat».",
+        "eu": "Langileek eta administratzaileek mezuak ikusi eta bidal ditzakete taldearen txatean/oholean; App Storeko fitxak «Mensajería y chat» barne hartzen du."
+      },
+      "quote": "Ver y enviar mensajes en el chat/tablón del equipo",
+      "url": "https://www.aturnos.com/app-gestion-de-equipos"
+    },
+    "push_notifications": {
+      "value": {
+        "es": "Solo app nativa",
+        "ca": "Només app nativa",
+        "gl": "Só app nativa",
+        "eu": "Aplikazio natiboan soilik"
+      },
+      "detail": {
+        "es": "La web indica que la PWA no dispone de notificaciones (a diferencia de la app descargable) y que se pueden configurar notificaciones por roles en peticiones y cambios.",
+        "ca": "El web indica que la PWA no disposa de notificacions (a diferència de l'app descarregable) i que es poden configurar notificacions per rols en peticions i canvis.",
+        "gl": "A web indica que a PWA non dispón de notificacións (a diferenza da app descargable) e que se poden configurar notificacións por roles en peticións e cambios.",
+        "eu": "Webguneak dio PWAk ez duela jakinarazpenik (deskarga daitekeen aplikazioak ez bezala) eta eskaeretan eta aldaketetan rolen araberako jakinarazpenak konfigura daitezkeela."
+      },
+      "quote": "La diferencia entre la App progresiva y la nativa(la descargable), es que la primera no dispone de notificaciones",
+      "url": "https://www.aturnos.com/app-gestion-de-equipos",
+      "has": true
+    },
+    "reminders": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "ai_assistant": {
+      "value": {
+        "es": "Para RR.HH.; nivel básico gratuito",
+        "ca": "Per a RH; nivell bàsic gratuït",
+        "gl": "Para RR. HH.; nivel básico gratuíto",
+        "eu": "Giza baliabideentzat; oinarrizko maila doakoa"
+      },
+      "detail": {
+        "es": "Ofrece una IA integrada para consultar datos de plantilla en lenguaje natural, analizar tendencias y recomendar coberturas, con un nivel gratuito (5 conversaciones/día) y niveles de 1,5 €, 3 € por empleado y precio a consultar.",
+        "ca": "Ofereix una IA integrada per consultar dades de plantilla en llenguatge natural, analitzar tendències i recomanar cobertures, amb un nivell gratuït (5 converses/dia) i nivells d'1,5 €, 3 € per empleat i preu a consultar.",
+        "gl": "Ofrece unha IA integrada para consultar datos do persoal en linguaxe natural, analizar tendencias e recomendar coberturas, cun nivel gratuíto (5 conversas/día) e niveis de 1,5 €, 3 € por empregado e prezo a consultar.",
+        "eu": "IA integratu bat eskaintzen du plantillaren datuak hizkuntza naturalean kontsultatzeko, joerak aztertzeko eta estaldurak gomendatzeko, doako maila batekin (5 elkarrizketa/egun) eta langileko 1,5 €-ko, 3 €-ko eta kontsultatu beharreko prezioko mailekin."
+      },
+      "quote": "La IA de aTurnos es un asistente integrado en el software. Comprende los datos relacionados con RR.HH. de sus usuarios.",
+      "url": "https://www.aturnos.com/asistente-ia-rrhh",
+      "has": true
+    },
+    "legal_assistant": {
+      "value": {
+        "es": "Aplica convenios en la planificación",
+        "ca": "Aplica convenis a la planificació",
+        "gl": "Aplica convenios na planificación",
+        "eu": "Hitzarmenak aplikatzen ditu plangintzan"
+      },
+      "detail": {
+        "es": "La IA se describe como conocedora de convenios, descansos y jornada anual para evitar errores en la planificación; no consta un asistente que responda consultas de derecho laboral al trabajador.",
+        "ca": "La IA es descriu com a coneixedora de convenis, descansos i jornada anual per evitar errors en la planificació; no consta un assistent que respongui consultes de dret laboral al treballador.",
+        "gl": "A IA descríbese como coñecedora de convenios, descansos e xornada anual para evitar erros na planificación; non consta un asistente que responda consultas de dereito laboral ao traballador.",
+        "eu": "IA hitzarmenak, atsedenak eta urteko lanaldia ezagutzen dituen gisa deskribatzen da, plangintzan akatsak saihesteko; ez da ageri langileari lan-zuzenbideko kontsultak erantzuten dizkion laguntzailerik."
+      },
+      "quote": "A diferencia de un chatbot genérico, la IA de aTurnos conoce las reglas reales de la operativa del negocio: convenios, descansos obligatorios, jornada anual",
+      "url": "https://www.aturnos.com/asistente-ia-rrhh",
+      "has": false
+    },
+    "organisations": {
+      "value": "yes",
+      "detail": {
+        "es": "El producto en sí es una plataforma para empresas, con planes Standard (desde 2 € por empleado y mes, 100 empleados, pago anual), Enterprise y Smart (presupuesto personalizado).",
+        "ca": "El producte en si és una plataforma per a empreses, amb plans Standard (des de 2 € per empleat i mes, 100 empleats, pagament anual), Enterprise i Smart (pressupost personalitzat).",
+        "gl": "O produto en si é unha plataforma para empresas, con plans Standard (desde 2 € por empregado e mes, 100 empregados, pagamento anual), Enterprise e Smart (orzamento personalizado).",
+        "eu": "Produktua bera enpresentzako plataforma bat da, Standard (2 €-tik aurrera langile eta hileko, 100 langile, urteko ordainketa), Enterprise eta Smart (aurrekontu pertsonalizatua) planekin."
+      },
+      "quote": "Para empresas que buscan planificación, automatización y registro digital de la jornada.",
+      "url": "https://www.aturnos.com/precios"
+    },
+    "data_privacy": {
+      "value": {
+        "es": "Servidores AWS en Irlanda",
+        "ca": "Servidors AWS a Irlanda",
+        "gl": "Servidores AWS en Irlanda",
+        "eu": "AWS zerbitzariak Irlandan"
+      },
+      "detail": {
+        "es": "La página de privacidad indica servidores en Irlanda en AWS con copias diarias y HTTPS obligatorio; la ficha de Google Play declara cifrado en tránsito y que no se comparten datos con terceros.",
+        "ca": "La pàgina de privadesa indica servidors a Irlanda a AWS amb còpies diàries i HTTPS obligatori; la fitxa de Google Play declara xifratge en trànsit i que no es comparteixen dades amb tercers.",
+        "gl": "A páxina de privacidade indica servidores en Irlanda en AWS con copias diarias e HTTPS obrigatorio; a ficha de Google Play declara cifrado en tránsito e que non se comparten datos con terceiros.",
+        "eu": "Pribatutasun-orriak AWSko zerbitzariak Irlandan daudela adierazten du, eguneroko kopiekin eta HTTPS derrigorrezkoarekin; Google Playko fitxak garraioko zifratzea adierazten du eta datuak ez direla hirugarrenekin partekatzen."
+      },
+      "quote": "Los servidores de aTurnos se encuentran localizados en Irlanda dentro de la legislación UE, están alojados y replicados en la estructura de Amazon Web Service (AWS)",
+      "url": "https://www.aturnos.com/privacidad",
+      "has": true
+    }
+  }
+}

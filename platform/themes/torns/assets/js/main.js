@@ -1,5 +1,6 @@
 // Torns theme — vanilla JS. No jQuery, no frameworks.
-// Handles: mobile drawer, sticky header shadow, closing <details> menus.
+// Handles: mobile drawer, sticky header shadow, closing <details> menus,
+// the contact form confirmation screen with confetti.
 
 (() => {
     'use strict'
@@ -76,72 +77,77 @@
     })
 
     // ------------------------------------------------------------------
-    // Sticky header — subtle shadow once the page scrolls.
+    // Sticky header — subtle shadow once the page scrolls. On a page that
+    // opens with the hero (the home page), the bar is the hero's white
+    // until then, so the top of the page is one colour.
     // ------------------------------------------------------------------
     const header = document.querySelector('[data-header]')
     if (header) {
+        const hero = document.querySelector('[data-hero]')
         const onScroll = () => {
-            header.classList.toggle('shadow-sm', window.scrollY > 8)
+            const scrolled = window.scrollY > 8
+            header.classList.toggle('shadow-sm', scrolled)
+            header.classList.toggle('header-on-hero', Boolean(hero) && !scrolled)
         }
         onScroll()
         window.addEventListener('scroll', onScroll, { passive: true })
     }
 
     // ------------------------------------------------------------------
-    // Gallery lightbox (vanilla)
+    // Screens carousel: the current screen large in the middle, its
+    // neighbours smaller on each side; arrows, swipe and arrow keys.
     // ------------------------------------------------------------------
-    const lightbox = document.querySelector('[data-lightbox]')
-    if (lightbox) {
-        const items = Array.from(document.querySelectorAll('[data-gallery-item]'))
-        const image = lightbox.querySelector('[data-lightbox-image]')
-        const caption = lightbox.querySelector('[data-lightbox-caption]')
-        let current = -1
-        let lightboxOpener = null
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+        const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'))
+        const caption = carousel.querySelector('[data-carousel-caption]')
+        const count = slides.length
+        if (!count) return
+        let current = 0
 
-        const show = (index) => {
-            current = (index + items.length) % items.length
-            const item = items[current]
-            image.src = item.dataset.full
-            image.alt = item.dataset.caption || ''
-            caption.textContent = item.dataset.caption || ''
+        const render = () => {
+            slides.forEach((slide, index) => {
+                let offset = index - current
+                if (offset > count / 2) offset -= count
+                if (offset < -count / 2) offset += count
+                const distance = Math.abs(offset)
+                slide.style.setProperty('--offset', offset)
+                slide.style.setProperty('--scale', distance === 0 ? 1 : distance === 1 ? 0.74 : 0.56)
+                slide.style.zIndex = String(10 - distance)
+                slide.dataset.position = distance === 0 ? 'current' : distance <= 2 ? 'side' : 'hidden'
+                slide.setAttribute('aria-hidden', distance === 0 ? 'false' : 'true')
+                slide.tabIndex = distance === 1 ? 0 : -1
+            })
+            if (caption) caption.textContent = slides[current].dataset.caption || ''
+        }
+        const go = (index) => {
+            current = (index + count) % count
+            render()
         }
 
-        const openLightbox = (index) => {
-            lightboxOpener = document.activeElement
-            show(index)
-            lightbox.classList.add('is-open')
-            document.body.classList.add('lightbox-locked')
-            lightbox.querySelector('[data-lightbox-close]').focus()
-        }
+        carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => go(current - 1))
+        carousel.querySelector('[data-carousel-next]')?.addEventListener('click', () => go(current + 1))
+        slides.forEach((slide, index) => slide.addEventListener('click', () => go(index)))
+        carousel.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') go(current - 1)
+            if (event.key === 'ArrowRight') go(current + 1)
+        })
 
-        const closeLightbox = () => {
-            lightbox.classList.remove('is-open')
-            document.body.classList.remove('lightbox-locked')
-            image.src = ''
-            if (lightboxOpener) lightboxOpener.focus()
-        }
+        let startX = null
+        carousel.addEventListener('touchstart', (event) => { startX = event.touches[0].clientX }, { passive: true })
+        carousel.addEventListener('touchend', (event) => {
+            if (startX === null) return
+            const delta = event.changedTouches[0].clientX - startX
+            if (Math.abs(delta) > 40) go(current + (delta < 0 ? 1 : -1))
+            startX = null
+        })
 
-        items.forEach((item, index) => {
-            item.addEventListener('click', () => openLightbox(index))
-        })
-        lightbox.querySelector('[data-lightbox-close]').addEventListener('click', closeLightbox)
-        lightbox.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => show(current - 1))
-        lightbox.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(current + 1))
-        lightbox.addEventListener('click', (event) => {
-            if (event.target === lightbox) closeLightbox()
-        })
-        document.addEventListener('keydown', (event) => {
-            if (!lightbox.classList.contains('is-open')) return
-            if (event.key === 'Escape') closeLightbox()
-            if (event.key === 'ArrowLeft') show(current - 1)
-            if (event.key === 'ArrowRight') show(current + 1)
-        })
-    }
+        render()
+    })
 
     // ------------------------------------------------------------------
-    // <details> menus (language switcher) — close on outside click/Escape.
+    // <details> menus (language switcher, «Para organizaciones») — close on outside click/Escape.
     // ------------------------------------------------------------------
-    const detailsMenus = document.querySelectorAll('[data-lang-menu]')
+    const detailsMenus = document.querySelectorAll('[data-lang-menu], [data-org-menu]')
     if (detailsMenus.length) {
         document.addEventListener('click', (event) => {
             detailsMenus.forEach((menu) => {
@@ -154,5 +160,260 @@
                 if (menu.open) menu.open = false
             })
         })
+    }
+
+    // ------------------------------------------------------------------
+    // Home: «30 días de Pro» announcement, at most once every 10 days per
+    // browser. Counted from when it is shown, closed or not.
+    // ------------------------------------------------------------------
+    const promo = document.querySelector('[data-promo-pro]')
+    if (promo) {
+        const KEY = 'torns_promo_pro_shown_at'
+        const EVERY = 10 * 24 * 60 * 60 * 1000
+        let last = 0
+        try {
+            last = Number(window.localStorage.getItem(KEY)) || 0
+        } catch {
+            last = Date.now() // storage blocked: do not show it on every visit
+        }
+        let opener = null
+
+        const hide = () => {
+            promo.hidden = true
+            document.documentElement.style.overflow = ''
+            opener?.focus?.({ preventScroll: true })
+        }
+
+        const show = () => {
+            opener = document.activeElement
+            promo.hidden = false
+            document.documentElement.style.overflow = 'hidden'
+            promo.querySelector('#promo-pro-title')?.focus({ preventScroll: true })
+            try {
+                window.localStorage.setItem(KEY, String(Date.now()))
+            } catch {
+                // nothing to remember it in; it simply shows again next time
+            }
+        }
+
+        promo.querySelector('[data-promo-pro-close]')?.addEventListener('click', hide)
+        promo.addEventListener('click', (event) => {
+            if (!event.target.closest('[data-promo-pro-card]')) hide()
+        })
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !promo.hidden) hide()
+        })
+        // On a first visit the cookie notice comes up too: wait until it has
+        // been answered (its consent cookie exists) so the two never stack.
+        // Looked up on each check: the notice's markup comes after this script.
+        const consentGiven = () => {
+            const name = document.querySelector('[data-site-cookie-name]')?.getAttribute('data-site-cookie-name')
+            return !name || document.cookie.split(';').some((item) => item.trim().startsWith(name + '='))
+        }
+        if (Date.now() - last >= EVERY) {
+            const started = Date.now()
+            const wait = window.setInterval(() => {
+                if (document.readyState !== 'loading' && consentGiven()) {
+                    window.clearInterval(wait)
+                    window.setTimeout(show, 800)
+                } else if (Date.now() - started > 5 * 60 * 1000) {
+                    window.clearInterval(wait)
+                }
+            }, 500)
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // Post share buttons on a phone: X, Facebook and LinkedIn open their
+    // app instead of their website. WhatsApp's wa.me already does.
+    // - Android: an intent for the app's own share screen, with the text
+    //   ready; Chrome falls back to the website when the app is missing.
+    // - iPhone/iPad: iOS lets a web page open neither Facebook's nor
+    //   LinkedIn's share screen, so the system share sheet comes up, with
+    //   the installed apps in it.
+    // On a computer the links open the website, as they always did.
+    //
+    // Short link (torns.app/wy89, docs/short-links.md): when the post has
+    // none yet in this language, pressing a share button asks for it. The
+    // click waits for it 1.5 s at most and then shares whichever link it
+    // has, so sharing never fails.
+    // ------------------------------------------------------------------
+    const shareBox = document.querySelector('[data-share-url]')
+    if (shareBox) {
+        const ua = navigator.userAgent
+        const android = /Android/i.test(ua)
+        const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        const packages = { x: 'com.twitter.android', facebook: 'com.facebook.katana', linkedin: 'com.linkedin.android' }
+        let url = shareBox.dataset.shareUrl
+        const title = shareBox.dataset.shareTitle || document.title
+        const links = shareBox.querySelectorAll('.share-link')
+
+        const endpoint = shareBox.dataset.shortLinkEndpoint
+        let shortLink = null
+        let ready = !endpoint
+
+        const useShortUrl = (short) => {
+            const swaps = [[encodeURIComponent(url), encodeURIComponent(short)], [url, short]]
+            links.forEach((link) => {
+                let href = link.getAttribute('href')
+                swaps.forEach(([from, to]) => {
+                    href = href.split(from).join(to)
+                })
+                link.setAttribute('href', href)
+            })
+            url = short
+        }
+
+        const requestShortLink = () => {
+            shortLink ??= fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({ post: Number(shareBox.dataset.postId), locale: shareBox.dataset.locale }),
+            })
+                .then((res) => (res.ok ? res.json() : null))
+                .then((json) => {
+                    if (json?.url) useShortUrl(json.url)
+                })
+                .catch(() => {})
+                .finally(() => {
+                    ready = true
+                })
+            return shortLink
+        }
+
+        if (endpoint) {
+            // Pressing starts the request, so it is usually back by the click.
+            shareBox.addEventListener('pointerdown', (event) => {
+                if (event.target.closest('.share-link')) requestShortLink()
+            })
+            shareBox.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && event.target.closest('.share-link')) requestShortLink()
+            })
+        }
+
+        // Opens the link once the click had to wait, when the browser may no
+        // longer allow a new window: then in this tab.
+        const follow = (link, popup) => {
+            if (popup) {
+                popup.location.href = link.href
+            } else if (link.target !== '_blank' || !window.open(link.href, '_blank', 'noopener')) {
+                window.location.href = link.href
+            }
+        }
+
+        const share = (link, event, popup = null) => {
+            const network = link.dataset.share
+            if (android && packages[network]) {
+                event?.preventDefault()
+                popup?.close()
+                const text = network === 'x' ? `${title} ${url}` : url
+                window.location.href = 'intent:#Intent;action=android.intent.action.SEND;type=text/plain;'
+                    + `S.android.intent.extra.TEXT=${encodeURIComponent(text)};`
+                    + `package=${packages[network]};`
+                    + `S.browser_fallback_url=${encodeURIComponent(link.href)};end`
+            } else if (ios && navigator.share && network) {
+                event?.preventDefault()
+                navigator.share({ title, url }).catch((error) => {
+                    // Closed without choosing: nothing to do. Refused after the
+                    // wait (no user gesture left): the network's page instead.
+                    if (!event && error?.name === 'NotAllowedError') follow(link, null)
+                })
+            } else if (!event) {
+                follow(link, popup)
+            }
+        }
+
+        links.forEach((link) => {
+            link.addEventListener('click', (event) => {
+                if (ready) {
+                    share(link, event)
+                    return
+                }
+                event.preventDefault()
+                // A window opened now, while the click still counts, is not
+                // blocked; it gets its address when the short link is back.
+                const popup = link.target === '_blank' && !android && !ios ? window.open('', '_blank') : null
+                if (popup) popup.opener = null
+                Promise.race([requestShortLink(), new Promise((resolve) => setTimeout(resolve, 1500))])
+                    .then(() => share(link, null, popup))
+            })
+        })
+    }
+
+    // ------------------------------------------------------------------
+    // Contact form: confirmation screen with confetti
+    // ------------------------------------------------------------------
+    const sent = document.querySelector('[data-contact-sent]')
+    if (sent) {
+        const canvas = sent.querySelector('[data-confetti]')
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        let frame = null
+
+        const confetti = () => {
+            if (reduced || !canvas?.getContext) return
+            const ctx = canvas.getContext('2d')
+            const ratio = window.devicePixelRatio || 1
+            canvas.width = window.innerWidth * ratio
+            canvas.height = window.innerHeight * ratio
+            ctx.scale(ratio, ratio)
+            const colors = ['#227A96', '#5BC0DE', '#F5A623', '#C2185B', '#34C759', '#1B2A4A']
+            const pieces = Array.from({ length: 180 }, () => ({
+                x: Math.random() * window.innerWidth,
+                y: -20 - Math.random() * window.innerHeight * 0.6,
+                w: 6 + Math.random() * 6,
+                h: 8 + Math.random() * 8,
+                vx: -1.5 + Math.random() * 3,
+                vy: 2 + Math.random() * 3.5,
+                angle: Math.random() * Math.PI,
+                spin: -0.15 + Math.random() * 0.3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+            }))
+            const started = performance.now()
+            cancelAnimationFrame(frame)
+            const draw = (now) => {
+                ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+                const fading = Math.max(0, Math.min(1, (6000 - (now - started)) / 1500))
+                pieces.forEach((p) => {
+                    p.x += p.vx + Math.sin((now + p.y) / 400) * 0.6
+                    p.y += p.vy
+                    p.angle += p.spin
+                    ctx.save()
+                    ctx.globalAlpha = fading
+                    ctx.translate(p.x, p.y)
+                    ctx.rotate(p.angle)
+                    ctx.fillStyle = p.color
+                    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h)
+                    ctx.restore()
+                })
+                if (fading > 0) frame = requestAnimationFrame(draw)
+                else ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+            }
+            frame = requestAnimationFrame(draw)
+        }
+
+        const show = () => {
+            sent.hidden = false
+            document.documentElement.style.overflow = 'hidden'
+            sent.querySelector('#contact-sent-title')?.focus({ preventScroll: true })
+            confetti()
+        }
+
+        const hide = () => {
+            sent.hidden = true
+            document.documentElement.style.overflow = ''
+            cancelAnimationFrame(frame)
+        }
+
+        // Botble's contact-public.js sends the form by AJAX and fires this
+        // event after the answer; its success box has text only on success.
+        document.addEventListener('contact-form.submitted', () => {
+            if (document.querySelector('.contact-success-message')?.textContent.trim()) show()
+        })
+        sent.querySelector('[data-contact-sent-close]')?.addEventListener('click', hide)
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !sent.hidden) hide()
+        })
+        // Sent without JavaScript: the page came back with the screen open.
+        if (!sent.hidden) show()
     }
 })()

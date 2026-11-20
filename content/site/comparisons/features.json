@@ -1,0 +1,376 @@
+{
+  "groups": {
+    "general": {
+      "es": "General",
+      "ca": "General",
+      "gl": "Xeral",
+      "eu": "Orokorra"
+    },
+    "calendar": {
+      "es": "Calendario de turnos",
+      "ca": "Calendari de torns",
+      "gl": "Calendario de quendas",
+      "eu": "Txanden egutegia"
+    },
+    "swaps": {
+      "es": "Cambios de turno",
+      "ca": "Canvis de torn",
+      "gl": "Cambios de quenda",
+      "eu": "Txanda-aldaketak"
+    },
+    "communication": {
+      "es": "Comunicación",
+      "ca": "Comunicació",
+      "gl": "Comunicación",
+      "eu": "Komunikazioa"
+    },
+    "extras": {
+      "es": "Inteligencia artificial, organizaciones y datos",
+      "ca": "Intel·ligència artificial, organitzacions i dades",
+      "gl": "Intelixencia artificial, organizacións e datos",
+      "eu": "Adimen artifiziala, erakundeak eta datuak"
+    }
+  },
+  "features": [
+    {
+      "key": "focus",
+      "group": "general",
+      "label": {
+        "es": "Enfoque",
+        "ca": "Enfocament",
+        "gl": "Enfoque",
+        "eu": "Ikuspegia"
+      }
+    },
+    {
+      "key": "healthcare",
+      "group": "general",
+      "label": {
+        "es": "Pensada para personal sanitario",
+        "ca": "Pensada per a personal sanitari",
+        "gl": "Pensada para persoal sanitario",
+        "eu": "Osasun-langileentzat pentsatua"
+      }
+    },
+    {
+      "key": "platforms",
+      "group": "general",
+      "label": {
+        "es": "Plataformas",
+        "ca": "Plataformes",
+        "gl": "Plataformas",
+        "eu": "Plataformak"
+      }
+    },
+    {
+      "key": "languages",
+      "group": "general",
+      "label": {
+        "es": "Idiomas (incluye catalán, gallego y euskera)",
+        "ca": "Idiomes (inclou català, gallec i basc)",
+        "gl": "Idiomas (inclúe catalán, galego e éuscaro)",
+        "eu": "Hizkuntzak (katalana, galiziera eta euskara barne)"
+      }
+    },
+    {
+      "key": "price",
+      "group": "general",
+      "label": {
+        "es": "Precio",
+        "ca": "Preu",
+        "gl": "Prezo",
+        "eu": "Prezioa"
+      }
+    },
+    {
+      "key": "account",
+      "group": "general",
+      "label": {
+        "es": "Alta individual, sin que la empresa lo contrate",
+        "ca": "Alta individual, sense que l'empresa ho contracti",
+        "gl": "Alta individual, sen que a empresa o contrate",
+        "eu": "Banakako alta, enpresak kontratatu gabe"
+      }
+    },
+    {
+      "key": "calendar_views",
+      "group": "calendar",
+      "label": {
+        "es": "Vistas del calendario",
+        "ca": "Vistes del calendari",
+        "gl": "Vistas do calendario",
+        "eu": "Egutegiaren ikuspegiak"
+      }
+    },
+    {
+      "key": "shift_types",
+      "group": "calendar",
+      "label": {
+        "es": "Tipos de turno, colores y horarios",
+        "ca": "Tipus de torn, colors i horaris",
+        "gl": "Tipos de quenda, cores e horarios",
+        "eu": "Txanda motak, koloreak eta ordutegiak"
+      }
+    },
+    {
+      "key": "multi_job",
+      "group": "calendar",
+      "label": {
+        "es": "Varios centros o trabajos en un calendario",
+        "ca": "Diversos centres o feines en un calendari",
+        "gl": "Varios centros ou traballos nun calendario",
+        "eu": "Zentro edo lan bat baino gehiago egutegi bakarrean"
+      }
+    },
+    {
+      "key": "rotations",
+      "group": "calendar",
+      "label": {
+        "es": "Rotaciones y patrones de turnos",
+        "ca": "Rotacions i patrons de torns",
+        "gl": "Rotacións e patróns de quendas",
+        "eu": "Txanden errotazioak eta ereduak"
+      }
+    },
+    {
+      "key": "import_roster",
+      "group": "calendar",
+      "label": {
+        "es": "Importar el cuadrante (foto, PDF, hoja de cálculo)",
+        "ca": "Importar el quadrant (foto, PDF, full de càlcul)",
+        "gl": "Importar o cadro de quendas (foto, PDF, folla de cálculo)",
+        "eu": "Koadrantea inportatu (argazkia, PDFa, kalkulu-orria)"
+      }
+    },
+    {
+      "key": "offline",
+      "group": "calendar",
+      "label": {
+        "es": "Funciona sin conexión",
+        "ca": "Funciona sense connexió",
+        "gl": "Funciona sen conexión",
+        "eu": "Konexiorik gabe dabil"
+      }
+    },
+    {
+      "key": "calendar_sync",
+      "group": "calendar",
+      "label": {
+        "es": "Sincronización con Apple, Google u Outlook Calendar",
+        "ca": "Sincronització amb Apple, Google o Outlook Calendar",
+        "gl": "Sincronización con Apple, Google ou Outlook Calendar",
+        "eu": "Apple, Google edo Outlook Calendar-ekin sinkronizazioa"
+      }
+    },
+    {
+      "key": "two_way_sync",
+      "group": "calendar",
+      "label": {
+        "es": "Importar eventos de otros calendarios",
+        "ca": "Importar esdeveniments d'altres calendaris",
+        "gl": "Importar eventos doutros calendarios",
+        "eu": "Beste egutegietako gertaerak inportatu"
+      }
+    },
+    {
+      "key": "share_calendar",
+      "group": "calendar",
+      "label": {
+        "es": "Compartir el calendario con familia u otras personas",
+        "ca": "Compartir el calendari amb família o altres persones",
+        "gl": "Compartir o calendario coa familia ou outras persoas",
+        "eu": "Egutegia familiarekin edo beste pertsonekin partekatu"
+      }
+    },
+    {
+      "key": "print_pdf",
+      "group": "calendar",
+      "label": {
+        "es": "Imprimir o exportar a PDF",
+        "ca": "Imprimir o exportar a PDF",
+        "gl": "Imprimir ou exportar a PDF",
+        "eu": "Inprimatu edo PDFra esportatu"
+      }
+    },
+    {
+      "key": "statistics",
+      "group": "calendar",
+      "label": {
+        "es": "Estadísticas de horas y turnos",
+        "ca": "Estadístiques d'hores i torns",
+        "gl": "Estatísticas de horas e quendas",
+        "eu": "Ordu eta txanden estatistikak"
+      }
+    },
+    {
+      "key": "holidays",
+      "group": "calendar",
+      "label": {
+        "es": "Festivos en el calendario",
+        "ca": "Festius al calendari",
+        "gl": "Festivos no calendario",
+        "eu": "Jaiegunak egutegian"
+      }
+    },
+    {
+      "key": "widgets_watch",
+      "group": "calendar",
+      "label": {
+        "es": "Widgets y reloj inteligente",
+        "ca": "Widgets i rellotge intel·ligent",
+        "gl": "Widgets e reloxo intelixente",
+        "eu": "Widgetak eta erloju adimenduna"
+      }
+    },
+    {
+      "key": "swaps_between_colleagues",
+      "group": "swaps",
+      "label": {
+        "es": "Cambios de turno entre compañeros dentro de la app",
+        "ca": "Canvis de torn entre companys dins de l'app",
+        "gl": "Cambios de quenda entre compañeiros dentro da app",
+        "eu": "Txanda-aldaketak lankideen artean aplikazioan bertan"
+      }
+    },
+    {
+      "key": "swap_board",
+      "group": "swaps",
+      "label": {
+        "es": "Tablón o muro de turnos ofrecidos",
+        "ca": "Tauler o mur de torns oferts",
+        "gl": "Taboleiro ou muro de quendas ofrecidas",
+        "eu": "Eskainitako txanden taula edo horma"
+      }
+    },
+    {
+      "key": "swap_chains",
+      "group": "swaps",
+      "label": {
+        "es": "Cadenas de cambios entre 3 o 4 personas",
+        "ca": "Cadenes de canvis entre 3 o 4 persones",
+        "gl": "Cadeas de cambios entre 3 ou 4 persoas",
+        "eu": "3 edo 4 pertsonaren arteko aldaketa-kateak"
+      }
+    },
+    {
+      "key": "urgent_mode",
+      "group": "swaps",
+      "label": {
+        "es": "Aviso de cambio urgente (SOS)",
+        "ca": "Avís de canvi urgent (SOS)",
+        "gl": "Aviso de cambio urxente (SOS)",
+        "eu": "Aldaketa urgentearen abisua (SOS)"
+      }
+    },
+    {
+      "key": "anonymous_post",
+      "group": "swaps",
+      "label": {
+        "es": "Publicar un turno de forma anónima",
+        "ca": "Publicar un torn de manera anònima",
+        "gl": "Publicar unha quenda de forma anónima",
+        "eu": "Txanda bat anonimoki argitaratu"
+      }
+    },
+    {
+      "key": "manager_notification",
+      "group": "swaps",
+      "label": {
+        "es": "Comunicar el cambio al gestor o supervisor",
+        "ca": "Comunicar el canvi al gestor o supervisor",
+        "gl": "Comunicar o cambio ao xestor ou supervisor",
+        "eu": "Aldaketa kudeatzaileari edo arduradunari jakinarazi"
+      }
+    },
+    {
+      "key": "manual_swap_record",
+      "group": "swaps",
+      "label": {
+        "es": "Registrar un cambio acordado fuera de la app",
+        "ca": "Registrar un canvi acordat fora de l'app",
+        "gl": "Rexistrar un cambio acordado fóra da app",
+        "eu": "Aplikaziotik kanpo adostutako aldaketa erregistratu"
+      }
+    },
+    {
+      "key": "availability",
+      "group": "swaps",
+      "label": {
+        "es": "Disponibilidad y turnos compatibles",
+        "ca": "Disponibilitat i torns compatibles",
+        "gl": "Dispoñibilidade e quendas compatibles",
+        "eu": "Erabilgarritasuna eta txanda bateragarriak"
+      }
+    },
+    {
+      "key": "chat",
+      "group": "communication",
+      "label": {
+        "es": "Chat individual y de grupo",
+        "ca": "Xat individual i de grup",
+        "gl": "Chat individual e de grupo",
+        "eu": "Banakako eta taldeko txata"
+      }
+    },
+    {
+      "key": "push_notifications",
+      "group": "communication",
+      "label": {
+        "es": "Notificaciones de cambios y turnos",
+        "ca": "Notificacions de canvis i torns",
+        "gl": "Notificacións de cambios e quendas",
+        "eu": "Aldaketa eta txanden jakinarazpenak"
+      }
+    },
+    {
+      "key": "reminders",
+      "group": "communication",
+      "label": {
+        "es": "Recordatorios de turnos",
+        "ca": "Recordatoris de torns",
+        "gl": "Recordatorios de quendas",
+        "eu": "Txanden gogorarazleak"
+      }
+    },
+    {
+      "key": "ai_assistant",
+      "group": "extras",
+      "label": {
+        "es": "Asistente de inteligencia artificial",
+        "ca": "Assistent d'intel·ligència artificial",
+        "gl": "Asistente de intelixencia artificial",
+        "eu": "Adimen artifizialeko laguntzailea"
+      }
+    },
+    {
+      "key": "legal_assistant",
+      "group": "extras",
+      "label": {
+        "es": "Consultas sobre convenio y normativa laboral",
+        "ca": "Consultes sobre conveni i normativa laboral",
+        "gl": "Consultas sobre convenio e normativa laboral",
+        "eu": "Hitzarmenari eta lan-araudiari buruzko kontsultak"
+      }
+    },
+    {
+      "key": "organisations",
+      "group": "extras",
+      "label": {
+        "es": "Panel para empresas o centros",
+        "ca": "Panell per a empreses o centres",
+        "gl": "Panel para empresas ou centros",
+        "eu": "Enpresa edo zentroentzako panela"
+      }
+    },
+    {
+      "key": "data_privacy",
+      "group": "extras",
+      "label": {
+        "es": "Dónde se guardan los datos",
+        "ca": "On es guarden les dades",
+        "gl": "Onde se gardan os datos",
+        "eu": "Non gordetzen diren datuak"
+      }
+    }
+  ]
+}

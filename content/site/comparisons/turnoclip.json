@@ -1,0 +1,506 @@
+{
+  "name": "TurnoClip",
+  "slug": "turnoclip",
+  "website": "https://turnoclip.es/",
+  "checked_on": "2026-10-20",
+  "summary": {
+    "es": "TurnoClip es una app móvil gratuita para Android e iOS, desarrollada por Jesús Clemente Delgado (Dotesus, Toledo), para trabajadores a turnos como sanitarios, policías y bomberos. Combina un calendario personal de turnos con un tablón de ofertas de cambio entre compañeros del mismo centro, firma digital del acuerdo y generación de un PDF para supervisión.",
+    "ca": "TurnoClip és una app mòbil gratuïta per a Android i iOS, desenvolupada per Jesús Clemente Delgado (Dotesus, Toledo), per a treballadors a torns com ara sanitaris, policies i bombers. Combina un calendari personal de torns amb un tauler d'ofertes de canvi entre companys del mateix centre, signatura digital de l'acord i generació d'un PDF per a supervisió.",
+    "gl": "TurnoClip é unha app móbil gratuíta para Android e iOS, desenvolvida por Jesús Clemente Delgado (Dotesus, Toledo), para traballadores a quendas como sanitarios, policías e bombeiros. Combina un calendario persoal de quendas cun taboleiro de ofertas de cambio entre compañeiros do mesmo centro, sinatura dixital do acordo e xeración dun PDF para supervisión.",
+    "eu": "TurnoClip Android eta iOSerako doako aplikazio mugikor bat da, Jesús Clemente Delgadok (Dotesus, Toledo) garatua, txandaka lan egiten dutenentzat, hala nola osasun-langileentzat, poliziententzat eta suhiltzaileentzat. Txanden egutegi pertsonala zentro bereko lankideen arteko aldaketa-eskaintzen ohol batekin, akordioaren sinadura digitalarekin eta gainbegiratzerako PDF bat sortzearekin konbinatzen du."
+  },
+  "sources": [
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip",
+      "title": "TurnoClip - Google Play"
+    },
+    {
+      "url": "https://play.google.com/store/apps/datasafety?id=com.dotesus.turnoclip",
+      "title": "TurnoClip - Seguridad de los datos (Google Play)"
+    },
+    {
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "title": "TurnoClip - Cambios de Turno - App Store (incluye historial de versiones)"
+    },
+    {
+      "url": "https://turnoclip.es/",
+      "title": "TurnoClip - Organiza tus turnos sin el caos de WhatsApp"
+    },
+    {
+      "url": "https://doc-hosting.flycricket.io/politica-de-privacidad-turnoclip/b4efd591-5da8-4ce0-a6bf-fd1d8bed23e0/privacy",
+      "title": "Política de Privacidad TurnoClip"
+    }
+  ],
+  "rows": {
+    "focus": {
+      "value": {
+        "es": "App individual con centros",
+        "ca": "App individual amb centres",
+        "gl": "App individual con centros",
+        "eu": "Banakako aplikazioa zentroekin"
+      },
+      "detail": {
+        "es": "App móvil para trabajadores a turnos que organiza el cuadrante personal y permite cambiar turnos con compañeros del mismo centro; también ofrece un modo solo calendario.",
+        "ca": "App mòbil per a treballadors a torns que organitza el quadrant personal i permet canviar torns amb companys del mateix centre; també ofereix un mode només calendari.",
+        "gl": "App móbil para traballadores a quendas que organiza o cadro de quendas persoal e permite cambiar quendas con compañeiros do mesmo centro; tamén ofrece un modo só calendario.",
+        "eu": "Txandaka lan egiten dutenentzako aplikazio mugikorra, koadrante pertsonala antolatzen duena eta zentro bereko lankideekin txandak aldatzeko aukera ematen duena; egutegi hutseko modua ere eskaintzen du."
+      },
+      "quote": "TurnoClip es la herramienta definitiva para profesionales que trabajan a turnos (enfermería, medicina, policía, fábricas, emergencias...).",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip",
+      "has": true
+    },
+    "platforms": {
+      "value": {
+        "es": "Android, iOS/iPad, acceso web",
+        "ca": "Android, iOS/iPad, accés web",
+        "gl": "Android, iOS/iPad, acceso web",
+        "eu": "Android, iOS/iPad, web bidezko sarbidea"
+      },
+      "detail": {
+        "es": "Está publicada en Google Play y en App Store (compatible con iPhone e iPad, iOS 15.0 o superior); la web enlaza un inicio de sesión en turnoclip.web.app. No se mencionan widgets ni Apple Watch.",
+        "ca": "Està publicada a Google Play i a l'App Store (compatible amb iPhone i iPad, iOS 15.0 o superior); el web enllaça un inici de sessió a turnoclip.web.app. No s'esmenten widgets ni Apple Watch.",
+        "gl": "Está publicada en Google Play e en App Store (compatible con iPhone e iPad, iOS 15.0 ou superior); a web enlaza un inicio de sesión en turnoclip.web.app. Non se mencionan widgets nin Apple Watch.",
+        "eu": "Google Playn eta App Storen argitaratuta dago (iPhone eta iPadekin bateragarria, iOS 15.0 edo berriagoa); webguneak turnoclip.web.app helbideko saio-hasiera bat estekatzen du. Ez dira aipatzen widgetak ezta Apple Watch ere."
+      },
+      "quote": "Empieza gratis hoy mismo. ¡Descarga la app para iOS o Android!",
+      "url": "https://turnoclip.es/",
+      "has": true
+    },
+    "languages": {
+      "value": {
+        "es": "Solo español",
+        "ca": "Només espanyol",
+        "gl": "Só español",
+        "eu": "Gaztelania soilik"
+      },
+      "detail": {
+        "es": "La ficha de App Store indica únicamente español como idioma; no figuran catalán, gallego ni euskera.",
+        "ca": "La fitxa de l'App Store indica únicament l'espanyol com a idioma; no hi figuren el català, el gallec ni el basc.",
+        "gl": "A ficha de App Store indica unicamente español como idioma; non figuran catalán, galego nin éuscaro.",
+        "eu": "App Storeko fitxak gaztelania baino ez du adierazten hizkuntza gisa; ez dira ageri katalana, galiziera ezta euskara ere."
+      },
+      "quote": "Idiomas: Español",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": false
+    },
+    "price": {
+      "value": {
+        "es": "Gratis; sin compras integradas",
+        "ca": "Gratis; sense compres integrades",
+        "gl": "Gratis; sen compras integradas",
+        "eu": "Doan; aplikazio barneko erosketarik gabe"
+      },
+      "detail": {
+        "es": "Ambas tiendas la ofrecen gratis (0 EUR) y no indican compras integradas; la web dice que la descarga y la organización básica son gratuitas y el Match automático se presenta como beta gratuita durante el lanzamiento.",
+        "ca": "Totes dues botigues l'ofereixen gratis (0 EUR) i no indiquen compres integrades; el web diu que la descàrrega i l'organització bàsica són gratuïtes i el Match automàtic es presenta com a beta gratuïta durant el llançament.",
+        "gl": "Ambas as tendas a ofrecen gratis (0 EUR) e non indican compras integradas; a web di que a descarga e a organización básica son gratuítas e o Match automático preséntase como beta gratuíta durante o lanzamento.",
+        "eu": "Bi dendek doan eskaintzen dute (0 EUR) eta ez dute aplikazio barneko erosketarik adierazten; webguneak dio deskarga eta oinarrizko antolaketa doakoak direla, eta Match automatikoa doako beta gisa aurkezten da abiarazte-aldian."
+      },
+      "quote": "La descarga y organización básica del cuadrante es totalmente gratuita. Podrás cambiar turnos sin límites de forma fácil.",
+      "url": "https://turnoclip.es/",
+      "has": true
+    },
+    "account": {
+      "value": {
+        "es": "Requiere cuenta",
+        "ca": "Requereix compte",
+        "gl": "Require conta",
+        "eu": "Kontua behar da"
+      },
+      "detail": {
+        "es": "La política de privacidad indica que nombre, apellidos y correo son necesarios para crear la cuenta; el registro admite Apple, Google o correo y no requiere que el empleador contrate el servicio.",
+        "ca": "La política de privadesa indica que el nom, els cognoms i el correu són necessaris per crear el compte; el registre admet Apple, Google o correu i no requereix que l'ocupador contracti el servei.",
+        "gl": "A política de privacidade indica que nome, apelidos e correo son necesarios para crear a conta; o rexistro admite Apple, Google ou correo e non require que o empregador contrate o servizo.",
+        "eu": "Pribatutasun-politikak dio izena, abizenak eta posta beharrezkoak direla kontua sortzeko; erregistroak Apple, Google edo posta onartzen ditu, eta ez du eskatzen enplegatzaileak zerbitzua kontratatzea."
+      },
+      "quote": "Nombre, apellidos y dirección de correo electrónico (necesarios para la creación de la cuenta y recuperación de contraseña).",
+      "url": "https://doc-hosting.flycricket.io/politica-de-privacidad-turnoclip/b4efd591-5da8-4ce0-a6bf-fd1d8bed23e0/privacy",
+      "has": true
+    },
+    "healthcare": {
+      "value": {
+        "es": "Sanitarios y otros colectivos",
+        "ca": "Sanitaris i altres col·lectius",
+        "gl": "Sanitarios e outros colectivos",
+        "eu": "Osasun-langileak eta beste kolektibo batzuk"
+      },
+      "detail": {
+        "es": "Se dirige a trabajadores a turnos en general, citando enfermería y medicina junto a policía, bomberos, fábricas y emergencias.",
+        "ca": "S'adreça a treballadors a torns en general, i cita infermeria i medicina al costat de policia, bombers, fàbriques i emergències.",
+        "gl": "Diríxese a traballadores a quendas en xeral, citando enfermaría e medicina xunto a policía, bombeiros, fábricas e emerxencias.",
+        "eu": "Oro har txandaka lan egiten dutenei zuzentzen zaie, eta erizaintza eta medikuntza aipatzen ditu polizia, suhiltzaileak, fabrikak eta larrialdiekin batera."
+      },
+      "quote": "La app definitiva para sanitarios, policías y trabajadores a turnos.",
+      "url": "https://turnoclip.es/",
+      "has": false
+    },
+    "calendar_views": {
+      "value": "yes",
+      "detail": {
+        "es": "Ofrece vista mensual, semanal y anual, además de detalle del día y una agenda de eventos.",
+        "ca": "Ofereix vista mensual, setmanal i anual, a més del detall del dia i una agenda d'esdeveniments.",
+        "gl": "Ofrece vista mensual, semanal e anual, ademais do detalle do día e unha axenda de eventos.",
+        "eu": "Hileko, asteko eta urteko ikuspegiak eskaintzen ditu, baita eguneko xehetasuna eta gertaeren agenda bat ere."
+      },
+      "quote": "además de la vista mensual, ahora puedes consultar tus turnos por semana o por año.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472"
+    },
+    "shift_types": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite crear tipos de turno con color y horas de duración personalizadas, incluidos valores decimales.",
+        "ca": "Permet crear tipus de torn amb color i hores de durada personalitzades, inclosos valors decimals.",
+        "gl": "Permite crear tipos de quenda con cor e horas de duración personalizadas, incluídos valores decimais.",
+        "eu": "Txanda motak sortzeko aukera ematen du, kolorearekin eta iraupen-ordu pertsonalizatuekin, balio hamartarrak barne."
+      },
+      "quote": "Configura Mañanas, Tardes, Noches, Guardias de 24h o Días Libres. Ponles el color y las horas de duración que tú decidas.",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip"
+    },
+    "multi_job": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada. Sí admite dos turnos en un mismo día.",
+        "ca": "No consta a la documentació pública consultada. Sí que admet dos torns en un mateix dia.",
+        "gl": "Non consta na documentación pública consultada. Si admite dúas quendas nun mesmo día.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan. Egun berean bi txanda onartzen ditu, ordea."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "rotations": {
+      "value": {
+        "es": "Solo CPEIS Toledo (bomberos)",
+        "ca": "Només CPEIS Toledo (bombers)",
+        "gl": "Só CPEIS Toledo (bombeiros)",
+        "eu": "CPEIS Toledo soilik (suhiltzaileak)"
+      },
+      "detail": {
+        "es": "El historial de versiones describe la generación automática del cuadrante anual solo para los grupos de guardia de CPEIS Toledo; no se documenta un generador de rotaciones genérico.",
+        "ca": "L'historial de versions descriu la generació automàtica del quadrant anual només per als grups de guàrdia del CPEIS Toledo; no es documenta un generador de rotacions genèric.",
+        "gl": "O historial de versións describe a xeración automática do cadro de quendas anual só para os grupos de garda do CPEIS Toledo; non se documenta un xerador de rotacións xenérico.",
+        "eu": "Bertsioen historialak urteko koadrantearen sorrera automatikoa deskribatzen du, CPEIS Toledoko guardia-taldeentzat soilik; ez dago dokumentatuta errotazio-sorgailu generikorik."
+      },
+      "quote": "Cuadrante automático para CPEIS Toledo: los bomberos pueden seleccionar su grupo de guardia en el perfil y la app genera automáticamente todas sus guardias 24h",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": false
+    },
+    "import_roster": {
+      "value": {
+        "es": "PDF de cuadrantes Serveo",
+        "ca": "PDF de quadrants Serveo",
+        "gl": "PDF de cadros de quendas Serveo",
+        "eu": "Serveo koadranteen PDFak"
+      },
+      "detail": {
+        "es": "El historial de versiones describe la importación automática de cuadrantes PDF de las bases de Serveo (Madrid, Málaga, Sevilla y Barcelona); no menciona IA, OCR, fotos ni hojas de cálculo.",
+        "ca": "L'historial de versions descriu la importació automàtica de quadrants PDF de les bases de Serveo (Madrid, Màlaga, Sevilla i Barcelona); no esmenta IA, OCR, fotos ni fulls de càlcul.",
+        "gl": "O historial de versións describe a importación automática de cadros de quendas PDF das bases de Serveo (Madrid, Málaga, Sevilla e Barcelona); non menciona IA, OCR, fotos nin follas de cálculo.",
+        "eu": "Bertsioen historialak Serveoren baseetako (Madril, Malaga, Sevilla eta Bartzelona) PDF koadranteen inportazio automatikoa deskribatzen du; ez ditu aipatzen IA, OCR, argazkiak ezta kalkulu-orriak ere."
+      },
+      "quote": "La importación es compatible con cuadrantes de todas las bases de Serveo: Madrid, Málaga, Sevilla y Barcelona",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": true
+    },
+    "offline": {
+      "value": {
+        "es": "Persistencia local de datos",
+        "ca": "Persistència local de dades",
+        "gl": "Persistencia local de datos",
+        "eu": "Datuen tokiko iraunkortasuna"
+      },
+      "detail": {
+        "es": "Las notas de versión mencionan un modo offline mejorado con persistencia de datos en el dispositivo, sin detallar qué funciones están disponibles sin conexión.",
+        "ca": "Les notes de versió esmenten un mode fora de línia millorat amb persistència de dades al dispositiu, sense detallar quines funcions estan disponibles sense connexió.",
+        "gl": "As notas de versión mencionan un modo sen conexión mellorado con persistencia de datos no dispositivo, sen detallar que funcións están dispoñibles sen conexión.",
+        "eu": "Bertsio-oharrek lineaz kanpoko modu hobetu bat aipatzen dute, datuak gailuan iraunarazten dituena, konexiorik gabe zein funtzio dauden erabilgarri zehaztu gabe."
+      },
+      "quote": "Modo offline mejorado: Navegación más rápida y resistente gracias a la nueva persistencia de datos en el dispositivo.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": true
+    },
+    "calendar_sync": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "two_way_sync": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "share_calendar": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada. Sí permite compartir ofertas de cambio por WhatsApp mediante enlace.",
+        "ca": "No consta a la documentació pública consultada. Sí que permet compartir ofertes de canvi per WhatsApp mitjançant un enllaç.",
+        "gl": "Non consta na documentación pública consultada. Si permite compartir ofertas de cambio por WhatsApp mediante ligazón.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan. Aldaketa-eskaintzak WhatsApp bidez partekatzeko aukera ematen du, ordea, esteka baten bidez."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "print_pdf": {
+      "value": {
+        "es": "PDF del acuerdo de cambio",
+        "ca": "PDF de l'acord de canvi",
+        "gl": "PDF do acordo de cambio",
+        "eu": "Aldaketa-akordioaren PDFa"
+      },
+      "detail": {
+        "es": "Genera un PDF del acuerdo de cambio con las firmas de ambos compañeros; no se documenta la impresión o exportación del calendario.",
+        "ca": "Genera un PDF de l'acord de canvi amb les signatures de tots dos companys; no es documenta la impressió o exportació del calendari.",
+        "gl": "Xera un PDF do acordo de cambio coas sinaturas de ambos os compañeiros; non se documenta a impresión ou exportación do calendario.",
+        "eu": "Aldaketa-akordioaren PDF bat sortzen du bi lankideen sinadurekin; ez dago dokumentatuta egutegia inprimatzeko edo esportatzeko aukerarik."
+      },
+      "quote": "TurnoClip genera automáticamente el documento PDF oficial con los datos cruzados y ambas firmas integradas, listo para entregar a supervisión.",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip",
+      "has": false
+    },
+    "statistics": {
+      "value": "yes",
+      "detail": {
+        "es": "El perfil suma automáticamente las horas trabajadas cada mes y cuenta los cambios realizados.",
+        "ca": "El perfil suma automàticament les hores treballades cada mes i compta els canvis fets.",
+        "gl": "O perfil suma automaticamente as horas traballadas cada mes e conta os cambios realizados.",
+        "eu": "Profilak automatikoki batzen ditu hilero lan egindako orduak eta egindako aldaketak zenbatzen ditu."
+      },
+      "quote": "En tu Perfil privado, TurnoClip suma automáticamente las horas que has trabajado cada mes y cuenta los cambios realizados.",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip"
+    },
+    "holidays": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "widgets_watch": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "swaps_between_colleagues": {
+      "value": "yes",
+      "detail": {
+        "es": "Permite solicitar cambios de turno a compañeros del mismo servicio o centro y cerrar el acuerdo en la app.",
+        "ca": "Permet sol·licitar canvis de torn a companys del mateix servei o centre i tancar l'acord a l'app.",
+        "gl": "Permite solicitar cambios de quenda a compañeiros do mesmo servizo ou centro e pechar o acordo na app.",
+        "eu": "Zerbitzu edo zentro bereko lankideei txanda-aldaketak eskatzeko eta akordioa aplikazioan ixteko aukera ematen du."
+      },
+      "quote": "Intercambio de Turnos: Solicita cambios a tus compañeros con un par de toques. El sistema notifica al instante a los implicados.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472"
+    },
+    "swap_board": {
+      "value": {
+        "es": "Tablón de ofertas",
+        "ca": "Tauler d'ofertes",
+        "gl": "Taboleiro de ofertas",
+        "eu": "Eskaintzen ohola"
+      },
+      "detail": {
+        "es": "Dispone de un tablón común donde se publican ofertas de turno que los compañeros pueden aceptar o contraofertar.",
+        "ca": "Disposa d'un tauler comú on es publiquen ofertes de torn que els companys poden acceptar o contraofertar.",
+        "gl": "Dispón dun taboleiro común onde se publican ofertas de quenda que os compañeiros poden aceptar ou contraofertar.",
+        "eu": "Ohol komun bat du, eta bertan lankideek onartu edo kontraeskaintza egin diezaieketen txanda-eskaintzak argitaratzen dira."
+      },
+      "quote": "TABLÓN DE OFERTAS: ¿Necesitas cambiar un turno urgente? Publica una oferta en el tablón común.",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip",
+      "has": true
+    },
+    "swap_chains": {
+      "value": {
+        "es": "Match automático de ofertas (beta)",
+        "ca": "Match automàtic d'ofertes (beta)",
+        "gl": "Match automático de ofertas (beta)",
+        "eu": "Eskaintzen Match automatikoa (beta)"
+      },
+      "detail": {
+        "es": "El Match automático busca ofertas compatibles según los días de devolución indicados y avisa a ambos usuarios; no se describen cadenas de 3 o más personas ni el uso de IA.",
+        "ca": "El Match automàtic cerca ofertes compatibles segons els dies de devolució indicats i avisa tots dos usuaris; no es descriuen cadenes de 3 o més persones ni l'ús d'IA.",
+        "gl": "O Match automático busca ofertas compatibles segundo os días de devolución indicados e avisa a ambos os usuarios; non se describen cadeas de 3 ou máis persoas nin o uso de IA.",
+        "eu": "Match automatikoak eskaintza bateragarriak bilatzen ditu adierazitako itzulera-egunen arabera eta bi erabiltzaileei abisatzen die; ez dira deskribatzen 3 pertsona edo gehiagoko kateak ezta IAren erabilera ere."
+      },
+      "quote": "TurnoClip busca automáticamente otras ofertas compatibles y notifica a ambos usuarios al instante si hay coincidencia.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": false
+    },
+    "urgent_mode": {
+      "value": "-",
+      "detail": {
+        "es": "No se documenta un modo urgente específico; la descripción sugiere usar el tablón general para cambios urgentes.",
+        "ca": "No es documenta un mode urgent específic; la descripció suggereix fer servir el tauler general per a canvis urgents.",
+        "gl": "Non se documenta un modo urxente específico; a descrición suxire usar o taboleiro xeral para cambios urxentes.",
+        "eu": "Ez dago dokumentatuta urgentziazko modu berezirik; deskribapenak ohol orokorra erabiltzea iradokitzen du aldaketa urgenteetarako."
+      },
+      "quote": "¿Necesitas cambiar un turno urgente? Publica una oferta en el tablón común.",
+      "url": "https://play.google.com/store/apps/details?id=com.dotesus.turnoclip"
+    },
+    "anonymous_post": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "manager_notification": {
+      "value": {
+        "es": "PDF firmado y email manual",
+        "ca": "PDF signat i correu manual",
+        "gl": "PDF asinado e correo manual",
+        "eu": "PDF sinatua eta eskuzko posta"
+      },
+      "detail": {
+        "es": "Genera un PDF firmado para entregar a supervisión o RR. HH. y puede preparar un email de solicitud que se abre en el cliente de correo del móvil para que el usuario lo envíe.",
+        "ca": "Genera un PDF signat per lliurar a supervisió o a RH i pot preparar un correu de sol·licitud que s'obre al client de correu del mòbil perquè l'usuari l'enviï.",
+        "gl": "Xera un PDF asinado para entregar a supervisión ou a RR. HH. e pode preparar un correo de solicitude que se abre no cliente de correo do móbil para que o usuario o envíe.",
+        "eu": "PDF sinatu bat sortzen du gainbegiratzeari edo giza baliabideei emateko, eta eskaera-mezu bat presta dezake, mugikorreko posta-bezeroan irekitzen dena, erabiltzaileak bidal dezan."
+      },
+      "quote": "se abre en el cliente de correo del móvil listo para enviar.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": true
+    },
+    "manual_swap_record": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "availability": {
+      "value": {
+        "es": "Días de devolución por oferta",
+        "ca": "Dies de devolució per oferta",
+        "gl": "Días de devolución por oferta",
+        "eu": "Itzulera-egunak eskaintza bakoitzeko"
+      },
+      "detail": {
+        "es": "Al publicar una oferta se pueden indicar los días disponibles para devolver el turno, que el Match automático usa para emparejar; no se describe una disponibilidad general.",
+        "ca": "En publicar una oferta es poden indicar els dies disponibles per tornar el torn, que el Match automàtic fa servir per aparellar; no es descriu una disponibilitat general.",
+        "gl": "Ao publicar unha oferta pódense indicar os días dispoñibles para devolver a quenda, que o Match automático usa para emparellar; non se describe unha dispoñibilidade xeral.",
+        "eu": "Eskaintza bat argitaratzean txanda itzultzeko egun erabilgarriak adieraz daitezke, eta Match automatikoak horiek erabiltzen ditu parekatzeko; ez da erabilgarritasun orokorrik deskribatzen."
+      },
+      "quote": "al publicar una oferta de cambio, puedes indicar los días en los que estarías disponible para devolver el turno.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": true
+    },
+    "chat": {
+      "value": "yes",
+      "detail": {
+        "es": "Incluye un chat con el equipo centrado en la gestión del cuadrante; no se especifica si es individual o de grupo.",
+        "ca": "Inclou un xat amb l'equip centrat en la gestió del quadrant; no s'especifica si és individual o de grup.",
+        "gl": "Inclúe un chat co equipo centrado na xestión do cadro de quendas; non se especifica se é individual ou de grupo.",
+        "eu": "Taldearekin txateatzeko aukera du, koadrantearen kudeaketan zentratua; ez da zehazten banakakoa ala taldekoa den."
+      },
+      "quote": "Comunicación Directa: Chatea con tu equipo de forma organizada y centrada exclusivamente en la gestión del cuadrante.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472"
+    },
+    "push_notifications": {
+      "value": "yes",
+      "detail": {
+        "es": "Envía notificaciones sobre nuevas solicitudes, aprobaciones y ofertas.",
+        "ca": "Envia notificacions sobre noves sol·licituds, aprovacions i ofertes.",
+        "gl": "Envía notificacións sobre novas solicitudes, aprobacións e ofertas.",
+        "eu": "Eskaera, onarpen eta eskaintza berriei buruzko jakinarazpenak bidaltzen ditu."
+      },
+      "quote": "Notificaciones Claras: Entérate al momento de las solicitudes nuevas y las aprobaciones para que no se te escape nada.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472"
+    },
+    "reminders": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada. Solo se menciona un recordatorio del código de invitación del centro.",
+        "ca": "No consta a la documentació pública consultada. Només s'esmenta un recordatori del codi d'invitació del centre.",
+        "gl": "Non consta na documentación pública consultada. Só se menciona un recordatorio do código de invitación do centro.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan. Zentroaren gonbidapen-kodearen oroigarri bat baino ez da aipatzen."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "ai_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada.",
+        "ca": "No consta a la documentació pública consultada.",
+        "gl": "Non consta na documentación pública consultada.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "legal_assistant": {
+      "value": "-",
+      "detail": {
+        "es": "No consta en la documentación pública consultada. Ofrece una sección de Ventajas con convenios y servicios de sindicatos.",
+        "ca": "No consta a la documentació pública consultada. Ofereix una secció de Ventajas amb convenis i serveis de sindicats.",
+        "gl": "Non consta na documentación pública consultada. Ofrece unha sección de Ventajas con convenios e servizos de sindicatos.",
+        "eu": "Ez da ageri kontsultatutako dokumentazio publikoan. Ventajas atal bat eskaintzen du, sindikatuen hitzarmen eta zerbitzuekin."
+      },
+      "quote": "",
+      "url": ""
+    },
+    "organisations": {
+      "value": {
+        "es": "Panel de centros; precio no publicado",
+        "ca": "Panell de centres; preu no publicat",
+        "gl": "Panel de centros; prezo non publicado",
+        "eu": "Zentroen panela; prezioa argitaratu gabe"
+      },
+      "detail": {
+        "es": "Los centros tienen administradores que, desde un panel, configuran turnos oficiales, categorías, tipos de oferta e intercambios entre servicios; no se publica ningún precio.",
+        "ca": "Els centres tenen administradors que, des d'un panell, configuren torns oficials, categories, tipus d'oferta i intercanvis entre serveis; no es publica cap preu.",
+        "gl": "Os centros teñen administradores que, desde un panel, configuran quendas oficiais, categorías, tipos de oferta e intercambios entre servizos; non se publica ningún prezo.",
+        "eu": "Zentroek administratzaileak dituzte, eta horiek panel batetik konfiguratzen dituzte txanda ofizialak, kategoriak, eskaintza motak eta zerbitzuen arteko trukeak; ez da preziorik argitaratzen."
+      },
+      "quote": "Los administradores de centros pueden ahora restringir las categorías disponibles, evitando que los usuarios creen roles personalizados no deseados.",
+      "url": "https://apps.apple.com/es/app/turnoclip-cambios-de-turno/id6759789472",
+      "has": true
+    },
+    "data_privacy": {
+      "value": {
+        "es": "Google Firebase",
+        "ca": "Google Firebase",
+        "gl": "Google Firebase",
+        "eu": "Google Firebase"
+      },
+      "detail": {
+        "es": "La política de privacidad indica que se usa Google Firebase (Auth, Firestore, Storage) y cifrado en tránsito HTTPS; Google Play declara que no se recogen datos, mientras que App Store declara nombre, email e ID de usuario vinculados.",
+        "ca": "La política de privadesa indica que es fa servir Google Firebase (Auth, Firestore, Storage) i xifratge en trànsit HTTPS; Google Play declara que no es recullen dades, mentre que l'App Store declara nom, correu electrònic i ID d'usuari vinculats.",
+        "gl": "A política de privacidade indica que se usa Google Firebase (Auth, Firestore, Storage) e cifrado en tránsito HTTPS; Google Play declara que non se recollen datos, mentres que App Store declara nome, correo electrónico e ID de usuario vinculados.",
+        "eu": "Pribatutasun-politikak dio Google Firebase (Auth, Firestore, Storage) eta HTTPS garraio-zifratzea erabiltzen direla; Google Playk dio ez dela daturik biltzen, eta App Storek, berriz, lotutako izena, posta elektronikoa eta erabiltzaile-IDa adierazten ditu."
+      },
+      "quote": "Google Firebase (Google LLC): Utilizamos sus servicios para la autenticación segura de usuarios (Firebase Auth), base de datos en tiempo real (Firestore)",
+      "url": "https://doc-hosting.flycricket.io/politica-de-privacidad-turnoclip/b4efd591-5da8-4ce0-a6bf-fd1d8bed23e0/privacy",
+      "has": true
+    }
+  }
+}

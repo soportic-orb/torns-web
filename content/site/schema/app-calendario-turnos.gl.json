@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hai algunha app de calendario de quendas para sanitarios?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns é unha app de calendario de quendas e gardas para enfermeiras, médicos, TCAE, TES e outros profesionais sanitarios de España. Funciona en iPhone, Android, Apple Watch e no navegador (app.torns.app)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O calendario de quendas de Torns é gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. O plan Free inclúe o calendario de quendas, os widgets, o Apple Watch, as lembranzas e a sincronización co calendario do móbil. Torns Pro custa 2,99 € ao mes ou 29,90 € ao ano, e todas as contas novas teñen 30 días de proba coas funcións Pro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo pasar o meu cadro de quendas en papel ou en PDF á app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Con «Importar cadrante», Torns le unha foto, un PDF, unha captura ou unha folla de cálculo, extrae as túas quendas e amósachas para que as revises antes de gardalas. O arquivo non se garda. O plan Free inclúe 2 lecturas e Torns Pro, 30 ao mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo poñer unha rotación de quendas de forma automática?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, con Torns Pro. Debuxas o ciclo (por exemplo, dúas noites e tres libres, ou un patrón de varias semanas), ves unha vista previa e Torns enche as datas que escollas, saltando os festivos e os días non dispoñibles se queres. Podes gardar ata 10 rotacións."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sincronízase con Google Calendar ou co calendario do iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Torns exporta as túas quendas ao calendario do iPhone ou Android que escollas, con alarmas, e pode conectarse a Google Calendar. Con Torns Pro, a sincronización bidireccional tamén propón importar a Torns os eventos que parecen quendas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podo levar as quendas de varios centros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. Cada quenda leva o seu centro, unidade e área, e todas se ven no mesmo calendario. No plan Free únete a 1 centro de traballo e con Torns Pro, a varios, para ver e publicar quendas en cada un."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O calendario funciona sen conexión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si. En iOS e Android podes consultar, crear, editar e borrar quendas sen conexión, e os cambios sincronízanse ao recuperala. Cambiar quendas e o chat necesitan conexión."
+      }
+    }
+  ]
+}

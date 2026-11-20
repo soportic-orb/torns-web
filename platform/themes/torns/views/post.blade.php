@@ -1,12 +1,26 @@
 @php
     Theme::layout('full-width');
     Theme::set('post', $post);
+    SeoHelper::openGraph()->addProperty('locale', str_replace('-', '_', TORNS_SCHEMA_LOCALES[torns_current_locale()] ?? 'es-ES'));
     $relatedPosts = get_related_posts($post->id, 3);
     $shareUrl = $post->url;
     $shareTitle = $post->name;
+    // Short link (torns.app/wy89) when the post has one in this language;
+    // otherwise main.js asks for it when a share button is pressed.
+    $shortLinks = class_exists(\App\Support\ShortLinks::class) ? app(\App\Support\ShortLinks::class) : null;
+    $shortLink = $shortLinks?->find($post->id, torns_current_locale());
+    if ($shortLink) {
+        $shareUrl = $shortLinks->url($shortLink);
+    }
 @endphp
 
 <article class="py-12 lg:py-16">
+    <div class="mx-auto mb-6 max-w-3xl px-4 sm:px-6">
+        <a href="{{ torns_blog_url() }}" class="inline-flex min-h-11 items-center gap-2 rounded-full px-1 text-sm font-semibold text-torns-primary transition hover:text-torns-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-torns-primary" data-testid="back-to-blog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            {{ __('Volver al blog') }}
+        </a>
+    </div>
     <header class="mx-auto max-w-3xl px-4 sm:px-6">
         @if ($post->categories->isNotEmpty())
             <div class="flex flex-wrap justify-center gap-2">
@@ -46,6 +60,8 @@
             {!! BaseHelper::clean($post->content) !!}
         </div>
 
+        {!! Theme::partial('blog.download-banner') !!}
+
         @if ($post->tags->isNotEmpty())
             <ul class="mt-10 flex flex-wrap gap-2">
                 @foreach ($post->tags as $tag)
@@ -58,21 +74,22 @@
             </ul>
         @endif
 
-        {{-- Native share links, no third-party SDKs --}}
-        <div class="mt-10 border-t border-torns-ink/5 pt-6">
+        {{-- Native share links, no third-party SDKs. On a phone main.js hands
+             X, Facebook and LinkedIn to the installed app (data-share). --}}
+        <div class="mt-10 border-t border-torns-ink/5 pt-6" data-share-url="{{ $shareUrl }}" data-share-title="{{ $shareTitle }}" @if ($shortLinks?->ready() && ! $shortLink) data-short-link-endpoint="{{ url('short-link') }}" data-post-id="{{ $post->id }}" data-locale="{{ torns_current_locale() }}" @endif>
             <p class="mb-3 text-sm font-semibold">{{ __('Share') }}</p>
             <ul class="flex flex-wrap gap-2">
                 <li>
                     <a class="share-link" rel="noopener nofollow" target="_blank" href="https://wa.me/?text={{ urlencode($shareTitle . ' ' . $shareUrl) }}">WhatsApp</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://x.com/intent/post?url={{ urlencode($shareUrl) }}&text={{ urlencode($shareTitle) }}">X</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="x" href="https://x.com/intent/post?url={{ urlencode($shareUrl) }}&text={{ urlencode($shareTitle) }}">X</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($shareUrl) }}">Facebook</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($shareUrl) }}">Facebook</a>
                 </li>
                 <li>
-                    <a class="share-link" rel="noopener nofollow" target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}">LinkedIn</a>
+                    <a class="share-link" rel="noopener nofollow" target="_blank" data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode($shareUrl) }}">LinkedIn</a>
                 </li>
                 <li>
                     <a class="share-link" href="mailto:?subject={{ rawurlencode($shareTitle) }}&body={{ rawurlencode($shareUrl) }}">Email</a>
@@ -91,4 +108,8 @@
             </div>
         </aside>
     @endif
+
+    <div class="mx-auto mt-12 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+        <a href="{{ torns_blog_url() }}" class="btn-secondary">{{ __('Ver todas las publicaciones') }}</a>
+    </div>
 </article>

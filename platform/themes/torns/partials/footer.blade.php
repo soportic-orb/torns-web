@@ -46,7 +46,11 @@
                 </div>
 
                 <div class="mt-12 flex flex-col gap-4 border-t border-torns-ink/5 pt-6 text-sm text-torns-ink/70 sm:flex-row sm:items-center sm:justify-between">
-                    <p>{!! Theme::getSiteCopyright() ?: '&copy; ' . date('Y') . ' Torns' !!}</p>
+                    <p>
+                        {!! Theme::getSiteCopyright() ?: '&copy; ' . date('Y') . ' Torns' !!}
+                        <span aria-hidden="true">·</span>
+                        {!! __('Desarrollado en Barcelona 🎉 por :company', ['company' => '<a class="footer-link font-semibold" href="https://www.soportic.es" rel="noopener">Soportic</a>']) !!}
+                    </p>
                     {!!
                         Menu::renderMenuLocation('footer-legal-menu', [
                             'view' => 'menu-footer',

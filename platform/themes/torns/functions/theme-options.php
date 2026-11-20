@@ -2,8 +2,8 @@
 
 use Botble\Theme\Events\RenderingThemeOptionSettings;
 use Botble\Theme\ThemeOption\Fields\RepeaterField;
-use Botble\Theme\ThemeOption\Fields\TextField;
 use Botble\Theme\ThemeOption\Fields\TextareaField;
+use Botble\Theme\ThemeOption\Fields\TextField;
 use Botble\Theme\ThemeOption\Fields\ToggleField;
 use Botble\Theme\ThemeOption\ThemeOptionSection;
 
@@ -96,7 +96,7 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
                 TextField::make()
                     ->name('comparison_reviewed_at')
                     ->label(__('Last review date'))
-                    ->defaultValue('29/07/2026')
+                    ->defaultValue('26/08/2026')
                     ->helperText(__('Shown under the table. Update it whenever you verify the data again.')),
                 RepeaterField::make()
                     ->name('comparison_rows')

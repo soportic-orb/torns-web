@@ -1,0 +1,45 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quant costa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depèn del nombre de places i del patrocini que trieu. Us preparem un pressupost a mida: escriu-nos des del formulari de contacte o a hola@torns.app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hem de pagar tota la subscripció de cada associat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El patrocini pot ser total, i llavors l'associat fa servir Torns Pro sense cost, o parcial, i llavors el té amb descompte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com sap Torns qui és associat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En registrar-se, l'associat introdueix el codi de l'associació, o Torns el reconeix pel seu correu si és al registre de correus que pugeu des del panell. Qui ja té compte rep un avís amb l'oferta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quines dades dels nostres associats veiem al panell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De cada alta en veieu el nom, el correu, si es va donar d'alta amb el codi o pel registre de correus, el patrocini, l'estat i la data d'activació. No en veieu els torns, els canvis ni els missatges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Podem deixar de patrocinar-lo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El contracte és anual i es renova sol; des del panell podeu decidir no renovar-lo fins a 30 dies abans de la data de renovació."
+      }
+    }
+  ]
+}

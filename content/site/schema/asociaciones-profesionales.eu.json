@@ -1,0 +1,45 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Zenbat balio du?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plaza kopuruaren eta aukeratzen duzuen babesaren araberakoa da. Neurrira egindako aurrekontu bat prestatuko dizuegu: idatzi iezaguzu harremanetarako formulariotik edo hola@torns.app helbidera."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bazkide bakoitzaren harpidetza osoa ordaindu behar dugu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez. Babesa osoa izan daiteke, eta orduan bazkideak Torns Pro kosturik gabe erabiltzen du, edo partziala, eta orduan deskontuarekin du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nola daki Torns-ek nor den bazkide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Erregistratzean, bazkideak elkartearen kodea sartzen du, edo Torns-ek bere helbide elektronikoaz ezagutzen du panelean igotzen duzuen posta-erregistroan badago. Dagoeneko kontua duenak eskaintzaren abisua jasotzen du."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gure bazkideen zer datu ikusten ditugu panelean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alta bakoitzaren izena, helbide elektronikoa, kodearekin edo posta-erregistroaren bidez eman zuen alta, babesa, egoera eta aktibazio-data ikusten dituzue. Ez dituzue haien txandak, aldaketak edo mezuak ikusten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Babesteari utz diezaiokegu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bai. Kontratua urtekoa da eta bere kabuz berritzen da; panelean ez berritzea erabaki dezakezue berritze-data baino 30 egun lehenagora arte."
+      }
+    }
+  ]
+}

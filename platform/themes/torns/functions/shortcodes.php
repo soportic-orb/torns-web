@@ -4,8 +4,8 @@ use Botble\Base\Forms\FieldOptions\SelectFieldOption;
 use Botble\Base\Forms\Fields\MediaImageField;
 use Botble\Base\Forms\Fields\NumberField;
 use Botble\Base\Forms\Fields\SelectField;
-use Botble\Base\Forms\Fields\TextField;
 use Botble\Base\Forms\Fields\TextareaField;
+use Botble\Base\Forms\Fields\TextField;
 use Botble\Shortcode\Forms\ShortcodeForm;
 use Botble\Theme\Facades\Theme;
 use Illuminate\Routing\Events\RouteMatched;
@@ -24,7 +24,7 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 1. Hero
     // ------------------------------------------------------------------
-    add_shortcode('torns-hero', __('Torns: Hero'), __('Main hero with dual value proposition, store badges and swap animation'), function ($shortcode) {
+    add_shortcode('torns-hero', __('Torns: Hero'), __('Main hero: multi-centre calendar on a phone, store badges and web app link'), function ($shortcode) {
         return Theme::partial('shortcodes.hero', ['shortcode' => $shortcode]);
     });
 
@@ -52,17 +52,16 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 3. What is Torns
     // ------------------------------------------------------------------
-    add_shortcode('torns-about', __('Torns: What is Torns'), __('Introduction to the two pillars: shift swaps + unified calendar'), function ($shortcode) {
+    add_shortcode('torns-about', __('Torns: What is Torns'), __('Three cards: work calendar, shift swaps and the AI assistant'), function ($shortcode) {
         return Theme::partial('shortcodes.about', ['shortcode' => $shortcode]);
     });
 
-    shortcode()->setAdminConfig('torns-about', function (array $attributes) use ($textField, $textareaField) {
+    shortcode()->setAdminConfig('torns-about', function (array $attributes) use ($textField) {
         $form = ShortcodeForm::createFromArray($attributes)
-            ->add('title', TextField::class, $textField(__('Title')))
-            ->add('description', TextareaField::class, $textareaField(__('Description')));
+            ->add('title', TextField::class, $textField(__('Title')));
 
-        for ($i = 1; $i <= 4; $i++) {
-            $form->add('bullet_' . $i, TextField::class, $textField(__('Bullet :number', ['number' => $i])));
+        for ($i = 1; $i <= 3; $i++) {
+            $form->add('bullet_' . $i, TextField::class, $textField(__('Card :number title', ['number' => $i])));
         }
 
         return $form;
@@ -71,7 +70,7 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 4. Unified calendar spotlight
     // ------------------------------------------------------------------
-    add_shortcode('torns-unified-calendar', __('Torns: Unified calendar'), __('Calendar spotlight with central mockup and benefits around'), function ($shortcode) {
+    add_shortcode('torns-unified-calendar', __('Torns: Unified calendar'), __('Calendar spotlight: three screenshots and the calendar features with their plan'), function ($shortcode) {
         return Theme::partial('shortcodes.unified-calendar', ['shortcode' => $shortcode]);
     });
 
@@ -81,6 +80,57 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
             ->add('closing', TextField::class, $textField(__('Closing highlight')))
             ->add('image', MediaImageField::class, ['label' => __('Calendar mockup image')]);
+    });
+
+    // ------------------------------------------------------------------
+    // 4a. Share the calendar and export it to PDF (Pro)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-share-export', __('Torns: Share and export'), __('Public calendar link and PDF export, with screenshots'), function ($shortcode) {
+        return Theme::partial('shortcodes.share-export', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-share-export', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')));
+    });
+
+    // ------------------------------------------------------------------
+    // 4b. Import your roster (photo of the roster → reviewed shifts)
+    // ------------------------------------------------------------------
+    add_shortcode('torns-import-roster', __('Torns: Import roster'), __('Roster photo turning into shifts, with two paragraphs'), function ($shortcode) {
+        return Theme::partial('shortcodes.import-roster', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-import-roster', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('content_1', TextareaField::class, $textareaField(__('First paragraph')))
+            ->add('content_2', TextareaField::class, $textareaField(__('Second paragraph')));
+    });
+
+    // ------------------------------------------------------------------
+    // 4c. Shift swaps (wall, chains, SOS, chat) with two screenshots each
+    // ------------------------------------------------------------------
+    add_shortcode('torns-swaps', __('Torns: Shift swaps'), __('Four alternating rows with two app screenshots each'), function ($shortcode) {
+        return Theme::partial('shortcodes.swaps', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-swaps', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')));
+    });
+
+    // ------------------------------------------------------------------
+    // 4d. AI: Copilot and legal consultant
+    // ------------------------------------------------------------------
+    add_shortcode('torns-ai', __('Torns: AI'), __('Copilot and legal consultant cards'), function ($shortcode) {
+        return Theme::partial('shortcodes.ai', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-ai', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')));
     });
 
     // ------------------------------------------------------------------
@@ -109,6 +159,12 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('content_1', TextareaField::class, $textareaField(__('First paragraph')))
             ->add('content_2', TextareaField::class, $textareaField(__('Second paragraph')))
             ->add('image', MediaImageField::class, ['label' => __('Image')])
+            ->add('screens', TextField::class, $textField(__('Two app screens instead of the image (file names, comma-separated)')))
+            ->add('screen_1_title', TextField::class, $textField(__('First screen: title')))
+            ->add('screen_1_text', TextField::class, $textField(__('First screen: text')))
+            ->add('screen_2_title', TextField::class, $textField(__('Second screen: title')))
+            ->add('screen_2_text', TextField::class, $textField(__('Second screen: text')))
+            ->add('tags', TextField::class, $textField(__('Tags under the text, separated by |')))
             ->add(
                 'side',
                 SelectField::class,
@@ -175,6 +231,40 @@ app('events')->listen(RouteMatched::class, function (): void {
     // ------------------------------------------------------------------
     // 11. Register CTA
     // ------------------------------------------------------------------
+    add_shortcode('torns-comparison-page', __('Torns: Comparison with an app'), __('Full comparison page between Torns and one app (content/site/comparisons/<app>.json)'), function ($shortcode) {
+        return Theme::partial('shortcodes.comparison-page', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-comparison-page', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('competitor', TextField::class, $textField(__('App (aturnos, shiftool, supershift, turnoclip)')));
+    });
+
+    add_shortcode('torns-related-pages', __('Torns: Related pages'), __('Cards linking to other pages of the site, with their name and SEO description'), function ($shortcode) {
+        return Theme::partial('shortcodes.related-pages', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-related-pages', function (array $attributes) use ($textField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('pages', TextField::class, $textField(__('Page keys, comma-separated (e.g. app-calendario-turnos,funcionalidades)')));
+    });
+
+    add_shortcode('torns-comparison-hub', __('Torns: Comparisons index'), __('List of the comparison pages'), function ($shortcode) {
+        return Theme::partial('shortcodes.comparison-hub', ['shortcode' => $shortcode]);
+    });
+
+    add_shortcode('torns-centers-signup', __('Torns: Centers sign-up'), __('Banner to create a centre account in the management panel'), function ($shortcode) {
+        return Theme::partial('shortcodes.centers-signup', ['shortcode' => $shortcode]);
+    });
+
+    shortcode()->setAdminConfig('torns-centers-signup', function (array $attributes) use ($textField, $textareaField) {
+        return ShortcodeForm::createFromArray($attributes)
+            ->add('title', TextField::class, $textField(__('Title')))
+            ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
+            ->add('url', TextField::class, $textField(__('Button URL')));
+    });
+
     add_shortcode('torns-register-cta', __('Torns: Register CTA'), __('Create account call to action with store badges'), function ($shortcode) {
         return Theme::partial('shortcodes.register-cta', ['shortcode' => $shortcode]);
     });
@@ -252,6 +342,7 @@ app('events')->listen(RouteMatched::class, function (): void {
         return ShortcodeForm::createFromArray($attributes)
             ->add('title', TextField::class, $textField(__('Title (H1)')))
             ->add('subtitle', TextareaField::class, $textareaField(__('Subtitle')))
+            ->add('image_asset', TextField::class, $textField(__('Theme image (e.g. centers-hero)')))
             ->add(
                 'align',
                 SelectField::class,
@@ -274,6 +365,10 @@ app('events')->listen(RouteMatched::class, function (): void {
             ->add('problem_title', TextField::class, $textField(__('Problem section title')))
             ->add('benefits_title', TextField::class, $textField(__('Benefits section title')))
             ->add('panel_title', TextField::class, $textField(__('Panel section title')));
+    });
+
+    add_shortcode('torns-associations-landing', __('Torns: Associations landing'), __('Full landing content for the professional associations page'), function ($shortcode) {
+        return Theme::partial('shortcodes.associations-landing', ['shortcode' => $shortcode]);
     });
 
     // ------------------------------------------------------------------

@@ -63,8 +63,13 @@ Copia `.env.example` a `.env` y rellena:
 
 ## 6. Instalador web de Botble
 
-1. Visita `https://tu-dominio/install` y sigue el asistente (genera la
-   `APP_KEY`, ejecuta migraciones y crea el usuario administrador).
+1. Visita `https://tu-dominio/install` y sigue el asistente (ejecuta las
+   migraciones y crea el usuario administrador). El asistente reescribe el
+   `.env`; la web vuelve a poner la `APP_KEY`, los datos de la base de datos
+   y los valores propios (`APP_ENV`, `ADMIN_DIR`, `OTA_*`…) justo después
+   (`App\Listeners\RepairEnvAfterInstaller`).
+   Con acceso SSH (p. ej. CloudPanel) es más directo instalar por línea de
+   comandos: `docs/CLOUDPANEL.md`.
 2. Entra en `/admin` y comprueba que el tema **torns** está activo
    (Apariencia → Temas); actívalo si no lo está.
 3. Verifica en Admin → Plugins que están activos: Blog, Language,
@@ -74,6 +79,8 @@ Copia `.env.example` a `.env` y rellena:
 
 El seeder crea idiomas, páginas en 4 idiomas, menús, categorías del blog,
 metas SEO y opciones del tema. Es idempotente: re-ejecutarlo no duplica nada.
+Las páginas y los menús salen de `content/site/` (los mismos ficheros que
+actualiza la OTA, ver `docs/OTA.md`).
 
 - **Con SSH:**
 
@@ -88,9 +95,10 @@ metas SEO y opciones del tema. Es idempotente: re-ejecutarlo no duplica nada.
      `storage/installed-content-seed.lock`). Borra `INSTALL_SEED_TOKEN`
      del `.env`.
 
-## 8. Cron del scheduler (opcional, recomendado)
+## 8. Cron del scheduler (recomendado)
 
-Para publicaciones de blog programadas, añade en el panel del hosting:
+Para publicaciones de blog programadas y para que el panel avise de las
+actualizaciones OTA (`docs/OTA.md`), añade en el panel del hosting:
 
 ```
 * * * * * php /ruta/al/proyecto/artisan schedule:run >> /dev/null 2>&1

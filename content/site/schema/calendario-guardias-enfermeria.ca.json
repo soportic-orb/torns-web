@@ -1,0 +1,61 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hi ha alguna app de calendari de torns per a infermeres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns és una app de calendari de torns i guàrdies per a infermeres, TCAE, llevadores i altres professionals sanitaris d'Espanya, amb canvis de torn entre companyes del mateix centre i categoria. Té un pla gratuït."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc apuntar guàrdies de 24 hores i torns localitzables?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns té els tipus de torn Matí, Tarda, Nit, Dia, 24h i Localitzable, cadascun amb el seu color i el seu horari, i pots marcar un torn com a hora extraordinària o JAC."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Com canvio un torn amb una altra infermera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publica el torn a la pestanya Canvis. Les teves companyes de centre i categoria el veuen al Mur i et proposen un dels seus torns; en acceptar, Torns actualitza els dos calendaris. Amb Torns Pro, el canvi es pot comunicar per correu electrònic al gestor de plantilles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puc passar el quadrant de la planta a l'app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns llegeix una foto, un PDF o un full de càlcul del quadrant, busca la teva fila pel teu nom i n'extreu els teus torns perquè els revisis. L'arxiu no es desa. Free inclou 2 lectures i Torns Pro, 30 al mes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns compta les meves hores, nits i festius?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, amb Torns Pro. Les estadístiques de treball resumeixen per mes o per any els torns i hores treballades, les hores extres, els dissabtes, diumenges i festius, i el repartiment per tipus de torn, àrea i dia de la setmana."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns està en català, gallec i basc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Torns està en castellà, català, gallec i basc, i cada persona tria l'idioma de l'app al seu perfil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns guarda dades de pacients?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Torns tracta només dades personals i laborals dels professionals, i la moderació del mur social bloqueja les publicacions amb dades de pacients o informació clínica."
+      }
+    }
+  ]
+}

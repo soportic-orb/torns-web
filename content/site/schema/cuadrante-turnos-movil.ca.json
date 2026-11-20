@@ -1,0 +1,37 @@
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Com passo el meu quadrant de torns al mòbil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Amb «Importar quadrant»: prem +, puja una foto, un PDF, una captura o un full de càlcul del quadrant, revisa els torns que Torns ha trobat a la teva fila i confirma'ls. Queden desats al teu calendari."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Torns desa la foto del meu quadrant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El fitxer es processa i es descarta; només es desen els torns que tu confirmes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quants quadrants puc importar gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El pla Free inclou 2 lectures de quadrant en total i Torns Pro, 30 al mes. Cada fitxer pot tenir fins a 10 MB i 4 pàgines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Què passa si Torns no pot llegir una cel·la?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La deixa buida. Torns no s'inventa torns: t'ensenya el que ha llegit línia a línia perquè ho revisis i ho completis abans de desar-ho."
+      }
+    }
+  ]
+}

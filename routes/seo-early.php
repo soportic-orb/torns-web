@@ -1,0 +1,31 @@
+<?php
+
+use App\Http\Controllers\SeoController;
+use App\Http\Controllers\ShortLinkController;
+use Illuminate\Support\Facades\Route;
+
+/*
+| SEO and AI-readable URLs that Botble does not route itself (docs/seo-geo.md).
+| Registered before Botble's catch-all page route, which would take them.
+| The Markdown version of pages and posts: /funcionalidades.md, /ca/blog/x.md…
+*/
+
+Route::get('robots.txt', [SeoController::class, 'robots']);
+Route::get('llms-full.txt', [SeoController::class, 'llmsFull']);
+Route::get('{key}.txt', [SeoController::class, 'indexNowKey'])->where('key', '[a-f0-9]{32}');
+
+Route::middleware('web')->group(function (): void {
+    Route::get('{first}/{second}.md', [SeoController::class, 'markdown'])
+        ->where(['first' => '[a-z0-9-]+', 'second' => '[a-z0-9-]+(/[a-z0-9-]+)?']);
+    Route::get('{first}.md', [SeoController::class, 'markdown'])
+        ->where('first', '[a-z0-9-]+');
+});
+
+// Short link of a post, made when a reader shares it (docs/short-links.md).
+// Outside «web»: no session or CSRF token, so it works on cached pages.
+Route::post('short-link', [ShortLinkController::class, 'store'])->middleware('throttle:30,1');
+
+// URLs of the previous WordPress website (config/legacy-redirects.php).
+foreach (config('legacy-redirects', []) as $from => $to) {
+    Route::permanentRedirect($from, $to);
+}
