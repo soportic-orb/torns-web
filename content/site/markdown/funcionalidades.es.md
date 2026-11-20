@@ -123,7 +123,7 @@ El calendario de Torns se puede imprimir o exportar a PDF en formato de lista, m
 En Torns, un profesional publica un turno que quiere cambiar y lo ven los compañeros de su centro y de su misma categoría profesional. Puede publicarlo de forma anónima con «Ocultar mi identidad». Los turnos que empiezan en menos de 48 horas se marcan como «Turno urgente».
 
 - **Cómo se usa:** pestaña Cambios › + › «Crear un nuevo turno» o «Seleccionar un turno de mi calendario» › «Publicar cambio».
-- **Plan:** Free y Pro.
+- **Plan:** Free, 3 turnos publicados al mes (el contador se reinicia el día 1); Pro, sin límite.
 - **Para quién:** quien necesita librar un día y busca quién le cubra sin depender de grupos de mensajería.
 
 ### Muro de turnos
@@ -136,7 +136,7 @@ El Muro de Torns reúne los turnos publicados en los centros del usuario, filtra
 
 Desde un turno del Muro, el profesional pulsa «Proponer cambio» y ofrece uno de sus turnos a cambio. Quien publicó el turno acepta o rechaza la propuesta. Al aceptarla, Torns pasa cada turno al calendario de su nuevo titular. Un cambio ya hecho solo se puede deshacer si las dos personas están de acuerdo.
 
-- **Plan:** Free, 2 cambios al mes (el contador se reinicia el día 1); Pro, cambios ilimitados.
+- **Plan:** Free, 2 propuestas de cambio al mes (el contador se reinicia el día 1); Pro, ilimitadas.
 
 ### Cadenas de cambios
 
@@ -306,7 +306,7 @@ La app de Torns para Apple Watch muestra los próximos turnos y los cambios del 
 
 ### Free
 
-El plan Free de Torns es gratuito e incluye el calendario de turnos, publicar turnos, el Muro, 2 cambios al mes, 1 centro de trabajo, el chat, el muro social, recordatorios de turnos, widgets, Apple Watch, 2 lecturas de cuadrante y 2 consultas al Consultor legal.
+El plan Free de Torns es gratuito e incluye el calendario de turnos, el Muro, 3 turnos publicados y 2 propuestas de cambio al mes, 1 centro de trabajo, el chat, el muro social, recordatorios de turnos, widgets, Apple Watch, 2 lecturas de cuadrante y 2 consultas al Consultor legal.
 
 ### Torns Pro
 
@@ -331,7 +331,8 @@ Al registrarse en Torns, cada cuenta tiene 30 días de prueba con las funciones 
 | Compartir calendario | No | Sí |
 | Imprimir y exportar a PDF | No | Sí |
 | Publicar turnos y Muro | Sí | Sí |
-| Cambios de turno aceptados | 2 al mes | Ilimitados |
+| Turnos publicados para cambio | 3 al mes | Ilimitados |
+| Propuestas de cambio | 2 al mes | Ilimitadas |
 | Centros de trabajo | 1 | Varios |
 | Cadenas de cambios | No | Sí |
 | Modo SOS | No | Sí |
@@ -411,7 +412,7 @@ Sí. Torns es una app para que enfermeras y otros profesionales sanitarios de Es
 
 ### ¿Torns es gratis?
 
-Torns tiene un plan Free gratuito que incluye el calendario de turnos, publicar turnos y 2 cambios al mes. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro.
+Torns tiene un plan Free gratuito que incluye el calendario de turnos, publicar 3 turnos y hacer 2 propuestas de cambio al mes. Torns Pro cuesta 2,99 € al mes o 29,90 € al año, y todas las cuentas nuevas tienen 30 días de prueba con las funciones Pro.
 
 ### ¿Qué incluye Torns Pro?
 

@@ -58,7 +58,7 @@ Les organitzacions paguen per usuari actiu i mes, de 0,99 € (fins a 50 usuaris
 
 ### Puc gestionar els meus torns gratis?
 
-Sí. El pla Free de Torns inclou el calendari de torns, publicar torns, el Mur, 2 canvis al mes, el xat, els recordatoris, els widgets i l'Apple Watch. Torns Pro costa 2,99 € al mes o 29,90 € a l'any.
+Sí. El pla Free de Torns inclou el calendari de torns, el Mur, 3 torns publicats i 2 propostes de canvi al mes, el xat, els recordatoris, els widgets i l'Apple Watch. Torns Pro costa 2,99 € al mes o 29,90 € a l'any.
 
 ## Continua llegint
 

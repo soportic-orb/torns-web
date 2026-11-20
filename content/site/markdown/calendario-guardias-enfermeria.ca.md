@@ -16,7 +16,7 @@ Marca les teves vacances i els dies que no estàs disponible perquè ningú no e
 
 ## Canviar un torn sense el grup de WhatsApp
 
-Publica el torn que no pots fer i el veuran les companyes del teu centre i de la teva mateixa categoria. Et proposen un dels seus torns i, en acceptar, Torns passa cada torn al calendari de la seva nova titular. El pla Free inclou 2 canvis al mes; Torns Pro, il·limitats.
+Publica el torn que no pots fer i el veuran les companyes del teu centre i de la teva mateixa categoria. Et proposen un dels seus torns i, en acceptar, Torns passa cada torn al calendari de la seva nova titular. El pla Free inclou 2 propostes de canvi i 3 torns publicats al mes; Torns Pro, il·limitats.
 
 Si ningú no te'l pot canviar directament, Torns busca cadenes de canvis entre 3 o 4 companyes. I si és per a demà, el mode SOS puja el torn al principi del Mur durant 24 hores i avisa totes les companyes (Torns Pro).
 

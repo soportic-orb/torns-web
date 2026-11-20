@@ -123,7 +123,7 @@ El calendari de Torns es pot imprimir o exportar a PDF en format de llista, mens
 A Torns, un professional publica un torn que vol canviar i el veuen els companys del seu centre i de la mateixa categoria professional. El pot publicar de manera anònima amb «Ocultar la meva identitat». Els torns que comencen en menys de 48 hores es marquen com a «Torn urgent».
 
 - **Com s'usa:** pestanya Canvis › + › «Crear un nou torn» o «Seleccionar un torn del meu calendari» › «Publicar canvi».
-- **Pla:** Free i Pro.
+- **Pla:** Free, 3 torns publicats al mes (el comptador es reinicia el dia 1); Pro, sense límit.
 - **Per a qui:** qui necessita lliurar un dia i busca qui el cobreixi sense dependre de grups de missatgeria.
 
 ### Mur de torns
@@ -136,7 +136,7 @@ El Mur de Torns reuneix els torns publicats als centres de l'usuari, filtrables 
 
 Des d'un torn del Mur, el professional prem «Proposar canvi» i ofereix un dels seus torns a canvi. Qui ha publicat el torn accepta o rebutja la proposta. En acceptar-la, Torns passa cada torn al calendari del seu nou titular. Un canvi ja fet només es pot desfer si les dues persones hi estan d'acord.
 
-- **Pla:** Free, 2 canvis al mes (el comptador es reinicia el dia 1); Pro, canvis il·limitats.
+- **Pla:** Free, 2 propostes de canvi al mes (el comptador es reinicia el dia 1); Pro, il·limitades.
 
 ### Cadenes de canvis
 
@@ -306,7 +306,7 @@ L'app de Torns per a Apple Watch mostra els pròxims torns i els canvis de l'usu
 
 ### Free
 
-El pla Free de Torns és gratuït i inclou el calendari de torns, publicar torns, el Mur, 2 canvis al mes, 1 centre de treball, el xat, el mur social, els recordatoris de torns, els widgets, l'Apple Watch, 2 lectures de quadrant i 2 consultes al Consultor legal.
+El pla Free de Torns és gratuït i inclou el calendari de torns, el Mur, 3 torns publicats i 2 propostes de canvi al mes, 1 centre de treball, el xat, el mur social, els recordatoris de torns, els widgets, l'Apple Watch, 2 lectures de quadrant i 2 consultes al Consultor legal.
 
 ### Torns Pro
 
@@ -331,7 +331,8 @@ En registrar-se a Torns, cada compte té 30 dies de prova amb les funcions Pro. 
 | Compartir calendari | No | Sí |
 | Imprimir i exportar a PDF | No | Sí |
 | Publicar torns i Mur | Sí | Sí |
-| Canvis de torn acceptats | 2 al mes | Il·limitats |
+| Torns publicats per canviar | 3 al mes | Il·limitats |
+| Propostes de canvi | 2 al mes | Il·limitades |
 | Centres de treball | 1 | Diversos |
 | Cadenes de canvis | No | Sí |
 | Mode SOS | No | Sí |
@@ -411,7 +412,7 @@ Sí. Torns és una app perquè infermeres i altres professionals sanitaris d'Esp
 
 ### Torns és gratuït?
 
-Torns té un pla Free gratuït que inclou el calendari de torns, publicar torns i 2 canvis al mes. Torns Pro costa 2,99 € al mes o 29,90 € a l'any, i tots els comptes nous tenen 30 dies de prova amb les funcions Pro.
+Torns té un pla Free gratuït que inclou el calendari de torns, publicar 3 torns i fer 2 propostes de canvi al mes. Torns Pro costa 2,99 € al mes o 29,90 € a l'any, i tots els comptes nous tenen 30 dies de prova amb les funcions Pro.
 
 ### Què inclou Torns Pro?
 

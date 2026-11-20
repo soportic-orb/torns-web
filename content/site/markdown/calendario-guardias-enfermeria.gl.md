@@ -16,7 +16,7 @@ Marca as túas vacacións e os días que non estás dispoñible para que ningué
 
 ## Cambiar unha quenda sen o grupo de WhatsApp
 
-Publica a quenda que non podes facer e verana as compañeiras do teu centro e da túa mesma categoría. Propóñenche unha das súas quendas e, ao aceptar, Torns pasa cada quenda ao calendario da súa nova titular. O plan Free inclúe 2 cambios ao mes; Torns Pro, ilimitados.
+Publica a quenda que non podes facer e verana as compañeiras do teu centro e da túa mesma categoría. Propóñenche unha das súas quendas e, ao aceptar, Torns pasa cada quenda ao calendario da súa nova titular. O plan Free inclúe 2 propostas de cambio e 3 quendas publicadas ao mes; Torns Pro, ilimitados.
 
 Se ninguén cha pode cambiar directamente, Torns busca cadeas de cambios entre 3 ou 4 compañeiras. E se é para mañá, o modo SOS sobe a quenda ao principio do Muro durante 24 horas e avisa a todas (Torns Pro).
 

@@ -58,7 +58,7 @@ Las organizaciones pagan por usuario activo y mes, de 0,99 € (hasta 50 usuario
 
 ### ¿Puedo gestionar mis turnos gratis?
 
-Sí. El plan Free de Torns incluye el calendario de turnos, publicar turnos, el Muro, 2 cambios al mes, el chat, los recordatorios, los widgets y el Apple Watch. Torns Pro cuesta 2,99 € al mes o 29,90 € al año.
+Sí. El plan Free de Torns incluye el calendario de turnos, el Muro, 3 turnos publicados y 2 propuestas de cambio al mes, el chat, los recordatorios, los widgets y el Apple Watch. Torns Pro cuesta 2,99 € al mes o 29,90 € al año.
 
 ## Sigue leyendo
 

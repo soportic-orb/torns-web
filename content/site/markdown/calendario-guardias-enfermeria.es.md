@@ -16,7 +16,7 @@ Marca tus vacaciones y los días que no estás disponible para que nadie te prop
 
 ## Cambiar un turno sin el grupo de WhatsApp
 
-Publica el turno que no puedes hacer y lo verán las compañeras de tu centro y de tu misma categoría. Te proponen uno de sus turnos y, al aceptar, Torns pasa cada turno al calendario de su nueva titular. El plan Free incluye 2 cambios al mes; Torns Pro, ilimitados.
+Publica el turno que no puedes hacer y lo verán las compañeras de tu centro y de tu misma categoría. Te proponen uno de sus turnos y, al aceptar, Torns pasa cada turno al calendario de su nueva titular. El plan Free incluye 2 propuestas de cambio y 3 turnos publicados al mes; Torns Pro, ilimitados.
 
 Si nadie puede cambiártelo directamente, Torns busca cadenas de cambios entre 3 o 4 compañeras. Y si es para mañana, el modo SOS sube el turno al principio del Muro durante 24 horas y avisa a todas (Torns Pro).
 

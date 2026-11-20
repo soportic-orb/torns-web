@@ -58,7 +58,7 @@ Erakundeek erabiltzaile aktibo eta hileko ordaintzen dute, 0,99 €-tik (gehiene
 
 ### Nire txandak doan kudea ditzaket?
 
-Bai. Torns-en Free planak txanden egutegia, txandak argitaratzea, Murala, 2 aldaketa hilean, txata, oroitzapenak, widgetak eta Apple Watch ditu. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean.
+Bai. Torns-en Free planak txanden egutegia, Murala, hilean argitaratutako 3 txanda eta 2 aldaketa-proposamen, txata, oroitzapenak, widgetak eta Apple Watch ditu. Torns Prok 2,99 € balio du hilean edo 29,90 € urtean.
 
 ## Jarraitu irakurtzen
 
