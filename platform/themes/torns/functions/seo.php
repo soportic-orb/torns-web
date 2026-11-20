@@ -495,6 +495,23 @@ add_filter(THEME_FRONT_FOOTER, function (?string $html): string {
 }, 20);
 
 /**
+ * Favicon fallback: Botble only prints a favicon when one is uploaded in
+ * Admin → Apariencia → Opciones del tema. Until one is set there, the theme
+ * icon is used; an admin upload always takes precedence.
+ */
+add_filter(THEME_FRONT_HEADER, function (?string $html): string {
+    if (theme_option('favicon')) {
+        return $html ?? '';
+    }
+
+    $icon = torns_asset('images/icon-192.png');
+
+    return ($html ?? '')
+        . '<link rel="icon" type="image/png" sizes="192x192" href="' . e($icon) . '">' . PHP_EOL
+        . '<link rel="apple-touch-icon" href="' . e($icon) . '">' . PHP_EOL;
+}, 15);
+
+/**
  * GA4: rendered only when a measurement ID is configured AND the app runs in
  * production — never on staging (nueva.torns.app uses APP_ENV=staging) or local.
  */
